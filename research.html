@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Research · Team 1 Design Portfolio</title>
+<meta name="description" content="Survey and interview methods, results, limitations and synthesis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#d9a86c" stroke="#6b4526" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#5a3a22"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#fed500"/><stop offset="100%" stop-color="#ff9100"/></linearGradient></defs>
+</svg><span>Team 1 &middot; Gate Review 1</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Introduction</a></li>
+      <li><a href="customers.html">Customers</a></li>
+      <li><a href="research.html" aria-current="page">Research</a></li>
+      <li><a href="product-definition.html">Definition</a></li>
+      <li><a href="qfd.html">QFD</a></li>
+      <li><a href="characteristics.html">Targets</a></li>
+      <li><a href="competition.html">Competition</a></li>
+      <li><a href="value-proposition.html">Value Prop</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+
+  <p class="eyebrow">Section 02</p>
+  <h1>Market Research</h1>
+  <p class="lead">What we asked, why we asked it that way, what came back, and what we got wrong.</p>
+
+  <div class="badge-row">
+  <span class="badge badge-survey">Survey n=40</span>
+  <span class="badge badge-interview">Interviews</span>
+  <span class="badge badge-interview">Journey map</span>
+</div>
+
+  <h2>Method 1 &mdash; Survey</h2>
+
+  <h3>Research question and purpose</h3>
+  <p>How often do players experience damaged or degraded equipment, what kinds of damage occur, and
+  how do they currently decide whether a ball or paddle is still usable? A survey was appropriate
+  because these are frequency and prevalence questions across a population, not questions about
+  reasoning &mdash; we needed to know how common the nuisance is before investing in depth.</p>
+
+  <h3>Assumptions we set out to test</h3>
+  <ul>
+    <li>Pickleballs degrade often enough to be a meaningful nuisance.</li>
+    <li>Performance changes before damage becomes visible.</li>
+    <li>Players are not always confident judging whether a ball is usable.</li>
+    <li>Players keep using degraded balls, or discard good ones, because they are unsure.</li>
+    <li>Durability, performance consistency and easy damage identification are important needs.</li>
+    <li>Clubs have more incentive than individuals to evaluate equipment condition.</li>
+  </ul>
+
+  <h3>Design, distribution and respondents</h3>
+  <p>A ten-question Google Form, piloted with four respondents and then revised. The pilot lacked
+  several questions added afterwards, so those questions report <strong>n=36</strong> rather than the
+  full <strong>n=40</strong>. Revisions after the pilot added demographics (who provides the balls,
+  age, where they play), a confidence question, a ranked-priority section, a frustrations question,
+  and a current-solutions section; the "not applicable" option on session length was removed to avoid
+  inflating the shortest bucket, and non-players were excluded.</p>
+
+  <div class="grid grid-3" style="margin:1.4rem 0">
+    <div class="stat"><span class="stat-value">40</span><span class="stat-label">total responses
+      (4 pilot, 36 revised)</span></div>
+    <div class="stat"><span class="stat-value">80.6%</span><span class="stat-label">aged 18&ndash;24</span></div>
+    <div class="stat"><span class="stat-value">47.2%</span><span class="stat-label">play regularly or
+      often</span></div>
+  </div>
+
+  <h3>Results</h3>
+
+  <figure>
+    <div class="chart-surface"><svg viewBox="0 0 680 234" role="img" aria-labelledby="fig1-t">
+<title id="fig1-t">Chart</title>
+<line x1="210.0" y1="6" x2="210.0" y2="206" stroke="var(--grid)" stroke-width="1"/>
+<text x="210.0" y="224" fill="var(--ink-3)" font-size="11" text-anchor="middle">0%</text>
+<line x1="311.5" y1="6" x2="311.5" y2="206" stroke="var(--grid)" stroke-width="1"/>
+<text x="311.5" y="224" fill="var(--ink-3)" font-size="11" text-anchor="middle">15%</text>
+<line x1="413.0" y1="6" x2="413.0" y2="206" stroke="var(--grid)" stroke-width="1"/>
+<text x="413.0" y="224" fill="var(--ink-3)" font-size="11" text-anchor="middle">30%</text>
+<line x1="514.5" y1="6" x2="514.5" y2="206" stroke="var(--grid)" stroke-width="1"/>
+<text x="514.5" y="224" fill="var(--ink-3)" font-size="11" text-anchor="middle">45%</text>
+<line x1="616.0" y1="6" x2="616.0" y2="206" stroke="var(--grid)" stroke-width="1"/>
+<text x="616.0" y="224" fill="var(--ink-3)" font-size="11" text-anchor="middle">60%</text>
+<text x="198" y="25.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Consistent performance</text>
+<rect x="210" y="8" width="357.3" height="26" rx="4" fill="var(--series-4)"><title>Consistent performance: 52.8%</title></rect>
+<text x="576.3" y="25.7" fill="var(--ink)" font-size="13" font-weight="700">52.8%</text>
+<text x="198" y="65.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Price</text>
+<rect x="210" y="48" width="113.0" height="26" rx="4" fill="var(--series-4)"><title>Price: 16.7%</title></rect>
+<text x="332.0" y="65.7" fill="var(--ink)" font-size="13" font-weight="700">16.7%</text>
+<text x="198" y="105.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Durability</text>
+<rect x="210" y="88" width="94.1" height="26" rx="4" fill="var(--series-4)"><title>Durability: 13.9%</title></rect>
+<text x="313.1" y="105.7" fill="var(--ink)" font-size="13" font-weight="700">13.9%</text>
+<text x="198" y="145.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Long use life</text>
+<rect x="210" y="128" width="94.1" height="26" rx="4" fill="var(--series-4)"><title>Long use life: 13.9%</title></rect>
+<text x="313.1" y="145.7" fill="var(--ink)" font-size="13" font-weight="700">13.9%</text>
+<text x="198" y="185.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Easy to identify damage</text>
+<rect x="210" y="168" width="18.9" height="26" rx="4" fill="var(--series-4)"><title>Easy to identify damage: 2.8%</title></rect>
+<text x="237.9" y="185.7" fill="var(--ink)" font-size="13" font-weight="700">2.8%</text>
+</svg></div>
+    <figcaption><b>Figure 1.</b> Share of respondents ranking each characteristic first when choosing
+    pickleball equipment (n=36). Consistent performance dominates. Easy identification of damage is
+    last &mdash; and among the 18 respondents who ranked all five, it has the worst average rank
+    (4.78 of 5, against 2.11&ndash;3.00 for everything else). Players do not buy equipment to make
+    damage easier to spot; they buy it to perform predictably.</figcaption>
+  </figure>
+
+  <figure>
+    <div class="chart-surface"><svg viewBox="0 0 680 194" role="img" aria-labelledby="fig2-t">
+<title id="fig2-t">Chart</title>
+<line x1="210.0" y1="6" x2="210.0" y2="166" stroke="var(--grid)" stroke-width="1"/>
+<text x="210.0" y="184" fill="var(--ink-3)" font-size="11" text-anchor="middle">0%</text>
+<line x1="311.5" y1="6" x2="311.5" y2="166" stroke="var(--grid)" stroke-width="1"/>
+<text x="311.5" y="184" fill="var(--ink-3)" font-size="11" text-anchor="middle">20%</text>
+<line x1="413.0" y1="6" x2="413.0" y2="166" stroke="var(--grid)" stroke-width="1"/>
+<text x="413.0" y="184" fill="var(--ink-3)" font-size="11" text-anchor="middle">40%</text>
+<line x1="514.5" y1="6" x2="514.5" y2="166" stroke="var(--grid)" stroke-width="1"/>
+<text x="514.5" y="184" fill="var(--ink-3)" font-size="11" text-anchor="middle">60%</text>
+<line x1="616.0" y1="6" x2="616.0" y2="166" stroke="var(--grid)" stroke-width="1"/>
+<text x="616.0" y="184" fill="var(--ink-3)" font-size="11" text-anchor="middle">80%</text>
+<text x="198" y="25.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Visible cracking</text>
+<rect x="210" y="8" width="366.4" height="26" rx="4" fill="var(--series-1)"><title>Visible cracking: 72.2%</title></rect>
+<text x="585.4" y="25.7" fill="var(--ink)" font-size="13" font-weight="700">72.2%</text>
+<text x="198" y="65.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Surface wear</text>
+<rect x="210" y="48" width="338.5" height="26" rx="4" fill="var(--series-1)"><title>Surface wear: 66.7%</title></rect>
+<text x="557.5" y="65.7" fill="var(--ink)" font-size="13" font-weight="700">66.7%</text>
+<text x="198" y="105.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Ball becoming soft</text>
+<rect x="210" y="88" width="183.2" height="26" rx="4" fill="var(--series-1)"><title>Ball becoming soft: 36.1%</title></rect>
+<text x="402.2" y="105.7" fill="var(--ink)" font-size="13" font-weight="700">36.1%</text>
+<text x="198" y="145.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Warped or misshapen</text>
+<rect x="210" y="128" width="155.3" height="26" rx="4" fill="var(--series-1)"><title>Warped or misshapen: 30.6%</title></rect>
+<text x="374.3" y="145.7" fill="var(--ink)" font-size="13" font-weight="700">30.6%</text>
+</svg></div>
+    <figcaption><b>Figure 2.</b> Types of ball damage personally experienced (n=36, multiple
+    selection). On paddles, 44.4% have seen cracking or edge damage and 27.8% a dead spot on the
+    face. Damage is not an edge case &mdash; it is the normal condition of the equipment.</figcaption>
+  </figure>
+
+  <figure>
+    <div class="chart-surface"><svg viewBox="0 0 680 114" role="img" aria-labelledby="fig3-t">
+<title id="fig3-t">Chart</title>
+<line x1="210.0" y1="6" x2="210.0" y2="86" stroke="var(--grid)" stroke-width="1"/>
+<text x="210.0" y="104" fill="var(--ink-3)" font-size="11" text-anchor="middle">0%</text>
+<line x1="311.5" y1="6" x2="311.5" y2="86" stroke="var(--grid)" stroke-width="1"/>
+<text x="311.5" y="104" fill="var(--ink-3)" font-size="11" text-anchor="middle">15%</text>
+<line x1="413.0" y1="6" x2="413.0" y2="86" stroke="var(--grid)" stroke-width="1"/>
+<text x="413.0" y="104" fill="var(--ink-3)" font-size="11" text-anchor="middle">30%</text>
+<line x1="514.5" y1="6" x2="514.5" y2="86" stroke="var(--grid)" stroke-width="1"/>
+<text x="514.5" y="104" fill="var(--ink-3)" font-size="11" text-anchor="middle">45%</text>
+<line x1="616.0" y1="6" x2="616.0" y2="86" stroke="var(--grid)" stroke-width="1"/>
+<text x="616.0" y="104" fill="var(--ink-3)" font-size="11" text-anchor="middle">60%</text>
+<text x="198" y="25.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Not confident (rates 1–3)</text>
+<rect x="210" y="8" width="357.3" height="26" rx="4" fill="var(--series-3)"><title>Not confident (rates 1–3): 52.8%</title></rect>
+<text x="576.3" y="25.7" fill="var(--ink)" font-size="13" font-weight="700">52.8%</text>
+<text x="198" y="65.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Confident (rates 4–7)</text>
+<rect x="210" y="48" width="319.4" height="26" rx="4" fill="var(--series-3)"><title>Confident (rates 4–7): 47.2%</title></rect>
+<text x="538.4" y="65.7" fill="var(--ink)" font-size="13" font-weight="700">47.2%</text>
+</svg></div>
+    <figcaption><b>Figure 3.</b> Self-rated confidence in judging whether a ball is still in good
+    condition, on a 7-point scale (n=36). The split is close to even and leans toward doubt. This is
+    the number the product's confidence target (53%) is set against.</figcaption>
+  </figure>
+
+  <figure>
+    <div class="chart-surface"><svg viewBox="0 0 680 154" role="img" aria-labelledby="fig4-t">
+<title id="fig4-t">Chart</title>
+<line x1="210.0" y1="6" x2="210.0" y2="126" stroke="var(--grid)" stroke-width="1"/>
+<text x="210.0" y="144" fill="var(--ink-3)" font-size="11" text-anchor="middle">0%</text>
+<line x1="311.5" y1="6" x2="311.5" y2="126" stroke="var(--grid)" stroke-width="1"/>
+<text x="311.5" y="144" fill="var(--ink-3)" font-size="11" text-anchor="middle">20%</text>
+<line x1="413.0" y1="6" x2="413.0" y2="126" stroke="var(--grid)" stroke-width="1"/>
+<text x="413.0" y="144" fill="var(--ink-3)" font-size="11" text-anchor="middle">40%</text>
+<line x1="514.5" y1="6" x2="514.5" y2="126" stroke="var(--grid)" stroke-width="1"/>
+<text x="514.5" y="144" fill="var(--ink-3)" font-size="11" text-anchor="middle">60%</text>
+<line x1="616.0" y1="6" x2="616.0" y2="126" stroke="var(--grid)" stroke-width="1"/>
+<text x="616.0" y="144" fill="var(--ink-3)" font-size="11" text-anchor="middle">80%</text>
+<text x="198" y="25.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Visual inspection</text>
+<rect x="210" y="8" width="349.2" height="26" rx="4" fill="var(--series-2)"><title>Visual inspection: 68.8%</title></rect>
+<text x="568.2" y="25.7" fill="var(--ink)" font-size="13" font-weight="700">68.8%</text>
+<text x="198" y="65.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Compare the bounce</text>
+<rect x="210" y="48" width="317.2" height="26" rx="4" fill="var(--series-2)"><title>Compare the bounce: 62.5%</title></rect>
+<text x="536.2" y="65.7" fill="var(--ink)" font-size="13" font-weight="700">62.5%</text>
+<text x="198" y="105.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Hit it to judge feel</text>
+<rect x="210" y="88" width="222.3" height="26" rx="4" fill="var(--series-2)"><title>Hit it to judge feel: 43.8%</title></rect>
+<text x="441.3" y="105.7" fill="var(--ink)" font-size="13" font-weight="700">43.8%</text>
+</svg></div>
+    <figcaption><b>Figure 4.</b> How players currently check a ball (n=16 asked, multiple
+    selection). Every one of these methods is subjective, and they are the real competition &mdash;
+    not the industrial testers. Any product must beat a ten-second bounce test on effort, not just
+    on accuracy.</figcaption>
+  </figure>
+
+  <figure>
+    <div class="chart-surface">
+      <svg viewBox="0 0 680 290" role="img" aria-label="Grouped comparison">
+<line x1="54" y1="12.0" x2="656" y2="12.0" stroke="var(--grid)" stroke-width="1"/>
+<text x="44" y="16.0" fill="var(--ink-3)" font-size="11" text-anchor="end">80%</text>
+<line x1="54" y1="65.5" x2="656" y2="65.5" stroke="var(--grid)" stroke-width="1"/>
+<text x="44" y="69.5" fill="var(--ink-3)" font-size="11" text-anchor="end">60%</text>
+<line x1="54" y1="119.0" x2="656" y2="119.0" stroke="var(--grid)" stroke-width="1"/>
+<text x="44" y="123.0" fill="var(--ink-3)" font-size="11" text-anchor="end">40%</text>
+<line x1="54" y1="172.5" x2="656" y2="172.5" stroke="var(--grid)" stroke-width="1"/>
+<text x="44" y="176.5" fill="var(--ink-3)" font-size="11" text-anchor="end">20%</text>
+<line x1="54" y1="226.0" x2="656" y2="226.0" stroke="var(--grid)" stroke-width="1"/>
+<text x="44" y="230.0" fill="var(--ink-3)" font-size="11" text-anchor="end">0%</text>
+<rect x="141.5" y="68.7" width="58.0" height="157.3" rx="4" fill="var(--series-1)"><title>Regularly / often (n=17) — Confident judging condition (rates 5–7): 58.8%</title></rect>
+<text x="170.5" y="61.7" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="middle">58.8%</text>
+<rect x="209.5" y="155.6" width="58.0" height="70.4" rx="4" fill="var(--series-4)"><title>Sometimes / rarely (n=19) — Confident judging condition (rates 5–7): 26.3%</title></rect>
+<text x="238.5" y="148.6" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="middle">26.3%</text>
+<text x="204.5" y="256" fill="var(--ink-2)" font-size="12.5" text-anchor="middle">Confident judging condition (rates 5–7)</text>
+<rect x="442.5" y="52.9" width="58.0" height="173.1" rx="4" fill="var(--series-1)"><title>Regularly / often (n=17) — Finds an objective test useful: 64.7%</title></rect>
+<text x="471.5" y="45.9" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="middle">64.7%</text>
+<rect x="510.5" y="99.2" width="58.0" height="126.8" rx="4" fill="var(--series-4)"><title>Sometimes / rarely (n=19) — Finds an objective test useful: 47.4%</title></rect>
+<text x="539.5" y="92.2" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="middle">47.4%</text>
+<text x="505.5" y="256" fill="var(--ink-2)" font-size="12.5" text-anchor="middle">Finds an objective test useful</text>
+</svg>
+      <div class="legend">
+  <span class="legend-item"><span class="legend-swatch" style="background:var(--series-1)"></span>Regularly / often (n=17)</span>
+  <span class="legend-item"><span class="legend-swatch" style="background:var(--series-4)"></span>Sometimes / rarely (n=19)</span>
+</div>
+    </div>
+    <figcaption><b>Figure 5.</b> Confidence and interest both rise with play frequency (n=36).
+    The players most likely to want an objective test are the ones who already trust their own
+    judgement, which argues against framing the product for uncertain beginners.</figcaption>
+  </figure>
+
+  <h3>What the survey means for the product</h3>
+  <p>Damage is common and detection is hard, but "easy to identify damage" is the <em>least</em>
+  valued purchase criterion. These are only contradictory if the product is sold as a damage
+  detector. Sold as a way to protect consistent performance &mdash; the thing 52.8% rank first &mdash;
+  the same capability addresses the dominant need. That reframing is the single most important
+  product-definition consequence of the survey.</p>
+
+  <div class="callout callout-limit">
+  <span class="callout-title">Limitations and bias</span>
+  <p>The sample is small (36) and skews heavily toward 18–24-year-old, University of Michigan–affiliated respondents, so it generalises poorly to the older recreational players who make up much of the sport. Several questions were added after the pilot and have smaller bases still (n=15 to n=18), which is why the frustration and full-ranking figures are reported with their own denominators. Most importantly, we never asked willingness to pay, and we never asked usefulness and willingness to pay in the same instrument — so the survey establishes interest, not demand.</p>
+</div>
+
+  <h2>Method 2 &mdash; Interviews</h2>
+
+  <h3>Purpose and participant selection</h3>
+  <p>The survey could tell us how often equipment fails, but not how players reason about it.
+  Interviews were used to understand how a player notices wear, what they do next, and whether the
+  problem is worth solving for individuals or for institutions. Participants were regular players who
+  had dealt with worn-out equipment; <strong>two</strong> were interviewed in depth, roughly 30 minutes
+  each, recorded with consent under a semi-structured guide.</p>
+
+  <h3>Structure</h3>
+  <p>The guide moved from background and equipment use, to a critical-incident question (the last time
+  a ball did not play the way they expected), to how they check equipment, to paddles, frustrations
+  and workarounds, and finally to what they want. Asking for the most recent specific incident, rather
+  than general opinion, was deliberate: it produces recall of what actually happened instead of a
+  theory about what usually happens.</p>
+
+  <h3>What we heard</h3>
+  <ul>
+    <li><strong>The customer may not be the player.</strong> Both participants felt a condition-checking
+    product made more sense for a club or facility than as something an individual recreational player
+    would buy. This was the clearest contradiction of our starting assumption.</li>
+    <li><strong>Feel changes before appearance does.</strong> Consistent with the survey finding that
+    invisible damage is the leading frustration.</li>
+    <li><strong>Checking is a habit, not a procedure.</strong> Bouncing, squeezing, comparing against
+    another ball, and looking it over &mdash; performed constantly, trusted only partly.</li>
+    <li><strong>Durability alone is not the answer.</strong> A longer-lasting ball is only attractive if
+    it still plays like a normal ball, which rules out "just make a tougher ball" as a product
+    direction.</li>
+  </ul>
+
+  <div class="callout callout-limit">
+  <span class="callout-title">Limitations</span>
+  <p>Two interviews is a small base for the strongest conclusion we drew from them — that clubs are the better customer. Both participants were recruited from the same community as the survey sample. The club/facility hypothesis is currently supported by two conversations and no institutional interview at all; no club manager, tournament organiser or facility buyer has been interviewed.</p>
+</div>
+
+  <h2>Research synthesis</h2>
+  <p>Bringing the survey, the interviews and the journey map together:</p>
+  <ul>
+    <li><strong>About the customer.</strong> Frequent, competitive-minded players who already run
+    informal equipment checks and want them validated &mdash; not replaced.</li>
+    <li><strong>Which touchpoints matter.</strong> Pre-match selection and post-game evaluation. The
+    mid-game failure is what hurts, but it is too late to act on; the product has to move the decision
+    earlier.</li>
+    <li><strong>What customers value.</strong> Consistent performance first, by a wide margin, then
+    price and durability.</li>
+    <li><strong>Assumption supported:</strong> degradation is frequent, invisible damage is the top
+    frustration, and confidence is genuinely split.</li>
+    <li><strong>Assumption revised:</strong> the buyer may be the club rather than the player, and
+    interest rises with expertise rather than falling.</li>
+    <li><strong>Assumption rejected:</strong> that players want easier damage identification as such.
+    They rank it last. They want consistent performance, of which detection is a means.</li>
+    <li><strong>Open questions.</strong> What would anyone pay? Would a club buy? How much effort will a
+    player tolerate before a match? None of these are answered by the current evidence.</li>
+  </ul>
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="customers.html">&larr; Customers &amp; Benefits</a>
+    <a href="product-definition.html">Product Definition &rarr;</a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team 1 (The DreamTeam / OriWagon) &middot;
+    Gate Review 1: Product Definition and Market Analysis &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>
