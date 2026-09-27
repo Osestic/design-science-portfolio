@@ -1,0 +1,471 @@
+/* ==========================================================================
+   Team 1 — Design Portfolio
+   Visual language: Wahala's warm gold gradient and soft glass cards, grounded
+   in the materials of the sport — maple paddle faces, grip tape, court lines.
+   Light mode only by design: the whole aesthetic is warm paper and wood.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* Wood — paddle face to walnut edge guard */
+  --wood-deep: #3f2a1a;
+  --wood: #6b4526;
+  --wood-mid: #a9763f;
+  --maple: #d9a86c;
+  --maple-soft: #eccfa6;
+
+  /* Paper — court chalk and cream */
+  --paper: #fffdf8;
+  --cream: #fbf4e8;
+  --cream-deep: #f4e8d5;
+
+  /* Wahala signature */
+  --gold: #fed500;
+  --amber: #ff9100;
+  --grad: linear-gradient(135deg, var(--gold), var(--amber));
+
+  /* Ink */
+  --ink: #241a12;
+  --ink-2: #5a4636;
+  --ink-3: #8d7862;
+
+  /* Data — validated categorical slots (see README) */
+  --series-1: #2a78d6;
+  --series-2: #1baf7a;
+  --series-3: #4a3aa7;
+  --series-4: #eda100;
+  --series-5: #e87ba4;
+  --grid: #e4d8c4;
+
+  --radius: 20px;
+  --radius-sm: 12px;
+  --shadow: 0 10px 34px rgba(74, 47, 28, 0.10);
+  --shadow-lift: 0 18px 48px rgba(74, 47, 28, 0.16);
+  --edge: 1px solid rgba(107, 69, 38, 0.14);
+  --measure: 72ch;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  /* Faint vertical grain, the way light falls across a paddle face. */
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(169, 118, 63, 0.035) 0px,
+      rgba(169, 118, 63, 0.035) 1px,
+      transparent 1px,
+      transparent 7px
+    ),
+    radial-gradient(1200px 600px at 15% -10%, rgba(254, 213, 0, 0.16), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(255, 145, 0, 0.10), transparent 55%);
+  color: var(--ink);
+  font-family: Outfit, "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: min(1120px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.narrow { max-width: var(--measure); }
+
+h1, h2, h3, h4 {
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.6em;
+  font-weight: 800;
+}
+
+h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); }
+h2 { font-size: clamp(1.5rem, 3.2vw, 2.1rem); margin-top: 2.4em; }
+h3 { font-size: clamp(1.14rem, 2.2vw, 1.34rem); margin-top: 1.9em; font-weight: 700; }
+h4 { font-size: 1.02rem; margin-top: 1.5em; font-weight: 700; color: var(--ink-2); }
+
+p, li { color: var(--ink-2); }
+p { margin: 0 0 1.1em; max-width: var(--measure); }
+li { margin-bottom: 0.45em; }
+ul, ol { padding-left: 1.3em; max-width: var(--measure); }
+
+strong { color: var(--ink); font-weight: 650; }
+
+a { color: #a35a00; text-decoration-color: rgba(163, 90, 0, 0.35); text-underline-offset: 3px; }
+a:hover { color: #7d4400; }
+
+.gradient-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 1rem;
+  color: var(--wood);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.lead { font-size: 1.14rem; color: var(--ink-2); }
+
+/* ── Navigation ───────────────────────────────────────────────────────── */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 253, 248, 0.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: var(--edge);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 62px;
+  padding-block: 0.5rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.brand svg { flex: none; }
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.4rem;
+  margin-left: auto;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links a {
+  display: block;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: var(--ink-2);
+  font-size: 0.87rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-links a:hover { background: rgba(169, 118, 63, 0.11); color: var(--ink); }
+
+.nav-links a[aria-current="page"] {
+  background: var(--grad);
+  color: #2a1d00;
+  box-shadow: 0 4px 14px rgba(255, 145, 0, 0.3);
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────────── */
+
+.hero { padding: clamp(2.6rem, 7vw, 5rem) 0 2.2rem; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.75fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.hero p { font-size: 1.16rem; }
+
+.paddle-art { width: 100%; height: auto; filter: drop-shadow(0 18px 30px rgba(74, 47, 28, 0.22)); }
+
+/* ── Surfaces ─────────────────────────────────────────────────────────── */
+
+.card {
+  padding: clamp(1.15rem, 2.6vw, 1.8rem);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.96), rgba(255, 250, 240, 0.9));
+  border: var(--edge);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card h3:first-child, .card h2:first-child, .card h4:first-child { margin-top: 0; }
+
+.grid { display: grid; gap: 1.1rem; }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); }
+
+/* Grip-tape band: the wrapped handle of a paddle, used to head a section. */
+.section {
+  position: relative;
+  margin-top: 3.2rem;
+  padding-top: 2.2rem;
+  border-top: 2px solid transparent;
+  border-image: repeating-linear-gradient(
+      90deg,
+      var(--maple) 0 14px,
+      var(--wood-mid) 14px 28px
+    ) 1;
+}
+
+/* ── Stat tiles ───────────────────────────────────────────────────────── */
+
+.stat {
+  padding: 1.1rem 1.2rem;
+  background: var(--paper);
+  border: var(--edge);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+
+.stat-value {
+  display: block;
+  font-size: clamp(1.9rem, 4.4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stat-label { display: block; margin-top: 0.35rem; color: var(--ink-2); font-size: 0.92rem; }
+.stat-source { display: block; margin-top: 0.5rem; color: var(--ink-3); font-size: 0.76rem; }
+
+/* ── Evidence badges ──────────────────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-survey { background: rgba(42, 120, 214, 0.13); color: #1b5296; }
+.badge-interview { background: rgba(27, 175, 122, 0.15); color: #0f6f4b; }
+.badge-benchmark { background: rgba(74, 58, 167, 0.13); color: #3a2d84; }
+.badge-qfd { background: rgba(255, 145, 0, 0.16); color: #96520a; }
+.badge-assumption { background: rgba(141, 120, 98, 0.16); color: #6a5744; }
+
+.badge-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 0.9rem; }
+
+/* ── Callouts ─────────────────────────────────────────────────────────── */
+
+.callout {
+  margin: 1.4rem 0;
+  padding: 1rem 1.15rem;
+  border-left: 4px solid var(--wood-mid);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: rgba(236, 207, 166, 0.28);
+}
+
+.callout p:last-child { margin-bottom: 0; }
+.callout-title { display: block; margin-bottom: 0.3rem; font-weight: 750; color: var(--ink); }
+
+.callout-todo { border-left-color: #c9770d; background: rgba(255, 145, 0, 0.1); }
+.callout-limit { border-left-color: var(--series-1); background: rgba(42, 120, 214, 0.08); }
+
+blockquote {
+  margin: 1.3rem 0;
+  padding: 0.4rem 0 0.4rem 1.2rem;
+  border-left: 3px solid var(--gold);
+  color: var(--ink);
+  font-size: 1.06rem;
+  font-style: italic;
+}
+
+blockquote cite { display: block; margin-top: 0.5rem; color: var(--ink-3); font-size: 0.84rem; font-style: normal; }
+
+/* ── Tables ───────────────────────────────────────────────────────────── */
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.2rem 0;
+  border: var(--edge);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+
+th, td {
+  padding: 0.62rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(107, 69, 38, 0.1);
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background: var(--cream-deep);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: rgba(254, 213, 0, 0.07); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* QFD matrix */
+.qfd th.vert {
+  height: 190px;
+  padding: 0.4rem 0.2rem;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+.qfd th.vert > span {
+  display: inline-block;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.qfd td.rel { text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.rel-9 { background: rgba(255, 145, 0, 0.26); color: #6d3c00; }
+.rel-3 { background: rgba(255, 145, 0, 0.13); color: #8a5510; }
+.rel-1 { background: rgba(255, 145, 0, 0.06); color: var(--ink-3); }
+.qfd tbody th { font-size: 0.86rem; font-weight: 650; color: var(--ink); white-space: nowrap; }
+
+/* ── Figures & charts ─────────────────────────────────────────────────── */
+
+figure { margin: 1.6rem 0; }
+
+figure svg { width: 100%; height: auto; display: block; }
+
+figcaption {
+  margin-top: 0.7rem;
+  color: var(--ink-3);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+figcaption b { color: var(--ink-2); }
+
+.chart-surface {
+  padding: 1.1rem;
+  background: var(--paper);
+  border: var(--edge);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1.1rem; margin-top: 0.8rem; }
+.legend-item { display: inline-flex; align-items: center; gap: 7px; color: var(--ink-2); font-size: 0.84rem; }
+.legend-swatch { width: 11px; height: 11px; border-radius: 3px; flex: none; }
+
+/* ── Section index cards ──────────────────────────────────────────────── */
+
+.section-link {
+  display: block;
+  padding: 1.25rem 1.35rem;
+  background: var(--paper);
+  border: var(--edge);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.section-link:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+.section-link .num { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.14em; color: var(--wood-mid); }
+.section-link h3 { margin: 0.3rem 0 0.4rem; color: var(--ink); font-size: 1.1rem; }
+.section-link p { margin: 0; color: var(--ink-2); font-size: 0.92rem; }
+
+/* ── Page footer / pager ──────────────────────────────────────────────── */
+
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: space-between;
+  margin: 3.5rem 0 0;
+  padding-top: 1.5rem;
+  border-top: var(--edge);
+}
+
+.pager a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--paper);
+  border: var(--edge);
+  font-size: 0.9rem;
+  font-weight: 650;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.pager a:hover { box-shadow: var(--shadow); }
+
+.site-footer {
+  margin-top: 4rem;
+  padding: 2rem 0 2.6rem;
+  border-top: 2px solid transparent;
+  border-image: repeating-linear-gradient(90deg, var(--maple) 0 14px, var(--wood-mid) 14px 28px) 1;
+  color: var(--ink-3);
+  font-size: 0.87rem;
+}
+
+.refs { font-size: 0.88rem; }
+.refs li { margin-bottom: 0.5em; color: var(--ink-2); word-break: break-word; }
+
+main { padding-bottom: 1rem; }
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .paddle-art { max-width: 260px; margin-inline: auto; }
+  .nav-links { width: 100%; margin-left: 0; }
+}
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .container { width: min(1120px, 100% - 1.6rem); }
+}
+
+@media print {
+  .nav, .pager { display: none; }
+  body { background: #fff; }
+  .card, .stat, .table-wrap, .chart-surface { box-shadow: none; }
+}

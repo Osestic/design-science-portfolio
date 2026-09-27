@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+~$*
+*.tmp
+.cmsg.txt
+.m.txt
+
+# Source documents — kept locally, not published
+Resources/
