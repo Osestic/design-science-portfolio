@@ -379,6 +379,31 @@ figcaption {
 
 figcaption b { color: var(--ink-2); }
 
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: var(--edge);
+  box-shadow: var(--shadow);
+}
+
+/* Visible placeholder for content the team still has to supply. */
+.todo {
+  display: inline;
+  padding: 0.05em 0.35em;
+  border-radius: 6px;
+  background: #ffe8e8;
+  color: #9b1c1c;
+  border: 1px dashed #d64545;
+  font-weight: 650;
+  font-size: 0.92em;
+}
+
+blockquote.quote { margin: 1rem 0; padding: 0.8rem 1.1rem; border-left: 4px solid var(--amber); background: var(--paper); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+blockquote.quote cite { display: block; margin-top: 0.3rem; font-style: normal; font-size: 0.85rem; color: var(--ink-3); }
+
+
 .chart-surface {
   padding: 1.1rem;
   background: var(--paper);

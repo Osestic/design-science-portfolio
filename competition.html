@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competition Analysis · Team 1 Design Portfolio</title>
-<meta name="description" content="State of the art, design gap and product positioning.">
+<meta name="description" content="State of the art, searches, benchmarking, the design gap and product positioning.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -38,178 +38,208 @@
 
   <p class="eyebrow">Section 04</p>
   <h1>Competition Analysis</h1>
-  <p class="lead">What exists, what it costs, what it weighs, and the gap none of it fills.</p>
+  <p class="lead">What exists, how it performs, what it costs, and the gap none of it fills.</p>
 
   <div class="badge-row">
-  <span class="badge badge-benchmark">Benchmarking</span>
-  <span class="badge badge-survey">Survey n=36</span>
-  <span class="badge badge-interview">Interviews</span>
-</div>
+    <span class="badge badge-benchmark">Patents &amp; standards</span>
+    <span class="badge badge-benchmark">Benchmarking</span>
+    <span class="badge badge-survey">Survey n=36</span>
+    <span class="badge badge-interview">Interviews n=4</span>
+  </div>
 
   <h2>How we searched</h2>
-  <p>Web and product searches for pickleball and racquet-sport equipment testing instruments;
-  manufacturer specification pages for the three products with published figures; and the survey's
-  current-solutions question, which established what players use today in the absence of any
-  product. Patent, literature and standards searches are outstanding.</p>
-
-  <h3>Search log</h3>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Search type</th><th>Scope</th><th>Status</th></tr></thead>
+      <thead><tr><th>Search</th><th>Method</th><th>Result</th></tr></thead>
       <tbody>
-        <tr><td>Web and product search</td><td>Pickleball and racquet-sport equipment testing
-          instruments; manufacturer specification pages</td><td>Complete — three products with
-          published specifications found</td></tr>
-        <tr><td>Customer perception of existing products</td><td>Survey question on current methods
-          of judging equipment condition (n=16)</td><td>Complete</td></tr>
-        <tr><td>Patent search</td><td>Ball and paddle condition testing; sports equipment wear
-          detection</td><td><strong>Not yet run</strong></td></tr>
-        <tr><td>Literature search</td><td>Polymer fatigue in moulded sports balls; paddle
-          delamination</td><td><strong>Not yet run</strong></td></tr>
-        <tr><td>Standards and regulatory</td><td>USA Pickleball equipment standards and approved
-          equipment programme</td><td><strong>Not yet run</strong></td></tr>
+        <tr><td><strong>Patents</strong></td><td>Espacenet as the primary database</td><td>One pickleball ball-testing
+          patent application: US 2025/0332489 A1, “Pickleball testing device” (Tri Great International), which floats the
+          ball in an airflow column and uses cameras or lasers to detect deformation, wear and hole defects [1]. The team
+          does not currently plan to use an airflow method.</td></tr>
+        <tr><td><strong>Literature</strong></td><td>University of Michigan Library Search for scholarly work on pickleball
+          ball testing</td><td>No articles on ball-condition testing found. Injury literature was reviewed for the
+          safety context (see <a href="customers.html#context">Customers</a>).</td></tr>
+        <tr><td><strong>Web and products</strong></td><td>Keywords such as “pickleball ball testing tools” and
+          “pickleball equipment standards”</td><td>Industrial and tournament testers (Table 15); no consumer ball
+          tester</td></tr>
+        <tr><td><strong>Standards and regulations</strong></td><td>USA Pickleball Equipment Standards Manual and 2026
+          Official Rulebook</td><td>The manual defines bounce, hardness, size and weight for approving <em>new</em> ball
+          models [2]; the rulebook has no test for a ball in service and leaves a soft ball to player agreement (Rule
+          10.G) [3]</td></tr>
+        <tr><td><strong>Customer perceptions</strong></td><td>Review search; survey and interviews</td><td>No reviews
+          exist because all testers are manufacturer- or tournament-grade. Players rely on subjective checks (68.8% look,
+          62.5% bounce, n=16) [4]</td></tr>
+        <tr><td><strong>Market and competitor data</strong></td><td>Manufacturer pages; team QFD benchmarking</td><td>Little
+          public market data, because testers are not sold to consumers; prices and weights from the QFD sheet [5]</td></tr>
       </tbody>
     </table>
   </div>
-  <p><b>Table 9.</b> Competitive search coverage.</p>
+  <p><b>Table 14.</b> Competitive search coverage. <span class="todo">[TEAM: add exact search strings and search
+  dates for the patent and literature searches.]</span></p>
 
-  <h2>The state of the art</h2>
-  <p>Three instruments have published specifications. All three are industrial or
-  manufacturer-facing, and all three test paddles. <strong>No ball tester exists at any price</strong>
-  &mdash; a notable absence given that 72.2% of our respondents have played with a visibly cracked
-  ball.</p>
-
+  <h2>State of the art</h2>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Alternative</th><th>Target user</th><th>What it measures</th>
-      <th class="num">Price</th><th class="num">Weight</th><th>Shortcoming for our customer</th></tr></thead>
+      <thead><tr><th>Alternative</th><th>Target users</th><th>What it does</th><th>Time</th><th>Price</th><th>Weight</th><th>Strengths</th><th>Shortcomings</th></tr></thead>
       <tbody>
-        <tr><td><strong>Paddle Press</strong><br><span style="color:var(--ink-3);font-size:.85em">Pickleball Instruments [1]</span></td>
-          <td>Manufacturers, certification labs</td><td>Paddle deflection under load</td>
-          <td class="num">$5,000</td><td class="num">Not published</td>
-          <td>45 s per test, workshop-bound, priced for a manufacturer. No ball testing.</td></tr>
-        <tr><td><strong>Go/No-Go</strong><br><span style="color:var(--ink-3);font-size:.85em">USA Paddle Testing [2]</span></td>
-          <td>Tournament certification</td><td>Pass/fail on paddle conformance</td>
-          <td class="num">$7,200</td><td class="num">41 kg</td>
-          <td>Binary verdict against a rules threshold, not a condition read. Heaviest and most
-          expensive of the three.</td></tr>
-        <tr><td><strong>Head 4-in-1 diagnostic centre</strong><br><span style="color:var(--ink-3);font-size:.85em">WD Strings [3]</span></td>
-          <td>Racquet shops, stringers</td><td>Swingweight, balance, and related properties</td>
-          <td class="num">$2,900</td><td class="num">22.8 kg</td>
-          <td>Built for racquet tuning rather than condition assessment; 0.22 m³ of bench space.</td></tr>
-        <tr><td><strong>Current practice: manual checks</strong><br><span style="color:var(--ink-3);font-size:.85em">Survey, n=16 asked</span></td>
-          <td>Every player</td><td>Nothing measurable — visual inspection (68.8%), bounce comparison
-          (62.5%), hitting to judge feel (43.8%)</td>
-          <td class="num">Free</td><td class="num">0 kg</td>
-          <td>The method players distrust: 52.8% rate their confidence in it at 3 or below.</td></tr>
+        <tr><td><strong>Manual check</strong><br><span style="font-size:.85em;color:var(--ink-3)">direct substitute</span></td>
+          <td>Every player</td><td>Look, bounce, squeeze, hit, or slap against the floor</td><td>≈3 s (P3) [4]</td>
+          <td>Free</td><td>—</td><td>Instant, habitual, no equipment</td><td>Subjective; misses softening and hairline
+          cracks; not shareable between players</td></tr>
+        <tr><td><strong>Pickle Press</strong><br><span style="font-size:.85em;color:var(--ink-3)">ADC [6]</span></td>
+          <td>Manufacturers, QC specialists, test labs</td><td>Load frame measuring ball and paddle compression; optional
+          coefficient-of-friction testing</td><td>Not published</td><td>Not published</td><td>Not published</td>
+          <td>Precise, quantitative compression data</td><td>Bench-bound, lab-oriented, cost not disclosed</td></tr>
+        <tr><td><strong>Go/No-Go</strong><br><span style="font-size:.85em;color:var(--ink-3)">ADC / USA Paddle Testing [7][8]</span></td>
+          <td>Tournaments and clubs; official device for UPA-A and DUPR</td><td>Paddle deflection pass/fail with a visual
+          indicator</td><td>&lt; 60 s per paddle [7][8]</td><td>$299/month rental [11]; no purchase price published</td><td>12 lb (≈5.4 kg) [7]</td><td>Portable enough for events; readable by anyone</td>
+          <td>Paddles only; conformance, not condition</td></tr>
+        <tr><td><strong>Paddle Press</strong><br><span style="font-size:.85em;color:var(--ink-3)">Pickleball Instruments [9]</span></td>
+          <td>Manufacturers, tournaments</td><td>Repeatable paddle deflection checks</td><td>45 s (QFD) [5]</td>
+          <td>$5,000 [5]</td><td>Not published</td><td>Field-ready measurement</td><td>Paddles only</td></tr>
+        <tr><td><strong>Head 4-in-1</strong><br><span style="font-size:.85em;color:var(--ink-3)">WD Strings [10], analogous</span></td>
+          <td>Racquet shops, stringers</td><td>Swingweight, balance and related racquet properties</td><td>Not published</td>
+          <td>$2,900 [5]</td><td>22.8 kg [5]</td><td>Multi-measurement in one unit</td><td>Racquets, not balls; 0.22 m³
+          of bench space</td></tr>
+        <tr><td><strong>Crack-resistant ball</strong><br><span style="font-size:.85em;color:var(--ink-3)">e.g. Lifetime; indirect substitute</span></td>
+          <td>Clubs, strong players</td><td>Fails less often</td><td>—</td><td>≈$1.62 per ball (P4) [4]</td><td>—</td>
+          <td>Clubs standardize on it (P4); “best ball” (P3)</td><td>Plays differently (P2, P4); supply shortage in 2025 (P4);
+          still fails eventually</td></tr>
+        <tr><td><strong>Airflow tester</strong><br><span style="font-size:.85em;color:var(--ink-3)">US 2025/0332489 A1 [1], prior design</span></td>
+          <td>Competitions, quality control</td><td>Ball floats in airflow; cameras or lasers detect wobble, deformation and
+          holes</td><td>“Real-time” claimed</td><td>—</td><td>—</td><td>Ball-specific; non-contact</td><td>Patent application,
+          not a product on sale</td></tr>
       </tbody>
     </table>
   </div>
-  <p><b>Table 10.</b> Competitive benchmarking. Prices and weights are as published by the
-  manufacturers; blank cells are figures we could not source.</p>
+  <p><b>Table 15.</b> Direct competitors, substitutes and prior designs. QFD values are the team's benchmarking [5].
+  Intellectual property: only the airflow tester was found in the patent search.
+  <span class="todo">[TEAM: search patents held by ADC and Pickleball Instruments before concept selection.]</span></p>
 
-  <h2>The design gap</h2>
-  <p>Existing instruments are accurate and repeatable, and they are the right tools for a
-  certification lab. What none of them do is give a player or a club an objective condition read on
-  the equipment they are about to use, at the place and moment they use it. The market is split
-  between free methods nobody trusts and instruments nobody can carry or afford.</p>
-  <p>The gap is therefore not "a more accurate tester". It is <strong>an objective condition verdict
-  at courtside cost and courtside weight</strong> &mdash; and, for balls, a measurement that does not
-  exist in any form.</p>
+  <h3>How well each alternative meets the priority needs</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Priority need</th><th>Manual check</th><th>Pickle Press</th><th>Go/No-Go</th><th>Crack-resistant ball</th><th>Airflow tester</th></tr></thead>
+      <tbody>
+        <tr><td>Consistent ball performance</td><td>Partial</td><td>Yes (lab)</td><td>No (paddles)</td><td>Partial (fewer failures, different feel)</td><td>Yes</td></tr>
+        <tr><td>Objective, trusted result</td><td>No</td><td>Yes</td><td>Yes (paddles)</td><td>No</td><td>Yes</td></tr>
+        <tr><td>Fast, courtside</td><td>Yes</td><td>No</td><td>Partial</td><td>—</td><td>Unknown</td></tr>
+        <tr><td>Affordable to a player or club</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td><td>Unknown</td></tr>
+        <tr><td>Works unattended at a club</td><td>No</td><td>No</td><td>No</td><td>Yes</td><td>Unknown</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 16.</b> Fit against the priority needs from <a href="customers.html#benefits">Customers</a>. Ratings are the
+  team's assessment from Table 15.</p>
 
-  <h3>Why the gap is worth pursuing</h3>
+  <h2>Design gap and market opportunity</h2>
+  <p><strong>What existing products do well.</strong> Instrumented testers give precise, repeatable, objective results,
+  and the Go/No-Go shows a pass/fail answer can be delivered in under a minute by a device light enough for an event.
+  Crack-resistant balls reduce how often failures happen.</p>
+  <p><strong>Where they fall short.</strong> Every instrumented tester is built for manufacturers, labs or paddle
+  conformance. None gives a player or club an in-service ball-condition reading at the court, and the only ball-specific
+  design is an unreleased patent. The manual check is fast but subjective and cannot be shared between players.</p>
+  <p><strong>The design gap:</strong> knowing a ball's playing condition before visible damage appears, with an
+  objective result that can be shared between players, in about the time of a manual check. This matters because
+  consistency is the top purchase criterion (52.8%), players lack confidence (52.8% rate 1–3), and 55.6% find an
+  objective test useful, rising to 64.7% of frequent players [4].</p>
   <ul>
-    <li>Damage is near-universal among our respondents (72.2% cracking, 66.7% surface wear).</li>
-    <li>The dominant purchase criterion, consistent performance (52.8% rank it first), is exactly what
-    degraded equipment destroys.</li>
-    <li>Interest concentrates among frequent players (64.7%), who are also the heaviest equipment
-    buyers.</li>
-    <li>There is no incumbent consumer product to displace &mdash; and no ball tester at all.</li>
+    <li><strong>What makes the direction distinct:</strong> no commercial ball-condition tester exists at any price.</li>
+    <li><strong>Targets that drive viability:</strong> time per test and user confidence, followed by price.</li>
+    <li><strong>Risks to differentiation:</strong> ADC already makes both a ball-capable press and a portable pass/fail
+    device, and could combine them; the airflow patent may constrain some methods; crack-resistant balls may shrink the
+    problem; and the facility owner we interviewed saw no need (P4) [4].</li>
+    <li><strong>Barriers:</strong> the Equipment Standards Manual's approval tests [2] should be replicated or
+    complemented, never presented as certification.</li>
+    <li><strong>Evidence the gap is worth pursuing:</strong> survey interest rises with play frequency, and interviewees
+    see value for competitive and club settings, though no professionals have been interviewed yet.</li>
   </ul>
-
-  <h3>Risks to differentiation</h3>
-  <p>An established paddle or ball manufacturer could bundle a crude condition indicator into its own
-  equipment and remove the need for a separate device. A low price point invites imitation.
-  And the absence of competition may reflect an absence of demand rather than an oversight &mdash; a
-  possibility the current evidence cannot rule out.</p>
 
   <h2>Product positioning</h2>
   <figure>
-    <div class="chart-surface"><svg viewBox="0 0 700 430" role="img" aria-label="Product positioning chart">
-<rect x="72" y="28" width="157" height="122" rx="10" fill="rgba(254,213,0,.16)" stroke="#c9770d" stroke-dasharray="6 5" stroke-width="1.5"/>
-<text x="84" y="51" fill="#8a5510" font-size="12" font-weight="700">Target niche: courtside + objective</text>
-<line x1="72" y1="352.0" x2="660" y2="352.0" stroke="var(--grid)"/>
-<text x="62" y="356.0" fill="var(--ink-3)" font-size="11" text-anchor="end">1</text>
-<line x1="72" y1="271.0" x2="660" y2="271.0" stroke="var(--grid)"/>
-<text x="62" y="275.0" fill="var(--ink-3)" font-size="11" text-anchor="end">2</text>
-<line x1="72" y1="190.0" x2="660" y2="190.0" stroke="var(--grid)"/>
-<text x="62" y="194.0" fill="var(--ink-3)" font-size="11" text-anchor="end">3</text>
-<line x1="72" y1="109.0" x2="660" y2="109.0" stroke="var(--grid)"/>
-<text x="62" y="113.0" fill="var(--ink-3)" font-size="11" text-anchor="end">4</text>
-<line x1="72" y1="28.0" x2="660" y2="28.0" stroke="var(--grid)"/>
-<text x="62" y="32.0" fill="var(--ink-3)" font-size="11" text-anchor="end">5</text>
-<line x1="72.0" y1="28" x2="72.0" y2="352" stroke="var(--grid)"/>
-<text x="72.0" y="372" fill="var(--ink-3)" font-size="11" text-anchor="middle">0 kg</text>
-<line x1="202.7" y1="28" x2="202.7" y2="352" stroke="var(--grid)"/>
-<text x="202.7" y="372" fill="var(--ink-3)" font-size="11" text-anchor="middle">10 kg</text>
-<line x1="333.3" y1="28" x2="333.3" y2="352" stroke="var(--grid)"/>
-<text x="333.3" y="372" fill="var(--ink-3)" font-size="11" text-anchor="middle">20 kg</text>
-<line x1="464.0" y1="28" x2="464.0" y2="352" stroke="var(--grid)"/>
-<text x="464.0" y="372" fill="var(--ink-3)" font-size="11" text-anchor="middle">30 kg</text>
-<line x1="594.7" y1="28" x2="594.7" y2="352" stroke="var(--grid)"/>
-<text x="594.7" y="372" fill="var(--ink-3)" font-size="11" text-anchor="middle">40 kg</text>
-<text x="366" y="398" fill="var(--ink-2)" font-size="12.5" text-anchor="middle" font-weight="650">Weight carried to the court (kg) — lower is better</text>
-<text transform="translate(20 190) rotate(-90)" fill="var(--ink-2)" font-size="12.5" text-anchor="middle" font-weight="650">Objectivity of the condition read-out (1–5)</text>
-<circle cx="72.0" cy="352.0" r="8" fill="var(--series-5)" stroke="var(--paper)" stroke-width="2"><title>Manual check (bounce, squeeze, look): 0.0 kg, objectivity 1/5</title></circle>
-<text x="86.0" y="334.0" fill="var(--ink)" font-size="12.5" font-weight="600" text-anchor="start">Manual check (bounce, squeeze, look)</text>
-<circle cx="369.9" cy="28.0" r="8" fill="var(--series-3)" stroke="var(--paper)" stroke-width="2"><title>Head 4-in-1 diagnostic centre: 22.8 kg, objectivity 5/5</title></circle>
-<text x="369.9" y="10.0" fill="var(--ink)" font-size="12.5" font-weight="600" text-anchor="middle">Head 4-in-1 diagnostic centre</text>
-<circle cx="607.7" cy="190.0" r="8" fill="var(--series-2)" stroke="var(--paper)" stroke-width="2"><title>Go/No-Go paddle tester: 41.0 kg, objectivity 3/5</title></circle>
-<text x="593.7" y="176.0" fill="var(--ink)" font-size="12.5" font-weight="600" text-anchor="end">Go/No-Go paddle tester</text>
-<circle cx="170.0" cy="109.0" r="11" fill="var(--series-4)" stroke="var(--paper)" stroke-width="2"><title>PaddleCheck target: 7.5 kg, objectivity 4/5</title></circle>
-<text x="186.0" y="115.0" fill="var(--ink)" font-size="12.5" font-weight="750" text-anchor="start">PaddleCheck target</text>
+    <div class="chart-surface" style="overflow-x:auto"><svg viewBox="0 0 680 420" role="img" aria-labelledby="pos-t">
+<title id="pos-t">Positioning chart: time per test (log scale) versus objectivity of the result</title>
+<rect x="130" y="30.5" width="333.8" height="117.4" fill="rgba(255,145,0,.12)" stroke="#c9770d" stroke-dasharray="5 4" rx="8"/>
+<text x="138" y="46.5" font-size="11.5" font-weight="750" fill="#8a5510">Gap: objective and courtside-fast</text>
+<text x="138" y="60.5" font-size="11.5" font-weight="750" fill="#8a5510">(30 s or less)</text>
+<line x1="130.0" y1="24" x2="130.0" y2="350" stroke="var(--grid)"/>
+<text x="130.0" y="368" text-anchor="middle" font-size="11" fill="var(--ink-3)">1 s</text>
+<line x1="237.8" y1="24" x2="237.8" y2="350" stroke="var(--grid)"/>
+<text x="237.8" y="368" text-anchor="middle" font-size="11" fill="var(--ink-3)">3 s</text>
+<line x1="356.0" y1="24" x2="356.0" y2="350" stroke="var(--grid)"/>
+<text x="356.0" y="368" text-anchor="middle" font-size="11" fill="var(--ink-3)">10 s</text>
+<line x1="463.8" y1="24" x2="463.8" y2="350" stroke="var(--grid)"/>
+<text x="463.8" y="368" text-anchor="middle" font-size="11" fill="var(--ink-3)">30 s</text>
+<line x1="582.0" y1="24" x2="582.0" y2="350" stroke="var(--grid)"/>
+<text x="582.0" y="368" text-anchor="middle" font-size="11" fill="var(--ink-3)">100 s</text>
+<line x1="130" y1="317.4" x2="650" y2="317.4" stroke="var(--grid)" stroke-dasharray="3 4"/>
+<text x="122" y="321.4" text-anchor="end" font-size="10.5" fill="var(--ink-3)">1 feel</text>
+<line x1="130" y1="252.2" x2="650" y2="252.2" stroke="var(--grid)" stroke-dasharray="3 4"/>
+<text x="122" y="256.2" text-anchor="end" font-size="10.5" fill="var(--ink-3)">2</text>
+<line x1="130" y1="187.0" x2="650" y2="187.0" stroke="var(--grid)" stroke-dasharray="3 4"/>
+<text x="122" y="191.0" text-anchor="end" font-size="10.5" fill="var(--ink-3)">3 pass/fail</text>
+<line x1="130" y1="121.8" x2="650" y2="121.8" stroke="var(--grid)" stroke-dasharray="3 4"/>
+<text x="122" y="125.8" text-anchor="end" font-size="10.5" fill="var(--ink-3)">4</text>
+<line x1="130" y1="56.6" x2="650" y2="56.6" stroke="var(--grid)" stroke-dasharray="3 4"/>
+<text x="122" y="60.6" text-anchor="end" font-size="10.5" fill="var(--ink-3)">5 numeric</text>
+<text x="390.0" y="390" text-anchor="middle" font-size="12" font-weight="650" fill="var(--ink-2)">Time per test (seconds, log scale) — quantitative</text>
+<text transform="translate(16 187.0) rotate(-90)" text-anchor="middle" font-size="12" font-weight="650" fill="var(--ink-2)">Objectivity of result (team scale)</text>
+<circle cx="237.8" cy="317.4" r="8" fill="var(--series-2)" stroke="var(--series-2)" stroke-width="2.5"><title>Manual check: ≈3 s (P3); free</title></circle>
+<text x="247.8" y="303.4" text-anchor="start" font-size="12" font-weight="700" fill="var(--ink)">Manual check</text>
+<text x="247.8" y="317.4" text-anchor="start" font-size="10.5" fill="var(--ink-3)">≈3 s (P3); free</text>
+<circle cx="503.6" cy="56.6" r="8" fill="var(--series-1)" stroke="var(--series-1)" stroke-width="2.5"><title>Paddle Press: 45 s; paddles; $5,000</title></circle>
+<text x="515.6" y="86.6" text-anchor="start" font-size="12" font-weight="700" fill="var(--ink)">Paddle Press</text>
+<text x="515.6" y="100.6" text-anchor="start" font-size="10.5" fill="var(--ink-3)">45 s; paddles; $5,000</text>
+<circle cx="531.8" cy="187.0" r="8" fill="var(--series-3)" stroke="var(--series-3)" stroke-width="2.5"><title>Go/No-Go: &lt;60 s; paddles; $299/mo rental</title></circle>
+<text x="543.8" y="175.0" text-anchor="start" font-size="12" font-weight="700" fill="var(--ink)">Go/No-Go</text>
+<text x="543.8" y="189.0" text-anchor="start" font-size="10.5" fill="var(--ink-3)">&lt;60 s; paddles; $299/mo rental</text>
+<circle cx="531.8" cy="56.6" r="8" fill="var(--paper)" stroke="var(--series-1)" stroke-width="2.5"><title>Pickle Press: time not published (est.)</title></circle>
+<text x="543.8" y="44.6" text-anchor="start" font-size="12" font-weight="700" fill="var(--ink)">Pickle Press</text>
+<text x="543.8" y="58.6" text-anchor="start" font-size="10.5" fill="var(--ink-3)">time not published (est.)</text>
+<line x1="237.8" y1="121.8" x2="463.8" y2="121.8" stroke="#c9770d" stroke-width="6" stroke-linecap="round"><title>Target: objectivity 4, 30 s or less per ball</title></line>
+<text x="356.0" y="143.8" text-anchor="middle" font-size="12" font-weight="750" fill="#8a5510">Our target: ≤30 s per ball (QFD)</text>
 </svg></div>
-    <figcaption><b>Figure 6.</b> Positioning on the two attributes that decide adoption: weight
-    carried to the court (quantitative, manufacturer-published) and objectivity of the condition
-    read-out. Price is deliberately excluded as an axis per the brief, though it tracks weight
-    closely here. The Paddle Press is omitted because no weight is published for it. The top-left
-    band &mdash; objective and portable &mdash; is empty, and that is the niche.</figcaption>
+    <figcaption><b>Figure 14.</b> Positioning on time per test (quantitative, log scale) and objectivity of the result.
+    The manual check is fast but subjective; instruments are objective but slow and built for paddles or labs. The
+    top-left region is empty. The target is 30 s or less per ball (QFD), inside the shaded gap. The Pickle Press time is estimated from the Go/No-Go benchmark because ADC does not publish it.
+    Sources: [4][5][6][7].</figcaption>
   </figure>
-
-  <div class="legend">
-  <span class="legend-item"><span class="legend-swatch" style="background:var(--series-5)"></span>Manual check</span>
-  <span class="legend-item"><span class="legend-swatch" style="background:var(--series-3)"></span>Head 4-in-1</span>
-  <span class="legend-item"><span class="legend-swatch" style="background:var(--series-2)"></span>Go/No-Go</span>
-  <span class="legend-item"><span class="legend-swatch" style="background:var(--series-4)"></span>PaddleCheck target</span>
-</div>
-
-  <div class="callout">
-    <span class="callout-title">How the objectivity scale is defined</span>
-    <p>This axis is a <strong>team assessment</strong>, not a measurement. 1 = a purely subjective
-    judgement made by feel; 3 = an instrumented pass/fail against a fixed threshold; 5 = a repeatable
-    numeric measurement of a physical property. Manual checks score 1, the Go/No-Go scores 3 because
-    it answers conformance rather than condition, and the Head 4-in-1 scores 5. The target scores 4:
-    numeric and repeatable, but expected to trade some precision for portability.</p>
-  </div>
-
-  <p>These two attributes were chosen over the alternatives because they are the two that disqualify
-  every existing product for our customer. Accuracy does not differentiate &mdash; the incumbents are
-  more accurate than we will be. Weight and objectivity together describe whether a condition check
-  can happen where the sport happens.</p>
+  <p><strong>Objectivity scale</strong> (team assessment): 1 = judgment by feel; 3 = instrumented pass/fail against a
+  fixed threshold; 5 = repeatable numeric measurement of a physical property. <strong>Why these axes:</strong> survey
+  respondents lack confidence in their own judgment (52.8% rate 1–3) and want an objective test (55.6%), which gives the
+  vertical axis. Other players on court rank <em>fast analysis</em> second of eleven QFD requirements, and the manual
+  check takes about 3 s, which gives the horizontal axis [4][5]. Price is excluded as an axis, as the brief requires; it
+  is shown in the point labels.</p>
 
   <h2>References</h2>
-  <ol class="refs">
-    <li>[1] Pickleball Instruments — Paddle Press.
+  <ol class="refs" style="list-style:none;padding-left:0">
+    <li>[1] W.-L. Chen and Y.-C. Mu (Tri Great International Ltd), “Pickleball testing device,” US 2025/0332489 A1, Oct.
+      30, 2025. <a href="https://patents.google.com/patent/US20250332489A1/en">patents.google.com</a></li>
+    <li>[2] USA Pickleball, <em>Equipment Standards Manual</em>, Jan. 2025.
+      <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">usapickleball.org</a></li>
+    <li>[3] USA Pickleball, <em>2026 Official Rulebook</em>, Rule 10.G.
+      <a href="https://usapickleball.org/docs/rules/USAP-Official-Rulebook.pdf">usapickleball.org</a></li>
+    <li>[4] Team 1, consumer survey (Activity 10a, n=36) and interviews (Activity 10b, P1–P4), ME 455, 2026.</li>
+    <li>[5] Team 1, QFD workbook (competitive benchmarking), ME 455, 2026. See <a href="qfd.html">QFD</a>.</li>
+    <li>[6] Automated Design Corp., “Pickle Press Load Frame,” accessed Sep. 29, 2026.
+      <a href="https://automateddesign.com/products/pickle_press/">automateddesign.com</a></li>
+    <li>[7] Crown Athletica, “Red Light, Green Light: Pro-Level Paddle Testing Is Coming to Amateur Pickleball
+      Tournaments,” accessed Sep. 29, 2026.
+      <a href="https://crownathletica.com/blogs/news/red-light-green-light-pro-level-paddle-testing-is-coming-to-amateur-pickleball-tournaments">crownathletica.com</a></li>
+    <li>[8] USA Paddle Testing, “Go/No-Go,” accessed Sep. 30, 2026. <a href="https://usapaddletesting.com/">usapaddletesting.com</a></li>
+    <li>[9] Pickleball Instruments, “Paddle Press.”
       <a href="https://pickleballinstruments.com/contact/?intent=manufacturers">pickleballinstruments.com</a></li>
-    <li>[2] USA Paddle Testing — Go/No-Go. <a href="https://usapaddletesting.com/">usapaddletesting.com</a></li>
-    <li>[3] WD Strings — Head 4-in-1 swingweight tuning machine.
+    <li>[10] WD Strings, “Head 4-in-1 swingweight tuning machine.”
       <a href="https://www.wdstrings.com/head-4-in-1-swingweight-tuning-machine/">wdstrings.com</a></li>
+    <li>[11] Pickleball.com, “Go/No-Go Machine brings pro paddle testing to amateurs,” accessed Sep. 30, 2026.
+      <a href="https://pickleball.com/blogs/go-no-go-machine-brings-pro-paddle-testing-to-amateurs">pickleball.com</a></li>
   </ol>
 
   <nav class="pager" aria-label="Section navigation">
     <a href="characteristics.html">&larr; Characteristics &amp; Targets</a>
     <a href="value-proposition.html">Market Value Proposition &rarr;</a>
   </nav>
+
 </main>
 
 <footer class="site-footer">

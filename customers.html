@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Customers & Benefits · Team 1 Design Portfolio</title>
-<meta name="description" content="Customers, users, stakeholders, journey and contextual factors.">
+<meta name="description" content="Users, purchasers, stakeholders, the target user, the customer journey and contextual factors.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -38,132 +38,331 @@
 
   <p class="eyebrow">Section 01</p>
   <h1>Customers &amp; Benefits</h1>
-  <p class="lead">Who experiences the problem, what they want from a product, and what a successful
-  product would give them.</p>
+  <p class="lead">Who experiences the problem, who would pay to solve it, what they want from a product,
+  and what a successful product would give them.</p>
 
   <div class="badge-row">
-  <span class="badge badge-survey">Survey n=36</span>
-  <span class="badge badge-interview">Interviews</span>
-  <span class="badge badge-interview">Journey map</span>
-  <span class="badge badge-qfd">QFD</span>
-</div>
+    <span class="badge badge-survey">Survey n=36</span>
+    <span class="badge badge-interview">Interviews n=4</span>
+    <span class="badge badge-interview">Journey map</span>
+    <span class="badge badge-qfd">QFD</span>
+    <span class="badge badge-benchmark">Rules &amp; standards</span>
+  </div>
 
-  <h2>Stakeholders</h2>
-  <p>The QFD weights each requirement from four stakeholder perspectives, because they do not want
-  the same things. A court owner's first concern is that testing does not damage equipment or slow
-  play; a manufacturer's is price.</p>
+  <p>This section concerns the <strong>pickleball itself</strong>; paddles are outside the product scope.
+  Evidence comes from a consumer survey (36 revised responses plus 4 pilot) [1], four semi-structured
+  interviews [2], the team's customer journey map [3], the team QFD [4], and published rules, standards and
+  literature. Interview participants are identified by number only: <strong>P1</strong> a recreational player,
+  <strong>P2</strong> a frequent player who co-owns an indoor facility, <strong>P3</strong> a competitive
+  tournament player, and <strong>P4</strong> the owner of two indoor pickleball venues. Statements that are the
+  team's interpretation rather than a documented finding carry the
+  <span class="badge badge-assumption">Interpretation</span> tag.</p>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <h2 id="stakeholders">Customers, users and stakeholders</h2>
+  <p>The person who experiences the problem is usually not the person who buys the balls. Players feel the
+  failure; clubs, facilities and tournament directors buy and retire balls in bulk. All three player
+  interviewees pointed to the club:</p>
+
+  <blockquote>“I don't think I would purchase something to determine whether or not it's good… when [P2] goes and
+  plays at the club, they give her the balls.”<cite>P1, recreational player [2]</cite></blockquote>
+  <blockquote>“I don't know that I would buy a device for that, but maybe if it was something at the club where you
+  could just like throw the balls in and it would shoot out the ones that were good… That could be kind of
+  cool.”<cite>P2, frequent player and facility co-owner [2]</cite></blockquote>
+
+  <p>P3 thought only “diehard pickleballers” would buy one for themselves [2]. The facility owner tempers the
+  club case. P4's venues do not inspect balls, because “it's pretty obvious when a ball has had it”; broken balls
+  are thrown away, and “equipment is kind of the least of my problems” [2]. Clubs remain the logical purchaser,
+  since they own the shared inventory, but their need is not yet proven. Figure 1 and Table 1 set out each
+  role.</p>
+
+  <figure>
+    <div class="chart-surface" style="overflow-x:auto"><svg viewBox="0 0 1000 330" role="img" aria-labelledby="figs-t">
+<title id="figs-t">Stakeholder map: producer, seller, customer, user, and other affected stakeholders</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--wood-mid)"/></marker></defs>
+<text x="10" y="22" font-size="11" font-weight="750" letter-spacing=".08em" fill="var(--ink-3)">VALUE CHAIN</text>
+<rect x="10" y="40" width="205" height="104" rx="12" fill="rgba(74,58,167,.08)" stroke="var(--series-3)" stroke-width="1.6"/>
+<text x="112.5" y="64" text-anchor="middle" font-size="13" font-weight="750" fill="var(--ink)">Producer</text>
+<text x="112.5" y="84" text-anchor="middle" font-size="11" fill="var(--ink-2)">Venture or ball / sports-</text>
+<text x="112.5" y="100" text-anchor="middle" font-size="11" fill="var(--ink-2)">equipment maker; contract</text>
+<text x="112.5" y="116" text-anchor="middle" font-size="11" fill="var(--ink-2)">manufacturing supply chain</text>
+<rect x="268" y="40" width="205" height="104" rx="12" fill="rgba(74,58,167,.08)" stroke="var(--series-3)" stroke-width="1.6"/>
+<text x="370.5" y="64" text-anchor="middle" font-size="13" font-weight="750" fill="var(--ink)">Seller / channel</text>
+<text x="370.5" y="84" text-anchor="middle" font-size="11" fill="var(--ink-2)">Sporting-goods retail,</text>
+<text x="370.5" y="100" text-anchor="middle" font-size="11" fill="var(--ink-2)">online stores, club</text>
+<text x="370.5" y="116" text-anchor="middle" font-size="11" fill="var(--ink-2)">pro shops, direct to clubs</text>
+<rect x="526" y="40" width="205" height="104" rx="12" fill="rgba(255,145,0,.14)" stroke="#c9770d" stroke-width="1.6"/>
+<text x="628.5" y="64" text-anchor="middle" font-size="13" font-weight="750" fill="var(--ink)">Customer (purchaser)</text>
+<text x="628.5" y="84" text-anchor="middle" font-size="11" fill="var(--ink-2)">Clubs, facilities and</text>
+<text x="628.5" y="100" text-anchor="middle" font-size="11" fill="var(--ink-2)">tournament directors;</text>
+<text x="628.5" y="116" text-anchor="middle" font-size="11" fill="var(--ink-2)">some individual players</text>
+<rect x="785" y="40" width="205" height="104" rx="12" fill="rgba(254,213,0,.22)" stroke="#c9770d" stroke-width="1.6"/>
+<text x="887.5" y="64" text-anchor="middle" font-size="13" font-weight="750" fill="var(--ink)">Primary user</text>
+<text x="887.5" y="84" text-anchor="middle" font-size="11" fill="var(--ink-2)">Frequent, competitive</text>
+<text x="887.5" y="100" text-anchor="middle" font-size="11" fill="var(--ink-2)">players who keep score</text>
+<text x="887.5" y="116" text-anchor="middle" font-size="11" fill="var(--ink-2)">and share court balls</text>
+<line x1="219" y1="92" x2="264" y2="92" stroke="var(--wood-mid)" stroke-width="2" marker-end="url(#ah)"/><text x="241.5" y="84.0" text-anchor="middle" font-size="10.5" font-weight="650" fill="var(--wood)">makes</text>
+<line x1="477" y1="92" x2="522" y2="92" stroke="var(--wood-mid)" stroke-width="2" marker-end="url(#ah)"/><text x="499.5" y="84.0" text-anchor="middle" font-size="10.5" font-weight="650" fill="var(--wood)">sells</text>
+<line x1="735" y1="92" x2="781" y2="92" stroke="var(--wood-mid)" stroke-width="2" marker-end="url(#ah)"/><text x="758.0" y="84.0" text-anchor="middle" font-size="10.5" font-weight="650" fill="var(--wood)">equips</text>
+<text x="10" y="194" font-size="11" font-weight="750" letter-spacing=".08em" fill="var(--ink-3)">OTHER STAKEHOLDERS — AFFECTED BY PRODUCTION, USE OR DISPOSAL</text>
+<rect x="10" y="206" width="205" height="84" rx="12" fill="var(--paper)" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="112.5" y="230" text-anchor="middle" font-size="13" font-weight="750" fill="var(--ink)">USA Pickleball</text>
+<text x="112.5" y="250" text-anchor="middle" font-size="11" fill="var(--ink-2)">Sets ball standards and</text>
+<text x="112.5" y="266" text-anchor="middle" font-size="11" fill="var(--ink-2)">the approved-ball list</text>
+<rect x="268" y="206" width="205" height="84" rx="12" fill="var(--paper)" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="370.5" y="230" text-anchor="middle" font-size="13" font-weight="750" fill="var(--ink)">Ball manufacturers</text>
+<text x="370.5" y="250" text-anchor="middle" font-size="11" fill="var(--ink-2)">Their balls are the ones</text>
+<text x="370.5" y="266" text-anchor="middle" font-size="11" fill="var(--ink-2)">the product would judge</text>
+<rect x="526" y="206" width="205" height="84" rx="12" fill="var(--paper)" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="628.5" y="230" text-anchor="middle" font-size="13" font-weight="750" fill="var(--ink)">Opponents &amp; partners</text>
+<text x="628.5" y="250" text-anchor="middle" font-size="11" fill="var(--ink-2)">Wait during checks; share</text>
+<text x="628.5" y="266" text-anchor="middle" font-size="11" fill="var(--ink-2)">the ball and the score</text>
+<rect x="785" y="206" width="205" height="84" rx="12" fill="var(--paper)" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="887.5" y="230" text-anchor="middle" font-size="13" font-weight="750" fill="var(--ink)">Environment</text>
+<text x="887.5" y="250" text-anchor="middle" font-size="11" fill="var(--ink-2)">Plastic balls discarded</text>
+<text x="887.5" y="266" text-anchor="middle" font-size="11" fill="var(--ink-2)">sooner — or later</text>
+</svg></div>
+    <figcaption><b>Figure 1.</b> Stakeholder map. The product passes from producer to seller to purchaser before
+    it reaches the player. Dashed boxes are stakeholders affected by the product who never buy it.</figcaption>
+  </figure>
 
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Stakeholder</th><th>Role</th><th>What they want most</th></tr></thead>
+      <thead><tr><th>Role</th><th>Who</th><th>What they want most</th><th>Source</th></tr></thead>
       <tbody>
-        <tr><td><strong>Player</strong></td><td>Primary user, and purchaser in the individual case</td>
-          <td>Gameplay that is not interrupted or distorted by equipment; confidence in the gear they
-          bring to a match</td></tr>
-        <tr><td><strong>Court owner / tournament organizer</strong></td><td>Institutional purchaser and
-          equipment manager</td><td>Equipment that is not damaged by testing, competitive price, and
-          testing that does not extend games &mdash; delays cost revenue and goodwill</td></tr>
-        <tr><td><strong>Manufacturer</strong></td><td>Producer</td>
-          <td>Competitive price and a long-lasting product that can be built at acceptable cost</td></tr>
-        <tr><td><strong>Other players in the game</strong></td><td>Affected non-purchasers</td>
-          <td>Not waiting on an opponent's testing routine; fair equipment on both sides</td></tr>
+        <tr><td><strong>Primary user</strong></td><td>Frequent, competitive players: at least weekly play, keep
+          score, enter club or tournament play; professionals at the top</td><td>Every ball in play behaves like a
+          good ball; a check no slower than today's bounce test</td><td>Survey [1], interviews [2], journey
+          map [3]</td></tr>
+        <tr><td><strong>Customer (purchaser)</strong></td><td>Clubs, facilities and tournament directors. Venues stock
+          balls in caddies for self-serve play, often with no staff present (P4). A tournament director must choose
+          the ball from the approved list (Rule 16.G) [6]. Individual players are secondary: 50% bring their own
+          balls at least some of the time [1]</td><td>A consistent, defensible way to retire balls; no slowed play;
+          a competitive price</td><td>Interviews [2], QFD [4], rulebook [6]</td></tr>
+        <tr><td><strong>Producer and seller</strong></td><td>A new venture or an existing ball maker and its contract
+          manufacturers, selling through sporting-goods retailers, online stores, club pro shops, or directly to
+          clubs</td><td>Buildable at a competitive price; long-lasting; easy to explain</td><td>QFD [4];
+          <span class="badge badge-assumption">Interpretation</span></td></tr>
+        <tr><td><strong>Other stakeholders</strong></td><td>Opponents and partners; USA Pickleball (ball standards
+          and approved list [5][7]); ball manufacturers; the environment</td><td>No waiting on someone else's check;
+          fair balls on both sides; no implied certification; less plastic waste</td><td>QFD [4], rulebook [6]</td></tr>
       </tbody>
     </table>
   </div>
-  <p><b>Table 1.</b> Stakeholders and their priorities, as weighted in the QFD.</p>
+  <p><b>Table 1.</b> Stakeholder roles and priorities. The QFD weights each customer requirement separately for
+  players, court owners/tournament organizers, manufacturers, and other players [4].</p>
 
-  <h2>Meet the primary user</h2>
-  <div class="card" style="border-left:5px solid var(--amber)">
-    <div class="grid" style="grid-template-columns:auto minmax(0,1fr);gap:1.2rem;align-items:start">
-      <div style="width:84px;height:84px;border-radius:50%;background:var(--grad);display:grid;
-                  place-items:center;font-size:1.9rem;font-weight:800;color:#3d2a00">MJ</div>
-      <div>
-        <h3 style="margin:0 0 .3rem">Maya J. &mdash; 21, plays four times a week</h3>
-        <p style="margin-bottom:.7rem"><strong>A composite persona</strong>, assembled from the
-        modal survey respondent rather than from any one person: 18&ndash;24, two years in the sport,
-        self-rates 4 of 7 on skill, plays outdoors in sessions of two hours or less, and brings her
-        own balls about half the time.</p>
-        <p style="margin-bottom:.7rem"><strong>What she wants:</strong> to win. Competition is the
-        top-ranked reason she plays. Equipment is supposed to be invisible.</p>
-        <p style="margin-bottom:.7rem"><strong>What she does now:</strong> bounces a ball twice,
-        looks it over, maybe taps the paddle face. Takes ten seconds. She is not sure it tells her
-        anything.</p>
-        <p style="margin-bottom:0"><strong>Where it breaks down:</strong> mid-game, when a ball she
-        cleared bounces wrong and the point is replayed. She cannot tell whether the last three
-        points were the ball or her.</p>
-      </div>
-    </div>
-  </div>
+  <!-- ─────────────────────────────────────────────── -->
+  <h2 id="user">Primary user profile</h2>
+  <p>Survey respondents skew young and university-affiliated: 80.6% are 18–24. Most have played for one to three
+  years (69.7%) or longer (15.2%), 47.2% play weekly or more, and 58.3% play mainly outdoors (Figure 2) [1]. The
+  survey did not ask occupation, income or family status; the age skew and university distribution suggest most
+  respondents are students <span class="badge badge-assumption">Interpretation</span>. The interviews broaden the
+  picture with an elementary-school teacher who plays with family (P1), a retired frequent player (P2), and a
+  young, formerly college-competitive player who enters ranked tournaments (P3). P4 describes his venues' users as
+  aged “8 to 80,” from first-timers to rated players who play “five times a week” [2]. Nationally, 24.3 million
+  Americans played in 2025, and ages 13–24 have the highest participation rate of any age group [8].</p>
 
-  <h2>Pain points and the benefits that answer them</h2>
+  <figure>
+    <div class="chart-surface"><svg viewBox="0 0 680 532" role="img" aria-labelledby="figp-t">
+<title id="figp-t">Respondent profile: age, play frequency and playing environment</title>
+<text x="0" y="16" fill="var(--ink)" font-size="13.5" font-weight="750">Age (n=36)</text>
+<line x1="250.0" y1="26" x2="250.0" y2="188" stroke="var(--grid)" stroke-width="1"/>
+<line x1="341.5" y1="26" x2="341.5" y2="188" stroke="var(--grid)" stroke-width="1"/>
+<line x1="433.0" y1="26" x2="433.0" y2="188" stroke="var(--grid)" stroke-width="1"/>
+<line x1="524.5" y1="26" x2="524.5" y2="188" stroke="var(--grid)" stroke-width="1"/>
+<line x1="616.0" y1="26" x2="616.0" y2="188" stroke="var(--grid)" stroke-width="1"/>
+<text x="238" y="43.5" fill="var(--ink-2)" font-size="12.5" text-anchor="end">Under 18</text>
+<rect x="250" y="28" width="10.2" height="22" rx="4" fill="var(--series-1)"><title>Age — Under 18: 2.8%</title></rect>
+<text x="269.2" y="43.5" fill="var(--ink)" font-size="12.5" font-weight="700">2.8%</text>
+<text x="238" y="75.5" fill="var(--ink-2)" font-size="12.5" text-anchor="end">18–24</text>
+<rect x="250" y="60" width="295.0" height="22" rx="4" fill="var(--series-1)"><title>Age — 18–24: 80.6%</title></rect>
+<text x="554.0" y="75.5" fill="var(--ink)" font-size="12.5" font-weight="700">80.6%</text>
+<text x="238" y="107.5" fill="var(--ink-2)" font-size="12.5" text-anchor="end">25–44</text>
+<text x="259.0" y="107.5" fill="var(--ink)" font-size="12.5" font-weight="700">0.0%</text>
+<text x="238" y="139.5" fill="var(--ink-2)" font-size="12.5" text-anchor="end">45–54</text>
+<rect x="250" y="124" width="30.4" height="22" rx="4" fill="var(--series-1)"><title>Age — 45–54: 8.3%</title></rect>
+<text x="289.4" y="139.5" fill="var(--ink)" font-size="12.5" font-weight="700">8.3%</text>
+<text x="238" y="171.5" fill="var(--ink-2)" font-size="12.5" text-anchor="end">55–64</text>
+<rect x="250" y="156" width="30.4" height="22" rx="4" fill="var(--series-1)"><title>Age — 55–64: 8.3%</title></rect>
+<text x="289.4" y="171.5" fill="var(--ink)" font-size="12.5" font-weight="700">8.3%</text>
+<text x="0" y="222" fill="var(--ink)" font-size="13.5" font-weight="750">How often they play (n=36)</text>
+<line x1="250.0" y1="232" x2="250.0" y2="362" stroke="var(--grid)" stroke-width="1"/>
+<line x1="341.5" y1="232" x2="341.5" y2="362" stroke="var(--grid)" stroke-width="1"/>
+<line x1="433.0" y1="232" x2="433.0" y2="362" stroke="var(--grid)" stroke-width="1"/>
+<line x1="524.5" y1="232" x2="524.5" y2="362" stroke="var(--grid)" stroke-width="1"/>
+<line x1="616.0" y1="232" x2="616.0" y2="362" stroke="var(--grid)" stroke-width="1"/>
+<text x="238" y="249.5" fill="var(--ink-2)" font-size="12.5" text-anchor="end">Regularly — several times a week</text>
+<rect x="250" y="234" width="30.4" height="22" rx="4" fill="var(--series-1)"><title>How often they play — Regularly — several times a week: 8.3%</title></rect>
+<text x="289.4" y="249.5" fill="var(--ink)" font-size="12.5" font-weight="700">8.3%</text>
+<text x="238" y="281.5" fill="var(--ink-2)" font-size="12.5" text-anchor="end">Often — about once a week</text>
+<rect x="250" y="266" width="142.4" height="22" rx="4" fill="var(--series-1)"><title>How often they play — Often — about once a week: 38.9%</title></rect>
+<text x="401.4" y="281.5" fill="var(--ink)" font-size="12.5" font-weight="700">38.9%</text>
+<text x="238" y="313.5" fill="var(--ink-2)" font-size="12.5" text-anchor="end">Sometimes — a few times a month</text>
+<rect x="250" y="298" width="91.5" height="22" rx="4" fill="var(--series-1)"><title>How often they play — Sometimes — a few times a month: 25.0%</title></rect>
+<text x="350.5" y="313.5" fill="var(--ink)" font-size="12.5" font-weight="700">25.0%</text>
+<text x="238" y="345.5" fill="var(--ink-2)" font-size="12.5" text-anchor="end">Rarely — under once a month</text>
+<rect x="250" y="330" width="101.7" height="22" rx="4" fill="var(--series-1)"><title>How often they play — Rarely — under once a month: 27.8%</title></rect>
+<text x="360.7" y="345.5" fill="var(--ink)" font-size="12.5" font-weight="700">27.8%</text>
+<text x="0" y="396" fill="var(--ink)" font-size="13.5" font-weight="750">Where they mainly play (n=36)</text>
+<line x1="250.0" y1="406" x2="250.0" y2="504" stroke="var(--grid)" stroke-width="1"/>
+<line x1="341.5" y1="406" x2="341.5" y2="504" stroke="var(--grid)" stroke-width="1"/>
+<line x1="433.0" y1="406" x2="433.0" y2="504" stroke="var(--grid)" stroke-width="1"/>
+<line x1="524.5" y1="406" x2="524.5" y2="504" stroke="var(--grid)" stroke-width="1"/>
+<line x1="616.0" y1="406" x2="616.0" y2="504" stroke="var(--grid)" stroke-width="1"/>
+<text x="238" y="423.5" fill="var(--ink-2)" font-size="12.5" text-anchor="end">Outdoor courts</text>
+<rect x="250" y="408" width="213.4" height="22" rx="4" fill="var(--series-1)"><title>Where they mainly play — Outdoor courts: 58.3%</title></rect>
+<text x="472.4" y="423.5" fill="var(--ink)" font-size="12.5" font-weight="700">58.3%</text>
+<text x="238" y="455.5" fill="var(--ink-2)" font-size="12.5" text-anchor="end">Indoor courts</text>
+<rect x="250" y="440" width="71.0" height="22" rx="4" fill="var(--series-1)"><title>Where they mainly play — Indoor courts: 19.4%</title></rect>
+<text x="330.0" y="455.5" fill="var(--ink)" font-size="12.5" font-weight="700">19.4%</text>
+<text x="238" y="487.5" fill="var(--ink-2)" font-size="12.5" text-anchor="end">Both equally</text>
+<rect x="250" y="472" width="71.0" height="22" rx="4" fill="var(--series-1)"><title>Where they mainly play — Both equally: 19.4%</title></rect>
+<text x="330.0" y="487.5" fill="var(--ink)" font-size="12.5" font-weight="700">19.4%</text>
+<text x="250.0" y="524" fill="var(--ink-3)" font-size="11" text-anchor="middle">0%</text>
+<text x="341.5" y="524" fill="var(--ink-3)" font-size="11" text-anchor="middle">25%</text>
+<text x="433.0" y="524" fill="var(--ink-3)" font-size="11" text-anchor="middle">50%</text>
+<text x="524.5" y="524" fill="var(--ink-3)" font-size="11" text-anchor="middle">75%</text>
+<text x="616.0" y="524" fill="var(--ink-3)" font-size="11" text-anchor="middle">100%</text>
+</svg></div>
+    <figcaption><b>Figure 2.</b> Survey respondent profile (n=36) [1]. The sample is dominated by 18–24-year-olds,
+    splits almost evenly between weekly-or-more and less frequent play, and plays mostly outdoors. One respondent
+    did not fit the three location options.</figcaption>
+  </figure>
+
+  <p><strong>Persona.</strong> The primary user is a composite of the modal respondent and the frequent-player
+  subgroup: <strong>Maya, 21, a university student who plays four times a week</strong>, outdoors, in sessions
+  of up to two hours, and who brings her own balls about half the time
+  <span class="badge badge-assumption">Composite</span>. Table 2 profiles this user beyond demographics.</p>
+
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Pain point today</th><th>Evidence</th><th>Benefit the product must deliver</th></tr></thead>
+      <thead><tr><th>Attribute</th><th>Finding</th><th>Source</th></tr></thead>
       <tbody>
-        <tr><td><strong>Damage is invisible</strong> until it changes play</td>
-          <td>46.7% name it their leading frustration; 72.2% have played with a cracked ball</td>
-          <td>A verdict that does not depend on seeing the damage</td></tr>
-        <tr><td><strong>Cannot separate equipment from own play</strong></td>
-          <td>33.3% are unsure whether a performance change is the gear or themselves</td>
-          <td>An objective reading the player can trust over their own feel</td></tr>
-        <tr><td><strong>Replacement is guesswork</strong></td>
-          <td>26.7% do not know when to replace; 26.7% dislike discarding usable equipment</td>
-          <td>A clear keep-or-discard line, which also protects the equipment budget</td></tr>
-        <tr><td><strong>Checking costs time in front of other people</strong></td>
-          <td>Journey map: time spent bouncing each ball, still unsure; QFD stakeholders penalise
-          delay</td><td>A check no slower than the habit it replaces</td></tr>
+        <tr><td><strong>Values and priorities</strong></td><td>Performance first. 52.8% rank <em>consistent
+          performance</em> as their top equipment criterion, against 16.7% for price and 13.9% each for durability and
+          long life. <em>Easy identification of damage</em> comes last (2.8%; worst mean rank, 4.78 of 5, n=18).</td>
+          <td>Survey [1]</td></tr>
+        <tr><td><strong>Goals and motivations</strong></td><td>To compete and win. Competition is ranked first by
+          48.5% (n=33), ahead of improving skill (24.2%) and exercise (18.2%); teamwork is last (Figure 3). These
+          players keep score, so a bad ball costs them something.</td><td>Survey [1]</td></tr>
+        <tr><td><strong>Habits and behaviors</strong></td><td>They check balls by hand every session: 68.8% look,
+          62.5% compare bounce and 43.8% hit the ball to feel it (n=16). P3 slaps the ball against the floor with her
+          paddle and says she can usually tell “within 3 seconds.” P1 keeps an unlabeled “hodgepodge” of balls in one
+          bag; P2's club players write their names on their balls.</td><td>Survey [1], interviews [2]</td></tr>
+        <tr><td><strong>Social and cultural context</strong></td><td>Doubles on shared courts with pooled balls. Clubs
+          supply balls for open play; players bring their own for rented courts; public parks supply none. Under Rule
+          10.G a damaged ball is replaced only if all players agree [6], so checking a ball asks three people to wait.
+          Players are attached to how a ball looks and plays: P1 wants only fluorescent yellow.</td><td>Interviews
+          [2], rulebook [6]</td></tr>
+        <tr><td><strong>Functional needs</strong></td><td>Know before play whether each ball still plays like a good
+          ball, which the standard defines as bouncing 30–34 in. from a 78 in. drop [5], without special skill, good
+          eyesight, power, or more than a few seconds. The solution must not change how a good ball plays: P2, P3
+          and P4 all note that the more crack-resistant “Lifetime” ball plays differently.</td><td>Standard [5],
+          interviews [2]</td></tr>
+        <tr><td><strong>Emotional tensions</strong></td><td>The top frustration is that damage is hard to see (46.7%,
+          n=15), then “is it the ball or me?” (33.3%) (Figure 4). The journey map's low point is a mid-rally failure
+          and a replayed point [3]. Context matters: P2 said a break “in the last point” of a tournament “could be
+          annoying,” and P3 is “pretty mad” with no replacement ball.</td><td>Survey [1], interviews [2], journey
+          map [3]</td></tr>
+        <tr><td><strong>Aspirations</strong></td><td>To stop thinking about equipment so attention stays on the game.
+          Frequent players are both more confident (58.8% vs 26.3%) and more interested in an objective test (64.7% vs
+          47.4%). They want their judgment confirmed, not replaced.</td><td>Survey [1]</td></tr>
       </tbody>
     </table>
   </div>
-  <p><b>Table 2.</b> Pain points mapped to the benefits the product must deliver.</p>
+  <p><b>Table 2.</b> Primary user profile. Percentages are of n=36 unless another n is given.</p>
 
-  <h2>Primary user profile</h2>
   <div class="grid grid-2">
-    <div class="card">
-      <h3 style="margin-top:0">Who they are</h3>
-      <p>Our respondents skew young and university-affiliated: 80.6% are 18&ndash;24. But this is not a
-      beginner sample &mdash; 69.7% have played one to three years and 15.2% have played three or more.
-      Just under half (47.2%) play regularly or often, and 78.8% play two hours or less per session.
-      Most play outdoors (58.3%).</p>
-    </div>
-    <div class="card">
-      <h3 style="margin-top:0">What drives them</h3>
-      <p>Competition is the top-ranked motivation (48.5% rank it first, best average rank 2.06 of 4),
-      ahead of improving skill (24.2%) and exercise (18.2%). Teamwork ranks last. These are people who
-      keep score, and who therefore care when a bad ball decides a point.</p>
-    </div>
-    <div class="card">
-      <h3 style="margin-top:0">Habits and behaviours</h3>
-      <p>Half provide their own pickleballs at least some of the time. Franklin Sports X-40 is the most
-      used brand (38.9%), though 22.2% do not know what they are playing with. To judge a ball, 68.8%
-      look at it, 62.5% compare the bounce, and 43.8% hit it to judge feel &mdash; informal tests, run
-      by hand, every session.</p>
-    </div>
-    <div class="card">
-      <h3 style="margin-top:0">Tensions and frustrations</h3>
-      <p>The leading frustration is that damage is difficult to see (46.7%). Next is not knowing
-      whether a change in play is the equipment or themselves (33.3%). Smaller groups do not know when
-      to replace equipment (26.7%) or dislike discarding something still usable (26.7%).</p>
-    </div>
+    <figure>
+      <div class="chart-surface"><svg viewBox="0 0 440 194" role="img" aria-labelledby="figm-t">
+<title id="figm-t">Chart</title>
+<line x1="130.0" y1="6" x2="130.0" y2="166" stroke="var(--grid)" stroke-width="1"/>
+<text x="130.0" y="184" fill="var(--ink-3)" font-size="11" text-anchor="middle">0%</text>
+<line x1="213.3" y1="6" x2="213.3" y2="166" stroke="var(--grid)" stroke-width="1"/>
+<text x="213.3" y="184" fill="var(--ink-3)" font-size="11" text-anchor="middle">20%</text>
+<line x1="296.7" y1="6" x2="296.7" y2="166" stroke="var(--grid)" stroke-width="1"/>
+<text x="296.7" y="184" fill="var(--ink-3)" font-size="11" text-anchor="middle">40%</text>
+<line x1="380.0" y1="6" x2="380.0" y2="166" stroke="var(--grid)" stroke-width="1"/>
+<text x="380.0" y="184" fill="var(--ink-3)" font-size="11" text-anchor="middle">60%</text>
+<text x="118" y="25.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Competition</text>
+<rect x="130" y="8" width="202.1" height="26" rx="4" fill="var(--series-2)"><title>Competition: 48.5%</title></rect>
+<text x="341.1" y="25.7" fill="var(--ink)" font-size="13" font-weight="700">48.5%</text>
+<text x="118" y="65.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Improving skill</text>
+<rect x="130" y="48" width="100.8" height="26" rx="4" fill="var(--series-2)"><title>Improving skill: 24.2%</title></rect>
+<text x="239.8" y="65.7" fill="var(--ink)" font-size="13" font-weight="700">24.2%</text>
+<text x="118" y="105.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Exercise</text>
+<rect x="130" y="88" width="75.8" height="26" rx="4" fill="var(--series-2)"><title>Exercise: 18.2%</title></rect>
+<text x="214.8" y="105.7" fill="var(--ink)" font-size="13" font-weight="700">18.2%</text>
+<text x="118" y="145.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Teamwork</text>
+<rect x="130" y="128" width="37.9" height="26" rx="4" fill="var(--series-2)"><title>Teamwork: 9.1%</title></rect>
+<text x="176.9" y="145.7" fill="var(--ink)" font-size="13" font-weight="700">9.1%</text>
+</svg></div>
+      <figcaption><b>Figure 3.</b> Reason for playing ranked first (n=33) [1]. Competition leads, so an
+      unpredictable ball feels like an injustice rather than an inconvenience.</figcaption>
+    </figure>
+    <figure>
+      <div class="chart-surface"><svg viewBox="0 0 440 194" role="img" aria-labelledby="figf-t">
+<title id="figf-t">Chart</title>
+<line x1="175.0" y1="6" x2="175.0" y2="166" stroke="var(--grid)" stroke-width="1"/>
+<text x="175.0" y="184" fill="var(--ink-3)" font-size="11" text-anchor="middle">0%</text>
+<line x1="243.3" y1="6" x2="243.3" y2="166" stroke="var(--grid)" stroke-width="1"/>
+<text x="243.3" y="184" fill="var(--ink-3)" font-size="11" text-anchor="middle">20%</text>
+<line x1="311.7" y1="6" x2="311.7" y2="166" stroke="var(--grid)" stroke-width="1"/>
+<text x="311.7" y="184" fill="var(--ink-3)" font-size="11" text-anchor="middle">40%</text>
+<line x1="380.0" y1="6" x2="380.0" y2="166" stroke="var(--grid)" stroke-width="1"/>
+<text x="380.0" y="184" fill="var(--ink-3)" font-size="11" text-anchor="middle">60%</text>
+<text x="163" y="25.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Damage hard to see</text>
+<rect x="175" y="8" width="159.6" height="26" rx="4" fill="var(--series-3)"><title>Damage hard to see: 46.7%</title></rect>
+<text x="343.6" y="25.7" fill="var(--ink)" font-size="13" font-weight="700">46.7%</text>
+<text x="163" y="65.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Gear or my own play?</text>
+<rect x="175" y="48" width="113.8" height="26" rx="4" fill="var(--series-3)"><title>Gear or my own play?: 33.3%</title></rect>
+<text x="297.8" y="65.7" fill="var(--ink)" font-size="13" font-weight="700">33.3%</text>
+<text x="163" y="105.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Unsure when to replace</text>
+<rect x="175" y="88" width="91.2" height="26" rx="4" fill="var(--series-3)"><title>Unsure when to replace: 26.7%</title></rect>
+<text x="275.2" y="105.7" fill="var(--ink)" font-size="13" font-weight="700">26.7%</text>
+<text x="163" y="145.7" fill="var(--ink-2)" font-size="13" text-anchor="end">Discarding usable gear</text>
+<rect x="175" y="128" width="91.2" height="26" rx="4" fill="var(--series-3)"><title>Discarding usable gear: 26.7%</title></rect>
+<text x="275.2" y="145.7" fill="var(--ink)" font-size="13" font-weight="700">26.7%</text>
+</svg></div>
+      <figcaption><b>Figure 4.</b> Equipment frustrations (n=15, multiple selection) [1]. The top two are both
+      about not knowing. With so few respondents, these rates are noisy.</figcaption>
+    </figure>
   </div>
 
-  <h3>Aspirations</h3>
-  <p>Players want to walk onto the court without thinking about their equipment at all. The
-  aspiration is not measurement for its own sake &mdash; it is the absence of doubt, so attention stays
-  on the game.</p>
+  <!-- ─────────────────────────────────────────────── -->
+  <h2 id="journey">Use environment and customer journey</h2>
+  <p>Most play is outdoors (58.3%) [1], on dedicated or shared tennis courts exposed to sun, cold and rough
+  surfaces, with no storage or power (Figure 5). Breakage depends on level and ball: P2 sees a cracked ball
+  “probably every other time I play,” and P3 goes through about one ball per session at a high level [2]. P4
+  describes the facility setting: indoor venues in former warehouses and big-box stores, kept at a constant 65°F,
+  run without staff for up to about 21 hours a day. A four-court facility “could easily go through 200, 300 balls a
+  month,” balls “crack more quickly if it's cold,” and rough concrete or asphalt wears them faster [2]. Any
+  club-side product must therefore work unattended.</p>
 
-  <div class="callout">
-    <span class="callout-title">The counter-intuitive finding</span>
-    <p>Interest in an objective test does not fall as confidence rises &mdash; the two move together.
-    Players who play regularly or often are both more confident in their own judgement (58.8% rate
-    themselves 5&ndash;7, against 26.3% of occasional players) and more interested in an objective test
-    (64.7% against 47.4%). The buyer is not the uncertain novice. It is the frequent player who
-    already trusts their judgement and wants it confirmed.</p>
+  <div class="grid grid-2">
+    <figure>
+      <img src="assets/img/outdoor-courts.jpg" alt="Aerial view of two blue outdoor pickleball courts on a concrete pad beside a road" loading="lazy" width="1280" height="960">
+      <figcaption><b>Figure 5.</b> A typical outdoor setting: open courts with no shelter, storage or power. Photo:
+      Wikideas1, <a href="https://commons.wikimedia.org/wiki/File:Outdoor_pickleball_courts.jpg">Wikimedia Commons</a>, CC0.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/img/pickleball-balls.jpg" alt="Five yellow outdoor pickleballs on a wooden floor, all looking alike" loading="lazy" width="1280" height="960">
+      <figcaption><b>Figure 6.</b> Which of these still bounces 30–34 in.? Softening and hairline cracks are not
+      visible from the outside. Photo: E is for Ian,
+      <a href="https://commons.wikimedia.org/wiki/File:Pickleball_balls.jpg">Wikimedia Commons</a>,
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</figcaption>
+    </figure>
   </div>
+  <p><span class="todo">[TEAM: add at least one photo of your own — e.g. cracked or worn balls from play, or a
+  club ball caddy — to replace or join Figures 5–6.]</span></p>
 
-  <h2>Use context and the customer journey</h2>
-  <p>The journey map below follows a player through a tournament session. The product is aimed at the
-  transitions marked in gold: choosing equipment before play, and evaluating it afterwards.</p>
+  <h3>Journey map</h3>
+  <p><strong>Target customer:</strong> a frequent, competitive player. <strong>Goal:</strong> play a tournament
+  or club session without a ball failure deciding a point. <strong>Context:</strong> a club or tournament court,
+  indoors or outdoors, using club-supplied balls or balls from the player's own bag. <strong>Beginning and
+  end:</strong> the journey starts when the player arrives to play and ends with the post-game evaluation of what
+  failed (Figure 7) [3].</p>
 
   <figure>
     <div class="chart-surface" style="overflow-x:auto"><svg viewBox="0 0 1220 470" role="img" aria-label="Customer journey map across three stages with emotional highs and lows">
@@ -235,115 +434,174 @@
 <rect x="1076" y="428" width="104" height="24" rx="12" fill="rgba(255,145,0,.16)" stroke="#c9770d" stroke-dasharray="4 4"/>
 <text x="1128" y="444" text-anchor="middle" font-size="10.5" font-weight="750" fill="#8a5510">Product acts here</text>
 </svg></div>
-    <figcaption><b>Figure 6.</b> Customer journey across one tournament session. The line tracks
-    emotional state through six touchpoints; dashed rings mark the two moments where the proposed
-    product would act &mdash; choosing equipment before play, and evaluating it afterwards. The
-    failure itself, mid-game, is where the pain lands, but by then it is too late to act.</figcaption>
+    <figcaption><b>Figure 7.</b> Customer journey across a tournament session, redrawn from the team journey map
+    [3]. Dashed rings mark where a product can act: choosing a ball, and evaluating balls after play. The original
+    map also covered paddles, which are now out of scope.</figcaption>
   </figure>
 
-  <details style="margin:1.2rem 0">
-    <summary style="cursor:pointer;font-weight:650;color:var(--ink-2)">Same journey as a table</summary>
+  <p><strong>Touchpoints.</strong> <em>Products:</em> the ball, the paddle and the club's ball caddy.
+  <em>People:</em> partner, opponents and, in sanctioned play, the referee, who must agree to or rule on a swap
+  (Rules 10.G, 20.F) [6]. <em>Information:</em> the rulebook and word of mouth. <em>Environment:</em> court surface
+  and temperature, which change how fast balls fail [2]. <em>Services:</em> club-supplied balls for open play,
+  court booking, and often no staff on site [2].</p>
+  <p><strong>Why the customer feels this way.</strong> The positive start reflects that players expect not to think
+  about equipment. The neutral selection step reflects low confidence: 52.8% rate their judgment at 3 or below of 7
+  [1]. The negative mid-game step is the failure itself: 72.2% have played with a cracked ball [1]. The recovery
+  afterwards reflects how little one ball costs: “if I lose 10 balls a day, I don't really care” (P4) [2].</p>
+
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Stage</th><th>Activities</th><th>Emotional state</th><th>Pain points</th></tr></thead>
+      <thead><tr><th>Unmet need</th><th>Where in the journey</th><th>Evidence</th></tr></thead>
       <tbody>
-        <tr>
-          <td><strong>Gets ready to play</strong></td>
-          <td>Grabs a paddle from the rack when it is their turn; chooses a ball; checks equipment
-          quality</td>
-          <td>Excited, not expecting to think about equipment; assumes it is in good condition</td>
-          <td>Cannot immediately tell which balls or paddles are good. Spends time bouncing each ball
-          and tapping the paddle, still unsure how good any of them are.</td>
-        </tr>
-        <tr>
-          <td><strong>Plays</strong></td>
-          <td>Starts the game; equipment malfunctions; replaces it</td>
-          <td>Having fun &mdash; until the failure, then frustrated</td>
-          <td>The ball bounces oddly and the point is replayed. The game pauses for a replacement,
-          and the player may not have a spare paddle.</td>
-        </tr>
-        <tr>
-          <td><strong>Post-game evaluation</strong></td>
-          <td>Checks what failed; discards it; orders a replacement</td>
-          <td>Resigned</td>
-          <td>Judging what failed and whether the rest of the bag is next is guesswork.</td>
-        </tr>
+        <tr><td><strong>Nuisance</strong></td><td>Choosing a ball: good and bad balls look alike (Figure 6)</td>
+          <td>46.7% say damage is hard to see; 72.2% have played with a cracked ball, 36.1% with a soft one [1]</td></tr>
+        <tr><td><strong>Failure</strong></td><td>Mid-rally: the ball cracks, softens or bounces wrong</td>
+          <td>P2: a crack about every other session; P3: about one ball per session [2]</td></tr>
+        <tr><td><strong>Workaround</strong></td><td>Before and between games</td><td>Look, bounce, hit, or slap it
+          against the floor [1][2]</td></tr>
+        <tr><td><strong>Excess effort</strong></td><td>Checking a bag or caddy of balls one by one</td><td>Journey
+          map [3]; clubs supply pooled balls [2]</td></tr>
+        <tr><td><strong>Fairness</strong></td><td>A soft ball cannot be proven soft, so the point stands</td>
+          <td>Rule 10.G.2: no replay for a soft or degraded ball [6]</td></tr>
+        <tr><td><strong>Waste and cost</strong></td><td>After play: guessing what to discard</td><td>26.7% do not know
+          when to replace; 26.7% dislike discarding usable gear (n=15) [1]; P4 discards 200–300 balls a month [2]</td></tr>
+        <tr><td><strong>Safety</strong></td><td>Not a primary ball concern</td><td>Emergency-department injuries are
+          mainly strains, sprains, fractures and falls [9][10]; P2 notes players wear eye protection against fast
+          balls; P4's safety concern is a roof leak making a court slippery [2]</td></tr>
       </tbody>
     </table>
   </div>
-  </details>
-  <p><b>Table 3.</b> Customer journey map (team journey-mapping activity). The proposed product acts at
-  stages one and three: confidence before the match, and an objective verdict after it.</p>
+  <p><b>Table 3.</b> Where the current journey fails the user.</p>
 
-  <blockquote>The pain point is when the equipment fails, which causes not only a delay in the game
-  but can cause a team to lose a point because the ball bounces in an unexpected way.
-  <cite>Team journey map synthesis</cite></blockquote>
+  <p><strong>From journey to QFD.</strong> Finishing a session without a mid-game ball failure becomes the QFD
+  requirement <em>Improves gameplay</em>, measured by the decrease in games with equipment malfunction. The
+  selection step becomes <em>Increases confidence in quality</em> (user confidence, %). The time pressure at every
+  step becomes <em>Fast analysis</em> (time to use, s) [4]. See the <a href="qfd.html">QFD</a>.</p>
 
-  <h2>Priority customer benefits</h2>
-  <ol>
-    <li><strong>Fewer games disrupted by equipment failure.</strong> The failure is what players
-    actually feel. It costs points, time and, in a tournament, fairness.</li>
-    <li><strong>Confidence in equipment before the match starts.</strong> 52.8% of respondents rate
-    their confidence in judging a ball's condition at 3 or below on a 7-point scale. Removing that
-    doubt is the benefit players describe wanting.</li>
-    <li><strong>A verdict that costs almost nothing to get.</strong> Players already bounce and squeeze
-    their equipment. A product that is slower or more effortful than the habit it replaces will not
-    be used, regardless of accuracy.</li>
+  <!-- ─────────────────────────────────────────────── -->
+  <h2 id="benefits">Priority customer benefits</h2>
+  <p>Four benefits follow from the evidence, ordered by strength of support. Each is stated as an outcome, leaving
+  room for concept generation.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Benefit</th><th>Why it is valuable</th><th>How it improves today</th><th>Why it drives adoption</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1. Every ball in play performs like a good ball</strong></td><td>Consistency is the top
+          purchase criterion (52.8%) [1], and competition is why these players play</td><td>Balls below the bounce
+          standard [5] come out before play instead of failing mid-rally, where a soft ball gets no replay [6]</td>
+          <td>It delivers what players already buy equipment for, not inspection, which they rank last</td></tr>
+        <tr><td><strong>2. An objective answer players can trust</strong></td><td>52.8% rate their confidence at 3 or
+          below of 7; 33.3% cannot separate the ball from their own play [1]</td><td>A reading both teams can agree on,
+          which is what Rule 10.G requires before a swap [6]</td><td>55.6% overall and 64.7% of frequent players find
+          an objective test useful [1]</td></tr>
+        <tr><td><strong>3. A check that costs almost nothing</strong></td><td>Today's workaround takes seconds (P3:
+          “within 3 seconds”) and needs no equipment [1][2]</td><td>A clear keep-or-retire answer instead of a hunch, in 30 s or less (QFD target) [4]</td><td>Players will not use anything slower, however accurate
+          <span class="badge badge-assumption">Interpretation</span></td></tr>
+        <tr><td><strong>4. Clubs retire balls on evidence</strong> (hypothesis)</td><td>Clubs supply and replace
+          balls repeatedly; all three players placed the tester at the club [2]</td><td>Dead balls leave play and usable
+          ones stay in</td><td>Mixed evidence: P4 pays about $1.62 a ball and does not inspect them [2], so value must
+          come from consistent play for members, not from ball savings</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 4.</b> Priority customer benefits.</p>
+
+  <div class="callout">
+    <span class="callout-title">The benefit is consistent play, not damage detection</span>
+    <p>Only 2.8% rank easy damage identification first [1]. P3 cautioned that “life left in a ball is subjective”:
+    it depends on who is playing, and professionals mostly use new balls [2]. A useful reading must connect to how
+    the ball plays, such as bounce against the published standard [5], rather than to cosmetic wear. P3's own
+    suggestion, a ball that “changes color when it cracks,” shows that a simple signal would be welcome [2].</p>
+  </div>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <h2 id="context">Contextual considerations</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Factor</th><th>How it applies</th></tr></thead>
+      <tbody>
+        <tr><td><strong>User experience</strong></td><td>Used courtside, often one-handed, by players aged from under
+          18 to 64 in our sample [1] and “8 to 80” at P4's venues [2]. The result must not rely on fine vision,
+          dexterity or color perception.</td></tr>
+        <tr><td><strong>Business / economic</strong></td><td>User and purchaser differ, and neither's price tolerance
+          is known because the survey did not ask. P4's four-court venue uses 200–300 balls a month at about $1.62
+          each, roughly $324–$486 a month (team calculation) [2], and he sees no need for ball repair. Existing testing
+          instruments cost $2,900–$5,000 to buy (team QFD benchmarking) [4], or $299 a month to rent in the case of the Go/No-Go.</td></tr>
+        <tr><td><strong>Social</strong></td><td>Checking makes others wait, and a swap needs everyone's agreement [6].
+          An objective reading could settle disputes that feel cannot.</td></tr>
+        <tr><td><strong>Ecosystem / environment</strong></td><td>Balls are molded plastic and discarded in volume (P4:
+          200–300 a month at one venue). Catching dead balls may raise discard rates; clearing good balls may lower
+          them (26.7% discard gear they think is usable [1]). The net effect is unknown. The device's own materials and
+          end of life also count.</td></tr>
+        <tr><td><strong>Regulatory</strong></td><td>Ball designs must be approved under the USA Pickleball Equipment
+          Standards Manual (Rule 3.C.2), and tournament balls must come from the approved list (Rule 16.G) [6]; 393
+          balls are listed [7]. The manual sets bounce, hardness, size and weight for new balls [5]; no standard defines
+          when a ball in service is worn out (Rules 10.G, 20.F) [6]. The product must not imply certification. FCC and
+          battery rules may apply to an electronic concept <span class="todo">[TEAM: confirm once a concept is
+          chosen]</span>.</td></tr>
+        <tr><td><strong>Professional</strong></td><td>Designed in a university analytical product-design course:
+          claims must trace to evidence, and participant data stays anonymized and off this public site.</td></tr>
+        <tr><td><strong>Personal value</strong></td><td>Team members play; the nuisance was observed first-hand before
+          it was researched.</td></tr>
+        <tr><td><strong>Global</strong></td><td>The International and World Pickleball Federations voted in 2025 to
+          merge and pursue Olympic recognition [11]. Standards may differ by country, so the product should not depend
+          on an app, a subscription, or one power standard.</td></tr>
+        <tr><td><strong>Public health, safety and welfare</strong></td><td>Ball condition is mainly a fairness issue.
+          Emergency-department injuries are dominated by strains, sprains and fractures in players over 50 [9], most
+          often aged 60–79 [10], not by equipment failure. The device itself must avoid pinch points, sharp edges and
+          battery hazards, and be usable by older players.</td></tr>
+        <tr><td><strong>Cultural</strong></td><td>The culture is casual and social: P2 chose the sport for open play
+          [2]. Anything that looks like lab equipment may be rejected, which is why “looks cool” is a QFD
+          requirement [4].</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 5.</b> Contextual considerations.</p>
+
+  <h3>Hypotheses still to validate</h3>
+  <ul>
+    <li>We hypothesize that <strong>club and tournament operators</strong> will pay for ball screening <strong>when
+    they run rated or competitive programs</strong> because consistent balls matter more to those members. This can be
+    validated by interviews and a willingness-to-pay survey with more operators. (P4 runs mixed programs and saw no
+    need.)</li>
+    <li>We hypothesize that <strong>frequent players</strong> lose points to soft balls <strong>before visible
+    cracking</strong> because softening is not visible. This can be validated by drop-testing used balls against the
+    78 in./30–34 in. reference [5] and comparing results with players' own judgments.</li>
+    <li>We hypothesize that <strong>older and club-based players</strong> share the needs found in our young sample
+    <strong>because the failure modes are the same</strong>. This can be validated by a second survey distributed at
+    clubs and tournaments.</li>
+  </ul>
+
+  <h2>References</h2>
+  <ol class="refs" style="list-style:none;padding-left:0">
+    <li>[1] Team 1, “Activity 10a: Consumer Survey,” ME 455, University of Michigan, 2026. 40 responses (4 pilot,
+      36 revised). Raw data held by the team; see <a href="research.html">Market Research</a>.</li>
+    <li>[2] Team 1, “Activity 10b: Consumer Interviews,” ME 455, 2026. Four semi-structured interviews (P1–P4). P1,
+      P2 and P4 from transcripts; P3 from typed notes. Participants identified by number only.</li>
+    <li>[3] Team 1, “Activity 11: Customer Journey Map,” ME 455, 2026.</li>
+    <li>[4] Team 1, QFD workbook and submission, ME 455, 2026. See <a href="qfd.html">QFD</a>.</li>
+    <li>[5] USA Pickleball, <em>Equipment Standards Manual</em>, Jan. 2025.
+      <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">usapickleball.org</a></li>
+    <li>[6] USA Pickleball, <em>2026 Official Rulebook</em>, Rules 3.C, 10.G, 16.G and 20.F.
+      <a href="https://usapickleball.org/docs/rules/USAP-Official-Rulebook.pdf">usapickleball.org</a></li>
+    <li>[7] USA Pickleball, “Approved Balls,” accessed Sep. 28, 2026.
+      <a href="https://equipment.usapickleball.org/ball-list/">equipment.usapickleball.org</a></li>
+    <li>[8] Sports &amp; Fitness Industry Association, “SFIA Releases 2026 Pickleball Single Sport Report,” 2026.
+      <a href="https://sfia.org/resources/sfia-releases-2026-pickleball-single-sport-report-team-sports-reports-to-follow/">sfia.org</a></li>
+    <li>[9] M. B. Forrester, “Pickleball-related injuries treated in emergency departments,” <em>J. Emerg. Med.</em>,
+      58(2), 275–279, 2020. <a href="https://doi.org/10.1016/j.jemermed.2019.09.016">doi:10.1016/j.jemermed.2019.09.016</a></li>
+    <li>[10] P. McMillan et al., “The epidemiology of pickleball injuries presenting to US emergency departments,”
+      <em>Sports Health</em>, 18(4), 749–755, 2026. <a href="https://doi.org/10.1177/19417381251350671">doi:10.1177/19417381251350671</a></li>
+    <li>[11] “International Pickleball Federation,” <em>Wikipedia</em>, accessed Sep. 28, 2026.
+      <a href="https://en.wikipedia.org/wiki/International_Pickleball_Federation">en.wikipedia.org</a></li>
   </ol>
-
-  <h2>Contextual considerations</h2>
-  <p>The factors below could affect how this product is defined, developed, produced, used or
-  disposed of. Where information remains unknown, the uncertainty is stated.</p>
-
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Factor</th><th>How it applies here</th></tr></thead>
-      <tbody>
-        <tr><td><strong>User experience</strong></td><td>Used courtside, often mid-session, sometimes
-        one-handed while holding a paddle and a ball. It must work for players across a wide age range
-        &mdash; our sample spans under 18 to 64 &mdash; and must not demand fine visual discrimination,
-        since failing to see damage is the problem it exists to solve.</td></tr>
-        <tr><td><strong>Business</strong></td><td>The user and the purchaser diverge: an individual
-        player buys for themselves, but a club or tournament buys for many. Price tolerance almost
-        certainly differs between the two, and our survey did not ask willingness to pay.</td></tr>
-        <tr><td><strong>Social</strong></td><td>Testing in a social setting has a cost: other players
-        wait. A routine that visibly delays play may be socially unacceptable even when it is
-        technically useful &mdash; which is why time to use is a headline specification.</td></tr>
-        <tr><td><strong>Ecosystem / environment</strong></td><td>Pickleballs are moulded plastic and are
-        discarded in volume. Two opposing effects: a test that catches genuinely dead balls could
-        increase discard rates, while one that certifies still-good balls could reduce the 26.7% who
-        replace equipment they suspect is still fine. Which effect dominates is unknown.</td></tr>
-        <tr><td><strong>Regulatory</strong></td><td>USA Pickleball publishes equipment standards and an
-        approved-equipment programme for balls and paddles used in sanctioned play. Any claim that a
-        product certifies equipment as conforming would interact with that programme.
-        <em>Requires confirmation before any compliance claim is made.</em></td></tr>
-        <tr><td><strong>Professional</strong></td><td>Designed in a university course under an
-        analytical product-design process. Claims are expected to be traceable to evidence, which is
-        why every target on this site carries its source.</td></tr>
-        <tr><td><strong>Personal value</strong></td><td>The team plays. The nuisance was observed
-        first-hand before it was researched, and the interviews were run with players we could watch
-        as well as question.</td></tr>
-        <tr><td><strong>Global</strong></td><td>Pickleball is growing well beyond North America. A
-        device that depends on an app, a subscription or a specific power standard travels worse than
-        one that does not.</td></tr>
-        <tr><td><strong>Public health and welfare</strong></td><td>Equipment condition is a fairness
-        issue rather than a safety issue for balls, but paddle delamination changes how hard a ball
-        leaves the face, and pickleball injuries are dominated by falls and strain rather than
-        equipment failure. The product should not encourage players to keep using a paddle that a
-        governing body would disallow.</td></tr>
-        <tr><td><strong>Cultural</strong></td><td>Pickleball's culture is casual and fast-moving;
-        equipment rituals are informal and shared. A product that reads as laboratory equipment may be
-        rejected on feel alone &mdash; which is why "looks cool" survived into the QFD as a real, if
-        low-weighted, customer requirement.</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p><b>Table 4.</b> Contextual considerations.</p>
 
   <nav class="pager" aria-label="Section navigation">
     <a href="index.html">&larr; Introduction</a>
     <a href="research.html">Market Research &rarr;</a>
   </nav>
+
 </main>
 
 <footer class="site-footer">
