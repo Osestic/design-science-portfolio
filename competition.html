@@ -52,18 +52,21 @@
     <table>
       <thead><tr><th>Search</th><th>Method</th><th>Result</th></tr></thead>
       <tbody>
-        <tr><td><strong>Patents</strong></td><td>Espacenet as the primary database</td><td>One pickleball ball-testing
+        <tr><td><strong>Patents</strong></td><td>Espacenet as the primary database. Query: <code>ctxt all "pickleball" AND ctxt any "test tester testing inspect"</code>. Google Patents by
+          assignee: “Automated Design Corp”, “Pickleball Instruments”, “GNG”, “Pickle Pro Labs”, “USA Paddle Testing”; and
+          <code>(pickleball) (testing device OR tester OR inspection)</code></td><td>One pickleball ball-testing
           patent application: US 2025/0332489 A1, “Pickleball testing device” (Tri Great International), which floats the
           ball in an airflow column and uses cameras or lasers to detect deformation, wear and hole defects [1]. The team
-          does not currently plan to use an airflow method.</td></tr>
-        <tr><td><strong>Literature</strong></td><td>University of Michigan Library Search for scholarly work on pickleball
-          ball testing</td><td>No articles on ball-condition testing found. Injury literature was reviewed for the
+          does not currently plan to use an airflow method. No patents are assigned to ADC or Pickleball Instruments; two
+          further ball patents were found (Table 16).</td></tr>
+        <tr><td><strong>Literature</strong></td><td>University of Michigan Library Search: “pickleball ball testing”, “pickleball ball
+          durability”, “pickleball bounce test”</td><td>No articles on ball-condition testing found. Injury literature was reviewed for the
           safety context (see <a href="customers.html#context">Customers</a>).</td></tr>
-        <tr><td><strong>Web and products</strong></td><td>Keywords such as “pickleball ball testing tools” and
-          “pickleball equipment standards”</td><td>Industrial and tournament testers (Table 15); no consumer ball
+        <tr><td><strong>Web and products</strong></td><td>Google: “pickleball ball testing tools”, “pickleball ball tester”,
+          “pickleball paddle testing machine”, “pickleball equipment standards”</td><td>Industrial and tournament testers (Table 15); no consumer ball
           tester</td></tr>
-        <tr><td><strong>Standards and regulations</strong></td><td>USA Pickleball Equipment Standards Manual and 2026
-          Official Rulebook</td><td>The manual defines bounce, hardness, size and weight for approving <em>new</em> ball
+        <tr><td><strong>Standards and regulations</strong></td><td>usapickleball.org: “Equipment Standards Manual”, “Official Rulebook”,
+          “approved balls”</td><td>The manual defines bounce, hardness, size and weight for approving <em>new</em> ball
           models [2]; the rulebook has no test for a ball in service and leaves a soft ball to player agreement (Rule
           10.G) [3]</td></tr>
         <tr><td><strong>Customer perceptions</strong></td><td>Review search; survey and interviews</td><td>No reviews
@@ -74,8 +77,7 @@
       </tbody>
     </table>
   </div>
-  <p><b>Table 14.</b> Competitive search coverage. <span class="todo">[TEAM: add exact search strings and search
-  dates for the patent and literature searches.]</span></p>
+  <p><b>Table 14.</b> Competitive search coverage. Searches run Sep. 28–30, 2026.</p>
 
   <h2>State of the art</h2>
   <div class="table-wrap">
@@ -113,8 +115,35 @@
     </table>
   </div>
   <p><b>Table 15.</b> Direct competitors, substitutes and prior designs. QFD values are the team's benchmarking [5].
-  Intellectual property: only the airflow tester was found in the patent search.
-  <span class="todo">[TEAM: search patents held by ADC and Pickleball Instruments before concept selection.]</span></p>
+  Intellectual property for each is summarized in Table 16.</p>
+
+  <h3>Intellectual property</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Holder / product</th><th>Patents found</th><th>What it covers</th><th>Implication for our product</th></tr></thead>
+      <tbody>
+        <tr><td><strong>ADC</strong> (Pickle Press, Go/No-Go)</td><td>None assigned to Automated Design Corp. [12]</td>
+          <td>—</td><td>Protection may rest on trade secrets or applications not yet published; recheck before concept
+          selection</td></tr>
+        <tr><td><strong>Pickleball Instruments</strong> (Paddle Press)</td><td>None found [12]</td><td>—</td><td>No known
+          barrier; paddle-only in any case</td></tr>
+        <tr><td><strong>GNG Enterprises / USA Paddle Testing; Pickle Pro Labs</strong></td><td>None found [12]</td><td>—</td>
+          <td>No known barrier</td></tr>
+        <tr><td><strong>Tri Great International</strong></td><td>US 2025/0332489 A1 (application) [1]</td><td>Ball floated in an
+          airflow column; cameras or lasers detect wobble, deformation and hole defects</td><td>Avoid airflow-suspension
+          methods or design around the claims; monitor whether it is granted</td></tr>
+        <tr><td><strong>Weida Plastic Industry (Nantong)</strong></td><td>CN 118898423 A, granted in China, 2024 [13]</td>
+          <td>Factory quality evaluation of rotationally molded pickleballs: size, internal defects by laser scan, density,
+          rebound height and speed, wear and impact resistance</td><td>Rebound testing in manufacturing is known art, so
+          novelty must come from in-service, courtside use; a Chinese patent, so no direct U.S. barrier</td></tr>
+        <tr><td><strong>Hummingbird Sport</strong></td><td>WO 2025/076626 A1 (application) [14]</td><td>Graphene-infused
+          ball claimed to last 2–3× more hits before cracking with the same bounce</td><td>Not a tester but a substitute
+          threat: a ball that cracks less weakens the need to screen balls</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 16.</b> Intellectual-property review (Google Patents and Espacenet, searched Sep. 30, 2026). Finding no
+  patents is not proof of freedom to operate; a formal search is needed before concept selection.</p>
 
   <h3>How well each alternative meets the priority needs</h3>
   <div class="table-wrap">
@@ -129,7 +158,7 @@
       </tbody>
     </table>
   </div>
-  <p><b>Table 16.</b> Fit against the priority needs from <a href="customers.html#benefits">Customers</a>. Ratings are the
+  <p><b>Table 17.</b> Fit against the priority needs from <a href="customers.html#benefits">Customers</a>. Ratings are the
   team's assessment from Table 15.</p>
 
   <h2>Design gap and market opportunity</h2>
@@ -147,8 +176,8 @@
     <li><strong>What makes the direction distinct:</strong> no commercial ball-condition tester exists at any price.</li>
     <li><strong>Targets that drive viability:</strong> time per test and user confidence, followed by price.</li>
     <li><strong>Risks to differentiation:</strong> ADC already makes both a ball-capable press and a portable pass/fail
-    device, and could combine them; the airflow patent may constrain some methods; crack-resistant balls may shrink the
-    problem; and the facility owner we interviewed saw no need (P4) [4].</li>
+    device, and could combine them; the airflow patent application may constrain some methods; crack-resistant
+    balls, including a patented graphene ball [14], may shrink the problem; and the facility owner we interviewed saw no need (P4) [4].</li>
     <li><strong>Barriers:</strong> the Equipment Standards Manual's approval tests [2] should be replicated or
     complemented, never presented as certification.</li>
     <li><strong>Evidence the gap is worth pursuing:</strong> survey interest rises with play frequency, and interviewees
@@ -199,7 +228,7 @@
 <line x1="237.8" y1="121.8" x2="463.8" y2="121.8" stroke="#c9770d" stroke-width="6" stroke-linecap="round"><title>Target: objectivity 4, 30 s or less per ball</title></line>
 <text x="356.0" y="143.8" text-anchor="middle" font-size="12" font-weight="750" fill="#8a5510">Our target: ≤30 s per ball (QFD)</text>
 </svg></div>
-    <figcaption><b>Figure 14.</b> Positioning on time per test (quantitative, log scale) and objectivity of the result.
+    <figcaption><b>Figure 15.</b> Positioning on time per test (quantitative, log scale) and objectivity of the result.
     The manual check is fast but subjective; instruments are objective but slow and built for paddles or labs. The
     top-left region is empty. The target is 30 s or less per ball (QFD), inside the shaded gap. The Pickle Press time is estimated from the Go/No-Go benchmark because ADC does not publish it.
     Sources: [4][5][6][7].</figcaption>
@@ -233,6 +262,12 @@
       <a href="https://www.wdstrings.com/head-4-in-1-swingweight-tuning-machine/">wdstrings.com</a></li>
     <li>[11] Pickleball.com, “Go/No-Go Machine brings pro paddle testing to amateurs,” accessed Sep. 30, 2026.
       <a href="https://pickleball.com/blogs/go-no-go-machine-brings-pro-paddle-testing-to-amateurs">pickleball.com</a></li>
+    <li>[12] Google Patents, assignee searches for “Automated Design Corp”, “Pickleball Instruments”, “GNG”, “Pickle Pro
+      Labs” and “USA Paddle Testing”, Sep. 30, 2026. <a href="https://patents.google.com/">patents.google.com</a></li>
+    <li>[13] Weida Plastic Industry (Nantong) Co., Ltd., “A method for analyzing and processing the quality of pickle ball
+      rotational molding,” CN 118898423 A, Nov. 5, 2024. <a href="https://patents.google.com/patent/CN118898423A/en">patents.google.com</a></li>
+    <li>[14] Hummingbird Sport LP, “Pickleball ball,” WO 2025/076626 A1, Apr. 17, 2025.
+      <a href="https://patents.google.com/patent/WO2025076626A1/en">patents.google.com</a></li>
   </ol>
 
   <nav class="pager" aria-label="Section navigation">
