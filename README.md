@@ -20,16 +20,26 @@ Commit and push as normal; GitHub Pages redeploys from `main` within a minute.
 
 ## Pages
 
+Navigation follows the course template: **Home** (the introduction), one dropdown per
+gate review, and **Team**. Gate Review 1 sits under *Customer & Market Research*; later
+phases (Concept, Development, Business Plan) are greyed placeholders in the nav and on
+the home page until their pages exist.
+
 | File | Section |
 |---|---|
-| `index.html` | Introduction, product goal, section links |
-| `customers.html` | Customers & benefits, journey map, contextual considerations |
-| `research.html` | Market research — survey, interviews, synthesis |
-| `product-definition.html` | Product definition |
-| `qfd.html` | QFD matrix |
-| `characteristics.html` | Characteristics & targets |
-| `competition.html` | Competition analysis, design gap, positioning chart |
-| `value-proposition.html` | Value proposition, risks, problem statement, recommendation |
+| `index.html` | Home: introduction, product goal, links to every section |
+| `customers.html` | GR1 · Customers & benefits, journey map, contextual considerations |
+| `research.html` | GR1 · Market research: survey, interviews, synthesis |
+| `product-definition.html` | GR1 · Product definition, House of Quality (`#qfd`), characteristics & targets (`#targets`) |
+| `competition.html` | GR1 · Competition analysis, design gap, positioning chart |
+| `value-proposition.html` | GR1 · Value proposition, risks, problem statement, recommendation |
+| `team.html` | Team members and roles |
+
+`qfd.html` and `characteristics.html` only redirect to the matching anchors on
+`product-definition.html`, so old links keep working.
+
+To add a phase: create its pages, then in every page's `<header class="nav">` replace that
+phase's `<span class="nav-soon">` with a `has-menu` dropdown like the Gate Review 1 one.
 
 `assets/css/site.css` holds all styling.
 
@@ -43,6 +53,8 @@ Classes available in the stylesheet:
 - `.callout callout-limit` — stated limitation
 - `.table-wrap` around every table; add class `qfd` for the rotated-header matrix
 - `figure` + `figcaption`, captioned `<b>Figure n.</b>`
+- Citations: give each reference `<li id="ref-N">[N] …</li>` and cite it in the text as
+  `<a class="cite" href="#ref-N">[N]</a>`
 
 Charts are inline SVG. Series colours are `--series-1` … `--series-5`.
 

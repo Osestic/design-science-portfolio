@@ -20,23 +20,31 @@
   <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
   <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0%" stop-color="#fed500"/><stop offset="100%" stop-color="#ff9100"/></linearGradient></defs>
-</svg><span>DinkCheck &middot; Team 1</span></a>
+</svg><span>DinkCheck</span></a>
     <ul class="nav-links">
-      <li><a href="index.html">Introduction</a></li>
-      <li><a href="customers.html">Customers</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="product-definition.html">Definition</a></li>
-      <li><a href="qfd.html">QFD</a></li>
-      <li><a href="characteristics.html">Targets</a></li>
-      <li><a href="competition.html" aria-current="page">Competition</a></li>
-      <li><a href="value-proposition.html">Value Prop</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label is-active" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html" aria-current="page">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Concept &amp; Prototyping (later gate review)">Concept</span></li>
+      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
     </ul>
   </div>
 </header>
 
 <main class="container">
 
-  <p class="eyebrow">Section 04</p>
+  <p class="eyebrow">Gate Review 1 &middot; Customer &amp; Market Research</p>
   <h1>Competition Analysis</h1>
   <p class="lead">What exists, how it performs, what it costs, and the gap none of it fills.</p>
 
@@ -56,7 +64,7 @@
           assignee: “Automated Design Corp”, “Pickleball Instruments”, “GNG”, “Pickle Pro Labs”, “USA Paddle Testing”; and
           <code>(pickleball) (testing device OR tester OR inspection)</code></td><td>One pickleball ball-testing
           patent application: US 2025/0332489 A1, “Pickleball testing device” (Tri Great International), which floats the
-          ball in an airflow column and uses cameras or lasers to detect deformation, wear and hole defects [1]. The team
+          ball in an airflow column and uses cameras or lasers to detect deformation, wear and hole defects <a class="cite" href="#ref-1">[1]</a>. The team
           does not currently plan to use an airflow method. No patents are assigned to ADC or Pickleball Instruments; two
           further ball patents were found (Table 19).</td></tr>
         <tr><td><strong>Literature</strong></td><td>University of Michigan Library Search: “pickleball ball testing”, “pickleball ball
@@ -67,13 +75,13 @@
           tester</td></tr>
         <tr><td><strong>Standards and regulations</strong></td><td>usapickleball.org: “Equipment Standards Manual”, “Official Rulebook”,
           “approved balls”</td><td>The manual defines bounce, compression, size and weight for approving <em>new</em> ball
-          models [2]; the rulebook has no test for a ball in service and leaves a soft ball to player agreement (Rule
-          10.G) [3]</td></tr>
+          models <a class="cite" href="#ref-2">[2]</a>; the rulebook has no test for a ball in service and leaves a soft ball to player agreement (Rule
+          10.G) <a class="cite" href="#ref-3">[3]</a></td></tr>
         <tr><td><strong>Customer perceptions</strong></td><td>Review search; survey and interviews</td><td>No reviews
           exist because all testers are manufacturer- or tournament-grade. Players rely on subjective checks (68.8% look,
-          62.5% bounce, n=16) [4]</td></tr>
+          62.5% bounce, n=16) <a class="cite" href="#ref-4">[4]</a></td></tr>
         <tr><td><strong>Market and competitor data</strong></td><td>Manufacturer pages; team QFD benchmarking</td><td>Little
-          public market data, because testers are not sold to consumers; prices and weights from the QFD sheet [5]</td></tr>
+          public market data, because testers are not sold to consumers; prices and weights from the QFD sheet <a class="cite" href="#ref-5">[5]</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -85,36 +93,36 @@
       <thead><tr><th>Alternative</th><th>Target users</th><th>What it does</th><th>Time</th><th>Price</th><th>Weight</th><th>Strengths</th><th>Shortcomings</th></tr></thead>
       <tbody>
         <tr><td><strong>Manual check</strong><br><span style="font-size:.85em;color:var(--ink-3)">direct substitute</span></td>
-          <td>Every player</td><td>Look, bounce, squeeze, hit, or slap against the floor</td><td>≈3 s (P3) [4]</td>
+          <td>Every player</td><td>Look, bounce, squeeze, hit, or slap against the floor</td><td>≈3 s (P3) <a class="cite" href="#ref-4">[4]</a></td>
           <td>Free</td><td>—</td><td>Instant, habitual, no equipment</td><td>Subjective; misses softening and hairline
           cracks; not shareable between players</td></tr>
-        <tr><td><strong>Pickle Press</strong><br><span style="font-size:.85em;color:var(--ink-3)">ADC [6]</span></td>
+        <tr><td><strong>Pickle Press</strong><br><span style="font-size:.85em;color:var(--ink-3)">ADC <a class="cite" href="#ref-6">[6]</a></span></td>
           <td>Manufacturers, QC specialists, test labs</td><td>Load frame measuring ball and paddle compression; optional
           coefficient-of-friction testing</td><td>Not published</td><td>Not published</td><td>Not published</td>
           <td>Precise, quantitative compression data</td><td>Bench-bound, lab-oriented, cost not disclosed</td></tr>
-        <tr><td><strong>Go/No-Go</strong><br><span style="font-size:.85em;color:var(--ink-3)">ADC / USA Paddle Testing [7][8]</span></td>
+        <tr><td><strong>Go/No-Go</strong><br><span style="font-size:.85em;color:var(--ink-3)">ADC / USA Paddle Testing <a class="cite" href="#ref-7">[7]</a><a class="cite" href="#ref-8">[8]</a></span></td>
           <td>Tournaments and clubs; official device for UPA-A and DUPR</td><td>Paddle deflection pass/fail with a visual
-          indicator</td><td>&lt; 60 s per paddle [7][8]</td><td>$299/month rental [11]; no purchase price published</td><td>12 lb (≈5.4 kg) [7]</td><td>Portable enough for events; readable by anyone</td>
+          indicator</td><td>&lt; 60 s per paddle <a class="cite" href="#ref-7">[7]</a><a class="cite" href="#ref-8">[8]</a></td><td>$299/month rental <a class="cite" href="#ref-11">[11]</a>; no purchase price published</td><td>12 lb (≈5.4 kg) <a class="cite" href="#ref-7">[7]</a></td><td>Portable enough for events; readable by anyone</td>
           <td>Paddles only; conformance, not condition</td></tr>
-        <tr><td><strong>Paddle Press</strong><br><span style="font-size:.85em;color:var(--ink-3)">Pickleball Instruments [9]</span></td>
+        <tr><td><strong>Paddle Press</strong><br><span style="font-size:.85em;color:var(--ink-3)">Pickleball Instruments <a class="cite" href="#ref-9">[9]</a></span></td>
           <td>Manufacturers, tournaments</td><td>Repeatable paddle deflection checks</td><td>Not published</td>
-          <td>$4,995 [9]</td><td>Not published</td><td>Field-ready measurement</td><td>Paddles only</td></tr>
-        <tr><td><strong>Head 4-in-1</strong><br><span style="font-size:.85em;color:var(--ink-3)">WD Strings [10], analogous</span></td>
+          <td>$4,995 <a class="cite" href="#ref-9">[9]</a></td><td>Not published</td><td>Field-ready measurement</td><td>Paddles only</td></tr>
+        <tr><td><strong>Head 4-in-1</strong><br><span style="font-size:.85em;color:var(--ink-3)">WD Strings <a class="cite" href="#ref-10">[10]</a>, analogous</span></td>
           <td>Racquet shops, stringers</td><td>Swingweight, balance and related racquet properties</td><td>Not published</td>
-          <td>$2,900 [15]</td><td>Not published; 22.8 kg shipped [10]</td><td>Multi-measurement in one unit</td><td>Racquets, not balls; bench machine (ships in a
-          92 × 62 × 40 cm box) [10]</td></tr>
+          <td>$2,900 <a class="cite" href="#ref-15">[15]</a></td><td>Not published; 22.8 kg shipped <a class="cite" href="#ref-10">[10]</a></td><td>Multi-measurement in one unit</td><td>Racquets, not balls; bench machine (ships in a
+          92 × 62 × 40 cm box) <a class="cite" href="#ref-10">[10]</a></td></tr>
         <tr><td><strong>Crack-resistant ball</strong><br><span style="font-size:.85em;color:var(--ink-3)">e.g. Lifetime; indirect substitute</span></td>
-          <td>Clubs, strong players</td><td>Fails less often</td><td>—</td><td>≈$1.62 per ball (P4) [4]</td><td>—</td>
+          <td>Clubs, strong players</td><td>Fails less often</td><td>—</td><td>≈$1.62 per ball (P4) <a class="cite" href="#ref-4">[4]</a></td><td>—</td>
           <td>Clubs standardize on it (P4); “best ball” (P3)</td><td>Plays differently (P2, P4); supply shortage in 2025 (P4);
           still fails eventually</td></tr>
-        <tr><td><strong>Airflow tester</strong><br><span style="font-size:.85em;color:var(--ink-3)">US 2025/0332489 A1 [1], prior design</span></td>
+        <tr><td><strong>Airflow tester</strong><br><span style="font-size:.85em;color:var(--ink-3)">US 2025/0332489 A1 <a class="cite" href="#ref-1">[1]</a>, prior design</span></td>
           <td>Competitions, quality control</td><td>Ball floats in airflow; cameras or lasers detect wobble, deformation and
           holes</td><td>“Real-time” claimed</td><td>—</td><td>—</td><td>Ball-specific; non-contact</td><td>Patent application,
           not a product on sale</td></tr>
       </tbody>
     </table>
   </div>
-  <p><b>Table 18.</b> Direct competitors, substitutes and prior designs. QFD values are the team's benchmarking [5].
+  <p><b>Table 18.</b> Direct competitors, substitutes and prior designs. QFD values are the team's benchmarking <a class="cite" href="#ref-5">[5]</a>.
   Intellectual property for each is summarized in Table 19.</p>
 
   <h3>Intellectual property</h3>
@@ -122,21 +130,21 @@
     <table>
       <thead><tr><th>Holder / product</th><th>Patents found</th><th>What it covers</th><th>Implication for our product</th></tr></thead>
       <tbody>
-        <tr><td><strong>ADC</strong> (Pickle Press, Go/No-Go)</td><td>None assigned to Automated Design Corp. [12]</td>
+        <tr><td><strong>ADC</strong> (Pickle Press, Go/No-Go)</td><td>None assigned to Automated Design Corp. <a class="cite" href="#ref-12">[12]</a></td>
           <td>—</td><td>Protection may rest on trade secrets or applications not yet published; recheck before concept
           selection</td></tr>
-        <tr><td><strong>Pickleball Instruments</strong> (Paddle Press)</td><td>None found [12]</td><td>—</td><td>No known
+        <tr><td><strong>Pickleball Instruments</strong> (Paddle Press)</td><td>None found <a class="cite" href="#ref-12">[12]</a></td><td>—</td><td>No known
           barrier; paddle-only in any case</td></tr>
-        <tr><td><strong>GNG Enterprises / USA Paddle Testing; Pickle Pro Labs</strong></td><td>None found [12]</td><td>—</td>
+        <tr><td><strong>GNG Enterprises / USA Paddle Testing; Pickle Pro Labs</strong></td><td>None found <a class="cite" href="#ref-12">[12]</a></td><td>—</td>
           <td>No known barrier</td></tr>
-        <tr><td><strong>Tri Great International</strong></td><td>US 2025/0332489 A1 (application) [1]</td><td>Ball floated in an
+        <tr><td><strong>Tri Great International</strong></td><td>US 2025/0332489 A1 (application) <a class="cite" href="#ref-1">[1]</a></td><td>Ball floated in an
           airflow column; cameras or lasers detect wobble, deformation and hole defects</td><td>Avoid airflow-suspension
           methods or design around the claims; monitor whether it is granted</td></tr>
-        <tr><td><strong>Weida Plastic Industry (Nantong)</strong></td><td>CN 118898423 A, granted in China, 2024 [13]</td>
+        <tr><td><strong>Weida Plastic Industry (Nantong)</strong></td><td>CN 118898423 A, granted in China, 2024 <a class="cite" href="#ref-13">[13]</a></td>
           <td>Factory quality evaluation of rotationally molded pickleballs: size, internal defects by laser scan, density,
           rebound height and speed, wear and impact resistance</td><td>Rebound testing in manufacturing is known art, so
           novelty must come from in-service, courtside use; a Chinese patent, so no direct U.S. barrier</td></tr>
-        <tr><td><strong>Hummingbird Sport</strong></td><td>US 12,515,108 B2, granted Jan. 6, 2026 (also WO 2025/076626 A1) [14]</td><td>Graphene-infused
+        <tr><td><strong>Hummingbird Sport</strong></td><td>US 12,515,108 B2, granted Jan. 6, 2026 (also WO 2025/076626 A1) <a class="cite" href="#ref-14">[14]</a></td><td>Graphene-infused
           ball claimed to last 2–3× more hits before cracking with the same bounce</td><td>Not a tester but a substitute
           threat: a ball that cracks less weakens the need to screen balls</td></tr>
       </tbody>
@@ -167,18 +175,19 @@
   Crack-resistant balls reduce how often failures happen.</p>
   <p><strong>Where they fall short.</strong> Every instrumented tester is built for manufacturers, labs or paddle
   conformance. None gives a player or club an in-service ball-condition reading at the court, and the only ball-specific
-  design is an unreleased patent. The manual check is fast but subjective and cannot be shared between players.</p>
+  design is an unreleased patent. The manual check is fast but subjective: 52.8% of players rate their confidence in it at 3 or lower out of 7, and
+  balls soften well before damage becomes visible.</p>
   <p><strong>The design gap:</strong> knowing a ball's playing condition before visible damage appears, with an
-  objective result that can be shared between players, in about the time of a manual check. This matters because
+  result players can trust, in about the time of a manual check. This matters because
   consistency is the top purchase criterion (52.8%), players lack confidence (52.8% rate 1–3), and 55.6% find an
-  objective test useful, rising to 64.7% of frequent players [4].</p>
+  objective test useful, rising to 64.7% of frequent players <a class="cite" href="#ref-4">[4]</a>.</p>
   <ul>
     <li><strong>What makes the direction distinct:</strong> no commercial ball-condition tester exists at any price.</li>
     <li><strong>Targets that drive viability:</strong> time per test and user confidence, followed by price.</li>
     <li><strong>Risks to differentiation:</strong> ADC already makes both a ball-capable press and a portable pass/fail
     device, and could combine them; the airflow patent application may constrain some methods; crack-resistant
-    balls, including a patented graphene ball [14], may shrink the problem; and the facility owner we interviewed saw no need (P4) [4].</li>
-    <li><strong>Barriers:</strong> the Equipment Standards Manual's approval tests [2] should be replicated or
+    balls, including a patented graphene ball <a class="cite" href="#ref-14">[14]</a>, may shrink the problem; and the facility owner we interviewed saw no need (P4) <a class="cite" href="#ref-4">[4]</a>.</li>
+    <li><strong>Barriers:</strong> the Equipment Standards Manual's approval tests <a class="cite" href="#ref-2">[2]</a> should be replicated or
     complemented, never presented as certification.</li>
     <li><strong>Evidence the gap is worth pursuing:</strong> survey interest rises with play frequency, and interviewees
     see value for competitive and club settings, though no professionals have been interviewed yet.</li>
@@ -229,48 +238,48 @@
     The manual check is fast but subjective; instruments are objective but slow and built for paddles or labs. The
     top-left region is empty. The target is 30 s or less per ball (QFD), inside the shaded gap. The Pickle Press time is estimated from the Go/No-Go benchmark because ADC does not publish it.
     The Paddle Press is not plotted because its test time is not published.
-    Sources: [4][5][6][7].</figcaption>
+    Sources: <a class="cite" href="#ref-4">[4]</a><a class="cite" href="#ref-5">[5]</a><a class="cite" href="#ref-6">[6]</a><a class="cite" href="#ref-7">[7]</a>.</figcaption>
   </figure>
   <p><strong>Objectivity scale</strong> (team assessment): 1 = judgment by feel; 3 = instrumented pass/fail against a
   fixed threshold; 5 = repeatable numeric measurement of a physical property. <strong>Why these axes:</strong> survey
   respondents lack confidence in their own judgment (52.8% rate 1–3) and want an objective test (55.6%), which gives the
   vertical axis. Other players on court rank <em>fast analysis</em> second of eleven QFD requirements, and the manual
-  check takes about 3 s, which gives the horizontal axis [4][5]. Price is kept off the axes and shown in the point labels instead.</p>
+  check takes about 3 s, which gives the horizontal axis <a class="cite" href="#ref-4">[4]</a><a class="cite" href="#ref-5">[5]</a>. Price is kept off the axes and shown in the point labels instead.</p>
 
   <h2>References</h2>
   <ol class="refs" style="list-style:none;padding-left:0">
-    <li>[1] W.-L. Chen and Y.-C. Mu (Tri Great International Ltd), “Pickleball testing device,” US 2025/0332489 A1, Oct.
+    <li id="ref-1">[1] W.-L. Chen and Y.-C. Mu (Tri Great International Ltd), “Pickleball testing device,” US 2025/0332489 A1, Oct.
       30, 2025. <a href="https://patents.google.com/patent/US20250332489A1/en">patents.google.com</a></li>
-    <li>[2] USA Pickleball, <em>Equipment Standards Manual</em>, Jan. 2025.
+    <li id="ref-2">[2] USA Pickleball, <em>Equipment Standards Manual</em>, Jan. 2025.
       <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">usapickleball.org</a></li>
-    <li>[3] USA Pickleball, <em>2026 Official Rulebook</em>, Rule 10.G.
+    <li id="ref-3">[3] USA Pickleball, <em>2026 Official Rulebook</em>, Rule 10.G.
       <a href="https://usapickleball.org/docs/rules/USAP-Official-Rulebook.pdf">usapickleball.org</a></li>
-    <li>[4] Team 1, consumer survey (Activity 10a, n=36) and interviews (Activity 10b, P1–P4), ME 455, 2026.</li>
-    <li>[5] Team 1, QFD workbook (competitive benchmarking), ME 455, 2026. See <a href="qfd.html">QFD</a>.</li>
-    <li>[6] Automated Design Corp., “Pickle Press Load Frame,” accessed Sep. 29, 2026.
+    <li id="ref-4">[4] Team 1, consumer survey (Activity 10a, n=36) and interviews (Activity 10b, P1–P4), ME 455, 2026.</li>
+    <li id="ref-5">[5] Team 1, QFD workbook (competitive benchmarking), ME 455, 2026. See <a href="product-definition.html#qfd">House of Quality</a>.</li>
+    <li id="ref-6">[6] Automated Design Corp., “Pickle Press Load Frame,” accessed Sep. 29, 2026.
       <a href="https://automateddesign.com/products/pickle_press/">automateddesign.com</a></li>
-    <li>[7] Crown Athletica, “Red Light, Green Light: Pro-Level Paddle Testing Is Coming to Amateur Pickleball
+    <li id="ref-7">[7] Crown Athletica, “Red Light, Green Light: Pro-Level Paddle Testing Is Coming to Amateur Pickleball
       Tournaments,” accessed Sep. 29, 2026.
       <a href="https://crownathletica.com/blogs/news/red-light-green-light-pro-level-paddle-testing-is-coming-to-amateur-pickleball-tournaments">crownathletica.com</a></li>
-    <li>[8] USA Paddle Testing, “Go/No-Go,” accessed Sep. 30, 2026. <a href="https://usapaddletesting.com/">usapaddletesting.com</a></li>
-    <li>[9] Pickleball Instruments, “Paddle Press.”
+    <li id="ref-8">[8] USA Paddle Testing, “Go/No-Go,” accessed Sep. 30, 2026. <a href="https://usapaddletesting.com/">usapaddletesting.com</a></li>
+    <li id="ref-9">[9] Pickleball Instruments, “Paddle Press.”
       Price $4,995; accessed Oct. 1, 2026. <a href="https://pickleballinstruments.com/">pickleballinstruments.com</a></li>
-    <li>[10] WD Strings, “Head 4-in-1 swingweight tuning machine” (shipping box 92 × 62 × 40 cm, 22.8 kg), accessed Oct. 1, 2026.
+    <li id="ref-10">[10] WD Strings, “Head 4-in-1 swingweight tuning machine” (shipping box 92 × 62 × 40 cm, 22.8 kg), accessed Oct. 1, 2026.
       <a href="https://www.wdstrings.com/head-4-in-1-swingweight-tuning-machine/">wdstrings.com</a></li>
-    <li>[11] Pickleball.com, “Go/No-Go Machine brings pro paddle testing to amateurs,” accessed Sep. 30, 2026.
+    <li id="ref-11">[11] Pickleball.com, “Go/No-Go Machine brings pro paddle testing to amateurs,” accessed Sep. 30, 2026.
       <a href="https://pickleball.com/blogs/go-no-go-machine-brings-pro-paddle-testing-to-amateurs">pickleball.com</a></li>
-    <li>[12] Google Patents, assignee searches for “Automated Design Corp”, “Pickleball Instruments”, “GNG”, “Pickle Pro
+    <li id="ref-12">[12] Google Patents, assignee searches for “Automated Design Corp”, “Pickleball Instruments”, “GNG”, “Pickle Pro
       Labs” and “USA Paddle Testing”, Sep. 30, 2026. <a href="https://patents.google.com/">patents.google.com</a></li>
-    <li>[13] Weida Plastic Industry (Nantong) Co., Ltd., “A method for analyzing and processing the quality of pickle ball
+    <li id="ref-13">[13] Weida Plastic Industry (Nantong) Co., Ltd., “A method for analyzing and processing the quality of pickle ball
       rotational molding,” CN 118898423 A, Nov. 5, 2024. <a href="https://patents.google.com/patent/CN118898423A/en">patents.google.com</a></li>
-    <li>[14] Hummingbird Sport LP, “Pickleball ball,” U.S. Patent 12,515,108 B2, Jan. 6, 2026; also WO 2025/076626 A1, Apr. 17, 2025.
+    <li id="ref-14">[14] Hummingbird Sport LP, “Pickleball ball,” U.S. Patent 12,515,108 B2, Jan. 6, 2026; also WO 2025/076626 A1, Apr. 17, 2025.
       <a href="https://patents.google.com/patent/US12515108B2/en">patents.google.com</a></li>
-    <li>[15] Tennis.com, “Fine-tune your equipment with HEAD’s new 4-in-1 diagnostic center,” Mar. 25, 2024.
+    <li id="ref-15">[15] Tennis.com, “Fine-tune your equipment with HEAD’s new 4-in-1 diagnostic center,” Mar. 25, 2024.
       <a href="https://www.tennis.com/news/articles/fine-tune-your-equipment-with-head-s-new-4-in-1-diagnostic-center">tennis.com</a></li>
   </ol>
 
   <nav class="pager" aria-label="Section navigation">
-    <a href="characteristics.html">&larr; Characteristics &amp; Targets</a>
+    <a href="product-definition.html">&larr; Product Definition</a>
     <a href="value-proposition.html">Market Value Proposition &rarr;</a>
   </nav>
 
@@ -278,7 +287,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p style="margin:0">ME 455 Analytical Product Design &middot; Team 1 (The DreamTeam / OriWagon) &middot;
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team DinkCheck (Team 1) &middot;
     Gate Review 1: Product Definition and Market Analysis &middot; University of Michigan</p>
   </div>
 </footer>
