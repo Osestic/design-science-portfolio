@@ -62,7 +62,7 @@
   <p class="eyebrow">Gate Review 2 &middot; Concept &amp; Prototyping</p>
   <h1>Concept Tree</h1>
   <p class="lead">Our research showed that most ball damage is hidden: a ball keeps being played for many games after
-  it plays noticeably worse but before it visibly cracks <a class="cite" href="#ref-1">[1]</a>. So the tree asks one
+  it plays noticeably worse, because softening cannot be seen <a class="cite" href="#ref-1">[1]</a>. So the tree asks one
   question at every level: what physical effect does the method use to sense the ball's condition?</p>
 
   <figure>
@@ -74,7 +74,7 @@
 
   <h2>How the tree is organized</h2>
   <p>The tree starts from the product's core function, <strong>detect ball damage</strong>: telling a player whether
-  a ball still plays as it should, and warning them before it cracks. The first split is whether the method touches
+  a ball still plays as it should, and warning them when it has gone soft. The first split is whether the method touches
   the ball. <strong>Physical</strong> methods measure mechanical properties such as stiffness and rebound directly, but
   need a fixture and can damage or mis-measure the ball. <strong>Non-physical</strong> methods are faster and gentler,
   but most of them only see the outside. Below that, each branch is a different sensing principle, not a different
@@ -86,9 +86,9 @@
         <tr><td><strong>Squeeze</strong></td><td>Deform the whole shell and measure the force it takes (stiffness)</td><td>Softening, a soft axis</td></tr>
         <tr><td><strong>Puncture / poke</strong></td><td>Press into one small spot and measure local resistance</td><td>Local soft spots, weak hole edges</td></tr>
         <tr><td><strong>Drop or hit</strong></td><td>Bounce or strike the ball and measure the energy it returns</td><td>Bounce loss, softening</td></tr>
-        <tr><td><strong>Tap</strong></td><td>Excite the shell and measure how it vibrates (resonance)</td><td>Softening, early cracks, weak-spot location</td></tr>
-        <tr><td><strong>Light-based</strong></td><td>Form an image or shape measurement using light</td><td>Surface cracks, roundness</td></tr>
-        <tr><td><strong>Wave-based</strong></td><td>Send or receive sound, radio or X-rays through or off the ball</td><td>Bounce speed, wall thickness, internal cracks</td></tr>
+        <tr><td><strong>Tap</strong></td><td>Excite the shell and measure how it vibrates (resonance)</td><td>Softening, soft-spot location</td></tr>
+        <tr><td><strong>Light-based</strong></td><td>Form an image or shape measurement using light</td><td>Roundness, surface wear</td></tr>
+        <tr><td><strong>Wave-based</strong></td><td>Send or receive sound, radio or X-rays through or off the ball</td><td>Bounce speed, wall thickness</td></tr>
         <tr><td><strong>Other</strong></td><td>Estimate condition from size, use history or temperature instead of measuring damage</td><td>Shape, likely wear</td></tr>
       </tbody>
     </table>
@@ -105,10 +105,10 @@
   a method that compresses the ball 0.25 in. and records the peak load <a class="cite" href="#ref-3">[3]</a>, so a
   benchmark is built in. Squeeze testers are proven for tennis and golf balls, and load cells are inexpensive. On the
   other hand, readings depend on temperature <a class="cite" href="#ref-4">[4]</a>, a flexing frame corrupts the
-  measurement, pressing on a hole gives a false reading, a tiny early crack barely changes overall stiffness, and the
+  measurement, pressing on a hole gives a false reading, a small soft spot barely changes overall stiffness, and the
   fixture creates a pinch point that must be guarded.</p>
   <p><strong>Puncture / poke.</strong> Poking finds local soft spots, which matter because worn balls develop spots
-  that can be pressed in by finger <a class="cite" href="#ref-1">[1]</a> and because cracks start at the holes. Mapping
+  that can be pressed in by finger <a class="cite" href="#ref-1">[1]</a>. Mapping
   a whole ball one spot at a time is slow, an uncontrolled probe can damage the ball, and players may distrust a
   device that pushes into it.</p>
   <p><strong>Drop or hit.</strong> Bouncing matches how players already judge balls and is the official USA
@@ -116,8 +116,8 @@
   result is easy to trust and explain. It needs a fixed drop height and a hard surface, it is sensitive to
   temperature, and bounce mixes stiffness with internal damping, so it does not isolate one property. Launching the
   ball at speed adds space and safety requirements.</p>
-  <p><strong>Tap.</strong> Tapping is the cheapest physical approach and the only one that can warn of a crack before
-  it is visible and show where it is forming. It is also fast. The drawbacks are background noise, the need to
+  <p><strong>Tap.</strong> Tapping is the cheapest physical approach and it can show where on the ball a soft spot
+  is. It is also fast. The drawbacks are background noise, the need to
   calibrate each ball model, and the effect of holes and seams on the signal. A frequency reading is abstract to
   players, so the device must turn it into a simple grade to earn trust.</p>
   <p><strong>Light-based.</strong> Light needs no contact, and phones already have cameras, so an app could reach
@@ -154,17 +154,17 @@
   <h2>Branches pursued and branches set aside</h2>
   <p>The tree was pruned with four filters drawn from the QFD and the producer constraints: the test must not damage
   the ball; it must be portable enough for courtside use; its parts must cost under $400; and it must be buildable
-  this semester. Among what remained, the team favored methods that detect hidden softening or early cracks, since
-  players already notice gross cracks.</p>
+  this semester. Among what remained, the team favored methods that detect hidden softening, since
+  players cannot see or feel it.</p>
   <p><strong>Promising branches (bold in the tree).</strong></p>
   <ul>
-    <li><strong>Tap</strong>: tap many spots while the ball turns. The strongest lead for crack warning: it can locate a
-    weak spot using low-cost parts.</li>
+    <li><strong>Tap</strong>: tap many spots while the ball turns. The strongest lead for locating a
+    soft spot using low-cost parts.</li>
     <li><strong>Squeeze</strong>: plate compression, including in three directions. Measures stiffness directly and
     ties to the USA Pickleball compression requirement.</li>
     <li><strong>Drop or hit</strong>: microphone bounce timing and a force plate. Tie to the bounce requirement and give
     an intuitive result.</li>
-    <li><strong>Wave-based</strong>: drop-sound recording. One drop gives softening, bounce and crack cues, and can
+    <li><strong>Wave-based</strong>: drop-sound recording. One drop gives softening and bounce cues, and can
     share a microphone with the bounce timer.</li>
   </ul>
   <p>These four can share one microphone, one load cell and one microcontroller, which suggested that a later product
@@ -175,7 +175,7 @@
     sampling, but they destroy the ball or, in the case of weight, barely respond to wear.</li>
     <li>Ball launcher: accurate rebound speed, but not portable and adds safety risk. Kept only as a possible laboratory
     reference.</li>
-    <li>Ultrasound crack scanning, thermal imaging, radar imaging, X-ray and CT: all exceed the budget, and X-ray adds a
+    <li>Ultrasound scanning, thermal imaging, radar imaging, X-ray and CT: all exceed the budget, and X-ray adds a
     safety and regulatory burden.</li>
     <li>A sensor built into the ball: changes the ball and may make it illegal for play.</li>
   </ul>
@@ -191,9 +191,9 @@
       <thead><tr><th>Gap found</th><th>New ideas</th></tr></thead>
       <tbody>
         <tr><td>Tap, the lead direction, had only two ideas, and neither could locate a weak spot</td><td>Tap many spots while the ball turns; tap with a paddle while a phone app listens; drop a small weight onto the ball for a repeatable tap; excite the ball with a vibration motor and read an accelerometer</td></tr>
-        <tr><td>Half the puncture ideas destroyed the ball, and none targeted the holes where cracks begin</td><td>Spring pin with a go/no-go press depth; probe for the edge of each hole; air-puff dent test borrowed from the optometrist's eye-pressure test</td></tr>
-        <tr><td>Wave-based had one usable idea and no affordable crack detection</td><td>Play a tone into the holes and measure the echo inside the ball; track bounce height with an mmWave sensor</td></tr>
-        <tr><td>No low-cost way to see early cracks without contact</td><td>Polarized light to show stress in the plastic (and the tone-and-echo idea above)</td></tr>
+        <tr><td>Half the puncture ideas destroyed the ball, and none probed the edges of the holes</td><td>Spring pin with a go/no-go press depth; probe for the edge of each hole; air-puff dent test borrowed from the optometrist's eye-pressure test</td></tr>
+        <tr><td>Wave-based had one usable idea and no affordable way to sense softening</td><td>Play a tone into the holes and measure the echo inside the ball; track bounce height with an mmWave sensor</td></tr>
+        <tr><td>No low-cost way to see stress in the shell without contact</td><td>Polarized light to show stress in the plastic (and the tone-and-echo idea above)</td></tr>
         <tr><td>Nothing worked during play; every idea stopped the game for a separate test</td><td>Courtside pad that grades the warm-up bounce; drop the ball side by side with a new reference ball (and the paddle tap above)</td></tr>
       </tbody>
     </table>
