@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept Tree · DinkCheck · Team 1 Design Portfolio</title>
+<meta name="description" content="Concept classification tree of every way to detect pickleball damage, grouped by sensing principle, with tradeoffs, pruning, gaps and new ideas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#d9a86c" stroke="#6b4526" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#5a3a22"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#fed500"/><stop offset="100%" stop-color="#ff9100"/></linearGradient></defs>
+</svg><span>DinkCheck</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label is-active" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html" aria-current="page">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+
+  <p class="eyebrow">Gate Review 2 &middot; Concept &amp; Prototyping</p>
+  <h1>Concept Tree</h1>
+  <p class="lead">Our research showed that most ball damage is hidden: a ball keeps being played for many games after
+  it plays noticeably worse but before it visibly cracks <a class="cite" href="#ref-1">[1]</a>. So the tree asks one
+  question at every level: what physical effect does the method use to sense the ball's condition?</p>
+
+  <figure>
+    <a href="assets/img/gr2/concept-tree.png"><img src="assets/img/gr2/concept-tree.png" alt="Concept classification tree. Detect Ball Damage splits into Physical (squeeze, puncture or poke, drop or hit, tap) and Non-Physical (light-based, wave-based, other) methods, each listing specific ideas in bold, plain, crossed-out or italic text" loading="lazy"></a>
+    <figcaption><b>Figure 8.</b> Concept classification tree. <strong>Bold</strong>: kept for concept development.
+    <s>Crossed out</s>: ruled out (breaks the ball, too big for the court, or over $400). Plain: possible, lower
+    priority. <em>Italic +</em>: new idea added to fill a gap. Select the image to enlarge it.</figcaption>
+  </figure>
+
+  <h2>How the tree is organized</h2>
+  <p>The tree starts from the product's core function, <strong>detect ball damage</strong>: telling a player whether
+  a ball still plays as it should, and warning them before it cracks. The first split is whether the method touches
+  the ball. <strong>Physical</strong> methods measure mechanical properties such as stiffness and rebound directly, but
+  need a fixture and can damage or mis-measure the ball. <strong>Non-physical</strong> methods are faster and gentler,
+  but most of them only see the outside. Below that, each branch is a different sensing principle, not a different
+  product or brand.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Branch</th><th>Distinguishing principle</th><th>What it can detect</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Squeeze</strong></td><td>Deform the whole shell and measure the force it takes (stiffness)</td><td>Softening, a soft axis</td></tr>
+        <tr><td><strong>Puncture / poke</strong></td><td>Press into one small spot and measure local resistance</td><td>Local soft spots, weak hole edges</td></tr>
+        <tr><td><strong>Drop or hit</strong></td><td>Bounce or strike the ball and measure the energy it returns</td><td>Bounce loss, softening</td></tr>
+        <tr><td><strong>Tap</strong></td><td>Excite the shell and measure how it vibrates (resonance)</td><td>Softening, early cracks, weak-spot location</td></tr>
+        <tr><td><strong>Light-based</strong></td><td>Form an image or shape measurement using light</td><td>Surface cracks, roundness</td></tr>
+        <tr><td><strong>Wave-based</strong></td><td>Send or receive sound, radio or X-rays through or off the ball</td><td>Bounce speed, wall thickness, internal cracks</td></tr>
+        <tr><td><strong>Other</strong></td><td>Estimate condition from size, use history or temperature instead of measuring damage</td><td>Shape, likely wear</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 7.</b> Major branches of the concept tree.</p>
+  <p>Depth varies by branch on purpose: a branch was split further only when there were genuinely different ways to
+  carry it out. Bounce height, for example, can be read by eye, a light beam, a camera, LIDAR or a microphone, while
+  X-ray imaging has no meaningful sub-options.</p>
+
+  <h2>Advantages and disadvantages of each branch</h2>
+  <p><strong>Squeeze.</strong> Squeezing measures stiffness directly, the property that published wear tests show
+  degrading first, about 10% per hour of play in a Franklin X-40 <a class="cite" href="#ref-1">[1]</a>. It also matches
+  the USA Pickleball compression requirement, an average below 43 lbf under ASTM F1888 <a class="cite" href="#ref-2">[2]</a>,
+  a method that compresses the ball 0.25 in. and records the peak load <a class="cite" href="#ref-3">[3]</a>, so a
+  benchmark is built in. Squeeze testers are proven for tennis and golf balls, and load cells are inexpensive. On the
+  other hand, readings depend on temperature <a class="cite" href="#ref-4">[4]</a>, a flexing frame corrupts the
+  measurement, pressing on a hole gives a false reading, a tiny early crack barely changes overall stiffness, and the
+  fixture creates a pinch point that must be guarded.</p>
+  <p><strong>Puncture / poke.</strong> Poking finds local soft spots, which matter because worn balls develop spots
+  that can be pressed in by finger <a class="cite" href="#ref-1">[1]</a> and because cracks start at the holes. Mapping
+  a whole ball one spot at a time is slow, an uncontrolled probe can damage the ball, and players may distrust a
+  device that pushes into it.</p>
+  <p><strong>Drop or hit.</strong> Bouncing matches how players already judge balls and is the official USA
+  Pickleball test: 30–34 in. of rebound from a 78 in. drop onto granite <a class="cite" href="#ref-2">[2]</a>. The
+  result is easy to trust and explain. It needs a fixed drop height and a hard surface, it is sensitive to
+  temperature, and bounce mixes stiffness with internal damping, so it does not isolate one property. Launching the
+  ball at speed adds space and safety requirements.</p>
+  <p><strong>Tap.</strong> Tapping is the cheapest physical approach and the only one that can warn of a crack before
+  it is visible and show where it is forming. It is also fast. The drawbacks are background noise, the need to
+  calibrate each ball model, and the effect of holes and seams on the signal. A frequency reading is abstract to
+  players, so the device must turn it into a simple grade to earn trust.</p>
+  <p><strong>Light-based.</strong> Light needs no contact, and phones already have cameras, so an app could reach
+  players at almost no hardware cost. But light sees only the surface and shape; it cannot detect softening, the main
+  hidden damage. The team judged hobby-grade LIDAR too coarse to check the 0.020 in.
+  out-of-round tolerance <a class="cite" href="#ref-2">[2]</a>, and lighting changes affect results.</p>
+  <p><strong>Wave-based.</strong> Recording the sound of a drop needs only a microphone and pairs naturally with the
+  bounce test. Ultrasound can measure wall thickness but needs couplant gel, which players would find messy. X-ray and
+  radar imaging can see inside the ball, but they are costly laboratory equipment, and X-ray adds radiation-safety and
+  regulatory concerns.</p>
+  <p><strong>Other.</strong> Counting games or logging temperature needs little or no hardware, but it estimates
+  condition instead of measuring it. Wear rates differ about tenfold between ball models
+  <a class="cite" href="#ref-5">[5]</a>, so an estimate alone would not earn a player's confidence. A sensor built
+  into the ball would change its mass and could make it non-compliant with equipment rules.</p>
+
+  <h2>Tradeoffs across the tree</h2>
+  <ul>
+    <li><strong>Technical.</strong> Contact methods (squeeze, drop, tap) measure the hidden damage that matters;
+    non-contact methods mostly measure surface and shape. The most informative non-contact options (X-ray, ultrasound
+    scanning) are also the most expensive.</li>
+    <li><strong>Customer.</strong> Players care most about the result they can trust and the time it takes. Bounce
+    results are intuitive; tap results are powerful but must be translated into a simple grade.</li>
+    <li><strong>Manufacturing and business.</strong> The producer constraints are a $400 prototype budget, parts
+    buildable in class, and completion this semester. Load cells, microphones and solenoids fit easily; thermal cameras,
+    ultrasonic scanners and X-ray do not.</li>
+    <li><strong>Safety.</strong> Squeeze fixtures have pinch points, launchers fire a ball at speed, and X-ray involves
+    radiation. Tap and drop methods carry little risk.</li>
+    <li><strong>Environmental.</strong> An often-repeated industry estimate puts production at about 500 million
+    balls a year, with no primary source found <a class="cite" href="#ref-6">[6]</a>. A device that identifies a
+    ball's true end of life could keep good balls in play longer; destructive tests do the opposite, and every
+    electronic design adds some e-waste of its own.</li>
+  </ul>
+
+  <h2>Branches pursued and branches set aside</h2>
+  <p>The tree was pruned with four filters drawn from the QFD and the producer constraints: the test must not damage
+  the ball; it must be portable enough for courtside use; its parts must cost under $400; and it must be buildable
+  this semester. Among what remained, the team favored methods that detect hidden softening or early cracks, since
+  players already notice gross cracks.</p>
+  <p><strong>Promising branches (bold in the tree).</strong></p>
+  <ul>
+    <li><strong>Tap</strong>: tap many spots while the ball turns. The strongest lead for crack warning: it can locate a
+    weak spot using low-cost parts.</li>
+    <li><strong>Squeeze</strong>: plate compression, including in three directions. Measures stiffness directly and
+    ties to the USA Pickleball compression requirement.</li>
+    <li><strong>Drop or hit</strong>: microphone bounce timing and a force plate. Tie to the bounce requirement and give
+    an intuitive result.</li>
+    <li><strong>Wave-based</strong>: drop-sound recording. One drop gives softening, bounce and crack cues, and can
+    share a microphone with the bounce timer.</li>
+  </ul>
+  <p>These four can share one microphone, one load cell and one microcontroller, which suggested that a later product
+  could combine them.</p>
+  <p><strong>Branches set aside (crossed out).</strong></p>
+  <ul>
+    <li>Destructive tests (piercing or cutting the ball, pulling the seam apart) and weighing: useful for factory
+    sampling, but they destroy the ball or, in the case of weight, barely respond to wear.</li>
+    <li>Ball launcher: accurate rebound speed, but not portable and adds safety risk. Kept only as a possible laboratory
+    reference.</li>
+    <li>Ultrasound crack scanning, thermal imaging, radar imaging, X-ray and CT: all exceed the budget, and X-ray adds a
+    safety and regulatory burden.</li>
+    <li>A sensor built into the ball: changes the ball and may make it illegal for play.</li>
+  </ul>
+  <p>Methods in plain text, such as image recognition, LIDAR and game counting, remain possible but lower priority,
+  because most cannot detect softening.</p>
+
+  <h2>Gaps and new ideas</h2>
+  <p>After drawing the first version of the tree (<a href="conceptualization.html#concept-tree">Figure 4</a>), the team
+  reviewed it for sparse branches: branches with few usable ideas, or none aimed at the damage that matters. Five gaps
+  produced twelve new ideas, shown in italics with a + in Figure 8.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Gap found</th><th>New ideas</th></tr></thead>
+      <tbody>
+        <tr><td>Tap, the lead direction, had only two ideas, and neither could locate a weak spot</td><td>Tap many spots while the ball turns; tap with a paddle while a phone app listens; drop a small weight onto the ball for a repeatable tap; excite the ball with a vibration motor and read an accelerometer</td></tr>
+        <tr><td>Half the puncture ideas destroyed the ball, and none targeted the holes where cracks begin</td><td>Spring pin with a go/no-go press depth; probe for the edge of each hole; air-puff dent test borrowed from the optometrist's eye-pressure test</td></tr>
+        <tr><td>Wave-based had one usable idea and no affordable crack detection</td><td>Play a tone into the holes and measure the echo inside the ball; track bounce height with an mmWave sensor</td></tr>
+        <tr><td>No low-cost way to see early cracks without contact</td><td>Polarized light to show stress in the plastic (and the tone-and-echo idea above)</td></tr>
+        <tr><td>Nothing worked during play; every idea stopped the game for a separate test</td><td>Courtside pad that grades the warm-up bounce; drop the ball side by side with a new reference ball (and the paddle tap above)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 8.</b> Gaps in the first tree and the ideas generated to fill them.</p>
+  <p>The multi-spot tap idea moved straight into the promising set, and its rotating cradle shaped
+  <a href="top-concepts.html#concept-a">Concept A</a>, the basis of DinkCheck. The other
+  new ideas are untested, and some, such as polarized light on an opaque ball, may not work; they are recorded so the
+  design space stays complete.</p>
+
+  <h2>Connections to the other methods</h2>
+  <ul>
+    <li><strong>Benchmarking of manufacturer quality control</strong> contributed the bounce test, compression test,
+    hardness tester, roundness gauges, spin test, wall-thickness gauge, factory inspection cameras and destructive seam
+    tests.</li>
+    <li><strong>Patent and prior-art search</strong> contributed the two-plate tester with spring and dial gauge, the
+    three-axis squeeze, and resonance tap testing.</li>
+    <li><strong>Analogy</strong> contributed the air-puff dent test.</li>
+    <li><strong>Customer research</strong> pointed to soft spots that can be pressed in by finger, to the bounce check
+    players already do, and to the need for a test that fits into play, which exposed the “use during play” gap.</li>
+  </ul>
+
+  <h2>References</h2>
+  <ol class="refs" style="list-style:none;padding-left:0">
+    <li id="ref-1">[1] Pickleball Science, “How Many Games Will a Pickleball Last?” Mar. 15, 2023.
+      <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/">pickleballscience.org</a></li>
+    <li id="ref-2">[2] USA Pickleball, <em>Equipment Standards Manual</em>, Rev. 3.0, Jan. 2025, rules 2.D.3–2.D.6.
+      <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">usapickleball.org</a></li>
+    <li id="ref-3">[3] U.S. Patent 8,771,114, “Baseball with improved core and enhanced durability” (describes the ASTM F1888 compression-displacement procedure).
+      <a href="https://patents.google.com/patent/US8771114">patents.google.com</a></li>
+    <li id="ref-4">[4] Pickleball Science, “How Does Temperature Affect a Pickleball?” 2024.
+      <a href="https://pickleballscience.org/how-does-temperature-affect-a-pickleball/">pickleballscience.org</a></li>
+    <li id="ref-5">[5] Pickleball Science, “DuraFast 40 vs Franklin X-40 Pickleballs,” 2023.
+      <a href="https://pickleballscience.org/durafast-40-vs-franklin-x-40-pickleballs/">pickleballscience.org</a></li>
+    <li id="ref-6">[6] P3 Cares, home page, accessed Sep. 30, 2026. <a href="https://www.p3pbcares.org/">p3pbcares.org</a>;
+      see the waste discussion on <a href="research.html">Market Research</a>.</li>
+  </ol>
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="functional-decomposition.html">&larr; Functional Decomposition</a>
+    <a href="top-concepts.html">Top Concepts &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team DinkCheck (Team 1) &middot;
+    Gate Review 2: Product Concept &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposed Concept Description · DinkCheck · Team 1 Design Portfolio</title>
+<meta name="description" content="Gate Review 2 overview: DinkCheck, the enclosed rolling compression station, how it works, why it was selected, what the alpha prototype showed, and the team's recommendation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#d9a86c" stroke="#6b4526" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#5a3a22"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#fed500"/><stop offset="100%" stop-color="#ff9100"/></linearGradient></defs>
+</svg><span>DinkCheck</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label is-active" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html" aria-current="page">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+
+  <p class="eyebrow">Gate Review 2 &middot; Concept &amp; Prototyping</p>
+  <h1>Proposed Concept Description</h1>
+  <p class="lead">A pickleball goes soft long before it cracks, and players cannot feel the difference until it costs
+  them a point. DinkCheck squeezes the ball at several points around its circumference, measures how stiff it is and
+  how much energy it loses, and tells the player whether it still plays like a good ball.</p>
+
+  <div class="grid grid-3" style="align-items:center">
+    <figure style="margin:0">
+      <a href="assets/img/gr2/dinkcheck-closed.png"><img src="assets/img/gr2/dinkcheck-closed.png" alt="DinkCheck concept render with the door closed: dark upper shell, white lower shell, lime seam and a round window showing the ball inside" loading="lazy" style="max-height:380px;object-fit:contain;background:#f6f6f2"></a>
+    </figure>
+    <figure style="margin:0">
+      <a href="assets/img/gr2/dinkcheck-open.png"><img src="assets/img/gr2/dinkcheck-open.png" alt="DinkCheck concept render with the door open, showing the ball on the roller cradle" loading="lazy" style="max-height:380px;object-fit:contain;background:#f6f6f2"></a>
+    </figure>
+    <figure style="margin:0">
+      <a href="assets/img/gr2/proto-angle.jpg"><img src="assets/img/gr2/proto-angle.jpg" alt="Full-scale alpha prototype in pink foam: two pillars, a crossbar, a force press on elastic tubing above a pickleball resting on PVC rollers" loading="lazy" style="max-height:380px;object-fit:cover"></a>
+    </figure>
+  </div>
+  <p style="margin-top:0.7rem"><b>Figure 1.</b> DinkCheck: concept render with the door closed and open (team,
+  AI-assisted), and the full-scale alpha prototype of its press and roller cradle.</p>
+
+  <h2>The opportunity from Gate Review 1</h2>
+  <p>Gate Review 1 found that frequent, competitive players cannot reliably tell when a ball is worn out. Consistent
+  performance is their top equipment criterion (52.8% rank it first), yet 52.8% rate their confidence in judging
+  equipment at 3 or lower out of 7 <a class="cite" href="#ref-1">[1]</a>. The damage is mostly hidden: in
+  <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/">Pickleball Science's play test</a>, a
+  Franklin X-40 lost about 10% of its stiffness per hour of play, falling from 93.5 to 75.2 lb/in over two hours, well
+  before it cracked <a class="cite" href="#ref-2">[2]</a>. No commercial tester checks balls in service; the
+  instruments that exist test paddles or factory quality and cost $2,900 to $4,995 (<a href="competition.html">Competition
+  Analysis</a>). For Gate Review 2 the team narrowed the customer to the <strong>individual competitive player</strong>
+  who carries the device to the court, rather than a station installed at a club.</p>
+
+  <h2>What guided the concept</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Customer need (weight)</th><th>Specification</th><th>Target</th></tr></thead>
+      <tbody>
+        <tr><td>Identifies low-performance balls (15%)</td><td>Agreement with the USA Pickleball drop test; depth resolution</td><td>≥ 90%; 0.025 mm</td></tr>
+        <tr><td>Doesn't damage the ball (13%)</td><td>Rebound change after 50 tests</td><td>≤ 0.5 in.</td></tr>
+        <tr><td>Gives repeatable results (13%)</td><td>Change across repeat tests and operators</td><td>&lt; 10%</td></tr>
+        <tr><td>Increases confidence (10%)</td><td>Gain on a 7-point confidence scale</td><td>≥ 2 points</td></tr>
+        <tr><td>Affordable (10%) · Tests quickly (10%)</td><td>Retail price · time per ball</td><td>≤ $100 · ≤ 30 s</td></tr>
+        <tr><td>Fits routine (7%) · Portable (7%)</td><td>User actions · packed volume and weight</td><td>≤ 2 · ≤ 2.5 L, ≤ 2 kg</td></tr>
+        <tr><td>Producer constraints</td><td>Manufacturing cost · time to manufacture</td><td>&lt; $400 · &lt; 8 weeks</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 1.</b> The needs, specifications and constraints that guided concept generation. Weights combine the
+  four stakeholders' rankings in the GR2 <a href="product-definition.html#qfd">House of Quality</a>
+  <a class="cite" href="#ref-3">[3]</a>.</p>
+
+  <h2>How DinkCheck works</h2>
+  <p>The player opens the door with the finger recess, sets the ball on a two-roller cradle, closes the door and presses
+  the start button on top: two actions. A stepper-driven lead screw lowers a plate onto the ball; the load cell detects
+  contact, then the plate compresses the ball a fixed distance while force is recorded on the way down and on the way
+  back up. That gives two damage signals, <strong>stiffness</strong> (force ÷ deflection) and
+  <strong>hysteresis</strong> (the loop between loading and unloading). The plate lifts, the rollers turn the ball,
+  and the squeeze repeats at 4–6 positions. A position that reads far from the others flags a soft spot, or a ball
+  resting on a hole or seam. The controller compares the results with a new ball of the same model and shows
+  <strong>Playable</strong> or <strong>Non-playable</strong> on the readout, while the player watches the test through
+  the door's window.</p>
+  <p>Fixed-displacement compression is the principle behind the compression test in the
+  <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">USA Pickleball Equipment
+  Standards Manual</a>, which requires new balls to average below 43 lbf under ASTM F1888
+  <a class="cite" href="#ref-4">[4]</a>. DinkCheck applies it to balls already in play.</p>
+
+  <h2>Subsystems and how they interact</h2>
+  <div class="grid grid-3">
+    <div class="card"><h3>Housing</h3><p style="margin:0">Dark upper shell for the drive, white lower shell for the cradle, windowed door and finger-pull recess.</p></div>
+    <div class="card"><h3>Ball handling</h3><p style="margin:0">Two silicone-sleeved rollers that cradle the ball and turn it between squeezes.</p></div>
+    <div class="card"><h3>Compression</h3><p style="margin:0">Stepper and lead screw drive the plate; a collar sets a 5 mm hard stop.</p></div>
+    <div class="card"><h3>Force sensing</h3><p style="margin:0">A load cell in the full force path reads force through loading and unloading.</p></div>
+    <div class="card"><h3>Control</h3><p style="margin:0">Computes stiffness, hysteresis and the outlier check, subtracts frame flex from a steel-ball calibration, grades the ball.</p></div>
+    <div class="card"><h3>User interface</h3><p style="margin:0">One start button and a readout on the top face; the window shows the test.</p></div>
+  </div>
+  <p>The controller commands the compression drive, the drive deforms the ball, the load cell returns the force, and
+  the controller decides whether to squeeze again, roll the ball, or report a grade. The architecture drawing and
+  operating sequence are on <a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a>.</p>
+
+  <h2>Benefits and differentiation</h2>
+  <p>DinkCheck replaces a squeeze or bounce by feel with a measured answer. It detects softening before cracks are
+  visible, and because it reads two signals at several positions it finds local soft spots that a single squeeze or
+  bounce misses; Pickleball Science stopped its play test after three hours precisely because stiffness began to vary
+  with ball orientation <a class="cite" href="#ref-2">[2]</a>. The player can watch the test happen, which builds
+  trust, and it is the first tester aimed at balls in play rather than at paddles or factory quality control.</p>
+
+  <h2>Why this concept was selected</h2>
+  <p>Five meaningfully different concepts were compared against the test-gun datum with a Pugh matrix and a weighted
+  matrix built from the GR2 QFD. Concept A, the Rolling Compression Station, was refined with two features from the
+  CubeClamp (E), a hysteresis signal and steel-ball calibration, and the refined A′ scored highest at 3.26, ahead of the
+  CubeClamp at 3.19 <a class="cite" href="#ref-5">[5]</a>. Because that gap is smaller than one rating step, the team
+  decided on buildability: the CubeClamp's ball does not fit through its 40 mm opening, and it needs two synchronized
+  motors and a machined flexure, while A′ uses off-the-shelf parts and two user actions. The full argument is on
+  <a href="downselection.html">Downselection</a>.</p>
+
+  <h2>Advantages, limitations, risks and open questions</h2>
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Advantages</h3>
+      <ul style="margin-bottom:0">
+        <li>Objective and repeatable: the motor, not the user, sets the squeeze.</li>
+        <li>Two damage signals at 4–6 positions per ball.</li>
+        <li>Non-destructive: a software force limit and a 5 mm hard stop cap the deformation; the door keeps fingers
+        out of the squeeze.</li>
+        <li>Off-the-shelf parts, about $130 against the $400 prototype budget.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Limitations and risks</h3>
+      <ul style="margin-bottom:0">
+        <li>The alpha prototype showed that two plain rollers let the ball drift on the other axis, so the cradle needs
+        multi-axial contact to control which spots are pressed.</li>
+        <li>At about 8 in. tall it is slightly too big for a bag; it exceeds the 2.5 L / 2 kg targets.</li>
+        <li>Two motors make the $33 unit-cost target hard.</li>
+        <li>One rotation axis tests about 30% of the surface.</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Open questions.</strong> What Playable threshold fits each common ball model, and how should temperature be
+  handled, given that stiffness changes strongly with temperature <a class="cite" href="#ref-6">[6]</a>?</p>
+
+  <h2>Gate Review 2 recommendation</h2>
+  <div class="callout">
+    <span class="callout-title">Proceed with DinkCheck (refined concept A′) into detailed design</span>
+    <p style="margin:0">First steps: a motorized prototype with a multi-axial cradle; drop tests of 20 new and used
+    balls to confirm at least 90% agreement with the bounce test; 50 tests on control balls to confirm at most 0.5 in.
+    of rebound change; and a smaller frame. If agreement falls short, the CubeClamp's curve-based approach is the
+    fallback. Details: <a href="alpha-prototype.html#recommendation">Proposed Concept &amp; Alpha Prototype</a>.</p>
+  </div>
+
+  <h2>The detailed record</h2>
+  <p>Each page below documents one step from product requirements to the gate recommendation.</p>
+  <div class="grid grid-2" style="margin-top:0.6rem">
+    <a class="section-link" href="conceptualization.html">
+      <span class="num">SECTION 01</span>
+      <h3>Conceptualization Methods</h3>
+      <p>Seven methods used to explore the design space, and what each one produced.</p>
+    </a>
+    <a class="section-link" href="functional-decomposition.html">
+      <span class="num">SECTION 02</span>
+      <h3>Functional Decomposition</h3>
+      <p>What the tester must do, with its material, energy and signal flows.</p>
+    </a>
+    <a class="section-link" href="concept-tree.html">
+      <span class="num">SECTION 03</span>
+      <h3>Concept Tree</h3>
+      <p>Every way to sense ball damage, grouped by physical principle, with gaps filled.</p>
+    </a>
+    <a class="section-link" href="top-concepts.html">
+      <span class="num">SECTION 04</span>
+      <h3>Top Concepts</h3>
+      <p>Five different concepts, one per team member, each with a drawing.</p>
+    </a>
+    <a class="section-link" href="downselection.html">
+      <span class="num">SECTION 05</span>
+      <h3>Downselection</h3>
+      <p>Feasibility screen, Pugh matrix and QFD-weighted scoring, with sensitivity checks.</p>
+    </a>
+    <a class="section-link" href="alpha-prototype.html">
+      <span class="num">SECTION 06</span>
+      <h3>Proposed Concept &amp; Alpha Prototype</h3>
+      <p>Architecture, operating sequence, the alpha prototype and next steps.</p>
+    </a>
+    <a class="section-link" href="social-impact.html">
+      <span class="num">SECTION 07</span>
+      <h3>Social Impact Statement</h3>
+      <p>Who the product affects, how, and the design decisions made because of it.</p>
+    </a>
+  </div>
+
+  <h2>References</h2>
+  <ol class="refs" style="list-style:none;padding-left:0">
+    <li id="ref-1">[1] Team 1, “Activity 10a: Consumer Survey,” ME 455, 2026 (n=36 responses). See <a href="research.html">Market Research</a>.</li>
+    <li id="ref-2">[2] Pickleball Science, “How Many Games Will a Pickleball Last?” Mar. 15, 2023.
+      <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/">pickleballscience.org</a></li>
+    <li id="ref-3">[3] Team 1, “ME455 Pickle QFD” workbook, GR2 QFD tab, 2026. See <a href="product-definition.html#qfd">House of Quality</a>.</li>
+    <li id="ref-4">[4] USA Pickleball, <em>Equipment Standards Manual</em>, Rev. 3.0, Jan. 2025, rule 2.D.6.
+      <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">usapickleball.org</a></li>
+    <li id="ref-5">[5] Team 1, “DinkCheck Downselection (condensed),” ME 455, Oct. 26, 2026.</li>
+    <li id="ref-6">[6] Pickleball Science, “How Does Temperature Affect a Pickleball?” 2024.
+      <a href="https://pickleballscience.org/how-does-temperature-affect-a-pickleball/">pickleballscience.org</a></li>
+  </ol>
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="value-proposition.html">&larr; Market Value Proposition</a>
+    <a href="conceptualization.html">Conceptualization Methods &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team DinkCheck (Team 1) &middot;
+    Gate Review 2: Product Concept &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

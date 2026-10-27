@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conceptualization Methods · DinkCheck · Team 1 Design Portfolio</title>
+<meta name="description" content="The seven project-specific methods the team used to explore the design space for a pickleball condition tester, and what each one produced.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#d9a86c" stroke="#6b4526" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#5a3a22"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#fed500"/><stop offset="100%" stop-color="#ff9100"/></linearGradient></defs>
+</svg><span>DinkCheck</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label is-active" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html" aria-current="page">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+
+  <p class="eyebrow">Gate Review 2 &middot; Concept &amp; Prototyping</p>
+  <h1>Conceptualization Methods</h1>
+  <p class="lead">The team started with one question from Gate Review 1, how can a player know a ball is still good,
+  and used seven methods to open it up. Each method looked at the problem from a different side: physical form, product
+  features, required functions, sensing physics, combinations of options, solutions that already exist in other
+  sports, and AI-assisted visualization.</p>
+
+  <nav class="toc" aria-label="On this page">
+    <span class="toc-title">Methods</span>
+    <a href="#brainstorming">Brainstorming</a>
+    <a href="#mind-map">Mind map</a>
+    <a href="#functional-decomposition">Functional decomposition</a>
+    <a href="#concept-tree">Concept tree</a>
+    <a href="#combinational-table">Combinational table</a>
+    <a href="#external-search">External search and analogy</a>
+    <a href="#ai-visualization">AI visualization</a>
+    <a href="#breadth">Breadth and limits</a>
+  </nav>
+
+  <h2 id="brainstorming">1. Brainstorming and rapid sketching</h2>
+  <figure>
+    <a href="assets/img/gr2/brainstorm-sketches.jpg"><img src="assets/img/gr2/brainstorm-sketches.jpg" alt="Large sheet of paper covered in pencil and marker sketches of ball testers: tubes holding balls, squeeze boxes, a wall-thickness probe, a scanner, a hand crank, and a central mind map" loading="lazy"></a>
+    <figcaption><b>Figure 2.</b> The team's shared brainstorming sheet. Ideas include stacked-ball tubes, a squeeze box,
+    a wall-thickness probe, a 3D scanner that turns the ball, a hand-crank power source and a “smart ball.” Select the
+    image to open it at full size.</figcaption>
+  </figure>
+  <p><strong>How we applied it.</strong> All five members sketched on one shared sheet, building on each other's
+  drawings. The session concentrated on how a player would hold and operate a tester, how the ball would sit
+  in it, and how the result would be shown, rather than on the measurement itself.</p>
+  <p><strong>What it addressed.</strong> Portability, ease of use and a quick keep-or-retire decision: the
+  needs <em>not bulky</em>, <em>requires minimal changes to existing practices</em> and <em>fast analysis</em> in the
+  QFD <a class="cite" href="#ref-1">[1]</a>.</p>
+  <p><strong>Inputs.</strong> Team intuition and our own experience as players. This session drew less on the survey
+  than later methods did, so its ideas were treated as starting points to test, not conclusions.</p>
+  <p><strong>What it produced.</strong> Early forms for the device: a tube that holds several balls, a bench box that
+  squeezes the ball, a handheld unit with a grip, a scanner that rotates the ball, and power by hand crank or solar
+  panel for courts without outlets.</p>
+  <p><strong>How it influenced later work.</strong> The handheld and bench forms carried through to the
+  <a href="top-concepts.html">top concepts</a> (the test gun and the compression station), and the rotating-scanner
+  sketch reappeared as the rollers that turn the ball in DinkCheck.</p>
+
+  <h2 id="mind-map">2. Mind map</h2>
+  <figure>
+    <a href="assets/img/gr2/mind-map.jpg"><img src="assets/img/gr2/mind-map.jpg" alt="Mind map centred on Pickleball Tester with branches for testing method, testing metrics, accuracy and reliability, interface and display, ball handling, user interaction, power and energy, shape and design, and aesthetics" loading="lazy"></a>
+    <figcaption><b>Figure 3.</b> Mind map of the pickleball tester. Nine branches split the product into design questions;
+    the box at lower right records the five functions the team agreed every concept must perform.</figcaption>
+  </figure>
+  <p><strong>How we applied it.</strong> We placed the tester at the centre and branched outward into testing method,
+  testing metrics, accuracy and reliability, interface and display, ball handling, user interaction, power, shape and
+  aesthetics, listing options under each.</p>
+  <p><strong>What it addressed.</strong> Reliable condition assessment, ease of use, portability and clear
+  communication of the result, the customer needs ranked highest in Gate Review 1 <a class="cite" href="#ref-1">[1]</a>.</p>
+  <p><strong>Inputs.</strong> The prioritized customer needs from the survey and interviews, and the ideas from the
+  brainstorming session.</p>
+  <p><strong>What it produced.</strong> Nine test types (bounce, compression, impact, drop, rebound, deformation,
+  rotation, sound or vibration, and combinations), ten candidate metrics, and the most important insight of the
+  session: the tester must be <em>accurate and repeatable</em>, which led to the ideas of a reference ball and a
+  calibration step. The team also agreed the five functions every concept must perform: apply a stimulus, measure the
+  response, evaluate condition, communicate the result, and control the test conditions.</p>
+  <p><strong>How it influenced later work.</strong> The branches became the rows of the
+  <a href="#combinational-table">combinational table</a>, and “compare with a reference ball” became the grading
+  rule in the selected concept.</p>
+
+  <h2 id="functional-decomposition">3. Functional decomposition</h2>
+  <p><strong>How we applied it.</strong> We described what the tester must do as verb–noun functions linked by flows
+  of material (the ball), energy and signal, without naming any part.</p>
+  <p><strong>What it addressed.</strong> The overall function, <em>determine playability</em>, and the subfunctions
+  that most affect value: apply force, measure ball properties, determine softness.</p>
+  <p><strong>Inputs.</strong> The mind map's five agreed functions and the Gate Review 1 requirement that testing must
+  not damage the ball.</p>
+  <p><strong>What it produced.</strong> Separate option lists for each function: five ways to secure the ball, five to
+  rotate it, three to apply force, two control modes, three sensors and two decision rules.</p>
+  <p><strong>How it influenced later work.</strong> Choosing one option per function produced the DinkCheck
+  architecture. The diagrams and option table are on <a href="functional-decomposition.html">Functional
+  Decomposition</a>.</p>
+
+  <h2 id="concept-tree">4. Concept tree and internal searching</h2>
+  <figure>
+    <a href="assets/img/gr2/concept-tree-v1.jpg"><img src="assets/img/gr2/concept-tree-v1.jpg" alt="First version of the concept classification tree, splitting Detect Ball Damage into physical and non-physical methods and seven sensing branches" loading="lazy"></a>
+    <figcaption><b>Figure 4.</b> First version of the concept classification tree, before gaps were filled. The
+    completed tree is on <a href="concept-tree.html">Concept Tree</a>.</figcaption>
+  </figure>
+  <p><strong>How we applied it.</strong> We classified every way to tell whether a ball is worn out by the physical
+  effect it senses: squeeze, poke, drop, tap, light, waves, or indirect estimates.</p>
+  <p><strong>What it addressed.</strong> The primary function, detecting ball damage, and specifically the hidden
+  softening that players cannot see.</p>
+  <p><strong>Inputs.</strong> Gate Review 1 secondary research on how balls degrade, the USA Pickleball ball standards,
+  and the patents and products found during benchmarking.</p>
+  <p><strong>What it produced.</strong> About fifty methods in seven branches. Reviewing the first version for sparse
+  branches added twelve new ideas, including tapping the ball at many spots while it turns.</p>
+  <p><strong>How it influenced later work.</strong> Four branches (squeeze, tap, drop and sound) were kept for
+  concept development, and pruning filters drawn from the QFD removed destructive, unaffordable and unsafe methods.</p>
+
+  <h2 id="combinational-table">5. Combinational table</h2>
+  <figure>
+    <a href="assets/img/gr2/combinational-table.png"><img src="assets/img/gr2/combinational-table.png" alt="Combinational table with rows Evaluate Condition, Testing Method and Power Supply, each with four options" loading="lazy" style="max-width:720px"></a>
+    <figcaption><b>Figure 5.</b> Combinational table. Choosing one option from each row defines a system concept; the
+    table spans 4 × 4 × 4 = 64 combinations.</figcaption>
+  </figure>
+  <p><strong>How we applied it.</strong> We took three functions from the mind map, how to evaluate condition, how to
+  test, and how to power the device, listed four options for each, and combined one option from each row.</p>
+  <p><strong>What it addressed.</strong> How the device applies a stimulus, how it decides whether a ball is still
+  playable, and where its energy comes from: the needs for reliable assessment and convenient courtside use.</p>
+  <p><strong>Inputs.</strong> The options listed in the mind map, refined in team discussion.</p>
+  <p><strong>What it produced.</strong> Whole-system concepts instead of isolated features. The top concepts can be read
+  as paths through the table:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Concept</th><th>Evaluate condition</th><th>Testing method</th><th>Power supply</th></tr></thead>
+      <tbody>
+        <tr><td>A. Rolling Compression Station (DinkCheck)</td><td>Compare to reference ball</td><td>Deformation test</td><td>Charger (12 V supply)</td></tr>
+        <tr><td>B. Three-prong fork</td><td>Compare to threshold measurement</td><td>Deformation test</td><td>Not specified</td></tr>
+        <tr><td>C. Instrumented glove</td><td>Compare to threshold measurement</td><td>Deformation test (by hand)</td><td>Batteries</td></tr>
+        <tr><td>D. Test gun</td><td>Condition score</td><td>Deformation test</td><td>Not specified</td></tr>
+        <tr><td>E. CubeClamp</td><td>Combine multiple test results (stiffness, hysteresis, bulge)</td><td>Deformation test</td><td>Not specified</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 2.</b> The top concepts mapped onto the combinational table.</p>
+  <p><strong>How it influenced later work.</strong> The mapping shows that all five top concepts use a deformation
+  test, the method most directly tied to stiffness, and that power remains the least explored row. Solar and
+  human power were not developed further, which is why courtside power is still an open question for the selected
+  concept.</p>
+
+  <h2 id="external-search">6. External search and analogy</h2>
+  <p><strong>How we applied it.</strong> We looked at how other sports and industries already test balls and hollow
+  parts, and borrowed principles from unrelated fields.</p>
+  <p><strong>What it addressed.</strong> Measurement credibility: whether a method has been proven, and what standard
+  it could be checked against.</p>
+  <p><strong>Inputs.</strong> Manufacturer quality-control methods, tennis and golf ball testers, patents on resonance
+  inspection of steel balls and composites, and the USA Pickleball standard
+  <a class="cite" href="#ref-2">[2]</a><a class="cite" href="#ref-3">[3]</a>.</p>
+  <p><strong>What it produced.</strong> The two-plate squeeze tester with a dial gauge (tennis and golf ball testers),
+  squeezing along three axes (the ITF tennis ball tester), resonance tap testing, rotating rollers from automated
+  ball-inspection rigs, and, by analogy with the optometrist's eye-pressure test, an air-puff dent test.</p>
+  <p><strong>How it influenced later work.</strong> Prior art supplied the measurement principle the selected concept
+  relies on. The compression test is how the USA Pickleball standard checks new balls
+  <a class="cite" href="#ref-2">[2]</a>, and rotating a ball on rollers to inspect it at many positions is proven
+  in ball-inspection rigs <a class="cite" href="#ref-3">[3]</a>.</p>
+
+  <h2 id="ai-visualization">7. AI-assisted visualization</h2>
+  <div class="grid grid-2" style="align-items:center">
+    <figure style="margin:0">
+      <a href="assets/img/gr2/dinkcheck-open.png"><img src="assets/img/gr2/dinkcheck-open.png" alt="AI-assisted render of the DinkCheck housing with its front door open, showing the ball on the roller cradle" loading="lazy" style="max-height:420px;object-fit:contain;background:#f6f6f2"></a>
+    </figure>
+    <figure style="margin:0">
+      <a href="assets/img/gr2/concept-e-section.png"><img src="assets/img/gr2/concept-e-section.png" alt="AI-assisted section drawing of the CubeClamp concept" loading="lazy"></a>
+    </figure>
+  </div>
+  <p style="margin-top:0.7rem"><b>Figure 5a.</b> Renders and drawings produced by prompting an AI design tool: the
+  DinkCheck housing (left) and the CubeClamp section (right).</p>
+  <p><strong>How we applied it.</strong> Each member turned their concept into renders, section drawings and short
+  animations by describing it to an AI design tool, then revised it through follow-up prompts. A typical prompt
+  specified one change at a time and how to show it, for example: remove the oval notch on the side of the housing,
+  add a 20 × 12 × 4 mm finger-pull recess beside the door's free edge so the door overhangs it, and show a close-up
+  of a finger under the edge and a view with the door open at 90° <a class="cite" href="#ref-5">[5]</a>.</p>
+  <p><strong>What it addressed.</strong> Form, interaction and fit: how a player opens the tester, loads a ball and
+  reads the result, the emotional and aesthetic qualities in the QFD, and whether parts physically fit together.</p>
+  <p><strong>Inputs.</strong> The top-concept descriptions, the CAD parts list, and the QFD targets for user actions
+  and packed volume.</p>
+  <p><strong>What it produced.</strong> The enclosed DinkCheck housing, with a windowed door, finger-pull recess and
+  lime seam carried over from the CubeClamp's look; and the animation that exposed the CubeClamp's loading problem:
+  its 40 mm opening cannot admit a 74 mm ball.</p>
+  <p><strong>How it influenced later work.</strong> The loading finding weighed against the CubeClamp in
+  <a href="downselection.html">downselection</a>, and the housing renders became the proposed concept's form. The
+  renders are visualizations, not engineering models; dimensions still come from the CAD model and prototype.</p>
+
+  <h2 id="breadth">Breadth of the design space, and its limits</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Design dimension</th><th>Different approaches the methods produced</th></tr></thead>
+      <tbody>
+        <tr><td>Primary function (sense condition)</td><td>Squeeze, poke, bounce, tap, sound, light, radar, use-history estimates</td></tr>
+        <tr><td>Auxiliary functions (hold and present the ball)</td><td>Roller cradle, three-prong fork, cone seat, the player's own hand, handheld cradle</td></tr>
+        <tr><td>Energy flow</td><td>Motor and lead screw, solenoid tapper, human squeeze, gravity drop; wall, battery, solar or hand-crank power</td></tr>
+        <tr><td>Information flow</td><td>Absolute threshold, ratio to a reference ball, condition score, pass/fail light, wrist display</td></tr>
+        <tr><td>Usability, aesthetics and emotion</td><td>Bench instrument that feels like a pro-shop diagnostic, handheld gun, wearable glove, color and finish options</td></tr>
+        <tr><td>Business, safety and manufacturing constraints</td><td>Off-the-shelf parts under $400, no destructive testing, no X-ray, no sensor inside the ball</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 3.</b> How far the methods spread across the design space.</p>
+  <p>The search was bounded on purpose by the producer constraints: a $400 prototype budget, parts buildable in class,
+  and completion within the semester. Methods that destroy the ball, cost far more than the budget, or would change
+  the ball itself were set aside early. Two further limits shaped the result. Brainstorming relied on the team's own
+  play experience more than on customer evidence, and power and aesthetics were explored less deeply than sensing.
+  Finally, the team assumes that stiffness is the property that best predicts how a ball plays. That assumption is
+  supported by published wear tests <a class="cite" href="#ref-4">[4]</a> but has not yet been checked against
+  players' own judgments.</p>
+
+  <h2>References</h2>
+  <ol class="refs" style="list-style:none;padding-left:0">
+    <li id="ref-1">[1] Team 1, QFD workbook and submission, ME 455, 2026. See <a href="product-definition.html#qfd">House of Quality</a>.</li>
+    <li id="ref-2">[2] USA Pickleball, <em>Equipment Standards Manual</em>, Rev. 3.0, Jan. 2025, rules 2.D.3–2.D.6.
+      <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">usapickleball.org</a></li>
+    <li id="ref-3">[3] Team 1, “Pickleball Ball-Health Testing: Squeeze and Acoustic Tap Methods,” test-method summary
+      with prior-art review (tennis, golf and bearing-ball testers), ME 455, Oct. 2026.</li>
+    <li id="ref-4">[4] Pickleball Science, “How Many Games Will a Pickleball Last?” Mar. 15, 2023.
+      <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/">pickleballscience.org</a></li>
+    <li id="ref-5">[5] Team 1, prompt log for the DinkCheck housing renders (v5 → v6: finger-pull recess), Oct. 2026.</li>
+  </ol>
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="concept.html">&larr; Proposed Concept Description</a>
+    <a href="functional-decomposition.html">Functional Decomposition &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team DinkCheck (Team 1) &middot;
+    Gate Review 2: Product Concept &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

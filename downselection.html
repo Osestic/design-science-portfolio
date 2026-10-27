@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Downselection · DinkCheck · Team 1 Design Portfolio</title>
+<meta name="description" content="Feasibility screen, Pugh matrix and QFD-weighted scoring of the five top concepts against the test-gun datum, with sensitivity checks and the defense of the refined Rolling Compression Station (A′).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#d9a86c" stroke="#6b4526" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#5a3a22"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#fed500"/><stop offset="100%" stop-color="#ff9100"/></linearGradient></defs>
+</svg><span>DinkCheck</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label is-active" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html" aria-current="page">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+
+  <p class="eyebrow">Gate Review 2 &middot; Concept &amp; Prototyping</p>
+  <h1>Downselection</h1>
+  <p class="lead">The team selected the <strong>refined Rolling Compression Station (A′)</strong>: Concept A plus two
+  features borrowed from the CubeClamp (E). It scored highest in the weighted matrix, 3.26 of 5, and held first place
+  under most alternative weightings. The matrix alone could not separate it from the CubeClamp; buildability decided
+  the choice <a class="cite" href="#ref-4">[4]</a>.</p>
+
+  <nav class="toc" aria-label="On this page">
+    <span class="toc-title">On this page</span>
+    <a href="#process">Process</a>
+    <a href="#criteria">Criteria and weights</a>
+    <a href="#pugh">Pugh matrix</a>
+    <a href="#scoring">Weighted scoring</a>
+    <a href="#sensitivity">Sensitivity</a>
+    <a href="#judgment">Matrix and judgment</a>
+    <a href="#defense">Why A′</a>
+  </nav>
+
+  <h2 id="process">Concepts, datum and process</h2>
+  <p>The five <a href="top-concepts.html">top concepts</a> were evaluated: <strong>A</strong>, Rolling Compression
+  Station; <strong>B</strong>, Three-Prong Fork; <strong>C</strong>, Instrumented Grip Glove; <strong>D</strong>,
+  Instrumented Test Gun; and <strong>E</strong>, CubeClamp. <strong>D, the test gun, is the datum</strong> for both
+  matrices. It is the most generic objective tester, one handheld device, one controlled squeeze and one reading, so
+  using it keeps the reference neutral rather than a team favorite.</p>
+  <ol>
+    <li><strong>Feasibility screen</strong> against the hard constraints: no ball damage, a prototype under $400,
+    buildable this semester, and a test of 30 s or less. No concept was eliminated, but three were flagged. B's
+    ±1.25 mm ball-diameter tolerance causes about ±40% error in squash; C's sensor error (±10–25%) is as large as the
+    softening signal; and E's 40 mm opening cannot admit the 74 mm ball as drawn.</li>
+    <li><strong>Pugh screening matrix.</strong></li>
+    <li><strong>Weighted scoring matrix.</strong></li>
+    <li><strong>Sensitivity checks.</strong></li>
+  </ol>
+
+  <h2 id="criteria">Criteria and weights</h2>
+  <p>The criteria are the eleven customer needs in the team QFD, used unchanged, so each score traces to a need and its
+  specification <a class="cite" href="#ref-1">[1]</a>. Each need's weight comes from how the four stakeholders rank
+  it. Each rank was converted to points (rank 1 = 11 points, rank 11 = 1), multiplied by the stakeholder weight
+  recorded in the QFD, summed, normalized to 100% and rounded to whole percentages. The stakeholder weights are
+  <strong>Player 55%</strong> (primary user and buyer), <strong>Producer 25%</strong> (decides whether the product
+  can be built and sold at the target price), and <strong>Court owner</strong> and <strong>Other players</strong> 10%
+  each (affected by test time, but neither buys nor builds it).</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Criterion (QFD need)</th><th>Definition and governing specification</th><th>Rank: Player / Court owner / Producer / Other</th><th class="num">Weight</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Identifies low-performance balls</strong></td><td>Flags balls that no longer play to standard; ≥ 90% agreement with the USA Pickleball bounce test; 0.025 mm resolution</td><td>1 / 6 / 4 / 2</td><td class="num">15%</td></tr>
+        <tr><td><strong>Doesn't damage the ball</strong></td><td>≤ 0.5 in. rebound change after 50 tests</td><td>4 / 1 / 3 / 3</td><td class="num">13%</td></tr>
+        <tr><td><strong>Gives repeatable results</strong></td><td>&lt; 10% change across repeat tests and operators</td><td>2 / 7 / 5 / 6</td><td class="num">13%</td></tr>
+        <tr><td><strong>Increases confidence in quality</strong></td><td>≥ 2-point gain on a 7-point confidence scale</td><td>3 / 9 / 8 / 7</td><td class="num">10%</td></tr>
+        <tr><td><strong>Affordable</strong></td><td>≤ $100 retail; ≤ $33 unit cost at volume</td><td>7 / 2 / 1 / 10</td><td class="num">10%</td></tr>
+        <tr><td><strong>Tests quickly</strong></td><td>≤ 30 s per ball</td><td>5 / 4 / 9 / 1</td><td class="num">10%</td></tr>
+        <tr><td><strong>Fits existing routine</strong></td><td>≤ 2 user actions</td><td>6 / 10 / 10 / 4</td><td class="num">7%</td></tr>
+        <tr><td><strong>Portable to court</strong></td><td>≤ 2.5 L and ≤ 2 kg</td><td>8 / 8 / 6 / 5</td><td class="num">7%</td></tr>
+        <tr><td><strong>Long-lasting product</strong></td><td>≥ 1,500 test cycles</td><td>10 / 3 / 2 / 9</td><td class="num">7%</td></tr>
+        <tr><td><strong>Works with any ball</strong></td><td>Grades the 5 most-used ball models</td><td>9 / 5 / 7 / 8</td><td class="num">6%</td></tr>
+        <tr><td><strong>Aesthetically pleasing</strong></td><td>≥ 75% aesthetic approval</td><td>11 / 11 / 11 / 11</td><td class="num">2%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 11.</b> Evaluation criteria, definitions, QFD ranks and weights <a class="cite" href="#ref-1">[1]</a>.</p>
+  <p>The performance needs (identify, no damage, repeatable, confidence) carry 51% of the weight, which matches the QFD
+  finding that customer value comes from detection and confidence. Two pairs of criteria could double-count, so each
+  was defined to measure a different quantity: <em>tests quickly</em> versus <em>fits existing routine</em> (seconds
+  versus number of user actions), and <em>identifies</em> versus <em>repeatable</em> (accuracy versus spread between
+  tests and operators).</p>
+
+  <h2 id="pugh">Pugh screening matrix</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Criterion</th><th>A</th><th>B</th><th>C</th><th>D (datum)</th><th>E</th></tr></thead>
+      <tbody>
+        <tr><td>Identifies low-performance balls</td><td>+</td><td>−</td><td>−</td><td>0</td><td>+</td></tr>
+        <tr><td>Gives repeatable results</td><td>+</td><td>0</td><td>−</td><td>0</td><td>+</td></tr>
+        <tr><td>Increases confidence in quality</td><td>+</td><td>0</td><td>−</td><td>0</td><td>+</td></tr>
+        <tr><td>Doesn't damage the ball</td><td>0</td><td>−</td><td>+</td><td>0</td><td>+</td></tr>
+        <tr><td>Tests quickly</td><td>−</td><td>−</td><td>+</td><td>0</td><td>−</td></tr>
+        <tr><td>Fits existing routine</td><td>0</td><td>−</td><td>+</td><td>0</td><td>−</td></tr>
+        <tr><td>Portable to court</td><td>−</td><td>0</td><td>+</td><td>0</td><td>−</td></tr>
+        <tr><td>Affordable</td><td>−</td><td>+</td><td>0</td><td>0</td><td>−</td></tr>
+        <tr><td>Works with any ball</td><td>0</td><td>−</td><td>+</td><td>0</td><td>0</td></tr>
+        <tr><td>Long-lasting product</td><td>0</td><td>+</td><td>−</td><td>0</td><td>0</td></tr>
+        <tr><td>Aesthetically pleasing</td><td>0</td><td>0</td><td>0</td><td>0</td><td>+</td></tr>
+        <tr><td><strong>Net (+ minus −)</strong></td><td><strong>0</strong></td><td><strong>−3</strong></td><td><strong>+1</strong></td><td><strong>0</strong></td><td><strong>+1</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 12.</b> Pugh matrix: + better than, 0 same as, − worse than the test-gun datum. Each rating follows the
+  same evidence as the weighted ratings below.</p>
+  <p>Unweighted, the Pugh matrix ties the Glove (C) and CubeClamp (E) at +1, with A level with the datum. Because it
+  counts every criterion equally, the Glove's convenience wins cancel its losses on detection. That is why the weighted
+  matrix is needed: a tester that cannot tell a worn ball from a good one fails, however convenient it is. Only A and
+  E beat the datum on all three top player needs; B and C each lose on a heavily weighted need that redesign cannot
+  easily fix.</p>
+  <div class="callout">
+    <span class="callout-title">Combining concepts: A′</span>
+    <p style="margin:0">Following the Pugh combine-and-improve step, two of E's features were added to A at almost no
+    cost, because A already measures force and plate position. <strong>Hysteresis</strong>: the force–deflection loop
+    from each squeeze is used as a second damage signal. <strong>Steel-ball calibration</strong>: flex in the frame and
+    load cell is measured with a steel ball and subtracted. The refined concept is called A′.</p>
+  </div>
+
+  <h2 id="scoring">Weighted scoring matrix</h2>
+  <p><strong>Scale:</strong> 1 = much worse than the datum, 2 = worse, 3 = same, 4 = better, 5 = much better. Each
+  total is the sum of rating × weight, so the datum scores exactly 3.00.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Criterion</th><th class="num">Weight</th><th class="num">A</th><th class="num">A′</th><th class="num">B</th><th class="num">C</th><th class="num">D (datum)</th><th class="num">E</th></tr></thead>
+      <tbody>
+        <tr><td>Identifies low-performance balls</td><td class="num">15%</td><td class="num">4</td><td class="num"><strong>5</strong></td><td class="num">2</td><td class="num">1</td><td class="num">3</td><td class="num">4</td></tr>
+        <tr><td>Doesn't damage the ball</td><td class="num">13%</td><td class="num">3</td><td class="num">3</td><td class="num">2</td><td class="num">4</td><td class="num">3</td><td class="num">4</td></tr>
+        <tr><td>Gives repeatable results</td><td class="num">13%</td><td class="num">4</td><td class="num">4</td><td class="num">3</td><td class="num">1</td><td class="num">3</td><td class="num">4</td></tr>
+        <tr><td>Increases confidence in quality</td><td class="num">10%</td><td class="num">4</td><td class="num">4</td><td class="num">3</td><td class="num">2</td><td class="num">3</td><td class="num">4</td></tr>
+        <tr><td>Affordable</td><td class="num">10%</td><td class="num">2</td><td class="num">2</td><td class="num">4</td><td class="num">3</td><td class="num">3</td><td class="num">2</td></tr>
+        <tr><td>Tests quickly</td><td class="num">10%</td><td class="num">2</td><td class="num">2</td><td class="num">2</td><td class="num">4</td><td class="num">3</td><td class="num">2</td></tr>
+        <tr><td>Fits existing routine</td><td class="num">7%</td><td class="num">3</td><td class="num">3</td><td class="num">2</td><td class="num">4</td><td class="num">3</td><td class="num">2</td></tr>
+        <tr><td>Portable to court</td><td class="num">7%</td><td class="num">2</td><td class="num">2</td><td class="num">3</td><td class="num">5</td><td class="num">3</td><td class="num">2</td></tr>
+        <tr><td>Long-lasting product</td><td class="num">7%</td><td class="num">3</td><td class="num">3</td><td class="num">4</td><td class="num">2</td><td class="num">3</td><td class="num">3</td></tr>
+        <tr><td>Works with any ball</td><td class="num">6%</td><td class="num">3</td><td class="num">3</td><td class="num">2</td><td class="num">4</td><td class="num">3</td><td class="num">3</td></tr>
+        <tr><td>Aesthetically pleasing</td><td class="num">2%</td><td class="num">3</td><td class="num">3</td><td class="num">3</td><td class="num">3</td><td class="num">3</td><td class="num">4</td></tr>
+        <tr><td><strong>Weighted total</strong></td><td class="num">100%</td><td class="num"><strong>3.11</strong></td><td class="num"><strong>3.26</strong></td><td class="num"><strong>2.66</strong></td><td class="num"><strong>2.77</strong></td><td class="num"><strong>3.00</strong></td><td class="num"><strong>3.19</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 13.</b> Weighted scoring matrix. A′ scores highest at 3.26, ahead of E at 3.19; the original A scores
+  3.11, so E's two transferred features are what move A into first.</p>
+
+  <h3>Evidence for the deciding scores</h3>
+  <ul>
+    <li><strong>Identification.</strong> A worn ball's stiffness drops about 10% per hour of play, 93.5 to 75.2 lb/in
+    over two hours <a class="cite" href="#ref-2">[2]</a>. A tests 4–6 positions, catching local soft spots that one
+    squeeze misses. E reads stiffness, hysteresis and bulge, but only along one axis. A′ earns a 5 because it is the
+    only concept with several damage signals at several positions. B's diameter error (about ±40%) and C's sensor error
+    (±10–25%) are as large as the signal.</li>
+    <li><strong>No damage.</strong> A's 5 mm hard stop is below the 0.25 in. (6.35 mm) displacement of the ASTM F1888
+    compression test that the USA Pickleball standard uses <a class="cite" href="#ref-3">[3]</a>, but A squeezes several times per test, so
+    it rates the same as the datum. E's cups spread the load; B's prong tips concentrate it at hole edges.</li>
+    <li><strong>Repeatability and confidence.</strong> A and E are motorized, so the user's force does not affect the
+    result, and both show the test happening. C depends on each user's grip.</li>
+    <li><strong>Cost, size and speed.</strong> A and E each need two motors and a benchtop frame: about $130 and $200
+    to prototype (team estimates), and both exceed 2.5 L. A takes 20–30 s with 2 actions. E takes about 15 s but 4
+    actions, because the ball does not fit through its opening.</li>
+  </ul>
+
+  <h3>Avoiding false precision and bias</h3>
+  <ul>
+    <li>Whole-number ratings and whole-percent weights; every rating had to cite a mechanism or a number.</li>
+    <li>A neutral datum, with criteria and weights fixed from the QFD before scoring.</li>
+    <li>Pugh and weighted ratings were cross-checked for direction; five mismatches were corrected, mostly on B and C.</li>
+    <li>A′ is shown beside the original A, so the effect of the refinement is visible.</li>
+  </ul>
+
+  <h2 id="sensitivity">Sensitivity</h2>
+  <p>The matrix reliably narrows the field to A′ and E but cannot separate them alone: their 0.07-point gap is smaller
+  than one rating step on a top criterion.</p>
+  <ul>
+    <li><strong>Stakeholder weighting.</strong> Re-scored with each stakeholder alone, equal stakeholder weights, and
+    equal criterion weights, A′ ranks first or tied for first in 7 of 8 cases. The exception is court owners alone,
+    where the Glove and CubeClamp tie.</li>
+    <li><strong>Single changes.</strong> In 12 of 110 one-step rating changes, E overtakes A′, all on heavily weighted
+    criteria. Halving the identification weight ties A′ and E; doubling the damage weight puts E ahead.</li>
+  </ul>
+
+  <h2 id="judgment">When the matrix and judgment disagreed</h2>
+  <p>The first matrix ranked the original A (3.11) below E (3.19). The team checked each possible cause:</p>
+  <ul>
+    <li><strong>Missing criteria:</strong> none. All eleven QFD needs were used, and producer constraints were applied
+    in the feasibility screen.</li>
+    <li><strong>Weights or criteria improperly defined:</strong> no. They come directly from the QFD and were not
+    changed to favor A.</li>
+    <li><strong>Scores lacking evidence:</strong> five mismatched ratings were fixed, mostly on B and C. One correction
+    helped E.</li>
+    <li><strong>Key risks not represented:</strong> yes. The matrix scores performance once a concept works, not the
+    risk of making it work. E has three unresolved build problems (loading, motor synchronization, flexure); A has none
+    of that size.</li>
+    <li><strong>More research or prototyping:</strong> yes. Rather than rescore A, the team combined E's strengths into
+    A (A′) and assigned the remaining A′-versus-E uncertainty to prototype testing.</li>
+  </ul>
+
+  <h2 id="defense">Selected concept and defense</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Concept</th><th>Advantages</th><th>Disadvantages</th></tr></thead>
+      <tbody>
+        <tr><td><strong>A′: Rolling Compression Station, refined (3.26)</strong></td><td>Several damage signals (stiffness and hysteresis) at 4–6 positions; hands-off; 2 user actions; off-the-shelf parts</td><td>Benchtop, above 2.5 L; two motors; tests one band (about 30% of the surface); 20–30 s, near the limit; rollers may slip on holes</td></tr>
+        <tr><td><strong>E: CubeClamp (3.19)</strong></td><td>Richest single-squeeze data; gentle, force-limited cups; premium enclosed look</td><td>Ball does not fit its 40 mm opening; two synchronized motors; machined flexure; one axis misses off-pole damage; pinch hazard; 4 actions</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 14.</b> Advantages and disadvantages of the two finalists.</p>
+  <p>The other three each fail a top need: <strong>B</strong>, Fork (2.66), because its ball-diameter error defeats
+  identification; <strong>C</strong>, Glove (2.77), because its sensor error and grip variation defeat identification
+  and repeatability; and <strong>D</strong>, Gun (3.00), because it tests only one spot.</p>
+  <p><strong>Needs that drove the decision.</strong> Identification (15%), no damage (13%), repeatability (13%) and
+  confidence (10%) carry half the weight. Their specifications ask for at least 90% agreement with the bounce test,
+  0.025 mm resolution, under 10% variation between operators, and at most 0.5 in. of rebound change after 50 tests.
+  Only motorized compression concepts can plausibly meet these, and the same method is already used to test tennis,
+  golf and baseballs.</p>
+  <p><strong>Where A′ outperforms.</strong> It is the only concept that measures several damage signals at several
+  positions. Softening shows as lower stiffness and a wider loop, and a local soft spot shows as spread between
+  positions, which a one-axis squeeze (D, E) cannot see. Compared with E, it needs half the user actions and has no
+  loading, motor-synchronization or flexure-machining problem. With the matrix nearly tied, the concept that is cheaper
+  and faster to prove is the better engineering choice.</p>
+  <p><strong>Features taken from other concepts.</strong> From E: hysteresis sensing, steel-ball calibration, and a
+  visible test that builds trust (the windowed door of the <a href="alpha-prototype.html">DinkCheck housing</a>). From
+  B: an outlier check, in which a position reading far from the others flags a ball sitting on a hole or seam. From C:
+  a single Playable / Non-playable result instead of raw numbers.</p>
+  <p><strong>Weak points and risks.</strong> Size and cost: the frame exceeds the 2.5 L / 2 kg targets, and two motors
+  make the $33 unit cost hard; detailed design should shrink the frame and test one motor for both functions.
+  Coverage: one rotation axis tests about 30% of the surface. Calibration: per-model thresholds are not yet set, and
+  readings are temperature-sensitive.</p>
+  <p><strong>Why it is viable.</strong> All parts are off the shelf, at an estimated $130 against the $400 budget. The
+  5 mm stop stays below the USA Pickleball compression-test depth. Third-party force-gauge testing showed a linear
+  force–displacement response, supporting stiffness as a usable signal <a class="cite" href="#ref-2">[2]</a>. The
+  alpha prototype already shows the two-roller cradle at full scale.</p>
+  <div class="callout">
+    <span class="callout-title">Recommendation: proceed with A′ into detailed design</span>
+    <p style="margin:0">First validation steps: (1) drop-test 20 new and used balls to confirm at least 90% agreement
+    with the bounce test; (2) run 50 tests on control balls to confirm at most 0.5 in. of rebound change; (3) measure
+    roller slip and test time on the built station. If agreement falls short, the CubeClamp's curve-based approach is
+    the fallback.</p>
+  </div>
+
+  <h2>References</h2>
+  <ol class="refs" style="list-style:none;padding-left:0">
+    <li id="ref-1">[1] Team 1, “ME455 Pickle QFD” workbook, GR2 QFD tab, 2026. See <a href="product-definition.html#qfd">House of Quality</a>.</li>
+    <li id="ref-2">[2] Pickleball Science, “How Many Games Will a Pickleball Last?” Mar. 15, 2023.
+      <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/">pickleballscience.org</a></li>
+    <li id="ref-3">[3] USA Pickleball, <em>Equipment Standards Manual</em>, Rev. 3.0, Jan. 2025, rules 2.D.5–2.D.6.
+      <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">usapickleball.org</a></li>
+    <li id="ref-4">[4] Team 1, “DinkCheck Downselection (condensed),” ME 455, Oct. 26, 2026.</li>
+  </ol>
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="top-concepts.html">&larr; Top Concepts</a>
+    <a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team DinkCheck (Team 1) &middot;
+    Gate Review 2: Product Concept &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

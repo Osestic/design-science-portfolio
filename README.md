@@ -1,7 +1,7 @@
 # Team 1 — Design Portfolio
 
 ME 455 Analytical Product Design · University of Michigan
-Gate Review 1: Product Definition and Market Analysis
+Gate Review 1: Product Definition and Market Analysis · Gate Review 2: Product Concept
 
 Live site: https://osestic.github.io/design-science-portfolio/
 
@@ -21,9 +21,9 @@ Commit and push as normal; GitHub Pages redeploys from `main` within a minute.
 ## Pages
 
 Navigation follows the course template: **Home** (the introduction), one dropdown per
-gate review, and **Team**. Gate Review 1 sits under *Customer & Market Research*; later
-phases (Concept, Development, Business Plan) are greyed placeholders in the nav and on
-the home page until their pages exist.
+gate review, and **Team**. Gate Review 1 sits under *Customer & Market Research* and Gate
+Review 2 under *Concept & Prototyping*; later phases (Development, Business Plan) are greyed
+placeholders in the nav and on the home page until their pages exist.
 
 | File | Section |
 |---|---|
@@ -33,6 +33,14 @@ the home page until their pages exist.
 | `product-definition.html` | GR1 · Product definition, House of Quality (`#qfd`), characteristics & targets (`#targets`) |
 | `competition.html` | GR1 · Competition analysis, design gap, positioning chart |
 | `value-proposition.html` | GR1 · Value proposition, risks, problem statement, recommendation |
+| `concept.html` | GR2 · Proposed Concept Description (main Gate Review 2 page) |
+| `conceptualization.html` | GR2 · Conceptualization methods |
+| `functional-decomposition.html` | GR2 · Functional decomposition |
+| `concept-tree.html` | GR2 · Concept tree |
+| `top-concepts.html` | GR2 · Top concepts A–E |
+| `downselection.html` | GR2 · Pugh screening, weighted scoring, sensitivity |
+| `alpha-prototype.html` | GR2 · Proposed concept, architecture and operation drawings, alpha prototype |
+| `social-impact.html` | GR2 · Social impact statement |
 | `team.html` | Team members and roles |
 
 `qfd.html` and `characteristics.html` only redirect to the matching anchors on

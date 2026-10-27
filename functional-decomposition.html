@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Functional Decomposition · DinkCheck · Team 1 Design Portfolio</title>
+<meta name="description" content="Solution-neutral and concept-specific functional decompositions of the pickleball tester, with material, energy and signal flows, losses, and how the architecture satisfies each function.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#d9a86c" stroke="#6b4526" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#5a3a22"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#fed500"/><stop offset="100%" stop-color="#ff9100"/></linearGradient></defs>
+</svg><span>DinkCheck</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label is-active" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html" aria-current="page">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+
+  <p class="eyebrow">Gate Review 2 &middot; Concept &amp; Prototyping</p>
+  <h1>Functional Decomposition</h1>
+  <p class="lead">Before choosing any mechanism, the team described what a ball tester must do. At the top level it
+  has one job, <em>determine playability</em>: a pickleball and the user's effort go in, and the same ball, undamaged,
+  comes out with a result.</p>
+
+  <h2>The solution-neutral decomposition</h2>
+  <figure>
+    <a href="assets/img/gr2/fd-general.png"><img src="assets/img/gr2/fd-general.png" alt="Functional decomposition: pickle ball and user energy enter Determine playability; inside a dashed system boundary the chain runs secure ball, rotate ball, apply force, measure ball properties, determine softness, determine playability, display results, unsecure ball; insert and retrieve ball sit outside the boundary; losses of friction and I squared R leave each block" loading="lazy"></a>
+    <figcaption><b>Figure 6.</b> General functional decomposition. The dashed line is the system boundary; inserting and
+    retrieving the ball are done by the user outside it. Arrows leaving the bottom of each block are losses. Select the
+    image to enlarge it, or open the <a href="https://canva.link/ujneyrl3mkese2j">zoomable version of both
+    diagrams</a>.</figcaption>
+  </figure>
+  <p><strong>Color key.</strong> Green: the ball (material). Pink: user actions and user energy. Blue: primary
+  functions. Yellow: signal and information processing. Arrows are labelled with the flow they carry.</p>
+
+  <h3>Major functions and flows</h3>
+  <p>The main chain follows the ball: insert, secure, rotate, apply force, measure properties, determine softness,
+  determine playability, display result, unsecure, retrieve. Three flows run through it.</p>
+  <ul>
+    <li><strong>Material.</strong> The ball is inserted, held, rotated, compressed, and returned undamaged.</li>
+    <li><strong>Energy.</strong> The user supplies energy to insert and retrieve the ball and to switch the device on.
+    Inside the boundary, mechanical energy secures, turns and compresses the ball.</li>
+    <li><strong>Signal.</strong> The ball's mechanical response becomes an electrical signal, then numeric data, and
+    leaves the system as light from the display, which the user reads.</li>
+  </ul>
+
+  <h2>The DinkCheck decomposition</h2>
+  <figure>
+    <a href="assets/img/gr2/fd-dinkcheck.png"><img src="assets/img/gr2/fd-dinkcheck.png" alt="Expanded functional decomposition for DinkCheck adding two energy chains below the main chain: switch on, command rotation, convert electrical to mechanical energy, transfer mechanical energy to rollers; and switch on, command fixed-distance movement, convert electrical to mechanical energy, transfer to plate, convert mechanical to electrical energy, compute stiffness, compare stiffness with a playable ball; grey hold functions support each block" loading="lazy"></a>
+    <figcaption><b>Figure 7.</b> Functional decomposition of the selected concept. Two energy chains (rotation, left;
+    compression and sensing, right) expand the main chain. Teal blocks convert energy; grey blocks are the auxiliary
+    “hold” functions the frame and mounts provide. T<sub>m</sub> and ω<sub>m</sub> are motor torque and speed;
+    F and S are force and speed at the roller or plate.</figcaption>
+  </figure>
+  <p>After concept selection, the team expanded three functions to match the chosen principle. Electrical energy is
+  converted to mechanical energy twice: once to turn the rollers, and once to drive a fixed-distance compression. The
+  resulting force is converted back to an electrical signal, the controller computes stiffness, compares it with a
+  playable reference ball, and sends the result to the display. Auxiliary functions hold the motors, shaft, rollers,
+  load cell and controller in alignment, and switch the device on.</p>
+
+  <h3>What changed after concept selection, and why</h3>
+  <ul>
+    <li><strong>“Rotate ball” was added.</strong> Squeezing deforms the shell locally, and published wear tests found
+    that stiffness began to depend on ball orientation after about three hours of play
+    <a class="cite" href="#ref-1">[1]</a>, so one squeeze can miss a soft spot.</li>
+    <li><strong>“Apply force” became “command fixed-distance movement.”</strong> Displacement control suits a stepper
+    motor, makes stiffness simple to compute, and limits how far the ball is deformed.</li>
+    <li><strong>The sensing chain was expanded</strong> into convert mechanical to electrical energy, compute stiffness,
+    and compare with a playable ball, reflecting the choice of a load cell and grading against a reference ball.</li>
+  </ul>
+
+  <h2>Functions that matter most</h2>
+  <p><strong>Customer value.</strong> <em>Measure ball properties</em>, <em>compute stiffness</em> and <em>compare
+  with a playable ball</em> deliver the two needs players rank first: consistent performance (52.8% rank it first) and
+  confidence in the ball (52.8% rate their confidence 3 or lower of 7) <a class="cite" href="#ref-2">[2]</a>.
+  <em>Command fixed-distance movement</em> sets repeatability and caps the squeeze so the ball is not damaged.
+  <em>Rotate ball</em> decides whether a local soft spot is found.</p>
+  <p><strong>Technical feasibility.</strong> The hardest functions are separating ball deflection from flex in the
+  load cell and rollers, detecting first contact accurately, rotating a ball full of holes without slip, and defining a
+  reliable reference ball at the test temperature.</p>
+
+  <h2>Losses, hazards and inefficiencies</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Type</th><th>Where it occurs</th><th>Mitigation</th></tr></thead>
+      <tbody>
+        <tr><td>Friction</td><td>Lead screw, guide rods, shafts and rollers; inserting and retrieving the ball</td><td>Linear bearings on the guide rods; flanged bearings on the roller shafts</td></tr>
+        <tr><td>Electrical (I²R) and hysteresis losses</td><td>Both motors and the load-cell circuit</td><td>Reduced motor current when idle</td></tr>
+        <tr><td>Measurement error</td><td>Flex in the load cell and roller sleeves added to ball deflection</td><td>One compliance calibration with a steel ball</td></tr>
+        <tr><td>Pinch point</td><td>Between the moving plate and the cradle</td><td>Mechanical hard stop; plate moves only after the start button</td></tr>
+        <tr><td>Overload</td><td>A cold or cracked ball squeezed too far could crack further or overload the load cell</td><td>Software force limit and a hard stop that caps travel at 5 mm</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 4.</b> Losses, hazards and their mitigations.</p>
+
+  <h2>How decomposition generated alternatives</h2>
+  <p>Splitting the problem into solution-neutral functions let the team generate options for each function separately
+  and then combine them, rather than starting from one device.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Function</th><th>Options considered</th><th>Chosen</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Secure ball</td><td>Clamp, flat seat, O-ring seat, roller cradle, retaining cylinder</td><td>Roller cradle</td><td>Clamping pre-loads the ball and biases the reading; a roller cradle holds and turns it</td></tr>
+        <tr><td>Rotate ball</td><td>Manual, turntable, two rollers, omni-wheels, swerve drive</td><td>Two rollers</td><td>A turntable only spins the ball about the squeeze axis, so the plate keeps touching the same points; omni-wheels could roll it about two axes but are too complex for this semester</td></tr>
+        <tr><td>Apply force</td><td>Manual lever, toggle clamp, lead-screw stepper</td><td>Lead-screw stepper</td><td>Repeatable, automated travel</td></tr>
+        <tr><td>Control mode</td><td>Fixed force, fixed displacement</td><td>Fixed displacement</td><td>Suits a stepper and limits deformation</td></tr>
+        <tr><td>Sense</td><td>Force-sensitive resistor (FSR) pad, load cell, acoustic tap</td><td>Load cell</td><td>An FSR varies by ±6% part to part even under a controlled load <a class="cite" href="#ref-3">[3]</a>, too close to the ~10% softening per hour the device must detect <a class="cite" href="#ref-1">[1]</a>; an acoustic tap is better suited to finding cracks</td></tr>
+        <tr><td>Decide</td><td>Absolute threshold, ratio to a reference ball</td><td>Ratio</td><td>Cancels fixture and material differences between ball models</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 5.</b> Options generated for each function and the choice made in the selected concept.</p>
+
+  <h2>Subsystems in the selected concept, and how they satisfy each function</h2>
+  <p>Six subsystems emerged: <strong>ball handling</strong> (insertion cavity, rollers and rotation drive),
+  <strong>compression actuation</strong> (stepper, lead screw, guide rods, carriage and top plate), <strong>force
+  sensing</strong> (load cell and amplifier), <strong>control and computation</strong> (a microcontroller that counts
+  steps to get displacement, detects contact, computes stiffness and grades the ball), <strong>user interface</strong>
+  (button and display), and <strong>power and structure</strong> (12 V supply and aluminium frame, which carry the hold
+  functions).</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Required function</th><th>Satisfied by</th></tr></thead>
+      <tbody>
+        <tr><td>Insert, secure, unsecure, retrieve ball</td><td>Open insertion cavity above the roller cradle</td></tr>
+        <tr><td>Rotate ball</td><td>Roller drive under microcontroller command</td></tr>
+        <tr><td>Apply force (fixed distance)</td><td>Stepper and lead screw; displacement from the step count</td></tr>
+        <tr><td>Measure properties</td><td>Load cell (mechanical to electrical) and amplifier</td></tr>
+        <tr><td>Determine softness and playability</td><td>Microcontroller: stiffness = force ÷ deflection, compared with the reference ball</td></tr>
+        <tr><td>Display results</td><td>OLED display</td></tr>
+        <tr><td>Hold (auxiliary)</td><td>Frame and mounts for the motors, shafts, rollers, load cell and controller</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 6.</b> How the DinkCheck architecture satisfies each required function.</p>
+
+  <h2>References</h2>
+  <ol class="refs" style="list-style:none;padding-left:0">
+    <li id="ref-1">[1] Pickleball Science, “How Many Games Will a Pickleball Last?” Mar. 15, 2023.
+      <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/">pickleballscience.org</a></li>
+    <li id="ref-2">[2] Team 1, “Activity 10a: Consumer Survey,” ME 455, 2026 (n=36 responses). See <a href="research.html">Market Research</a>.</li>
+    <li id="ref-3">[3] Interlink Electronics, “FSR 400 Series,” product specifications (part-to-part force repeatability, single batch).
+      <a href="https://www.interlinkelectronics.com/fsr-400-series">interlinkelectronics.com</a></li>
+  </ol>
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="conceptualization.html">&larr; Conceptualization Methods</a>
+    <a href="concept-tree.html">Concept Tree &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team DinkCheck (Team 1) &middot;
+    Gate Review 2: Product Concept &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

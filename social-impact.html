@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Social Impact Statement · DinkCheck · Team 1 Design Portfolio</title>
+<meta name="description" content="How DinkCheck's concept, architecture, materials, interaction and business decisions affect players, bystanders, facilities, workers and the environment, and what the team changed because of it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#d9a86c" stroke="#6b4526" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#5a3a22"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#fed500"/><stop offset="100%" stop-color="#ff9100"/></linearGradient></defs>
+</svg><span>DinkCheck</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label is-active" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html" aria-current="page">Social Impact Statement</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+
+  <p class="eyebrow">Gate Review 2 &middot; Concept &amp; Prototyping</p>
+  <h1>Social Impact Statement</h1>
+  <p class="lead">Gate Review 1 described the context the product would enter: a social, mostly outdoor sport played
+  by people from childhood to their eighties, whose balls end up in landfill
+  (<a href="customers.html#context">Contextual Considerations</a>). Now that the concept is DinkCheck, an enclosed motorized compression
+  station, the question becomes more specific: what do <em>this</em> mechanism, <em>these</em> materials and
+  <em>this</em> verdict do to the people and places around it?</p>
+
+  <h2>Decisions already made because of this analysis</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Decision before Gate Review 2</th><th>Impact it addresses</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Fixed-displacement control with a software force limit and a 5 mm hard stop</strong>, instead of squeezing to a set force</td><td>Ball damage and waste; overloading a cold or cracked ball; pinch injury</td></tr>
+        <tr><td><strong>Destructive tests, ball launchers, X-ray and sensors inside the ball ruled out</strong> in the <a href="concept-tree.html">concept tree</a></td><td>Waste, projectile and radiation hazards, and equipment-rule compliance</td></tr>
+        <tr><td><strong>Grade relative to a new ball, shown in words</strong> (Playable / Non-playable), with no claim of approval</td><td>Honest claims; independence from one ball maker; color-blind users</td></tr>
+        <tr><td><strong>No app, account or wireless link</strong>, following the Gate Review 1 finding that the product should not depend on an app or subscription</td><td>Privacy; use where phones and data are unavailable</td></tr>
+        <tr><td><strong>Steel-ball calibration</strong> to remove frame and load-cell flex</td><td>A wrong verdict caused by the device rather than the ball</td></tr>
+        <tr><td><strong>Reduced motor current when idle</strong></td><td>Energy use and heat</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 17.</b> Technical decisions shaped by the social-impact analysis.</p>
+
+  <h2>Impact by context</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Context</th><th>Who is affected</th><th>Likely consequences</th><th>Design link</th><th>Evidence and uncertainty</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Public health and safety</strong></td><td>Users; bystanders, including children at courts</td><td>− Pinch between plate and ball; a cracked ball squeezed too far could split. + No projectile, no radiation, low voltage; the squeeze happens behind a closed door</td><td>Motorized plate; 20 kg load cell; enclosed housing with a door</td><td>Pickleball injuries treated in emergency departments are mostly strains, sprains and fractures, not equipment failures <a class="cite" href="#ref-1">[1]</a>; no data on tester injuries</td><td>Force limit, hard stop, button-started motion; next prototype to evaluate a door interlock</td></tr>
+        <tr><td><strong>Accessibility and inclusive use</strong></td><td>Older players; players with limited dexterity, vision or color vision</td><td>+ One button, a word-based result, and a window that shows the test. − The readout is small; the door needs a finger in a shallow recess; the unit sits on a table</td><td>Single-button interface; readout size; door and recess</td><td>Players range from “8 to 80” at one venue <a class="cite" href="#ref-2">[2]</a>; injured players are most often 60–79 <a class="cite" href="#ref-1">[1]</a>; display legibility untested</td><td>Test legibility with older players; evaluate a larger display or audible cue</td></tr>
+        <tr><td><strong>Ethical responsibility</strong></td><td>Players, opponents, USA Pickleball</td><td>− A confident verdict from thresholds not yet validated could mislead. + Evidence replaces argument</td><td>Grading rule and thresholds</td><td>No standard defines when a ball in service is worn out <a class="cite" href="#ref-3">[3]</a>; thresholds unvalidated</td><td>Present it as a condition check, never as approval; validate thresholds against the USA Pickleball bounce test before any claim</td></tr>
+        <tr><td><strong>Social effects</strong></td><td>Players in a game, opponents</td><td>+ A shared, objective basis for swapping a ball, which today needs every player's agreement <a class="cite" href="#ref-3">[3]</a>. − Testing makes others wait; a reading could be used to pressure opponents</td><td>Test time ≤ 30 s; result shown openly on the display</td><td>Survey: other players rank fast analysis second <a class="cite" href="#ref-4">[4]</a></td><td>Keep the full test under 30 s; show the result to everyone, not on a private screen</td></tr>
+        <tr><td><strong>Environmental effects</strong></td><td>Waste streams; ecosystems around landfills</td><td>+ Good balls kept in play longer. − Dead balls caught sooner may raise discard rates; the device adds metal and electronic waste</td><td>Non-destructive test; grading threshold; aluminium and electronics</td><td>About 500 million balls a year is an industry estimate without a primary source <a class="cite" href="#ref-5">[5]</a>; balls are LDPE and rarely recycled <a class="cite" href="#ref-6">[6]</a>; 26.7% of respondents discard gear they think is still usable <a class="cite" href="#ref-4">[4]</a>. Net effect unknown</td><td>Set the threshold by playability, not “like new”; design for disassembly</td></tr>
+        <tr><td><strong>Economic effects</strong></td><td>Players; facilities; the producer</td><td>+ Fewer premature ball purchases. − About $130 in prototype parts, and two motors make the ≤ $33 unit cost needed for a $100 retail price hard</td><td>Two steppers, load cell, frame and housing</td><td>Team downselection estimate <a class="cite" href="#ref-7">[7]</a>; willingness to pay still unmeasured</td><td>Cost a product version; measure willingness to pay with the next prototype</td></tr>
+        <tr><td><strong>Global use and culture</strong></td><td>Players outside the U.S.; casual players</td><td>+ Works without an app, account or language. − A lab-looking instrument may be rejected in a casual, social sport</td><td>No connectivity; external power adapter; open-frame look</td><td>The international and world federations voted in 2025 to merge <a class="cite" href="#ref-8">[8]</a>; “looks cool” is a QFD requirement <a class="cite" href="#ref-9">[9]</a></td><td>Region-specific adapters only; test appearance with players</td></tr>
+        <tr><td><strong>Manufacturing and labor</strong></td><td>Workers in motor, electronics and aluminium supply chains</td><td>− Labor and environmental conditions of suppliers unknown. + Simple bolted assembly suits local assembly and repair</td><td>Off-the-shelf parts</td><td>Supplier conditions not yet investigated</td><td>Prefer suppliers with published labor and RoHS-type compliance in a product version</td></tr>
+        <tr><td><strong>Regulations and standards</strong></td><td>Producer; USA Pickleball</td><td>− Implying approval would misuse USA Pickleball's role. + No mains wiring inside and no radio simplify compliance</td><td>Grading language; low-voltage supply; no wireless</td><td>Ball approval belongs to USA Pickleball (Rule 3.C) <a class="cite" href="#ref-3">[3]</a></td><td>No approval wording on the device or packaging</td></tr>
+        <tr><td><strong>Privacy and data</strong></td><td>Players</td><td>+ Nothing is collected or transmitted</td><td>No app or wireless link</td><td>Tracking quality over time is a QFD requirement <a class="cite" href="#ref-9">[9]</a> that would reopen this question</td><td>Any future tracking stays on the device unless the user opts in</td></tr>
+        <tr><td><strong>Maintenance and repair</strong></td><td>Owners</td><td>+ The bolted frame lets rollers and electronics be replaced with a hex key. − Calibration needs a steel ball and a new reference ball</td><td>Bolted frame; door access to the rollers; ratio grading</td><td>Calibration burden untested with users</td><td>Supply the steel calibration ball; make recalibration one button press</td></tr>
+        <tr><td><strong>End of life</strong></td><td>Recyclers; landfills</td><td>+ Aluminium, steel and electronics separate without adhesives. − Electronics remain e-waste</td><td>Bolted 2020 extrusion</td><td>Electronic recycling access varies by region</td><td>Mark materials; keep electronics in one removable module</td></tr>
+        <tr><td><strong>Foreseeable misuse</strong></td><td>Users; children</td><td>− Squeezing other objects or fingers; testing frozen balls; discarding every “Non-playable” ball, including practice balls</td><td>Force limit; grading wording</td><td>Cold balls are more brittle <a class="cite" href="#ref-10">[10]</a></td><td>Force limit stops on any unexpected load; logged temperature warns when a ball is too cold to test</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 18.</b> Impacts of the proposed concept by context. + positive, − negative.</p>
+
+  <h2>Who benefits, and who bears the cost</h2>
+  <p>The benefits fall mostly on frequent, competitive players who can afford a dedicated device; casual players, who
+  in our interviews preferred a tester provided by their club <a class="cite" href="#ref-2">[2]</a>, gain little unless
+  they borrow one. A product priced well above the $100 target would widen that gap. The safety risks fall on the
+  owner and on anyone nearby, including children at public courts, which is why the guards are mechanical as well as
+  in software. Environmental costs fall on communities near landfills and on workers in supply chains the team has not
+  yet examined, people who receive none of the product's benefits.</p>
+
+  <h2>Tradeoffs</h2>
+  <ul>
+    <li><strong>Customer value against sustainability.</strong> A stricter threshold catches more soft balls, giving
+    more consistent play, but sends more balls to landfill. The team chose to set the threshold by playability, so a ball
+    that still plays well is kept.</li>
+    <li><strong>Technical performance against cost.</strong> Two motors and a load cell give the most repeatable reading
+    of the five concepts, and also the highest cost (<a href="downselection.html">Downselection</a>).</li>
+    <li><strong>Safety against convenience.</strong> Enclosing the squeeze behind a door removes the pinch point from
+    reach but adds a step to loading; the window keeps the test visible.</li>
+    <li><strong>Portability against safety and cost.</strong> A battery would free the unit from outlets but adds a
+    battery hazard, weight, cost and another component to dispose of.</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <div class="grid grid-2">
+    <div class="card"><h3>Most consequential positive impact</h3><p style="margin:0">Consistent, fair games: players can retire balls that have gone soft on evidence instead of by argument, and keep balls that still play well.</p></div>
+    <div class="card"><h3>Most significant potential harm</h3><p style="margin:0">A verdict that looks authoritative before its thresholds are validated. A wrong “Non-playable” wastes balls and money; a wrong “Playable” undermines the trust the product exists to create.</p></div>
+    <div class="card"><h3>Current mitigation</h3><p style="margin:0">Grade relative to a new ball, in plain words, with no claim of approval; set thresholds by playability; cap force and travel mechanically and in software.</p></div>
+    <div class="card"><h3>Questions for detailed design</h3><p style="margin:0">Does DinkCheck's verdict agree with the USA Pickleball bounce test and with players' judgment? Does it reduce or increase ball waste in practice? Can older players read and operate it? Can it reach $100 without unsafe batteries or hidden supply-chain costs?</p></div>
+  </div>
+
+  <h2>References</h2>
+  <ol class="refs" style="list-style:none;padding-left:0">
+    <li id="ref-1">[1] P. McMillan et al., “The epidemiology of pickleball injuries presenting to US emergency departments,”
+      <em>Sports Health</em>, 18(4), 749–755, 2026. <a href="https://doi.org/10.1177/19417381251350671">doi:10.1177/19417381251350671</a></li>
+    <li id="ref-2">[2] Team 1, “Activity 10b: Consumer Interviews,” ME 455, 2026 (P1–P4).</li>
+    <li id="ref-3">[3] USA Pickleball, <em>2026 Official Rulebook</em>, Rules 3.C, 10.G and 20.F.
+      <a href="https://usapickleball.org/docs/rules/USAP-Official-Rulebook.pdf">usapickleball.org</a></li>
+    <li id="ref-4">[4] Team 1, “Activity 10a: Consumer Survey,” ME 455, 2026 (n=36 responses), and QFD stakeholder ranking. See <a href="research.html">Market Research</a>.</li>
+    <li id="ref-5">[5] P3 Cares, home page, accessed Sep. 30, 2026. <a href="https://www.p3pbcares.org/">p3pbcares.org</a></li>
+    <li id="ref-6">[6] F. Cerabino, “Tough Breaks in the Life of a Pickleball,” <em>The Pickler / Inside the Den</em>, Sep. 18, 2023.
+      <a href="https://insideden.com/pickleball-blog/pickleball-tough-breaks-recycling/">insideden.com</a></li>
+    <li id="ref-7">[7] Team 1, “DinkCheck Downselection (condensed)” and compression-tester parts list, ME 455, Oct. 2026.</li>
+    <li id="ref-8">[8] “International Pickleball Federation,” <em>Wikipedia</em>, accessed Sep. 28, 2026. See <a href="customers.html#context">Contextual Considerations</a>.</li>
+    <li id="ref-9">[9] Team 1, QFD workbook and submission, ME 455, 2026. See <a href="product-definition.html#qfd">House of Quality</a>.</li>
+    <li id="ref-10">[10] Pickleball Science, “How Does Temperature Affect a Pickleball?” 2024.
+      <a href="https://pickleballscience.org/how-does-temperature-affect-a-pickleball/">pickleballscience.org</a></li>
+  </ol>
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="alpha-prototype.html">&larr; Proposed Concept &amp; Alpha Prototype</a>
+    <a href="concept.html">Gate Review 2 overview &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team DinkCheck (Team 1) &middot;
+    Gate Review 2: Product Concept &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

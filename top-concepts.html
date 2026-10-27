@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Top Concepts · DinkCheck · Team 1 Design Portfolio</title>
+<meta name="description" content="The five strongest DinkCheck concepts, one per team member: rolling compression station, three-prong fork, instrumented glove, test gun and CubeClamp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#d9a86c" stroke="#6b4526" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#5a3a22"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#fed500"/><stop offset="100%" stop-color="#ff9100"/></linearGradient></defs>
+</svg><span>DinkCheck</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label is-active" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html" aria-current="page">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+
+  <p class="eyebrow">Gate Review 2 &middot; Concept &amp; Prototyping</p>
+  <h1>Top Concepts</h1>
+  <p class="lead">Five concepts emerged from the design-space exploration, one for each team member. They differ in
+  what senses the ball (a load cell, strain-gauge flexures, sensors on the hand, a handheld actuator, or a full force–deflection curve) and in
+  who or what applies the load, not just in shape.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Concept</th><th>Sensing principle</th><th>What loads the ball</th><th>Form</th><th>Origin in the methods</th></tr></thead>
+      <tbody>
+        <tr><td><a href="#concept-a">A. Rolling Compression Station</a></td><td>Stiffness at several positions (load cell)</td><td>Motor, fixed displacement</td><td>Bench station</td><td>Squeeze branch; rotating cradle from the tap gap</td></tr>
+        <tr><td><a href="#concept-b">B. Three-prong fork</a></td><td>Stiffness from prong force (strain gauges)</td><td>User push into a fixed interference</td><td>Compact ring</td><td>Squeeze branch; fixed displacement from the functional decomposition</td></tr>
+        <tr><td><a href="#concept-c">C. Instrumented glove</a></td><td>Grip force and finger closure (FSRs, flex sensors)</td><td>The player's hand</td><td>Wearable</td><td>Squeeze branch, “by hand with a force-sensitive resistor”</td></tr>
+        <tr><td><a href="#concept-d">D. Test gun</a></td><td>Force and deformation (handheld actuator)</td><td>Motor, trigger-started</td><td>Handheld</td><td>Brainstorming forms; squeeze branch</td></tr>
+        <tr><td><a href="#concept-e">E. CubeClamp</a></td><td>Stiffness, hysteresis and bulge from one squeeze (flexure gauges, encoder)</td><td>Two motors, to a set force</td><td>Benchtop cube</td><td>Brainstorm sketches; lab compression testers; AI animation</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Table 9.</b> The five top concepts at a glance.</p>
+
+  <!-- Concept A -->
+  <h2 id="concept-a">Concept A: Rolling Compression Station</h2>
+  <figure>
+    <a href="assets/img/gr2/concept-a-layout.png"><img src="assets/img/gr2/concept-a-layout.png" alt="Isometric computer model of the Rolling Compression Station with eighteen numbered callouts" loading="lazy"></a>
+    <figcaption><b>Figure 9.</b> Concept A, the Rolling Compression Station. Numbers refer to Table 10.</figcaption>
+  </figure>
+  <details>
+    <summary><strong>Table 10. Concept A parts (callouts 1–18)</strong></summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="num">#</th><th>Part</th><th class="num">#</th><th>Part</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td>Compression stepper, NEMA 17, integrated T8×2 lead screw</td><td class="num">10</td><td>Hard-stop collar, limits squeeze to 5 mm</td></tr>
+          <tr><td class="num">2</td><td>Motor plate, bolted to the crossbar</td><td class="num">11</td><td>Top endstop microswitch, for homing</td></tr>
+          <tr><td class="num">3</td><td>Top crossbar, 2020 extrusion, 150 mm</td><td class="num">12</td><td>Pickleball, Ø74 mm, 26 g, 40 holes</td></tr>
+          <tr><td class="num">4</td><td>Uprights ×2, 2020 extrusion, ~200 mm</td><td class="num">13</td><td>Rollers ×2, Ø20 × 60 mm, silicone 30A, 54 mm apart</td></tr>
+          <tr><td class="num">5</td><td>Guide rods ×2, Ø8 mm, clamped top and bottom</td><td class="num">14</td><td>Side blocks ×2, printed or aluminium, flanged bearings, Ø6 shafts</td></tr>
+          <tr><td class="num">6</td><td>Carriage, two LM8UU linear bearings</td><td class="num">15</td><td>GT2 belt drive, three pulleys, rollers turn together</td></tr>
+          <tr><td class="num">7</td><td>Lead-screw nut, T8 brass, flanged</td><td class="num">16</td><td>Roller stepper, NEMA 14; 222° of roller turn = 60° of ball roll</td></tr>
+          <tr><td class="num">8</td><td>Load cell, 20 kg straight bar, in the full force path</td><td class="num">17</td><td>Electronics enclosure, OLED and start button on top</td></tr>
+          <tr><td class="num">9</td><td>Top plate, aluminium disc Ø40 × 5 mm</td><td class="num">18</td><td>Base, 2020 frame 150 × 120 mm with a 3 mm plate</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+  <p><strong>Description.</strong> A compact station that tests the whole circumference of the ball, not just one
+  spot. The player drops a ball into an open cradle, presses one button, and gets one grade: Playable or
+  Non-playable.</p>
+  <p><strong>How it operates.</strong> The ball rests on two rollers. A stepper-driven lead screw lowers a flat plate;
+  the load cell detects contact, then the plate compresses the ball by a fixed distance while force is recorded and
+  stiffness computed. The plate lifts, the rollers roll the ball by 60°, and the cycle repeats, within 30 seconds in
+  total. The controller grades the ball from its average stiffness and the spread between positions, both compared
+  with a new ball.</p>
+  <p><strong>Subsystems.</strong> Roller cradle with its own small stepper; lead-screw carriage on guide rods;
+  top-mounted load cell; microcontroller with display; aluminium extrusion frame.</p>
+  <p><strong>Customer needs addressed.</strong> Fixed-displacement compression gives a repeatable, objective result,
+  serving the top two needs, consistent performance and confidence in the ball. Capping compression at a distance from
+  which the ball recovers its shape protects it, and the full test fits the 30-second target.</p>
+  <p><strong>Interactions and affordances.</strong> The open cavity invites the ball in; a single button starts the
+  test; the display states the result in words.</p>
+  <p><strong>Advantages.</strong> Tests several positions automatically, so it finds soft spots a single squeeze
+  misses. Hands-off and repeatable.</p>
+  <p><strong>Disadvantages and risks.</strong> Rolling covers only one band, about 30% of the surface. Thresholds
+  differ by ball model, which may need an extra step where the user selects the model.</p>
+  <p><strong>Technical and manufacturing challenges.</strong> Rollers may slip on the holes, giving inaccurate
+  rotation; roller sleeves and the load cell flex under load, so the system needs calibration with a rigid ball;
+  rollers and plate must be aligned precisely.</p>
+  <p><strong>Aesthetic and emotional qualities.</strong> Watching the ball turn and get pressed position by position
+  makes the result feel earned, like a pro-shop diagnostic, which supports confidence, the emotional need behind the
+  purchase.</p>
+
+  <!-- Concept B -->
+  <h2 id="concept-b">Concept B: Three-prong rigid fork with flexing base</h2>
+  <figure>
+    <a href="assets/img/gr2/concept-b-fork.png"><img src="assets/img/gr2/concept-b-fork.png" alt="Top and section views of Concept B: a ball pushed down between three rigid prongs on spoke flexures with strain gauges, mounted to a hub inside a rigid clamp ring" loading="lazy"></a>
+    <figcaption><b>Figure 10.</b> Concept B. (a) Top view: three prongs at 120° on spoke flexures, each carrying a strain
+    gauge; an index notch aligns the ball so the prongs miss the holes. (b) Section view: the ball (D ≈ 74 mm) is
+    pushed into a contact circle of diameter g &lt; D, forcing the prongs outward.</figcaption>
+  </figure>
+  <p><strong>Description.</strong> The ball is pressed into three rigid prongs spaced 120° apart on a contact circle
+  slightly smaller than the ball. The interference squashes the ball by a known amount, and strain gauges measure the
+  force it pushes back with.</p>
+  <p><strong>How it operates.</strong> The user lines up a mark on the ball with an index notch so the prongs land
+  between holes, then pushes the ball down until it seats. Three points always seat a sphere evenly, so each prong
+  carries an equal share of the load. The prongs move outward and stretch a spoke flexure connecting each prong to a
+  fixed hub. A strain gauge on each spoke converts strain ε into radial force through calibration, F = k<sub>cal</sub>ε.
+  The base deflection δ = F/k<sub>base</sub> is subtracted from the known interference to find the squash,
+  (D − g) − 2δ, and stiffness is k<sub>ball</sub> = F ÷ squash. The three readings are averaged; an outlier flags an
+  off-centre ball or a prong on a hole.</p>
+  <p><strong>Subsystems.</strong> Rigid clamp-ring frame; three prongs on spoke flexures; strain-gauge bridge and
+  amplifier; microcontroller and display.</p>
+  <p><strong>Customer needs addressed.</strong> Repeatability, speed, portability and low cost: three-point contact
+  centres the ball and no motor is needed.</p>
+  <p><strong>Interactions and affordances.</strong> A single “push until seated” motion with a clear stop.</p>
+  <p><strong>Advantages.</strong> Fixed-displacement loading removes the user's push force as a variable, and three
+  readings give a built-in error check.</p>
+  <p><strong>Disadvantages and risks.</strong> Ball diameter is allowed to vary from 2.87 to 2.97 in.
+  <a class="cite" href="#ref-1">[1]</a>, so each ball must be measured to know D. Friction while seating may cause
+  hysteresis, and readings depend on local wall thickness, holes and the seam.</p>
+  <p><strong>Technical and manufacturing challenges.</strong> The contact force acts at the prong tip, above the spoke,
+  so it bends the spokes as well as stretching them; a parallelogram flexure or full bridge is likely needed to reject
+  the bending. The contact circle needs tight machining tolerances.</p>
+  <p><strong>Aesthetic and emotional qualities.</strong> The symmetric radial form looks like a precision instrument,
+  and the firm stop makes the result feel trustworthy.</p>
+
+  <!-- Concept C -->
+  <h2 id="concept-c">Concept C: Instrumented grip glove</h2>
+  <figure>
+    <a href="assets/img/gr2/concept-c-glove.png"><img src="assets/img/gr2/concept-c-glove.png" alt="Palm and side views of Concept C: a stretch-fabric glove with force-sensitive resistors on the thumb, four fingertips and palm, two flex sensors, and a wrist module with a display" loading="lazy"></a>
+    <figcaption><b>Figure 11.</b> Concept C. (a) Palm view: FSRs S1–S6 on the thumb, fingertips and palm, flex sensors on
+    the index finger and thumb, and traces sewn in to a wrist module. (b) Side view gripping a ball: forces F1–F6 and the
+    squash s read from finger closure.</figcaption>
+  </figure>
+  <p><strong>Description.</strong> The player's own hand becomes the test fixture. A thin stretch-fabric glove with
+  force-sensitive resistors (FSRs) on the thumb, fingertips and palm measures how hard the ball pushes back when
+  squeezed.</p>
+  <p><strong>How it operates.</strong> The player puts on the glove, grips the ball between thumb and fingers, and
+  squeezes until the wrist display signals a target force. FSRs S1–S6 report contact forces F<sub>i</sub>. Flex sensors
+  along the index finger and thumb track finger closure, which is converted to ball squash s through calibration with
+  balls of known diameter. Stiffness is estimated as k<sub>ball</sub> = F/s, where F is the thumb force opposing the
+  combined finger forces.</p>
+  <p><strong>Subsystems.</strong> Glove shell with sewn-in traces; FSR array; two flex sensors; wrist module with
+  converter, microcontroller, battery and display.</p>
+  <p><strong>Customer needs addressed.</strong> Portability, speed and low cost: it packs into a bag, needs no fixture
+  or motor, and reads in a few seconds.</p>
+  <p><strong>Interactions and affordances.</strong> Familiarity is its strongest affordance: squeezing a ball is
+  already how players judge whether it is “dead,” so the glove puts numbers on an existing habit. A vibration or color
+  cue at the target force guides the squeeze.</p>
+  <p><strong>Advantages.</strong> Measures the ball the way players perceive it, and can check many balls quickly.</p>
+  <p><strong>Disadvantages and risks.</strong> Repeatability is the main weakness: the hand sets the force, contact
+  points and orientation, so readings vary between users and grips. FSRs drift and show hysteresis, and even under a
+  controlled load they vary by ±6% part to part <a class="cite" href="#ref-2">[2]</a>; flex sensors give only a coarse
+  displacement, so squash is the least certain quantity.</p>
+  <p><strong>Technical and manufacturing challenges.</strong> Keeping sensors aligned on stretching fabric, routing
+  durable wiring through flexing joints, sizing for different hands, and calibrating each glove.</p>
+  <p><strong>Aesthetic and emotional qualities.</strong> Personal and natural to use; it feels like part of the
+  player's kit rather than a lab instrument. It came from the squeeze branch of the
+  <a href="concept-tree.html">concept tree</a> (“by hand with a force-sensitive resistor”), trading the precision of
+  fixed-displacement concepts for portability and a player-centred experience.</p>
+
+  <!-- Concept D -->
+  <h2 id="concept-d">Concept D: Instrumented test gun</h2>
+  <div class="grid grid-2" style="align-items:center">
+    <figure style="margin:0">
+      <a href="assets/img/gr2/concept-d-gun.png"><img src="assets/img/gr2/concept-d-gun.png" alt="Side view of a handheld pistol-shaped tester about 8 in long and 6 in tall, with a display reading PASS 92/100, a linear actuator cutaway pushing a ball held in a front cradle, a grip and a trigger" loading="lazy"></a>
+    </figure>
+    <figure style="margin:0">
+      <img src="assets/img/gr2/concept-d-features.png" alt="Key features: 1 display, 2 force mechanism, 3 ball cradle, 4 ergonomic grip, 5 trigger" loading="lazy">
+    </figure>
+  </div>
+  <p style="margin-top:0.7rem"><b>Figure 12.</b> Concept D, about 8 in. long and 6 in. tall. A motor turns a lead screw so
+  a carriage pushes the ball against the front cradle; the display gives pass/fail, a condition score and metrics.</p>
+  <p><strong>Description.</strong> A portable, gun-shaped tester that applies a controlled force to a ball and
+  measures its response (stiffness, deformation and resistance to compression), then shows a condition score, test
+  metrics and a pass/fail indication.</p>
+  <p><strong>How it operates.</strong> The player picks up the tester, places the ball in the cradle and pulls the
+  trigger. The force mechanism loads the ball, and the result appears on the display.</p>
+  <p><strong>Subsystems.</strong> Display, force mechanism (linear actuator), ball cradle, ergonomic grip, trigger.</p>
+  <p><strong>Customer needs addressed.</strong> Fast, portable testing with a comfortable one-handed feel, and a
+  repeatable actuator instead of the user's squeeze.</p>
+  <p><strong>Interactions and affordances.</strong> The pistol grip and trigger tell the user how to hold and start it
+  without instructions.</p>
+  <p><strong>Advantages.</strong> Convenient handheld shape; simple to operate for all players; portable;
+  repeatable.</p>
+  <p><strong>Disadvantages and risks.</strong> It must accommodate every ball model, must not apply enough force to
+  damage the ball, and needs careful sensor integration. Testing at one spot can miss a local soft spot.</p>
+  <p><strong>Technical and manufacturing challenges.</strong> Calibrating the test force, designing a cradle that
+  holds the ball without interfering with the measurement, and manufacturing the casing.</p>
+  <p><strong>Aesthetic and emotional qualities.</strong> Many options for customization, including colors and grip
+  textures. Its handheld form came from the brainstorming sketches, and its measurement from the squeeze branch.</p>
+
+  <!-- Concept E -->
+  <h2 id="concept-e">Concept E: CubeClamp (cup-clamp tester)</h2>
+  <div class="grid grid-2" style="align-items:center">
+    <figure style="margin:0">
+      <a href="assets/img/gr2/concept-e-cubeclamp.png"><img src="assets/img/gr2/concept-e-cubeclamp.png" alt="Rendering of CubeClamp: a 140 mm rounded cube with a dark upper half, a pale lower half, a lime seam, a top viewing port and a side readout showing deflection and load" loading="lazy"></a>
+    </figure>
+    <figure style="margin:0">
+      <a href="assets/img/gr2/concept-e-section.png"><img src="assets/img/gr2/concept-e-section.png" alt="Section view of CubeClamp: the ball between upper and lower cup cradles, lead screws driven by two steppers, a linear encoder, rim strain gauges and a flexure with a full-bridge strain gauge under the lower cradle" loading="lazy"></a>
+    </figure>
+  </div>
+  <p style="margin-top:0.7rem"><b>Figure 13.</b> Concept E. Left: the 140 mm benchtop cube with its viewing port and
+  readout. Right: section through the load path (dashed); the flexure under the lower cradle carries four gauges in a
+  full bridge, and two rim gauges 90° apart read bulge.</p>
+  <p><strong>Description.</strong> A 140 mm benchtop cube that squeezes a pickleball between two cup-shaped cradles.
+  Instead of a single stiffness reading, it captures the full force–deflection curve and measures sideways bulge, so
+  one squeeze shows three signs of damage: lower stiffness, a wider loading/unloading loop, and uneven bulging from a
+  local crack or soft spot.</p>
+  <p><strong>How it operates.</strong> The user seats the ball in the lower cradle and presses one button. Two small
+  motors in the rear corners turn the lead screws, and the upper half travels down the guide posts until it meets the
+  ball: fast until first contact, then at a steady rate to a set target force. A flexible metal hub with strain gauges
+  under the lower cradle measures how hard the ball pushes back; a position sensor on one guide post measures how far
+  it has compressed; two strain gauges on the cradle rim, 90° apart, detect whether it bulges evenly. The test force
+  stays inside the moving parts and frame, so the outer housing carries no load, and machine flex is calibrated out by
+  first testing a solid steel ball. A pass/fail result and the deflection appear on the side display, and the upper
+  half returns home.</p>
+  <p><strong>Subsystems.</strong> Two-motor lead-screw drive; upper and lower cup cradles; strain-gauge flexure hub;
+  linear encoder; rim strain gauges; side readout; two-tone enclosure.</p>
+  <p><strong>Customer needs addressed.</strong> Reliable detection, speed and ease of use: a closed load path and
+  calibrated force sensor give repeatable readings, a test takes about 15 seconds, and the user only seats the ball
+  and presses one button.</p>
+  <p><strong>Interactions and affordances.</strong> The cup cradle centres the ball on its own, a front notch confirms
+  it is seated, and a top viewing port lets users watch the ball squash, which builds trust in the result.</p>
+  <p><strong>Advantages.</strong> Rich, quantitative data from a single squeeze, in a compact, enclosed form.</p>
+  <p><strong>Disadvantages and risks.</strong> Loading is the biggest risk: the upper half opens only about 40 mm, but
+  the 74 mm ball needs about 70 mm of clearance, so a hinged lid or slide-out drawer is needed. It is unproven that
+  damage changes stiffness more than ball-to-ball and temperature variation do. Squeezing along one axis can miss
+  cracks away from the poles, and the closing gap is a pinch hazard.</p>
+  <p><strong>Technical and manufacturing challenges.</strong> Keeping the two motors in sync, machining and gauging the
+  flexible hub accurately, and fitting everything inside without visible fasteners.</p>
+  <p><strong>Aesthetic and emotional qualities.</strong> The two-tone body with a pale-green seam reads as a premium
+  consumer device suited to a pro-shop counter. The concept grew from hand sketches of a clamping cube, benchmarks the
+  compression test used by laboratory testing machines, and took its separate force and deflection sensing from the
+  functional decomposition; AI-generated animations then exposed the loading-clearance problem.</p>
+
+  <h2>References</h2>
+  <ol class="refs" style="list-style:none;padding-left:0">
+    <li id="ref-1">[1] USA Pickleball, <em>Equipment Standards Manual</em>, Rev. 3.0, Jan. 2025, rule 2.D.3.
+      <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">usapickleball.org</a></li>
+    <li id="ref-2">[2] Interlink Electronics, “FSR 400 Series,” product specifications.
+      <a href="https://www.interlinkelectronics.com/fsr-400-series">interlinkelectronics.com</a></li>
+  </ol>
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="concept-tree.html">&larr; Concept Tree</a>
+    <a href="downselection.html">Downselection &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team DinkCheck (Team 1) &middot;
+    Gate Review 2: Product Concept &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>
