@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Functional Decomposition · DinkCheck · Team 1 Design Portfolio</title>
+<title>Functional Decomposition · CuPickle · Team 1 Design Portfolio</title>
 <meta name="description" content="Solution-neutral and concept-specific functional decompositions of the pickleball tester, with material, energy and signal flows, losses, and how the architecture satisfies each function.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
   <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
   <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0%" stop-color="#fed500"/><stop offset="100%" stop-color="#ff9100"/></linearGradient></defs>
-</svg><span>DinkCheck</span></a>
+</svg><span>CuPickle</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li class="has-menu">
@@ -87,9 +87,9 @@
     leaves the system as light from the display, which the user reads.</li>
   </ul>
 
-  <h2>The DinkCheck decomposition</h2>
+  <h2>The CuPickle decomposition</h2>
   <figure>
-    <a href="assets/img/gr2/fd-dinkcheck.png"><img src="assets/img/gr2/fd-dinkcheck.png" alt="Expanded functional decomposition for DinkCheck adding two energy chains below the main chain: switch on, command rotation, convert electrical to mechanical energy, transfer mechanical energy to rollers; and switch on, command fixed-distance movement, convert electrical to mechanical energy, transfer to plate, convert mechanical to electrical energy, compute stiffness, compare stiffness with a playable ball; grey hold functions support each block" loading="lazy"></a>
+    <a href="assets/img/gr2/fd-dinkcheck.png"><img src="assets/img/gr2/fd-dinkcheck.png" alt="Expanded functional decomposition for CuPickle adding two energy chains below the main chain: switch on, command rotation, convert electrical to mechanical energy, transfer mechanical energy to rollers; and switch on, command fixed-distance movement, convert electrical to mechanical energy, transfer to plate, convert mechanical to electrical energy, compute stiffness, compare stiffness with a playable ball; grey hold functions support each block" loading="lazy"></a>
     <figcaption><b>Figure 7.</b> Functional decomposition of the selected concept. Two energy chains (rotation, left;
     compression and sensing, right) expand the main chain. Teal blocks convert energy; grey blocks are the auxiliary
     “hold” functions the frame and mounts provide. T<sub>m</sub> and ω<sub>m</sub> are motor torque and speed;
@@ -131,7 +131,7 @@
         <tr><td>Electrical (I²R) and hysteresis losses</td><td>Both motors and the load-cell circuit</td><td>Reduced motor current when idle</td></tr>
         <tr><td>Measurement error</td><td>Flex in the load cell and roller sleeves added to ball deflection</td><td>One compliance calibration with a steel ball</td></tr>
         <tr><td>Pinch point</td><td>Between the moving plate and the cradle</td><td>Mechanical hard stop; plate moves only after the start button</td></tr>
-        <tr><td>Overload</td><td>A cold or cracked ball squeezed too far could crack further or overload the load cell</td><td>Software force limit and a hard stop that caps travel at 5 mm</td></tr>
+        <tr><td>Overload</td><td>A cold, brittle ball squeezed too far could break or overload the load cell</td><td>Software force limit and a hard stop that caps travel at 5 mm</td></tr>
       </tbody>
     </table>
   </div>
@@ -148,7 +148,7 @@
         <tr><td>Rotate ball</td><td>Manual, turntable, two rollers, omni-wheels, swerve drive</td><td>Two rollers</td><td>A turntable only spins the ball about the squeeze axis, so the plate keeps touching the same points; omni-wheels could roll it about two axes but are too complex for this semester</td></tr>
         <tr><td>Apply force</td><td>Manual lever, toggle clamp, lead-screw stepper</td><td>Lead-screw stepper</td><td>Repeatable, automated travel</td></tr>
         <tr><td>Control mode</td><td>Fixed force, fixed displacement</td><td>Fixed displacement</td><td>Suits a stepper and limits deformation</td></tr>
-        <tr><td>Sense</td><td>Force-sensitive resistor (FSR) pad, load cell, acoustic tap</td><td>Load cell</td><td>An FSR varies by ±6% part to part even under a controlled load <a class="cite" href="#ref-3">[3]</a>, too close to the ~10% softening per hour the device must detect <a class="cite" href="#ref-1">[1]</a>; an acoustic tap is better suited to finding cracks</td></tr>
+        <tr><td>Sense</td><td>Force-sensitive resistor (FSR) pad, load cell, acoustic tap</td><td>Load cell</td><td>An FSR varies by ±6% part to part even under a controlled load <a class="cite" href="#ref-3">[3]</a>, too close to the ~10% softening per hour the device must detect <a class="cite" href="#ref-1">[1]</a></td></tr>
         <tr><td>Decide</td><td>Absolute threshold, ratio to a reference ball</td><td>Ratio</td><td>Cancels fixture and material differences between ball models</td></tr>
       </tbody>
     </table>
@@ -176,7 +176,7 @@
       </tbody>
     </table>
   </div>
-  <p><b>Table 6.</b> How the DinkCheck architecture satisfies each required function.</p>
+  <p><b>Table 6.</b> How the CuPickle architecture satisfies each required function.</p>
 
   <h2>References</h2>
   <ol class="refs" style="list-style:none;padding-left:0">
@@ -196,7 +196,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p style="margin:0">ME 455 Analytical Product Design &middot; Team DinkCheck (Team 1) &middot;
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
     Gate Review 2: Product Concept &middot; University of Michigan</p>
   </div>
 </footer>
