@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Product Definition · DinkCheck · Team 1 Design Portfolio</title>
+<title>Product Definition · CuPickle · Team 1 Design Portfolio</title>
 <meta name="description" content="Prioritized customer needs, requirements, objectives, constraints and the characteristics that drive success.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
   <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
   <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0%" stop-color="#e8ffae"/><stop offset="100%" stop-color="#c9e67a"/></linearGradient></defs>
-</svg><span>DinkCheck</span></a>
+</svg><span>CuPickle</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li class="has-menu">
@@ -87,7 +87,7 @@
 
   <h2 id="product">The product</h2>
   <p>A pickleball softens and cracks before a player can tell, so a ball keeps getting played after it stops playing
-  like a good ball. <strong>DinkCheck</strong> is a pickleball ball-condition tester that tells a player, courtside and
+  like a good ball. <strong>CuPickle</strong> is a pickleball ball-condition tester that tells a player, courtside and
   before play or between games, whether a ball still performs to standard. Players say consistent performance matters
   most to them (52.8% rank it first), 72.2% have played with a cracked ball, and 52.8% rate their confidence in judging
   equipment at 3 or lower of 7 <a class="cite" href="#ref-1">[1]</a>. Their current check, a squeeze or a look, takes
@@ -197,7 +197,7 @@
     </div>
   </div>
   <div class="callout">
-    <p style="margin:0"><strong>Why a player would choose DinkCheck.</strong> The user-oriented objective is a
+    <p style="margin:0"><strong>Why a player would choose CuPickle.</strong> The user-oriented objective is a
     confidence gain of at least 2 points on the 7-point scale, delivered by grades that agree with the USA Pickleball
     bounce test on at least 90% of balls, within 30 s and courtside. No current option offers that combination: the
     manual check is fast but untrusted, and the bounce test and laboratory instruments are trusted but cannot be done
@@ -209,21 +209,21 @@
 
   <h3 id="standards">USA Pickleball requirements and how they enter the design</h3>
   <p>The <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">USA Pickleball Equipment
-  Standards Manual</a> defines what a conforming ball is, so it supplies the reference test DinkCheck is judged
+  Standards Manual</a> defines what a conforming ball is, so it supplies the reference test CuPickle is judged
   against, the range of balls it must accept, and limits on what it may claim. Each parameter has one role: a
   <em>reference test</em> is the ground truth for a target, a <em>constraint</em> bounds the design, and a
   <em>benchmark</em> is a comparison value that informs a target without being one.</p>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Parameter</th><th>USA Pickleball value</th><th>Role for DinkCheck</th><th>How it enters the product definition</th></tr></thead>
+      <thead><tr><th>Parameter</th><th>USA Pickleball value</th><th>Role for CuPickle</th><th>How it enters the product definition</th></tr></thead>
       <tbody>
         <tr><td>Bounce</td><td>30–34 in. rebound (to the top of the ball) from a 78 in. drop onto a granite surface plate (rule 2.D.5)</td><td>Reference test</td><td>Ground truth for S1 (agreement). The 4 in. window sets the S4 damage tolerance at one-eighth of the window and is the tolerance base for S16 (repeatability)</td></tr>
-        <tr><td>Test conditions</td><td>Bounce test at 70 ± 5 °F (rule 2.D.5)</td><td>Reference test condition; constraint on claims</td><td>Validation tests for S1 and S4 are run at this temperature. Courtside tests will not be, and stiffness changes strongly with temperature (a hot Franklin X-40 measured about half its room-temperature stiffness) <a class="cite" href="#ref-10">[10]</a>, so DinkCheck is a screen, not a certification</td></tr>
-        <tr><td>Compression</td><td>Force to compress the ball 0.25 in. under ASTM F1888 must average below 43 lbf, a maximum stiffness of about 172 lb/in (rule 2.D.6)</td><td>Benchmark</td><td>Shows stiffness is a property the standard itself checks; a new X-40 measures about 93.5 lb/in <a class="cite" href="#ref-9">[9]</a>. <span class="badge badge-assumption">Interpretation</span> Any test that loads the ball should stay within this test's 0.25 in. displacement, so DinkCheck never stresses a ball more than certification does (supports S4)</td></tr>
+        <tr><td>Test conditions</td><td>Bounce test at 70 ± 5 °F (rule 2.D.5)</td><td>Reference test condition; constraint on claims</td><td>Validation tests for S1 and S4 are run at this temperature. Courtside tests will not be, and stiffness changes strongly with temperature (a hot Franklin X-40 measured about half its room-temperature stiffness) <a class="cite" href="#ref-10">[10]</a>, so CuPickle is a screen, not a certification</td></tr>
+        <tr><td>Compression</td><td>Force to compress the ball 0.25 in. under ASTM F1888 must average below 43 lbf, a maximum stiffness of about 172 lb/in (rule 2.D.6)</td><td>Benchmark</td><td>Shows stiffness is a property the standard itself checks; a new X-40 measures about 93.5 lb/in <a class="cite" href="#ref-9">[9]</a>. <span class="badge badge-assumption">Interpretation</span> Any test that loads the ball should stay within this test's 0.25 in. displacement, so CuPickle never stresses a ball more than certification does (supports S4)</td></tr>
         <tr><td>Diameter and roundness</td><td>2.87–2.97 in. (72.9–75.4 mm); out-of-round no more than 0.020 in.</td><td>Constraint</td><td>The tester must accept every conforming diameter, a 2.5 mm range, without changing its grade (S11), and an out-of-round ball must not produce a false grade</td></tr>
         <tr><td>Mass</td><td>22.1–26.5 g</td><td>Constraint</td><td>The tester must accept the full mass range of conforming balls (S11)</td></tr>
-        <tr><td>Hardness</td><td>40–50 Durometer D, recorded for reference only, not a compliance requirement (rule 2.D.7)</td><td>Reference only</td><td>Explains why the Shore D durometer appears as a benchmark (Table 16) but hardness is not a DinkCheck target</td></tr>
-        <tr><td>Approval</td><td>Rules 3.C and 16.G govern approved balls; 393 models listed</td><td>Constraint; scoping input</td><td>No certification claim; DinkCheck grades the five most-used models (S11), not all 393</td></tr>
+        <tr><td>Hardness</td><td>40–50 Durometer D, recorded for reference only, not a compliance requirement (rule 2.D.7)</td><td>Reference only</td><td>Explains why the Shore D durometer appears as a benchmark (Table 16) but hardness is not a CuPickle target</td></tr>
+        <tr><td>Approval</td><td>Rules 3.C and 16.G govern approved balls; 393 models listed</td><td>Constraint; scoping input</td><td>No certification claim; CuPickle grades the five most-used models (S11), not all 393</td></tr>
       </tbody>
     </table>
   </div>
@@ -235,7 +235,7 @@
   <a class="cite" href="#ref-11">[11]</a>, is the reference method for the compression rule; its time, price and mass
   are not published, so it is listed in Table 16 but not rated in the House of Quality.</p>
   <div class="callout">
-    <p style="margin:0">DinkCheck is a courtside screening device whose grades are checked against the USA Pickleball
+    <p style="margin:0">CuPickle is a courtside screening device whose grades are checked against the USA Pickleball
     bounce test. It does not perform the reference test, does not replicate its temperature conditioning, and makes no
     claim of USA Pickleball certification or approval.</p>
   </div>
@@ -862,7 +862,7 @@
 <text x="20.0" y="1394.0" font-size="13" text-anchor="start" font-weight="400" fill="#20232e">Benchmark codes: TBM to be measured in planned team tests · none no device involved or no numeric reading · diff. instrument reads a different quantity (Shore D hardness, rebound height) · fixed not carried to court</text>
 </g></svg>
     </div>
-    <figcaption><b>Figure 15.</b> House of Quality for DinkCheck. Left: stakeholder ranks and the resulting need
+    <figcaption><b>Figure 15.</b> House of Quality for CuPickle. Left: stakeholder ranks and the resulting need
     weights. Roof: green + means improving one characteristic helps the other, red − means it works against it;
     darker is stronger. Body: need–characteristic relationships. Right: benchmark ratings per need. Bottom: direction
     of improvement, target, target source and each benchmark's value; the codes are defined beneath the chart and in
@@ -912,7 +912,7 @@
         <tr><td>S3</td><td><strong>Test-time spread across operators</strong> (%)</td><td>Tests quickly; fits existing routine</td><td>Difference in time per test between first-time and practiced users, as a percentage of the mean time. Measured by timing both groups on the same balls</td><td>Objective</td><td>▼</td><td>&lt; 10</td><td><strong>Interviews</strong>: players and court owners are sensitive to any delay <a class="cite" href="#ref-2">[2]</a>; the 10% value is a team estimate</td><td>Strong + with S7 and S8; strong − with S1</td><td>A test that relies on user skill is slow for new users; removing skill may add steps or cost</td></tr>
         <tr><td>S4</td><td><strong>Rebound change after 50 tests</strong> (in.)</td><td>Doesn&#x27;t damage the ball</td><td>Change in bounce-test rebound of control balls after 50 consecutive tests, drop-tested before and after at 70 ± 5 °F</td><td>Requirement</td><td>▼</td><td>&lt; 0.5</td><td><strong>Standard and engineering analysis</strong>: one-eighth of the 4 in. bounce window <a class="cite" href="#ref-4">[4]</a>, so testing cannot move a conforming ball across the limit</td><td>Moderate + with S2; weak − with S7</td><td>A gentler test protects the ball but gathers less information; 50 cycles is a team-chosen test length</td></tr>
         <tr><td>S5</td><td><strong>Confidence gain</strong> (points on a 7-point scale)</td><td>Increases confidence in quality</td><td>Mean increase in a player's rating of confidence that a ball is fit for play, using the survey's 7-point question, after using the tester compared with after their usual manual check. Measured with more than 20 target players</td><td>Objective (user)</td><td>▲</td><td>≥ 2</td><td><strong>Survey</strong>: 52.8% rate their confidence 3 or lower of 7 <a class="cite" href="#ref-1">[1]</a>; two points moves a typical respondent from the bottom of the scale to the midpoint</td><td>Strong + with S1; moderate + with S7 and S8</td><td><span class="badge badge-assumption">Assumption</span> Confidence follows accuracy and early detection; this must be tested with users, not assumed</td></tr>
-        <tr><td>S6</td><td><strong>Retail price</strong> ($)</td><td>Affordable</td><td>Price to the player at launch</td><td>Objective (business)</td><td>▼</td><td>≤ 100</td><td><strong>Benchmarking and business analysis</strong>: instruments sell for $2,900–$4,995 <a class="cite" href="#ref-13">[13]</a><a class="cite" href="#ref-14">[14]</a> or rent for $299 a month <a class="cite" href="#ref-12">[12]</a>; $100 places DinkCheck with player accessories</td><td>Strong + with S13; moderate − with S1, S2 and S11</td><td>Willingness to pay has not been measured; more capability raises cost</td></tr>
+        <tr><td>S6</td><td><strong>Retail price</strong> ($)</td><td>Affordable</td><td>Price to the player at launch</td><td>Objective (business)</td><td>▼</td><td>≤ 100</td><td><strong>Benchmarking and business analysis</strong>: instruments sell for $2,900–$4,995 <a class="cite" href="#ref-13">[13]</a><a class="cite" href="#ref-14">[14]</a> or rent for $299 a month <a class="cite" href="#ref-12">[12]</a>; $100 places CuPickle with player accessories</td><td>Strong + with S13; moderate − with S1, S2 and S11</td><td>Willingness to pay has not been measured; more capability raises cost</td></tr>
         <tr><td>S7</td><td><strong>Time to test one ball</strong> (s)</td><td>Tests quickly</td><td>Elapsed time from picking up the tester with a ball to reading the grade, timed with first-time users</td><td>Requirement</td><td>▼</td><td>≤ 30</td><td><strong>Interviews and journey</strong>: the manual check takes about 3 s (P3) <a class="cite" href="#ref-2">[2]</a>, but 52.8% rate their confidence 3 or lower of 7 <a class="cite" href="#ref-1">[1]</a>. Because the check happens before play or between games, players can trade a little time for a result they trust; 30 s fits that window (team estimate)</td><td>Strong − with S1 (central tension); strong + with S3 and S8</td><td>The time players will actually accept is not yet measured</td></tr>
         <tr><td>S8</td><td><strong>User actions per test</strong> (#)</td><td>Fits existing routine</td><td>Number of distinct steps the user performs from picking up the tester to reading the grade, counted in first-use trials</td><td>Objective</td><td>▼</td><td>≤ 2</td><td><strong>Justified estimate</strong> from the journey: today's check is a single action (squeeze or look) <a class="cite" href="#ref-2">[2]</a></td><td>Strong + with S3 and S7; moderate − with S1 and S11</td><td>Fewer steps means more of the test happens without the user, which can add cost and mass</td></tr>
         <tr><td>S9</td><td><strong>Packed volume</strong> (L)</td><td>Portable to court</td><td>Volume of the tester as carried, including its power source, measured from its bounding box</td><td>Constraint</td><td>▼</td><td>≤ 2.5</td><td><strong>Justified estimate</strong>: small enough to fit in a pickleball bag alongside balls, as the portability need requires; existing trusted methods are bench instruments or a fixed drop setup (Table 16)</td><td>Strong + with S10; moderate − with S2 and S11</td><td>Bag sizes vary; the limit has not yet been checked with players</td></tr>
@@ -971,7 +971,7 @@
 
   <h3>How the targets will be verified</h3>
   <p>Four tests will replace the estimates in Tables 15 and 16 with measurements. First, blind grading of 20 new and
-  used balls by squeeze, visual inspection, durometer and the DinkCheck prototype against the 78 in. drop test, with
+  used balls by squeeze, visual inspection, durometer and the CuPickle prototype against the 78 in. drop test, with
   repeat grading by several operators, will set S1 and S16 for every method. Second, 50 test cycles on control balls
   with before-and-after drop tests will check S4. Third, a before-and-after confidence survey with more than 20 target
   players will measure S5. Fourth, timed first-use trials will measure S3, S7 and S8, and the same players will rate
@@ -988,9 +988,9 @@
   size, cost and calibration effort. Supporting the five most-used models is a deliberate scope decision.</p>
 
   <h2 id="drivers">The characteristics that drive success</h2>
-  <p>Four groups of characteristics decide whether DinkCheck is worth building. <strong>Customer value</strong> comes
+  <p>Four groups of characteristics decide whether CuPickle is worth building. <strong>Customer value</strong> comes
   from agreement with the bounce test (S1) and the confidence gain it produces (S5): together they are the reason to
-  pick DinkCheck over a squeeze. <strong>Differentiation</strong> comes from delivering that accuracy in 30 s or less
+  pick CuPickle over a squeeze. <strong>Differentiation</strong> comes from delivering that accuracy in 30 s or less
   (S7) in a tester under 2.5 L and 2 kg (S9, S10) at $100 or less (S6); every existing trusted method fails at least
   one of these. <strong>Technical feasibility</strong> turns on whether the test can resolve wear (S2) repeatably
   (S16) without changing the ball (S4), despite temperature effects, within the cost targets (S13).
@@ -1025,7 +1025,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p style="margin:0">ME 455 Analytical Product Design &middot; Team DinkCheck (Team 1) &middot;
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
     Gate Review 1: Product Definition and Market Analysis &middot; University of Michigan</p>
   </div>
 </footer>
