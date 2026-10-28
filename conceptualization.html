@@ -169,7 +169,7 @@
     <table>
       <thead><tr><th>Concept</th><th>Evaluate condition</th><th>Testing method</th><th>Power supply</th></tr></thead>
       <tbody>
-        <tr><td>A. Rolling Compression Station (CuPickle)</td><td>Compare to reference ball</td><td>Deformation test</td><td>Charger (12 V supply)</td></tr>
+        <tr><td>A. Rolling Compression Station (CuPickle)</td><td>Compare to reference ball</td><td>Deformation test</td><td>Built-in rechargeable battery</td></tr>
         <tr><td>B. Three-prong fork</td><td>Compare to threshold measurement</td><td>Deformation test</td><td>Not specified</td></tr>
         <tr><td>C. Instrumented glove</td><td>Compare to threshold measurement</td><td>Deformation test (by hand)</td><td>Batteries</td></tr>
         <tr><td>D. Test gun</td><td>Condition score</td><td>Deformation test</td><td>Not specified</td></tr>
@@ -180,8 +180,7 @@
   <p><b>Table 2.</b> The top concepts mapped onto the combinational table.</p>
   <p><strong>How it influenced later work.</strong> The mapping shows that all five top concepts use a deformation
   test, the method most directly tied to stiffness, and that power remains the least explored row. Solar and
-  human power were not developed further, which is why courtside power is still an open question for the selected
-  concept.</p>
+  human power were not developed further; the selected concept runs on its own rechargeable battery.</p>
 
   <h2 id="external-search">6. External search and analogy</h2>
   <p><strong>How we applied it.</strong> We looked at how other sports and industries already test balls and hollow
@@ -247,7 +246,7 @@
         </tbody>
       </table>
     </div>
-    <p style="margin-bottom:0">Grade percentages were placeholders until calibrated against the bounce test. The summary
+    <p style="margin-bottom:0">The grade percentages were provisional, pending calibration against the bounce test. The summary
     recommended the compression test as the playability decision and the tap test as an early-warning feature. Its
     prior-art sources include US 6,357,282 and US 10,814,186 (tennis ball testers), US 9,310,283 (golf ball compression
     tester), the ITF three-axis tennis ball tester, US 4,534,219 and US 5,184,513 (ball inspection), and published
@@ -283,20 +282,17 @@
 
   <details id="prompt-log">
     <summary><strong>Prompt log: CuPickle housing, v5 → v6 (finger-pull recess)</strong></summary>
-    <p><strong>Prompt.</strong> “Fix the door finger notch. Keep everything else the same. (1) Remove the oval notch on
-    the side face of the housing (part 31). It does nothing there. (2) Add a finger pull recess on the front face of the
-    white lower shell. Place it directly next to the door's free (right) edge, centered on the door's height. It should
-    be a shallow scoop (about 20 mm tall, 12 mm wide, 4 mm deep) cut into the fixed housing surface, so it runs under
-    the door's right edge. With the door closed, the door edge overhangs the recess, which leaves a gap where a finger
-    can slip in behind the edge and flick the door open toward the left hinge. (3) Keep the recess subtle: a smooth,
-    rounded scoop in the same white matte finish, barely visible from straight on, with the door edge clearly
-    overhanging it in a close-up. Views: a close-up of the closed door's right edge showing the finger under the edge,
-    and the door open at 90° showing the recess left exposed on the housing.”</p>
-    <p style="margin-bottom:0"><strong>Result (v6).</strong> Side notch removed; new 20 × 12 × 4 mm recess in matte
-    white, right of the door's free edge and level with the middle of the door, with about 4 mm running under the door
-    so the edge overhangs it. A close-up view shows a ghosted finger under the door edge, and the door-open view was
-    re-angled from the front-left so the recess shows. Callouts 29 (door) and 31 (recess) and the parts list were
-    updated; nothing else changed.</p>
+    <p><strong>Request.</strong> The v5 render had an oval notch on the side of the housing that served no function. The
+    prompt asked the tool to remove it and to add a finger-pull recess on the front face of the white lower shell,
+    directly beside the door's free (right) edge and centred on the door's height: a shallow, rounded scoop about
+    20 mm tall, 12 mm wide and 4 mm deep, in the same matte white, cut so the closed door overhangs it and a finger can
+    slip behind the edge to swing the door open toward the left hinge. Everything else was to stay unchanged. Two views
+    were requested: a close-up of the closed door's edge with a finger under it, and the door open at 90° with the
+    recess exposed.</p>
+    <p style="margin-bottom:0"><strong>Result (v6).</strong> The side notch was removed and the 20 × 12 × 4 mm recess
+    added beside the door's free edge, with about 4 mm running under the door so the edge overhangs it. The close-up
+    shows a finger under the door edge, the door-open view was re-angled from the front-left so the recess is visible,
+    and callouts 29 (door) and 31 (recess) and the parts list were updated to match.</p>
   </details>
 
   <h2 id="breadth">Breadth of the design space, and its limits</h2>

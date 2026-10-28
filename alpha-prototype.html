@@ -158,7 +158,7 @@
   <h3>Preliminary materials and manufacturing</h3>
   <p>Mechanism: off-the-shelf motors, lead screw, bearings and electronics, with mounts 3D-printed in the makerspace;
   about $130 in parts against the $400 prototype budget <a class="cite" href="downselection.html" title="[5] Team 1, “CuPickle Downselection (condensed),” ME 455, Oct. 26, 2026.">[5]</a>. Housing: molded or
-  printed shells for the product version; the volume target is a ≤ $33 unit cost against the $100 retail price.</p>
+  printed shells for the product version, priced for the $100 retail target.</p>
 
   <h3>Safety and accessibility</h3>
   <p>The plate–cradle pinch point sits behind the closed door, a software force limit stops the compression, and a collar
@@ -179,7 +179,7 @@
     cradle need to control which spots are pressed?</li>
     <li>What Playable / Non-playable threshold fits each of the five common models, and how to correct for temperature.</li>
     <li>Whether one motor can drive both functions, and how small the housing can get while staying stiff enough.</li>
-    <li>Whether a full test fits in 20–30 s, and how the unit is powered courtside.</li>
+    <li>Whether a full test fits in 20–30 s, and how many tests one charge of the built-in battery provides.</li>
   </ul>
 
   <h2 id="architecture">Architecture and layout</h2>
@@ -191,7 +191,7 @@
   <figure>
     <div class="chart-surface">
       <svg viewBox="0 0 920 540" role="img" aria-labelledby="fig-arch-t">
-        <title id="fig-arch-t">CuPickle architecture: a power supply feeds the microcontroller and two stepper drives; the compression drive pushes through the load cell and plate onto the ball; the roller drive turns the ball; the load cell signal returns to the microcontroller, which drives the display read by the player</title>
+        <title id="fig-arch-t">CuPickle architecture: a rechargeable battery feeds the microcontroller and two stepper drives; the compression drive pushes through the load cell and plate onto the ball; the roller drive turns the ball; the load cell signal returns to the microcontroller, which drives the display read by the player</title>
         <defs>
           <marker id="ar-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c98500"/></marker>
           <marker id="ar-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2a78d6"/></marker>
@@ -200,7 +200,7 @@
         <rect x="598" y="18" width="304" height="446" rx="12" fill="none" stroke="#6d7387" stroke-width="2" stroke-dasharray="8 6"/>
         <text x="750" y="482" text-anchor="middle" font-size="15" fill="#4a5062">Housing: drive above, cradle behind door</text>
         <g font-size="16" fill="#20232e" text-anchor="middle">
-          <rect x="330" y="22" width="200" height="50" rx="8" fill="#e9ebf0" stroke="#303545" stroke-width="2"/><text x="430" y="52" font-weight="700">Power supply</text>
+          <rect x="330" y="22" width="200" height="50" rx="8" fill="#e9ebf0" stroke="#303545" stroke-width="2"/><text x="430" y="52" font-weight="700">Rechargeable battery</text>
           <rect x="330" y="200" width="200" height="80" rx="8" fill="#e9ebf0" stroke="#303545" stroke-width="2"/><text x="430" y="234" font-weight="700">Microcontroller</text><text x="430" y="256" font-size="13" fill="#4a5062">k = F/δ · hysteresis · outlier check</text>
           <rect x="40" y="200" width="200" height="80" rx="8" fill="#e9ebf0" stroke="#303545" stroke-width="2"/><text x="140" y="234" font-weight="700">Top start button</text><text x="140" y="256" font-weight="700">+ readout</text>
           <rect x="40" y="392" width="200" height="60" rx="30" fill="#f3f4f7" stroke="#303545" stroke-width="2"/><text x="140" y="428" font-weight="700">Player</text>
@@ -518,7 +518,7 @@
   <h3>Purpose and questions</h3>
   <p>The alpha prototype gives a physical, full-scale representation of the system, to communicate the relationship
   between the two main subsystems, the force press and the ball roller, and to frame the system's size against an
-  actual pickleball. It was built to answer three questions:</p>
+  actual pickleball. It was built to answer four questions:</p>
   <div class="table-wrap">
     <table>
       <thead><tr><th>Question</th><th>Answer</th></tr></thead>
@@ -526,6 +526,7 @@
         <tr><td>Do the ball, rollers and plate fit at 74 mm / 54 mm and meet on centre?</td><td><strong>Yes</strong></td></tr>
         <tr><td>Will a holed ball roll without slipping?</td><td><strong>No</strong></td></tr>
         <tr><td>Is the footprint acceptable to carry?</td><td><strong>Slightly no</strong></td></tr>
+        <tr><td>Is the component layout feasible?</td><td><strong>Yes</strong></td></tr>
       </tbody>
     </table>
   </div>
@@ -587,10 +588,8 @@
     <span class="callout-title">Proceed with CuPickle (A′) into detailed design</span>
     <p>Players need to trust that their ball does not impact their performance due to soft spot degradation. CuPickle
     is the only concept that reads damage signals at several positions. It scored highest (3.25), and the alpha
-    prototype showed the component layout feasible but overall size for portability should be reconsidered.</p>
-    <p>CuPickle is the strongest of five meaningfully different concepts on the needs that decide whether the product
-    works, the only one that measures several damage signals at several positions, and the more buildable of the two
-    finalists (<a href="downselection.html">Downselection</a>). The alpha prototype confirmed the core geometry and
+    prototype showed the component layout to be feasible, but its overall size should be reconsidered for portability.</p>
+    <p>It is also the more buildable of the two finalists (<a href="downselection.html">Downselection</a>). The alpha prototype confirmed the core geometry and
     showed what detailed design must fix: ball control on the rollers and overall size.</p>
     <p style="margin:0"><strong>Most important next steps:</strong> (1) build the motorized prototype with a
     multi-axial cradle and measure roller slip and test time; (2) drop-test 20 new and used balls to confirm at least
