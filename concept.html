@@ -61,9 +61,10 @@
 
   <p class="eyebrow">Gate Review 2 &middot; Concept &amp; Prototyping</p>
   <h1>Proposed Concept Description</h1>
-  <p class="lead">A pickleball goes soft with play, and players cannot feel the difference until it costs
-  them a point. CuPickle squeezes the ball at several points around its circumference, measures how stiff it is and
-  how much energy it loses, and tells the player whether it still plays like a good ball.</p>
+  <p class="lead">Keep the playable balls. Retire the non-playable ones. Frequent, competitive players suffer from
+  performance loss due to degraded balls. They can't tell when a ball is not fit for play, and no tester checks balls
+  in play. CuPickle is an enclosed rolling compression system that compresses a ball at multiple positions and grades
+  it playable or non-playable.</p>
 
   <div class="grid grid-3" style="align-items:center">
     <figure style="margin:0">
@@ -79,15 +80,45 @@
   <p style="margin-top:0.7rem"><b>Figure 1.</b> CuPickle: concept render with the door closed and open (team,
   AI-assisted), and the full-scale alpha prototype of its press and roller cradle.</p>
 
-  <h2>The opportunity from Gate Review 1</h2>
-  <p>Gate Review 1 found that frequent, competitive players cannot reliably tell when a ball is worn out. Consistent
-  performance is their top equipment criterion (52.8% rank it first), yet 52.8% rate their confidence in judging
-  equipment at 3 or lower out of 7 <a class="cite" href="#ref-1">[1]</a>. The damage is mostly hidden: in
-  <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/">Pickleball Science's play test</a>, a
-  Franklin X-40 lost about 10% of its stiffness per hour of play, falling from 93.5 to 75.2 lb/in over two hours <a class="cite" href="#ref-2">[2]</a>. No commercial tester checks balls in service; the
-  instruments that exist test paddles or factory quality and cost $2,900 to $4,995 (<a href="competition.html">Competition
-  Analysis</a>). For Gate Review 2 the team narrowed the customer to the <strong>individual competitive player</strong>
-  who carries the device to the court, rather than a station installed at a club.</p>
+  <h2>Updated need and design problem</h2>
+  <p><strong>Balls soften, reducing performance, and players can't tell.</strong></p>
+  <div class="grid grid-2">
+    <div class="card"><h3>Target customer</h3><p style="margin:0">The individual frequent, competitive players who bring
+    their own balls to the courts.</p></div>
+    <div class="card"><h3>Priority need and use context</h3><p style="margin:0">Player performance should not be impacted
+    by a degraded ball. Every ball in play should perform like a good ball. Today players judge by look, bounce or
+    compression in about 3 s <a class="cite" href="research.html#interviews" title="[7] Team 1, “Activity 10b: Consumer Interviews,” ME 455, 2026 (P1–P4). See Market Research.">[7]</a>, and 52.8% rate their confidence 3 or lower of 7
+    <a class="cite" href="research.html#survey" title="[1] Team 1, “Activity 10a: Consumer Survey,” ME 455, 2026 (n=36 responses). See Market Research.">[1]</a>.</p></div>
+    <div class="card"><h3>Principal benefit</h3><p style="margin:0">Consistent performance, fair games: retire a ball on
+    evidence before it costs a point, and keep the balls that still play well.</p></div>
+    <div class="card"><h3>Revised since Gate Review 1</h3><p style="margin:0">Customer: players and facilities →
+    individual competitive player. Use: test system at facilities → device the player carries. Scope: balls only;
+    paddles out of scope.</p></div>
+  </div>
+
+  <h3>Why it is still worth pursuing</h3>
+  <div class="grid grid-2" style="margin:1rem 0 1.6rem">
+    <div class="stat"><span class="stat-value">52.8%</span><span class="stat-label">rank consistent performance their #1 equipment criterion</span><span class="stat-source">Survey, n=36 [1]</span></div>
+    <div class="stat"><span class="stat-value">≈10%</span><span class="stat-label">of stiffness lost per hour of play: 93.5 → 75.2 lb/in in 2 h</span><span class="stat-source">Pickleball Science 2023 [2]</span></div>
+    <div class="stat"><span class="stat-value">$2,900</span><span class="stat-label">minimum for today's instruments; all test paddles or factory QC</span><span class="stat-source">Team QFD and benchmarking [3]</span></div>
+    <div class="stat"><span class="stat-value">0</span><span class="stat-label">commercial testers for balls already in play</span><span class="stat-source">Team QFD and benchmarking [3]</span></div>
+  </div>
+
+  <div class="callout">
+    <span class="callout-title">Design problem statement</span>
+    <p style="margin:0">The goal of this project is to design a pickleball condition tester for frequent, competitive
+    players that tells them objectively whether a ball still plays like a good ball before or between games so that
+    they do not use a ball that reduces their performance.</p>
+  </div>
+
+  <h3>Scope and constraints</h3>
+  <ul>
+    <li>≤ 30 s to test per ball</li>
+    <li>No damage to the ball</li>
+    <li>Portable: ≤ 2.5 L and ≤ 2 kg</li>
+    <li>Production: &lt; $400 prototype, &lt; 8 weeks to make, buildable in class</li>
+    <li>Retail target ≤ $100 <a class="cite" href="product-definition.html#qfd" title="[3] Team 1, “ME455 Pickle QFD” workbook, GR2 QFD tab, 2026. See House of Quality.">[3]</a></li>
+  </ul>
 
   <h2>What guided the concept</h2>
   <div class="table-wrap">
@@ -106,7 +137,7 @@
   </div>
   <p><b>Table 1.</b> The needs, specifications and constraints that guided concept generation. Weights combine the
   four stakeholders' rankings in the GR2 <a href="product-definition.html#qfd">House of Quality</a>
-  <a class="cite" href="#ref-3">[3]</a>.</p>
+  <a class="cite" href="product-definition.html#qfd" title="[3] Team 1, “ME455 Pickle QFD” workbook, GR2 QFD tab, 2026. See House of Quality.">[3]</a>.</p>
 
   <h2>How CuPickle works</h2>
   <p>The player opens the door with the finger recess, sets the ball on a two-roller cradle, closes the door and presses
@@ -114,40 +145,87 @@
   contact, then the plate compresses the ball a fixed distance while force is recorded on the way down and on the way
   back up. That gives two damage signals, <strong>stiffness</strong> (force ÷ deflection) and
   <strong>hysteresis</strong> (the loop between loading and unloading). The plate lifts, the rollers turn the ball,
-  and the squeeze repeats at 4–6 positions. A position that reads far from the others flags a soft spot, or a ball
+  and the compression repeats at 4–6 positions. A position that reads far from the others flags a soft spot, or a ball
   resting on a hole or seam. The controller compares the results with a new ball of the same model and shows
   <strong>Playable</strong> or <strong>Non-playable</strong> on the readout, while the player watches the test through
   the door's window.</p>
   <p>Fixed-displacement compression is the principle behind the compression test in the
   <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">USA Pickleball Equipment
   Standards Manual</a>, which requires new balls to average below 43 lbf under ASTM F1888
-  <a class="cite" href="#ref-4">[4]</a>. CuPickle applies it to balls already in play.</p>
+  <a class="cite" href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf" target="_blank" rel="noopener" title="[4] USA Pickleball, Equipment Standards Manual, Rev. 3.0, Jan. 2025, rule 2.D.6. usapickleball.org">[4]</a>. CuPickle applies it to balls already in play.</p>
+
+  <h2 id="evidence">Evidence the concept works</h2>
+  <div class="callout">
+    <span class="callout-title">Compression testing has been successfully used to determine the stiffness of a pickleball</span>
+    <p style="margin:0">Pickleball Science compressed Franklin X-40 balls with a plate and force gauge after each hour of
+    competitive play <a class="cite" href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/" target="_blank" rel="noopener" title="[2] Pickleball Science, “How Many Games Will a Pickleball Last?” Mar. 15, 2023. pickleballscience.org">[2]</a>. This validates our device methodology:</p>
+    <ul style="margin-bottom:0">
+      <li><strong>Linear response.</strong> Force and displacement are linear up to 30 lb, so stiffness (k = F/δ) from a
+      fixed compression is a valid measure.</li>
+      <li><strong>A large signal.</strong> Stiffness fell from 93.5 to 84.0 to 75.2 lb/in over two hours, about 10% per
+      hour of play.</li>
+      <li><strong>Soft spots.</strong> After three hours stiffness changed with ball orientation, which is why CuPickle
+      compresses at 4–6 positions instead of one.</li>
+    </ul>
+  </div>
+  <figure style="margin:1rem 0;max-width:620px">
+    <a href="downselection.html#evidence"><img src="https://i0.wp.com/pickleballscience.org/wp-content/uploads/2023/03/Figure-4-1.jpg?fit=930%2C570&amp;ssl=1" alt="Pickleball Science Figure 4, Pickleball Compliance vs Usage: linear compliance-versus-force lines for a new ball and after one and two hours of play" loading="lazy" referrerpolicy="no-referrer"></a>
+    <figcaption><b>Pickleball Science, Figure 4: Pickleball Compliance vs Usage</b> (embedded from
+    <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/">pickleballscience.org</a>). Full method, plots, data and limits:
+    <a href="downselection.html#evidence">Downselection: Pickleball Science evidence</a>.</figcaption>
+  </figure>
 
   <h2>Subsystems and how they interact</h2>
   <div class="grid grid-3">
     <div class="card"><h3>Housing</h3><p style="margin:0">Dark upper shell for the drive, white lower shell for the cradle, windowed door and finger-pull recess.</p></div>
-    <div class="card"><h3>Ball handling</h3><p style="margin:0">Two silicone-sleeved rollers that cradle the ball and turn it between squeezes.</p></div>
+    <div class="card"><h3>Ball handling</h3><p style="margin:0">Two silicone-sleeved rollers that cradle the ball and turn it between compressions.</p></div>
     <div class="card"><h3>Compression</h3><p style="margin:0">Stepper and lead screw drive the plate; a collar sets a 5 mm hard stop.</p></div>
     <div class="card"><h3>Force sensing</h3><p style="margin:0">A load cell in the full force path reads force through loading and unloading.</p></div>
     <div class="card"><h3>Control</h3><p style="margin:0">Computes stiffness, hysteresis and the outlier check, subtracts frame flex from a steel-ball calibration, grades the ball.</p></div>
     <div class="card"><h3>User interface</h3><p style="margin:0">One start button and a readout on the top face; the window shows the test.</p></div>
   </div>
+  <h3 id="parts-list">Parts list</h3>
+  <figure style="margin:0 0 1rem">
+    <a href="assets/img/gr2/concept-a-layout.png"><img src="assets/img/gr2/concept-a-layout.png" alt="Isometric computer model of the CuPickle mechanism with eighteen numbered callouts matching the parts list" loading="lazy"></a>
+    <figcaption><b>Figure 2.</b> CuPickle internal mechanism (Concept A layout). Numbers refer to Table 2; the housing
+    in Figure 1 encloses it.</figcaption>
+  </figure>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="num">#</th><th>Part</th><th class="num">#</th><th>Part</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td>Compression stepper: NEMA 17, integrated T8×2 lead screw</td><td class="num">10</td><td>Hard-stop collar: limits compression to 5 mm</td></tr>
+          <tr><td class="num">2</td><td>Motor plate: bolts to crossbar</td><td class="num">11</td><td>Top endstop: microswitch, homing</td></tr>
+          <tr><td class="num">3</td><td>Top crossbar: 2020 extrusion, 150 mm</td><td class="num">12</td><td>Pickleball: Ø74, 26 g, 40 holes Ø8</td></tr>
+          <tr><td class="num">4</td><td>Uprights ×2: 2020 extrusion, ~200 mm</td><td class="num">13</td><td>Rollers ×2: Ø20 × 60, silicone 30A, 54 c–c</td></tr>
+          <tr><td class="num">5</td><td>Guide rods ×2: Ø8, SK8 clamps top &amp; bottom</td><td class="num">14</td><td>Side blocks ×2: printed / Al, flanged bearings, Ø6 shafts</td></tr>
+          <tr><td class="num">6</td><td>Carriage: LM8UU ×2, rear tongue for load cell</td><td class="num">15</td><td>GT2 drive: 3 pulleys, one belt, rollers co-rotate</td></tr>
+          <tr><td class="num">7</td><td>Lead-screw nut: T8 brass, flanged</td><td class="num">16</td><td>Roller stepper: NEMA 14 · 222° = 60° ball roll</td></tr>
+          <tr><td class="num">8</td><td>Load cell: 20 kg straight bar, cantilever, full force path</td><td class="num">17</td><td>Electronics enclosure: OLED + start button on top</td></tr>
+          <tr><td class="num">9</td><td>Top plate: Al disc Ø40 × 5, on standoff</td><td class="num">18</td><td>Base: 2020 frame 150 × 120 + 3 mm plate</td></tr>
+        </tbody>
+      </table>
+    </div>
+  <p><b>Table 2.</b> CuPickle parts list (callouts 1–18 in Figure 2). Also on
+  <a href="top-concepts.html#parts-list">Top Concepts: Concept A</a>.</p>
+
   <p>The controller commands the compression drive, the drive deforms the ball, the load cell returns the force, and
-  the controller decides whether to squeeze again, roll the ball, or report a grade. The architecture drawing and
+  the controller decides whether to compress again, roll the ball, or report a grade. The architecture drawing and
   operating sequence are on <a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a>.</p>
 
   <h2>Benefits and differentiation</h2>
-  <p>CuPickle replaces a squeeze or bounce by feel with a measured answer. It detects softening that players
-  cannot see or feel, and because it reads two signals at several positions it finds local soft spots that a single squeeze or
-  bounce misses; Pickleball Science stopped its play test after three hours precisely because stiffness began to vary
-  with ball orientation <a class="cite" href="#ref-2">[2]</a>. The player can watch the test happen, which builds
+  <p>CuPickle replaces a compression or bounce by feel with a measured answer. It detects softening that players
+  cannot see or feel, and because it reads two signals at several positions it finds local soft spots that a single compression or
+  bounce
+  misses; Pickleball Science stopped its play test after three hours precisely because stiffness began to vary
+  with ball orientation <a class="cite" href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/" target="_blank" rel="noopener" title="[2] Pickleball Science, “How Many Games Will a Pickleball Last?” Mar. 15, 2023. pickleballscience.org">[2]</a>. The player can watch the test happen, which builds
   trust, and it is the first tester aimed at balls in play rather than at paddles or factory quality control.</p>
 
   <h2>Why this concept was selected</h2>
   <p>Five meaningfully different concepts were compared against the test-gun datum with a Pugh matrix and a weighted
   matrix built from the GR2 QFD. Concept A, the Rolling Compression Station, was refined with two features from the
-  CubeClamp (E), a hysteresis signal and steel-ball calibration, and the refined A′ scored highest at 3.26, ahead of the
-  CubeClamp at 3.19 <a class="cite" href="#ref-5">[5]</a>. Because that gap is smaller than one rating step, the team
+  CubeClamp (E), a hysteresis signal and steel-ball calibration, and the refined A′ scored highest at 3.25, ahead of the
+  CubeClamp at 3.19 <a class="cite" href="downselection.html" title="[5] Team 1, “CuPickle Downselection (condensed),” ME 455, Oct. 26, 2026.">[5]</a>. Because that gap is smaller than one rating step, the team
   decided on buildability: the CubeClamp's ball does not fit through its 40 mm opening, and it needs two synchronized
   motors and a machined flexure, while A′ uses off-the-shelf parts and two user actions. The full argument is on
   <a href="downselection.html">Downselection</a>.</p>
@@ -157,10 +235,10 @@
     <div class="card">
       <h3>Advantages</h3>
       <ul style="margin-bottom:0">
-        <li>Objective and repeatable: the motor, not the user, sets the squeeze.</li>
+        <li>Objective and repeatable: the motor, not the user, sets the compression.</li>
         <li>Two damage signals at 4–6 positions per ball.</li>
         <li>Non-destructive: a software force limit and a 5 mm hard stop cap the deformation; the door keeps fingers
-        out of the squeeze.</li>
+        out of the compression.</li>
         <li>Off-the-shelf parts, about $130 against the $400 prototype budget.</li>
       </ul>
     </div>
@@ -176,11 +254,14 @@
     </div>
   </div>
   <p><strong>Open questions.</strong> What Playable threshold fits each common ball model, and how should temperature be
-  handled, given that stiffness changes strongly with temperature <a class="cite" href="#ref-6">[6]</a>?</p>
+  handled, given that stiffness changes strongly with temperature <a class="cite" href="https://pickleballscience.org/how-does-temperature-affect-a-pickleball/" target="_blank" rel="noopener" title="[6] Pickleball Science, “How Does Temperature Affect a Pickleball?” 2024. pickleballscience.org">[6]</a>?</p>
 
   <h2>Gate Review 2 recommendation</h2>
   <div class="callout">
     <span class="callout-title">Proceed with CuPickle (refined concept A′) into detailed design</span>
+    <p>Players need to trust that their ball does not impact their performance due to soft spot degradation. CuPickle
+    is the only concept that reads damage signals at several positions. It scored highest (3.25), and the alpha
+    prototype showed the component layout feasible but overall size for portability should be reconsidered.</p>
     <p style="margin:0">First steps: a motorized prototype with a multi-axial cradle; drop tests of 20 new and used
     balls to confirm at least 90% agreement with the bounce test; 50 tests on control balls to confirm at most 0.5 in.
     of rebound change; and a smaller frame. If agreement falls short, the CubeClamp's curve-based approach is the
@@ -235,9 +316,10 @@
     <li id="ref-3">[3] Team 1, “ME455 Pickle QFD” workbook, GR2 QFD tab, 2026. See <a href="product-definition.html#qfd">House of Quality</a>.</li>
     <li id="ref-4">[4] USA Pickleball, <em>Equipment Standards Manual</em>, Rev. 3.0, Jan. 2025, rule 2.D.6.
       <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">usapickleball.org</a></li>
-    <li id="ref-5">[5] Team 1, “CuPickle Downselection (condensed),” ME 455, Oct. 26, 2026.</li>
+    <li id="ref-5">[5] Team 1, “CuPickle Downselection (condensed),” ME 455, Oct. 26, 2026. On this site: <a href="downselection.html">Downselection</a>.</li>
     <li id="ref-6">[6] Pickleball Science, “How Does Temperature Affect a Pickleball?” 2024.
       <a href="https://pickleballscience.org/how-does-temperature-affect-a-pickleball/">pickleballscience.org</a></li>
+    <li id="ref-7">[7] Team 1, “Activity 10b: Consumer Interviews,” ME 455, 2026 (P1–P4). See <a href="research.html">Market Research</a>.</li>
   </ol>
 
   <nav class="pager" aria-label="Section navigation">

@@ -69,11 +69,11 @@
     <table>
       <thead><tr><th>Concept</th><th>Sensing principle</th><th>What loads the ball</th><th>Form</th><th>Origin in the methods</th></tr></thead>
       <tbody>
-        <tr><td><a href="#concept-a">A. Rolling Compression Station</a></td><td>Stiffness at several positions (load cell)</td><td>Motor, fixed displacement</td><td>Bench station</td><td>Squeeze branch; rotating cradle from the tap gap</td></tr>
-        <tr><td><a href="#concept-b">B. Three-prong fork</a></td><td>Stiffness from prong force (strain gauges)</td><td>User push into a fixed interference</td><td>Compact ring</td><td>Squeeze branch; fixed displacement from the functional decomposition</td></tr>
-        <tr><td><a href="#concept-c">C. Instrumented glove</a></td><td>Grip force and finger closure (FSRs, flex sensors)</td><td>The player's hand</td><td>Wearable</td><td>Squeeze branch, “by hand with a force-sensitive resistor”</td></tr>
-        <tr><td><a href="#concept-d">D. Test gun</a></td><td>Force and deformation (handheld actuator)</td><td>Motor, trigger-started</td><td>Handheld</td><td>Brainstorming forms; squeeze branch</td></tr>
-        <tr><td><a href="#concept-e">E. CubeClamp</a></td><td>Stiffness, hysteresis and bulge from one squeeze (flexure gauges, encoder)</td><td>Two motors, to a set force</td><td>Benchtop cube</td><td>Brainstorm sketches; lab compression testers; AI animation</td></tr>
+        <tr><td><a href="#concept-a">A. Rolling Compression Station</a></td><td>Stiffness at several positions (load cell)</td><td>Motor, fixed displacement</td><td>Bench station</td><td>Compression branch; rotating cradle from the tap gap</td></tr>
+        <tr><td><a href="#concept-b">B. Three-prong fork</a></td><td>Stiffness from prong force (strain gauges)</td><td>User push into a fixed interference</td><td>Compact ring</td><td>Compression branch; fixed displacement from the functional decomposition</td></tr>
+        <tr><td><a href="#concept-c">C. Instrumented glove</a></td><td>Grip force and finger closure (FSRs, flex sensors)</td><td>The player's hand</td><td>Wearable</td><td>Compression branch, “by hand with a force-sensitive resistor”</td></tr>
+        <tr><td><a href="#concept-d">D. Test gun</a></td><td>Force and deformation (handheld actuator)</td><td>Motor, trigger-started</td><td>Handheld</td><td>Brainstorming forms; compression branch</td></tr>
+        <tr><td><a href="#concept-e">E. CubeClamp</a></td><td>Stiffness, hysteresis and bulge from one compression (flexure gauges, encoder)</td><td>Two motors, to a set force</td><td>Benchtop cube</td><td>Brainstorm sketches; lab compression testers; AI animation</td></tr>
       </tbody>
     </table>
   </div>
@@ -85,25 +85,25 @@
     <a href="assets/img/gr2/concept-a-layout.png"><img src="assets/img/gr2/concept-a-layout.png" alt="Isometric computer model of the Rolling Compression Station with eighteen numbered callouts" loading="lazy"></a>
     <figcaption><b>Figure 9.</b> Concept A, the Rolling Compression Station. Numbers refer to Table 10.</figcaption>
   </figure>
-  <details>
-    <summary><strong>Table 10. Concept A parts (callouts 1–18)</strong></summary>
+  <div id="parts-list">
+    <p style="margin-bottom:0.4rem"><b>Table 10.</b> Concept A parts list (callouts 1–18 in Figure 9).</p>
     <div class="table-wrap">
       <table>
         <thead><tr><th class="num">#</th><th>Part</th><th class="num">#</th><th>Part</th></tr></thead>
         <tbody>
-          <tr><td class="num">1</td><td>Compression stepper, NEMA 17, integrated T8×2 lead screw</td><td class="num">10</td><td>Hard-stop collar, limits squeeze to 5 mm</td></tr>
-          <tr><td class="num">2</td><td>Motor plate, bolted to the crossbar</td><td class="num">11</td><td>Top endstop microswitch, for homing</td></tr>
-          <tr><td class="num">3</td><td>Top crossbar, 2020 extrusion, 150 mm</td><td class="num">12</td><td>Pickleball, Ø74 mm, 26 g, 40 holes</td></tr>
-          <tr><td class="num">4</td><td>Uprights ×2, 2020 extrusion, ~200 mm</td><td class="num">13</td><td>Rollers ×2, Ø20 × 60 mm, silicone 30A, 54 mm apart</td></tr>
-          <tr><td class="num">5</td><td>Guide rods ×2, Ø8 mm, clamped top and bottom</td><td class="num">14</td><td>Side blocks ×2, printed or aluminium, flanged bearings, Ø6 shafts</td></tr>
-          <tr><td class="num">6</td><td>Carriage, two LM8UU linear bearings</td><td class="num">15</td><td>GT2 belt drive, three pulleys, rollers turn together</td></tr>
-          <tr><td class="num">7</td><td>Lead-screw nut, T8 brass, flanged</td><td class="num">16</td><td>Roller stepper, NEMA 14; 222° of roller turn = 60° of ball roll</td></tr>
-          <tr><td class="num">8</td><td>Load cell, 20 kg straight bar, in the full force path</td><td class="num">17</td><td>Electronics enclosure, OLED and start button on top</td></tr>
-          <tr><td class="num">9</td><td>Top plate, aluminium disc Ø40 × 5 mm</td><td class="num">18</td><td>Base, 2020 frame 150 × 120 mm with a 3 mm plate</td></tr>
+          <tr><td class="num">1</td><td>Compression stepper: NEMA 17, integrated T8×2 lead screw</td><td class="num">10</td><td>Hard-stop collar: limits compression to 5 mm</td></tr>
+          <tr><td class="num">2</td><td>Motor plate: bolts to crossbar</td><td class="num">11</td><td>Top endstop: microswitch, homing</td></tr>
+          <tr><td class="num">3</td><td>Top crossbar: 2020 extrusion, 150 mm</td><td class="num">12</td><td>Pickleball: Ø74, 26 g, 40 holes Ø8</td></tr>
+          <tr><td class="num">4</td><td>Uprights ×2: 2020 extrusion, ~200 mm</td><td class="num">13</td><td>Rollers ×2: Ø20 × 60, silicone 30A, 54 c–c</td></tr>
+          <tr><td class="num">5</td><td>Guide rods ×2: Ø8, SK8 clamps top &amp; bottom</td><td class="num">14</td><td>Side blocks ×2: printed / Al, flanged bearings, Ø6 shafts</td></tr>
+          <tr><td class="num">6</td><td>Carriage: LM8UU ×2, rear tongue for load cell</td><td class="num">15</td><td>GT2 drive: 3 pulleys, one belt, rollers co-rotate</td></tr>
+          <tr><td class="num">7</td><td>Lead-screw nut: T8 brass, flanged</td><td class="num">16</td><td>Roller stepper: NEMA 14 · 222° = 60° ball roll</td></tr>
+          <tr><td class="num">8</td><td>Load cell: 20 kg straight bar, cantilever, full force path</td><td class="num">17</td><td>Electronics enclosure: OLED + start button on top</td></tr>
+          <tr><td class="num">9</td><td>Top plate: Al disc Ø40 × 5, on standoff</td><td class="num">18</td><td>Base: 2020 frame 150 × 120 + 3 mm plate</td></tr>
         </tbody>
       </table>
     </div>
-  </details>
+  </div>
   <p><strong>Description.</strong> A compact station that tests the whole circumference of the ball, not just one
   spot. The player drops a ball into an open cradle, presses one button, and gets one grade: Playable or
   Non-playable.</p>
@@ -119,7 +119,7 @@
   which the ball recovers its shape protects it, and the full test fits the 30-second target.</p>
   <p><strong>Interactions and affordances.</strong> The open cavity invites the ball in; a single button starts the
   test; the display states the result in words.</p>
-  <p><strong>Advantages.</strong> Tests several positions automatically, so it finds soft spots a single squeeze
+  <p><strong>Advantages.</strong> Tests several positions automatically, so it finds soft spots a single compression
   misses. Hands-off and repeatable.</p>
   <p><strong>Disadvantages and risks.</strong> Rolling covers only one band, about 30% of the surface. Thresholds
   differ by ball model, which may need an extra step where the user selects the model.</p>
@@ -156,7 +156,7 @@
   <p><strong>Advantages.</strong> Fixed-displacement loading removes the user's push force as a variable, and three
   readings give a built-in error check.</p>
   <p><strong>Disadvantages and risks.</strong> Ball diameter is allowed to vary from 2.87 to 2.97 in.
-  <a class="cite" href="#ref-1">[1]</a>, so each ball must be measured to know D. Friction while seating may cause
+  <a class="cite" href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf" target="_blank" rel="noopener" title="[1] USA Pickleball, Equipment Standards Manual, Rev. 3.0, Jan. 2025, rule 2.D.3. usapickleball.org">[1]</a>, so each ball must be measured to know D. Friction while seating may cause
   hysteresis, and readings depend on local wall thickness, holes and the seam.</p>
   <p><strong>Technical and manufacturing challenges.</strong> The contact force acts at the prong tip, above the spoke,
   so it bends the spokes as well as stretching them; a parallelogram flexure or full bridge is likely needed to reject
@@ -174,9 +174,9 @@
   </figure>
   <p><strong>Description.</strong> The player's own hand becomes the test fixture. A thin stretch-fabric glove with
   force-sensitive resistors (FSRs) on the thumb, fingertips and palm measures how hard the ball pushes back when
-  squeezed.</p>
-  <p><strong>How it operates.</strong> The player puts on the glove, grips the ball between thumb and fingers, and
-  squeezes until the wrist display signals a target force. FSRs S1–S6 report contact forces F<sub>i</sub>. Flex sensors
+  compressed.</p>
+  <p><strong>How it operates.</strong> The player puts on the glove, grips the ball between thumb and fingers, and compresses it until the wrist
+  display signals a target force. FSRs S1–S6 report contact forces F<sub>i</sub>. Flex sensors
   along the index finger and thumb track finger closure, which is converted to ball squash s through calibration with
   balls of known diameter. Stiffness is estimated as k<sub>ball</sub> = F/s, where F is the thumb force opposing the
   combined finger forces.</p>
@@ -184,18 +184,18 @@
   converter, microcontroller, battery and display.</p>
   <p><strong>Customer needs addressed.</strong> Portability, speed and low cost: it packs into a bag, needs no fixture
   or motor, and reads in a few seconds.</p>
-  <p><strong>Interactions and affordances.</strong> Familiarity is its strongest affordance: squeezing a ball is
-  already how players judge whether it is “dead,” so the glove puts numbers on an existing habit. A vibration or color
-  cue at the target force guides the squeeze.</p>
+  <p><strong>Interactions and affordances.</strong> Familiarity is its strongest affordance: compressing a ball by hand is already how players
+  judge whether it is “dead,” so the glove puts numbers on an existing habit. A vibration or color
+  cue at the target force guides the compression.</p>
   <p><strong>Advantages.</strong> Measures the ball the way players perceive it, and can check many balls quickly.</p>
   <p><strong>Disadvantages and risks.</strong> Repeatability is the main weakness: the hand sets the force, contact
   points and orientation, so readings vary between users and grips. FSRs drift and show hysteresis, and even under a
-  controlled load they vary by ±6% part to part <a class="cite" href="#ref-2">[2]</a>; flex sensors give only a coarse
+  controlled load they vary by ±6% part to part <a class="cite" href="https://www.interlinkelectronics.com/fsr-400-series" target="_blank" rel="noopener" title="[2] Interlink Electronics, “FSR 400 Series,” product specifications. interlinkelectronics.com">[2]</a>; flex sensors give only a coarse
   displacement, so squash is the least certain quantity.</p>
   <p><strong>Technical and manufacturing challenges.</strong> Keeping sensors aligned on stretching fabric, routing
   durable wiring through flexing joints, sizing for different hands, and calibrating each glove.</p>
   <p><strong>Aesthetic and emotional qualities.</strong> Personal and natural to use; it feels like part of the
-  player's kit rather than a lab instrument. It came from the squeeze branch of the
+  player's kit rather than a lab instrument. It came from the compression branch of the
   <a href="concept-tree.html">concept tree</a> (“by hand with a force-sensitive resistor”), trading the precision of
   fixed-displacement concepts for portability and a player-centred experience.</p>
 
@@ -218,7 +218,7 @@
   trigger. The force mechanism loads the ball, and the result appears on the display.</p>
   <p><strong>Subsystems.</strong> Display, force mechanism (linear actuator), ball cradle, ergonomic grip, trigger.</p>
   <p><strong>Customer needs addressed.</strong> Fast, portable testing with a comfortable one-handed feel, and a
-  repeatable actuator instead of the user's squeeze.</p>
+  repeatable actuator instead of the user's hand compression.</p>
   <p><strong>Interactions and affordances.</strong> The pistol grip and trigger tell the user how to hold and start it
   without instructions.</p>
   <p><strong>Advantages.</strong> Convenient handheld shape; simple to operate for all players; portable;
@@ -228,7 +228,7 @@
   <p><strong>Technical and manufacturing challenges.</strong> Calibrating the test force, designing a cradle that
   holds the ball without interfering with the measurement, and manufacturing the casing.</p>
   <p><strong>Aesthetic and emotional qualities.</strong> Many options for customization, including colors and grip
-  textures. Its handheld form came from the brainstorming sketches, and its measurement from the squeeze branch.</p>
+  textures. Its handheld form came from the brainstorming sketches, and its measurement from the compression branch.</p>
 
   <!-- Concept E -->
   <h2 id="concept-e">Concept E: CubeClamp (cup-clamp tester)</h2>
@@ -243,9 +243,9 @@
   <p style="margin-top:0.7rem"><b>Figure 13.</b> Concept E. Left: the 140 mm benchtop cube with its viewing port and
   readout. Right: section through the load path (dashed); the flexure under the lower cradle carries four gauges in a
   full bridge, and two rim gauges 90° apart read bulge.</p>
-  <p><strong>Description.</strong> A 140 mm benchtop cube that squeezes a pickleball between two cup-shaped cradles.
-  Instead of a single stiffness reading, it captures the full force–deflection curve and measures sideways bulge, so
-  one squeeze shows three signs of damage: lower stiffness, a wider loading/unloading loop, and uneven bulging from a
+  <p><strong>Description.</strong> A 140 mm benchtop cube that compresses a pickleball between two cup-shaped cradles.
+  Instead of a single stiffness reading, it captures the full force–deflection curve and measures sideways bulge, so one compression shows three
+  signs of damage: lower stiffness, a wider loading/unloading loop, and uneven bulging from a
   local soft spot.</p>
   <p><strong>How it operates.</strong> The user seats the ball in the lower cradle and presses one button. Two small
   motors in the rear corners turn the lead screws, and the upper half travels down the guide posts until it meets the
@@ -262,10 +262,10 @@
   and presses one button.</p>
   <p><strong>Interactions and affordances.</strong> The cup cradle centres the ball on its own, a front notch confirms
   it is seated, and a top viewing port lets users watch the ball squash, which builds trust in the result.</p>
-  <p><strong>Advantages.</strong> Rich, quantitative data from a single squeeze, in a compact, enclosed form.</p>
+  <p><strong>Advantages.</strong> Rich, quantitative data from a single compression, in a compact, enclosed form.</p>
   <p><strong>Disadvantages and risks.</strong> Loading is the biggest risk: the upper half opens only about 40 mm, but
   the 74 mm ball needs about 70 mm of clearance, so a hinged lid or slide-out drawer is needed. It is unproven that
-  damage changes stiffness more than ball-to-ball and temperature variation do. Squeezing along one axis can miss
+  damage changes stiffness more than ball-to-ball and temperature variation do. Compressing along one axis can miss
   soft spots away from the poles, and the closing gap is a pinch hazard.</p>
   <p><strong>Technical and manufacturing challenges.</strong> Keeping the two motors in sync, machining and gauging the
   flexible hub accurately, and fitting everything inside without visible fasteners.</p>
@@ -296,5 +296,10 @@
   </div>
 </footer>
 
+<script>
+  /* Open a collapsed section when a citation links straight to it */
+  function openTarget(){var el=location.hash&&document.getElementById(location.hash.slice(1));if(el&&el.tagName==='DETAILS'){el.open=true;el.scrollIntoView();}}
+  window.addEventListener('hashchange',openTarget);openTarget();
+</script>
 </body>
 </html>

@@ -104,18 +104,18 @@
   toward the 2.5 L and 2 kg targets.</p>
 
   <h3>Operating principle</h3>
-  <p>The plate squeezes the ball by a fixed distance δ, set by the motor's step count, while the load cell measures
+  <p>The plate compresses the ball by a fixed distance δ, set by the motor's step count, while the load cell measures
   force F. That gives two damage signals at each position: <strong>stiffness</strong>, k = F ÷ δ, and
   <strong>hysteresis</strong>, the area between the loading and unloading curves. A worn ball is softer and dissipates
   more energy, so k falls and the loop widens; Pickleball Science measured stiffness falling about 10% per hour of play
-  <a class="cite" href="#ref-1">[1]</a>. Testing 4–6 positions around the ball adds a third: a reading far from the
+  <a class="cite" href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/" target="_blank" rel="noopener" title="[1] Pickleball Science, “How Many Games Will a Pickleball Last?” Mar. 15, 2023. pickleballscience.org">[1]</a>. Testing 4–6 positions around the ball adds a third: a reading far from the
   others flags a local soft spot, or a ball sitting on a hole or seam. Frame and load-cell flex are measured once with
   a steel ball and subtracted, and each ball is compared with a new ball of the same model near the same temperature,
-  since stiffness changes strongly with temperature <a class="cite" href="#ref-2">[2]</a>.</p>
+  since stiffness changes strongly with temperature <a class="cite" href="https://pickleballscience.org/how-does-temperature-affect-a-pickleball/" target="_blank" rel="noopener" title="[2] Pickleball Science, “How Does Temperature Affect a Pickleball?” 2024. pickleballscience.org">[2]</a>.</p>
 
   <h3>Functions</h3>
-  <p><strong>Primary:</strong> secure the ball, apply a fixed-distance squeeze, measure force, compute stiffness and
-  hysteresis, decide playability, display the result. <strong>Supporting:</strong> rotate the ball between squeezes,
+  <p><strong>Primary:</strong> secure the ball, apply a fixed-distance compression, measure force, compute stiffness and
+  hysteresis, decide playability, display the result. <strong>Supporting:</strong> rotate the ball between compressions,
   home the plate, limit force and travel, enclose the test, and hold every part in alignment
   (<a href="functional-decomposition.html">Functional Decomposition</a>).</p>
 
@@ -124,24 +124,24 @@
     <table>
       <thead><tr><th>Subsystem</th><th>Components</th><th>Role</th></tr></thead>
       <tbody>
-        <tr><td>Housing</td><td>Dark upper shell; white lower shell; left-hinged door with round window; finger-pull recess (about 20 × 12 × 4 mm); feet</td><td>Enclose the mechanism; keep fingers out of the squeeze; let the player see the test</td></tr>
-        <tr><td>Ball handling</td><td>Two Ø20 × 60 mm rollers with 30A silicone sleeves, 54 mm apart; GT2 belt; roller stepper</td><td>Cradle the ball and roll it between squeezes</td></tr>
-        <tr><td>Compression</td><td>NEMA 17 stepper with integrated T8 lead screw; carriage on linear bearings; Ø40 aluminium plate; 5 mm hard-stop collar</td><td>Lower the plate and squeeze a fixed distance</td></tr>
-        <tr><td>Force sensing</td><td>20 kg straight-bar load cell in the full force path; HX711 amplifier</td><td>Measure the squeeze force through loading and unloading</td></tr>
+        <tr><td>Housing</td><td>Dark upper shell; white lower shell; left-hinged door with round window; finger-pull recess (about 20 × 12 × 4 mm); feet</td><td>Enclose the mechanism; keep fingers out of the compression; let the player see the test</td></tr>
+        <tr><td>Ball handling</td><td>Two Ø20 × 60 mm rollers with 30A silicone sleeves, 54 mm apart; GT2 belt; roller stepper</td><td>Cradle the ball and roll it between compressions</td></tr>
+        <tr><td>Compression</td><td>NEMA 17 stepper with integrated T8 lead screw; carriage on linear bearings; Ø40 aluminium plate; 5 mm hard-stop collar</td><td>Lower the plate and compress the ball a fixed distance</td></tr>
+        <tr><td>Force sensing</td><td>20 kg straight-bar load cell in the full force path; HX711 amplifier</td><td>Measure the compression force through loading and unloading</td></tr>
         <tr><td>Control</td><td>Microcontroller; stepper drivers; homing endstop; temperature sensor</td><td>Sequence the test; compute stiffness, hysteresis and the outlier check; grade the ball</td></tr>
         <tr><td>User interface</td><td>Lime-ringed start button and slim readout on the top face</td><td>Start the test and show Playable or Non-playable</td></tr>
       </tbody>
     </table>
   </div>
   <p><b>Table 15.</b> CuPickle subsystems. Mechanism components are from the Concept A CAD model and parts list
-  <a class="cite" href="#ref-3">[3]</a>; housing features are from the concept render <a class="cite" href="#ref-4">[4]</a>.</p>
+  <a class="cite" href="top-concepts.html#parts-list" title="[3] Team 1, Concept A CAD model and “CuPickle Compression Tester: Parts List,” ME 455, Oct. 2026.">[3]</a>; housing features are from the concept render <a class="cite" href="#concept" title="[4] Team 1, CuPickle concept renders (AI-assisted, v6), ME 455, Oct. 2026.">[4]</a>.</p>
 
   <h3>Material, energy and information</h3>
-  <p><strong>Material:</strong> the ball enters through the door, is squeezed and rolled, and leaves unchanged.
+  <p><strong>Material:</strong> the ball enters through the door, is compressed and rolled, and leaves unchanged.
   <strong>Energy:</strong> electrical power drives two steppers; their torque becomes plate force through the lead
   screw and ball rotation through the belt and rollers. <strong>Information:</strong> the load cell turns force into
   a millivolt signal, the amplifier digitizes it, the controller combines it with the step count, and the readout turns
-  the grade into light the player reads; the window lets the player see the squeeze itself.</p>
+  the grade into light the player reads; the window lets the player see the compression itself.</p>
 
   <h3>Interface, controls, feedback and affordances</h3>
   <p>Two user actions: load the ball, press start. The finger-pull recess shows how the door opens, the cradle shows
@@ -157,13 +157,13 @@
 
   <h3>Preliminary materials and manufacturing</h3>
   <p>Mechanism: off-the-shelf motors, lead screw, bearings and electronics, with mounts 3D-printed in the makerspace;
-  about $130 in parts against the $400 prototype budget <a class="cite" href="#ref-5">[5]</a>. Housing: molded or
+  about $130 in parts against the $400 prototype budget <a class="cite" href="downselection.html" title="[5] Team 1, “CuPickle Downselection (condensed),” ME 455, Oct. 26, 2026.">[5]</a>. Housing: molded or
   printed shells for the product version; the volume target is a ≤ $33 unit cost against the $100 retail price.</p>
 
   <h3>Safety and accessibility</h3>
-  <p>The plate–cradle pinch point sits behind the closed door, a software force limit stops the squeeze, and a collar
+  <p>The plate–cradle pinch point sits behind the closed door, a software force limit stops the compression, and a collar
   caps travel at 5 mm, below the 0.25 in. displacement of the ASTM F1888 compression test that the USA Pickleball
-  standard uses <a class="cite" href="#ref-6">[6]</a>. One button and a word-based result suit older players and players
+  standard uses <a class="cite" href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf" target="_blank" rel="noopener" title="[6] USA Pickleball, Equipment Standards Manual, Rev. 3.0, Jan. 2025, rule 2.D.6; ASTM F1888 procedure as described in U.S. Patent 8,771,114. usapickleball.org">[6]</a>. One button and a word-based result suit older players and players
   with limited dexterity or color vision; the readout's legibility still has to be tested.</p>
 
   <h3>Benefits and differentiators</h3>
@@ -231,7 +231,7 @@
         <rect x="360" y="300" width="150" height="42" rx="8" fill="#e6e8ec" stroke="#303545" stroke-width="2"/><text x="435" y="326" text-anchor="middle" font-size="15" font-weight="700" fill="#20232e">Door + window</text>
         <g font-size="13" fill="#20232e">
           <text x="438" y="140">power</text>
-          <text x="760" y="124">force</text><text x="760" y="208">force</text><text x="760" y="286">squeeze δ</text><text x="760" y="372">rolls ball</text>
+          <text x="760" y="124">force</text><text x="760" y="208">force</text><text x="760" y="286">compression δ</text><text x="760" y="372">rolls ball</text>
           <text x="546" y="128" text-anchor="end" fill="#2a78d6">step/dir</text>
           <text x="546" y="190" text-anchor="end" fill="#2a78d6">force signal</text>
           <text x="560" y="300" text-anchor="end" fill="#2a78d6">step/dir</text>
@@ -259,7 +259,7 @@
   <figure>
     <div class="chart-surface" style="max-width:600px;margin-inline:auto">
       <svg viewBox="0 0 560 560" role="img" aria-labelledby="fig-dim-t">
-        <title id="fig-dim-t">Front elevation of the CuPickle mechanism with key dimensions in millimetres: base 150 wide, uprights about 200 tall, rollers 20 diameter at 54 centres, ball 74 diameter, plate 40 diameter, and 5 millimetre maximum squeeze</title>
+        <title id="fig-dim-t">Front elevation of the CuPickle mechanism with key dimensions in millimetres: base 150 wide, uprights about 200 tall, rollers 20 diameter at 54 centres, ball 74 diameter, plate 40 diameter, and 5 millimetre maximum compression</title>
         <defs><marker id="dm" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5062"/></marker></defs>
         <rect x="130" y="440" width="300" height="46" fill="#dcdfe7" stroke="#303545" stroke-width="2"/>
         <rect x="130" y="40" width="40" height="400" fill="#b9bdc9" stroke="#303545" stroke-width="1.5"/>
@@ -296,7 +296,7 @@
           <text x="280" y="156" stroke="#f3f4f7" stroke-width="5" paint-order="stroke">Ø40 plate</text>
           <text x="455" y="372" font-size="13" text-anchor="start">Ø20 × 60</text><text x="455" y="388" font-size="12" fill="#4a5062" text-anchor="start">rollers</text>
           <text x="455" y="202" font-size="13" text-anchor="start">load cell</text>
-          <text x="455" y="226" font-size="12" fill="#4a5062" text-anchor="start">max squeeze 5</text>
+          <text x="455" y="226" font-size="12" fill="#4a5062" text-anchor="start">max compression 5</text>
         </g>
         <g stroke="#6d7387" stroke-width="1"><line x1="354" y1="369" x2="452" y2="369"/><line x1="364" y1="198" x2="452" y2="198"/><line x1="320" y1="214" x2="452" y2="222"/></g>
       </svg>
@@ -386,7 +386,7 @@
     </figure>
     <figure style="margin:0">
       <div class="chart-surface" style="padding:0.6rem">
-        <svg viewBox="0 0 262 204" role="img" aria-label="Step 4: Squeeze and measure">
+        <svg viewBox="0 0 262 204" role="img" aria-label="Step 4: Compress and measure">
           <defs><marker id="ah4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2a78d6"/></marker></defs>
 <rect x="40" y="14" width="160" height="92" rx="10" fill="#2b2f3a"/>
 <rect x="40" y="104" width="160" height="88" rx="8" fill="#d9dbe0" stroke="#9aa0ab" stroke-width="1.2"/>
@@ -409,7 +409,7 @@
 <text x="2" y="132" font-size="10" font-weight="700" fill="#2a78d6">F–δ loop</text>
         </svg>
       </div>
-      <figcaption><b>4. Squeeze and measure.</b> The plate meets the ball and squeezes a fixed distance, logging force against travel.</figcaption>
+      <figcaption><b>4. Compress and measure.</b> The plate meets the ball and compresses it a fixed distance, logging force against travel.</figcaption>
     </figure>
     <figure style="margin:0">
       <div class="chart-surface" style="padding:0.6rem">
@@ -585,6 +585,9 @@
   <h2 id="recommendation">Gate Review 2 recommendation</h2>
   <div class="callout">
     <span class="callout-title">Proceed with CuPickle (A′) into detailed design</span>
+    <p>Players need to trust that their ball does not impact their performance due to soft spot degradation. CuPickle
+    is the only concept that reads damage signals at several positions. It scored highest (3.25), and the alpha
+    prototype showed the component layout feasible but overall size for portability should be reconsidered.</p>
     <p>CuPickle is the strongest of five meaningfully different concepts on the needs that decide whether the product
     works, the only one that measures several damage signals at several positions, and the more buildable of the two
     finalists (<a href="downselection.html">Downselection</a>). The alpha prototype confirmed the core geometry and
@@ -602,9 +605,9 @@
       <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/">pickleballscience.org</a></li>
     <li id="ref-2">[2] Pickleball Science, “How Does Temperature Affect a Pickleball?” 2024.
       <a href="https://pickleballscience.org/how-does-temperature-affect-a-pickleball/">pickleballscience.org</a></li>
-    <li id="ref-3">[3] Team 1, Concept A CAD model and “CuPickle Compression Tester: Parts List,” ME 455, Oct. 2026.</li>
-    <li id="ref-4">[4] Team 1, CuPickle concept renders (AI-assisted, v6), ME 455, Oct. 2026.</li>
-    <li id="ref-5">[5] Team 1, “CuPickle Downselection (condensed),” ME 455, Oct. 26, 2026.</li>
+    <li id="ref-3">[3] Team 1, Concept A CAD model and “CuPickle Compression Tester: Parts List,” ME 455, Oct. 2026. On this site: <a href="top-concepts.html#parts-list">Concept A parts list</a>.</li>
+    <li id="ref-4">[4] Team 1, CuPickle concept renders (AI-assisted, v6), ME 455, Oct. 2026. On this site: <a href="#concept">Proposed Concept</a>.</li>
+    <li id="ref-5">[5] Team 1, “CuPickle Downselection (condensed),” ME 455, Oct. 26, 2026. On this site: <a href="downselection.html">Downselection</a>.</li>
     <li id="ref-6">[6] USA Pickleball, <em>Equipment Standards Manual</em>, Rev. 3.0, Jan. 2025, rule 2.D.6; ASTM F1888 procedure as described in U.S. Patent 8,771,114.
       <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">usapickleball.org</a></li>
   </ol>

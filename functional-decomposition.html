@@ -103,9 +103,9 @@
 
   <h3>What changed after concept selection, and why</h3>
   <ul>
-    <li><strong>“Rotate ball” was added.</strong> Squeezing deforms the shell locally, and published wear tests found
+    <li><strong>“Rotate ball” was added.</strong> Compression deforms the shell locally, and published wear tests found
     that stiffness began to depend on ball orientation after about three hours of play
-    <a class="cite" href="#ref-1">[1]</a>, so one squeeze can miss a soft spot.</li>
+    <a class="cite" href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/" target="_blank" rel="noopener" title="[1] Pickleball Science, “How Many Games Will a Pickleball Last?” Mar. 15, 2023. pickleballscience.org">[1]</a>, so one compression can miss a soft spot.</li>
     <li><strong>“Apply force” became “command fixed-distance movement.”</strong> Displacement control suits a stepper
     motor, makes stiffness simple to compute, and limits how far the ball is deformed.</li>
     <li><strong>The sensing chain was expanded</strong> into convert mechanical to electrical energy, compute stiffness,
@@ -115,8 +115,8 @@
   <h2>Functions that matter most</h2>
   <p><strong>Customer value.</strong> <em>Measure ball properties</em>, <em>compute stiffness</em> and <em>compare
   with a playable ball</em> deliver the two needs players rank first: consistent performance (52.8% rank it first) and
-  confidence in the ball (52.8% rate their confidence 3 or lower of 7) <a class="cite" href="#ref-2">[2]</a>.
-  <em>Command fixed-distance movement</em> sets repeatability and caps the squeeze so the ball is not damaged.
+  confidence in the ball (52.8% rate their confidence 3 or lower of 7) <a class="cite" href="research.html#survey" title="[2] Team 1, “Activity 10a: Consumer Survey,” ME 455, 2026 (n=36 responses). See Market Research.">[2]</a>.
+  <em>Command fixed-distance movement</em> sets repeatability and caps the compression so the ball is not damaged.
   <em>Rotate ball</em> decides whether a local soft spot is found.</p>
   <p><strong>Technical feasibility.</strong> The hardest functions are separating ball deflection from flex in the
   load cell and rollers, detecting first contact accurately, rotating a ball full of holes without slip, and defining a
@@ -131,7 +131,7 @@
         <tr><td>Electrical (I²R) and hysteresis losses</td><td>Both motors and the load-cell circuit</td><td>Reduced motor current when idle</td></tr>
         <tr><td>Measurement error</td><td>Flex in the load cell and roller sleeves added to ball deflection</td><td>One compliance calibration with a steel ball</td></tr>
         <tr><td>Pinch point</td><td>Between the moving plate and the cradle</td><td>Mechanical hard stop; plate moves only after the start button</td></tr>
-        <tr><td>Overload</td><td>A cold, brittle ball squeezed too far could break or overload the load cell</td><td>Software force limit and a hard stop that caps travel at 5 mm</td></tr>
+        <tr><td>Overload</td><td>A cold, brittle ball compressed too far could break or overload the load cell</td><td>Software force limit and a hard stop that caps travel at 5 mm</td></tr>
       </tbody>
     </table>
   </div>
@@ -145,10 +145,10 @@
       <thead><tr><th>Function</th><th>Options considered</th><th>Chosen</th><th>Why</th></tr></thead>
       <tbody>
         <tr><td>Secure ball</td><td>Clamp, flat seat, O-ring seat, roller cradle, retaining cylinder</td><td>Roller cradle</td><td>Clamping pre-loads the ball and biases the reading; a roller cradle holds and turns it</td></tr>
-        <tr><td>Rotate ball</td><td>Manual, turntable, two rollers, omni-wheels, swerve drive</td><td>Two rollers</td><td>A turntable only spins the ball about the squeeze axis, so the plate keeps touching the same points; omni-wheels could roll it about two axes but are too complex for this semester</td></tr>
+        <tr><td>Rotate ball</td><td>Manual, turntable, two rollers, omni-wheels, swerve drive</td><td>Two rollers</td><td>A turntable only spins the ball about the compression axis, so the plate keeps touching the same points; omni-wheels could roll it about two axes but are too complex for this semester</td></tr>
         <tr><td>Apply force</td><td>Manual lever, toggle clamp, lead-screw stepper</td><td>Lead-screw stepper</td><td>Repeatable, automated travel</td></tr>
         <tr><td>Control mode</td><td>Fixed force, fixed displacement</td><td>Fixed displacement</td><td>Suits a stepper and limits deformation</td></tr>
-        <tr><td>Sense</td><td>Force-sensitive resistor (FSR) pad, load cell, acoustic tap</td><td>Load cell</td><td>An FSR varies by ±6% part to part even under a controlled load <a class="cite" href="#ref-3">[3]</a>, too close to the ~10% softening per hour the device must detect <a class="cite" href="#ref-1">[1]</a></td></tr>
+        <tr><td>Sense</td><td>Force-sensitive resistor (FSR) pad, load cell, acoustic tap</td><td>Load cell</td><td>An FSR varies by ±6% part to part even under a controlled load <a class="cite" href="https://www.interlinkelectronics.com/fsr-400-series" target="_blank" rel="noopener" title="[3] Interlink Electronics, “FSR 400 Series,” product specifications (part-to-part force repeatability, single batch). interlinkelectronics.com">[3]</a>, too close to the ~10% softening per hour the device must detect <a class="cite" href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/" target="_blank" rel="noopener" title="[1] Pickleball Science, “How Many Games Will a Pickleball Last?” Mar. 15, 2023. pickleballscience.org">[1]</a></td></tr>
         <tr><td>Decide</td><td>Absolute threshold, ratio to a reference ball</td><td>Ratio</td><td>Cancels fixture and material differences between ball models</td></tr>
       </tbody>
     </table>
