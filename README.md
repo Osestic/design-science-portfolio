@@ -1,6 +1,6 @@
 # Team 1 — Design Portfolio
 
-ME 455 Analytical Product Design · University of Michigan
+DESCI 501/ME 455 Analytical Product Design · University of Michigan
 Gate Review 1: Product Definition and Market Analysis · Gate Review 2: Product Concept · Gate Review 3: Detailed Design and Validation
 
 Live site: https://osestic.github.io/design-science-portfolio/

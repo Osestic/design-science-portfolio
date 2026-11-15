@@ -76,7 +76,7 @@
 <main class="container">
   <section class="section" style="padding-top:2.4rem">
     <p class="eyebrow">Gate Review 3 &middot; Proof-of-Concept Prototype</p>
-    <h1>A full-scale tester built to measure, not to look finished</h1>
+    <h1>Proof-of-concept design, fabrication and assembly</h1>
     <p class="lead">The POC is a full-scale, working CuPickle built in the U-M machine shop from the same frame drawings,
     motor, load cell, peg, driver chip and amplifier chip as the MVP. Its job is measurable evidence that one fixed 2 mm press
     grades a ball correctly, repeatably and within 30 s. It swaps the MVP's custom board, battery, touchscreen and molded case
@@ -235,7 +235,7 @@
     stack on the drawings (1/4 in. plate plus 1.5&ndash;2&times; diameter of thread engagement); confirm each at the first fit.</p>
     <h3>Preventing excess force or travel without the MVP's sensors</h3>
     <ol>
-      <li><strong>Mechanical stop.</strong> The P07 flange stops the Carriage at a 69.05 mm gap whatever the firmware does.</li>
+      <li><strong>Mechanical stop.</strong> The P07 flange stops the Carriage at a 69.05 mm gap independently of the firmware.</li>
       <li><strong>Current limit.</strong> The TMC2209 current is set before the motor is connected so stall thrust is &le; 177 N; first runs use half that current.</li>
       <li><strong>Firmware limits.</strong> The press stops at 2 mm from a 0.5 N contact or at 150 N, whichever comes first; it aborts if no contact is found within 15 mm of the start position.</li>
       <li><strong>Start position.</strong> Without a home switch, the operator jogs the plate to about 5 mm above a ball before each session; the firmware treats that as zero.</li>
@@ -358,7 +358,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
+    <p style="margin:0">DESCI 501/ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
     Gate Review 3: Detailed Design and Validation &middot; University of Michigan</p>
   </div>
 </footer>

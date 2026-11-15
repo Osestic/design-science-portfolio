@@ -76,7 +76,7 @@
 <main class="container">
   <section class="section" style="padding-top:2.4rem">
     <p class="eyebrow">Gate Review 3 &middot; Technical Development Methods</p>
-    <h1>Five design drivers decide whether CuPickle works</h1>
+    <h1>Design drivers and how each is resolved</h1>
     <p class="lead">Five focused questions decide whether CuPickle gives a trusted grade in 30 s or less. Drivers 2 and 4
     are resolved by analysis; driver 1 has test evidence; driver 3 is decided (a locating peg and one press) and waits on the
     POC; driver 5 needs the player study.</p>
@@ -106,7 +106,7 @@
     <h2>Driver 1: Playability grading (controlled experiment)</h2>
     <ol>
       <li><strong>Question.</strong> Does a plate press show a stiffness loss with play, and what ratio to a new ball marks a ball RETIRE?</li>
-      <li><strong>Why it matters.</strong> The grade is the product.</li>
+      <li><strong>Why it matters.</strong> Grading is CuPickle&rsquo;s main function; a wrong grade defeats the purpose of the product.</li>
       <li><strong>Requirement and failure mode.</strong> Identifies low-performance balls (15%, the heaviest need); FMEA "wrong grade shown" (RPN 288).</li>
       <li><strong>Why this method.</strong> <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/" target="_blank" rel="noopener">Pickleball Science</a> measured plate stiffness on Franklin X-40s falling 93.5 &rarr; 84.0 &rarr; 75.2 lb/in over two hours of play, the same property CuPickle measures, so a controlled compression test on our own balls is the most direct check.</li>
       <li><strong>Application.</strong> Phase A pressed one new and one used ball to 1, 5 and 11 mm. Phase B pressed five new and five used balls at six marked positions each to 5 mm (60 runs).</li>
@@ -125,7 +125,7 @@
       <li><strong>Requirement.</strong> S2 (&le; 0.025 mm), S16 (%GRR &lt; 10); FMEA "force reading wrong" (RPN 175).</li>
       <li><strong>Why this method.</strong> A series compliance stack shows which part flexes most before anything is built, and is quick to update with CAD dimensions.</li>
       <li><strong>Application.</strong> Summed the compliance of the load-cell bar, plates, carriage arm and screw and compared it with a new X-40.</li>
-      <li><strong>Inputs.</strong> 1/4 in. 6061-T6, spans from the drawings, 235 N worst-case stall thrust, 1.8&deg; motor with 1/16 microstepping.</li>
+      <li><strong>Inputs.</strong> 1/4 in. 6061-T6, plate and arm spans assumed until replaced with CAD values, 235 N worst-case stall thrust, 1.8&deg; motor with 1/16 microstepping.</li>
       <li><strong>Result.</strong> Machine compliance 0.00204 mm/N, 3.3% of the ball's; worn/new ratio error 0.005. Travel 0.0025 mm per microstep, lag &le; 0.022 mm. Safety factors 1.33&ndash;19.7.</li>
       <li><strong>Decision.</strong> Keep 1/4 in. plates; subtract steel-ball compliance; 0.5 N contact threshold so backlash is always taken up the same way; stall thrust limited to 177 N.</li>
       <li><strong>Validation.</strong> Dial-indicator travel check; calibration with known masses; gauge R&amp;R on the POC (<a href="validation.html#activity-2">Activity 2</a>).</li>
@@ -176,7 +176,7 @@
     <h2>Driver 5: Player trust (customer and usability study)</h2>
     <ol>
       <li><strong>Question.</strong> Which result format makes a player retire a ball on the result alone?</li>
-      <li><strong>Why it matters.</strong> Players buy confidence, not a number.</li>
+      <li><strong>Why it matters.</strong> Players will only buy and use CuPickle if they trust its result enough to act on it.</li>
       <li><strong>Requirement.</strong> S5 (&ge; 2-point gain), S8 (&le; 2 actions).</li>
       <li><strong>Why this method.</strong> Trust can only be measured with players.</li>
       <li><strong>Application.</strong> &ge; 21 weekly competitive adult players, including older players, check coded balls by hand and with CuPickle and rate their confidence.</li>
@@ -197,7 +197,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
+    <p style="margin:0">DESCI 501/ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
     Gate Review 3: Detailed Design and Validation &middot; University of Michigan</p>
   </div>
 </footer>

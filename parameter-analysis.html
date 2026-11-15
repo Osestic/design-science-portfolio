@@ -76,7 +76,7 @@
 <main class="container">
   <section class="section" style="padding-top:2.4rem">
     <p class="eyebrow">Gate Review 3 &middot; Parameter Analysis</p>
-    <h1>The numbers behind every part</h1>
+    <h1>Parameter decisions and supporting calculations</h1>
     <p class="lead">Each parameter below traces to a requirement or design driver and shows its inputs, equations, result,
     margin and decision. Values marked (A) are assumptions to be replaced by measurement. Worst cases use the full-current
     stall thrust of 235 N, not the nominal press force.</p>
@@ -239,9 +239,9 @@
       <tbody>
         <tr><td>New X-40 (published)</td><td>1 / 16.37 N/mm</td><td class="num">0.0611</td><td>&mdash;</td></tr>
         <tr><td>Load-cell bar</td><td>0.3 mm at 196 N (A)</td><td class="num">0.00153</td><td class="num">2.5%</td></tr>
-        <tr><td>Top and bottom plate (each)</td><td>Simply supported 80 mm span, 50 &times; 6.35 mm, 6061</td><td class="num">0.000145</td><td class="num">0.24%</td></tr>
-        <tr><td>Carriage arm</td><td>Cantilever 30 mm, 30 &times; 6.35 mm</td><td class="num">0.000204</td><td class="num">0.33%</td></tr>
-        <tr><td>Lead screw (axial)</td><td>60 mm of &Oslash;5.5 mm root</td><td class="num">0.000013</td><td class="num">0.02%</td></tr>
+        <tr><td>Top and bottom plate (each)</td><td>Simply supported 80 mm span (A), 50 &times; 6.35 mm, 6061</td><td class="num">0.000145</td><td class="num">0.24%</td></tr>
+        <tr><td>Carriage arm</td><td>Cantilever 30 mm (A), 30 &times; 6.35 mm</td><td class="num">0.000204</td><td class="num">0.33%</td></tr>
+        <tr><td>Lead screw (axial)</td><td>60 mm (A) of &Oslash;5.5 mm root</td><td class="num">0.000013</td><td class="num">0.02%</td></tr>
         <tr><td><strong>Machine total</strong></td><td>Sum</td><td class="num"><strong>0.00204</strong></td><td class="num"><strong>3.3%</strong></td></tr>
       </tbody></table></div>
     <p><strong>Effect.</strong> Uncorrected, a new ball reads 3.2% less stiff than it is (15.85 vs. 16.37 N/mm), but the
@@ -256,8 +256,8 @@
     <p>The flange on the Anti-Rotation Rod (P07, &Oslash;.630 in.) stops the Carriage at a 69.05 mm gap between the Press Plate and
     the Load Cell Plate. Largest legal ball 75.4 mm &rarr; at most 6.35 mm compression, exactly the ASTM F1888 certification depth;
     smallest legal ball 72.9 mm &rarr; at most 3.85 mm. A 2 mm press brings the gap to 70.9&ndash;73.4 mm, so the stop is never
-    reached in normal use. Retracted gap must clear the largest ball plus 5 mm for loading: &ge; 80.4 mm, so the plate travels about
-    11.4 mm from home to the end of a press. Machining the stop into the rod removes the separate collar and the step of setting it.</p>
+    reached in normal use. Retracted gap must clear the largest ball plus 5 mm for loading (A): &ge; 80.4 mm. From there a press ends 7.0 mm
+    (largest ball) to 9.5 mm (smallest ball) below home, and the stop sits 11.35 mm below home. Machining the stop into the rod removes the separate collar and the step of setting it.</p>
   </section>
 
   <section class="section" id="structure">
@@ -266,11 +266,11 @@
     <div class="table-wrap"><table>
       <thead><tr><th>Part</th><th>Model</th><th>Stress / load</th><th>Capacity</th><th>SF</th></tr></thead>
       <tbody>
-        <tr><td>Top Plate</td><td>Simply supported, 80 mm span, b = 50 mm, t = 6.35 mm; &sigma; = Mc/I</td><td class="num">14.0 MPa</td><td class="num">276 MPa</td><td class="num">19.7</td></tr>
-        <tr><td>Carriage arm</td><td>Cantilever 30 mm, b = 30 mm</td><td class="num">35.0 MPa</td><td class="num">276 MPa</td><td class="num">7.9</td></tr>
+        <tr><td>Top Plate</td><td>Simply supported, 80 mm span (A), b = 50 mm (A), t = 6.35 mm; &sigma; = Mc/I</td><td class="num">14.0 MPa</td><td class="num">276 MPa</td><td class="num">19.7</td></tr>
+        <tr><td>Carriage arm</td><td>Cantilever 30 mm (A), b = 30 mm (A)</td><td class="num">35.0 MPa</td><td class="num">276 MPa</td><td class="num">7.9</td></tr>
         <tr><td>Lead screw</td><td>Euler buckling, fixed&ndash;free (K = 2), 150 mm</td><td class="num">235 N</td><td class="num">985 N</td><td class="num">4.2</td></tr>
-        <tr><td>Brass nut threads</td><td>Bearing pressure, 10 mm engagement</td><td class="num">2.1 MPa</td><td class="num">&asymp; 10 MPa</td><td class="num">4.7</td></tr>
-        <tr><td>Load-cell bolts</td><td>Prying: 235 N &times; 55 mm / 15 mm</td><td class="num">862 N/bolt</td><td class="num">5.27 kN (M4 8.8 proof)</td><td class="num">6.1</td></tr>
+        <tr><td>Brass nut threads</td><td>Bearing pressure, 10 mm engagement (A)</td><td class="num">2.1 MPa</td><td class="num">&asymp; 10 MPa</td><td class="num">4.7</td></tr>
+        <tr><td>Load-cell bolts</td><td>Prying: 235 N &times; 55 mm (A) / 15 mm (A)</td><td class="num">862 N/bolt</td><td class="num">5.27 kN (M4 8.8 proof)</td><td class="num">6.1</td></tr>
         <tr><td>Load cell</td><td>Current-limited thrust vs. safe overload</td><td class="num">177 N</td><td class="num">235 N</td><td class="num">1.33</td></tr>
         <tr><td>Fatigue, any aluminium part</td><td>Peak stress vs. endurance strength</td><td class="num">35 MPa</td><td class="num">96 MPa</td><td class="num">2.7 (infinite life)</td></tr>
       </tbody></table></div>
@@ -430,7 +430,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
+    <p style="margin:0">DESCI 501/ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
     Gate Review 3: Detailed Design and Validation &middot; University of Michigan</p>
   </div>
 </footer>
