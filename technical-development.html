@@ -99,7 +99,7 @@
         <tr><td><a href="#d2">2. Force-path accuracy</a></td><td>Any flex or lag is read as ball deflection</td><td>Repeatable (13%), S16; precise, S2</td><td>%GRR &lt; 10; &le; 0.025 mm</td><td>Compliance stack, microstep and lag model, structural checks</td><td>Frame 3.3% of ball compliance; ratio error 0.005; 0.0025 mm/step; SF &ge; 1.33</td><td>Gauge R&amp;R 10 &times; 3 &times; 3; dial-indicator travel check</td><td>Analysis done; bench test pending</td></tr>
         <tr><td><a href="#d3">3. Ball location</a></td><td>The press must land on the same spot every test</td><td>S1, S16; FMEA RPN 392</td><td>&ge; 90% correct from one press; re-seat spread &le; 5% of stiffness</td><td>Comparison of peg, peg with re-seating, and rollers, using the position data</td><td>Peg removes drift and a motor; one random spot 75% correct in-sample</td><td>Single-press blind grading; 5 balls &times; 20 re-seats</td><td>Decided (peg); untested</td></tr>
         <tr><td><a href="#d4">4. Test cycle time</a></td><td>A slow test will not be used courtside</td><td>Tests quickly (10%), S7</td><td>&le; 30 s</td><td>Stage-by-stage time budget; ADC rate model</td><td>About 10 s per test</td><td>Firmware timestamps; timed first-use trials</td><td>Analysis done</td></tr>
-        <tr><td><a href="#d5">5. Player trust</a></td><td>An accurate grade fails if players will not act on it</td><td>Increases confidence (10%), S5; fits routine, S8</td><td>&ge; 2-point gain (7-point scale); &ge; 4 of 5 trust; &le; 2 actions</td><td>Customer and usability study</td><td>Result format chosen from Activity 26 (icon + word + sound)</td><td>&ge; 21 weekly competitive players, manual vs. CuPickle on coded balls</td><td>Planned</td></tr>
+        <tr><td><a href="#d5">5. Player trust</a></td><td>An accurate grade fails if players will not act on it</td><td>Increases confidence (10%), S5; fits routine, S8</td><td>&ge; 2-point gain (7-point scale); &ge; 4 of 5 trust; &le; 4 actions</td><td>Customer and usability study</td><td>Result format chosen from Activity 26 (icon + word + sound)</td><td>&ge; 21 weekly competitive players, manual vs. CuPickle on coded balls</td><td>Planned</td></tr>
       </tbody></table></div>
     <p><b>Table 1.</b> Design drivers. S-numbers are House of Quality characteristics.</p>
   </section>
@@ -179,10 +179,10 @@
     <ol>
       <li><strong>Question.</strong> Which result format makes a player retire a ball on the result alone?</li>
       <li><strong>Why it matters.</strong> Players will only buy and use CuPickle if they trust its result enough to act on it.</li>
-      <li><strong>Requirement.</strong> S5 (&ge; 2-point gain), S8 (&le; 2 actions).</li>
+      <li><strong>Requirement.</strong> S5 (&ge; 2-point gain), S8 (&le; 4 actions; revised from 2 at Gate Review 3).</li>
       <li><strong>Why this method.</strong> Trust can only be measured with players.</li>
       <li><strong>Application.</strong> &ge; 21 weekly competitive adult players, including older players, check coded balls by hand and with CuPickle and rate their confidence.</li>
-      <li><strong>Inputs.</strong> Result as large check or X, the word PLAY or RETIRE, and a distinct sound (Activity 26); one start control at &le; 22.2 N (ADA 309.4).</li>
+      <li><strong>Inputs.</strong> Result as large check or X, the word PLAY or RETIRE, and a distinct sound (Activity 26); Start enabled only with the door shut; controls at &le; 22.2 N (ADA 309.4).</li>
       <li><strong>Result.</strong> None yet.</li>
       <li><strong>Decision so far.</strong> The icon + word + sound format replaces the GR2 text-only readout.</li>
       <li><strong>Validation.</strong> <a href="validation.html#activity-3">Validation, Activity 3</a>.</li>

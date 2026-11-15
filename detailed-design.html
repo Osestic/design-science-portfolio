@@ -80,7 +80,7 @@
     <p class="eyebrow">DESCI 501/ME 455 &middot; Gate Review 3 &middot; Detailed Design and Validation</p>
     <h1>CuPickle <span class="gradient-text">detailed design</span></h1>
     <p class="lead">CuPickle is now a fully engineered, battery-powered courtside tester. A player sets the ball on a
-    locating peg, closes the door and presses Start; a motor presses the ball a fixed 2 mm while a load cell underneath
+    locating peg and closes the door and taps Start; a motor presses the ball a fixed 2 mm while a load cell underneath
     measures force, and the screen shows PLAY or RETIRE with an icon and a sound.</p>
   </section>
 
@@ -146,11 +146,11 @@
         <tr><td>Press drive</td><td>NEMA 17 stepper with integrated Tr8&times;8 lead screw (P01, P03, P04), Carriage (P06), Press Plate (P12), 4140 steel Anti-Rotation Rod (P07) in a bronze bushing (P05); the rod's flange is the hard stop</td><td>Lowers the plate and presses the ball once</td></tr>
         <tr><td>Force sensing</td><td>20 kg straight-bar load cell (P09), Load Cell Plate (P15) with an M4 set-screw locating peg (P14)</td><td>Seats the ball and measures force under it</td></tr>
         <tr><td>Electronics and power</td><td>Main board (microcontroller, TMC2209 driver, HX711 amplifier, USB-C charging), 9 V NiMH rechargeable battery</td><td>Runs the test, computes stiffness, grades the ball</td></tr>
-        <tr><td>Interface, safety, case</td><td>On/off switch, 2.8 in. touchscreen, door reed switch, IR ball-presence sensor, home switch, injection-molded ABS case</td><td>Start, result, door interlock, ball check, enclosure</td></tr>
+        <tr><td>Interface, safety, case</td><td>On/off switch, 2.8 in. touchscreen, door reed switch, IR ball-presence sensor, home switch, injection-molded ABS case</td><td>Result, door interlock, ball check, enclosure</td></tr>
       </tbody></table></div>
     <p><b>Table 1.</b> MVP subsystems. Overall size 135 &times; 116 &times; 210 mm; CAD mass 4.74 lb (2.15 kg) without the battery and case electronics.</p>
     <p><strong>Operating sequence.</strong> Switch on (the plate homes) &rarr; open the door and set the ball on the peg &rarr;
-    close the door (the reed switch and IR sensor must agree) &rarr; press Start &rarr; the plate finds contact at 0.5 N and
+    close the door (the reed switch and IR sensor must agree) &rarr; tap Start &rarr; the plate finds contact at 0.5 N and
     presses 2 mm at 2&ndash;4 mm/s &rarr; stiffness is the slope of force against travel, compared with a stored new-ball
     reference of the same model &rarr; PLAY or RETIRE shows with icon and sound &rarr; the plate returns home. Opening the door
     stops the motor at any point. The full use cycle, from first charge to storage and disposal, is on the
@@ -258,7 +258,6 @@
         <tr><td>9 V NiMH battery gives about 70 tests per charge at the estimated 0.7 A draw</td><td>Technical</td><td>Measure current per test on the POC; confirm a full session per charge</td></tr>
         <tr><td>Motor axial-load rating unknown</td><td>Technical</td><td>Get rating from Iverntech; thrust bearing if low</td></tr>
         <tr><td>Case mold lead time 8&ndash;12 weeks, $35k</td><td>Manufacturing</td><td>Freeze case CAD early</td></tr>
-        <tr><td>Four user actions against a &le; 2 target</td><td>User</td><td>Trust and usability study; justify or change the target</td></tr>
       </tbody></table></div>
   </section>
 

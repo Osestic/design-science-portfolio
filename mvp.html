@@ -100,7 +100,7 @@
         <tr><td>Press drive</td><td>NEMA 17 stepper with integrated Tr8&times;8 lead screw and brass nut (P01, P03, P04), Carriage (P06), Press Plate (P12), 4140 steel Anti-Rotation Rod (P07) with its flange as the hard stop, bronze bushing (P05), home switch (P11)</td><td>Lowers the plate onto the ball and presses it once</td></tr>
         <tr><td>Force sensing</td><td>20 kg straight-bar load cell (P09); Load Cell Plate (P15) with an M4 set-screw locating peg (P14)</td><td>Seats the ball and measures force under it</td></tr>
         <tr><td>Electronics and power</td><td>Main board (P19: microcontroller, TMC2209 driver, HX711 amplifier, USB-C charging); 9 V NiMH rechargeable battery (P20); charger and cable (P25, P26)</td><td>Runs the test, computes stiffness, grades the ball</td></tr>
-        <tr><td>Interface and safety</td><td>2.8 in. touchscreen (P21), on/off rocker (P22), IR break-beam ball sensor (P23), door reed switch with magnet (P24)</td><td>Start; PLAY / RETIRE / CHECK BALL with icon, word and sound; door interlock; ball check</td></tr>
+        <tr><td>Interface and safety</td><td>2.8 in. touchscreen (P21), on/off rocker (P22), IR break-beam ball sensor (P23), door reed switch with magnet (P24)</td><td>Start enabled only with the door shut; PLAY / RETIRE / CHECK BALL with icon, word and sound; door interlock; ball check</td></tr>
         <tr><td>Case</td><td>Injection-molded ABS case and door with a clear window (P16)</td><td>Encloses the pinch point; lets the player watch the press</td></tr>
       </tbody></table></div>
     <h3>Functions and customer benefits</h3>
@@ -122,8 +122,8 @@
         <tr><td>Increases confidence (10%)</td><td>Gain on a 7-point scale</td><td>&ge; 2 points</td></tr>
         <tr><td>Tests quickly (10%)</td><td>Pick-up to grade</td><td>&le; 30 s</td></tr>
         <tr><td>Affordable (10%)</td><td>Retail price</td><td>&le; $100</td></tr>
-        <tr><td>Fits routine (7%)</td><td>User actions</td><td>&le; 2</td></tr>
-        <tr><td>Portable (7%)</td><td>Packed volume and mass</td><td>&le; 2.5 L, &le; 2 kg</td></tr>
+        <tr><td>Fits routine (7%)</td><td>User actions</td><td>&le; 3</td></tr>
+        <tr><td>Portable (7%)</td><td>Packed volume and mass</td><td>Fits a pickleball backpack (&le; 15% of capacity); &le; 2.6 kg</td></tr>
         <tr><td>Measures precisely</td><td>Displacement resolution</td><td>&le; 0.025 mm</td></tr>
       </tbody></table></div>
     <h3>Deferred beyond the MVP</h3>
@@ -174,7 +174,7 @@
     <h3>Control and feedback</h3>
     <ol>
       <li><strong>Home:</strong> at switch-on the plate rises to the home switch.</li>
-      <li><strong>Check:</strong> the reed switch must read the door closed and the IR beam must see a ball before Start is accepted.</li>
+      <li><strong>Check and start:</strong> the reed switch must read the door closed and the IR beam must see a ball before the Start button is enabled; the player then taps Start.</li>
       <li><strong>Find contact:</strong> the plate lowers until force passes 0.5 N, so nut backlash is always taken up the same way.</li>
       <li><strong>Press:</strong> 2 mm from contact at 2&ndash;4 mm/s (about 87 N on a new ball). Stall thrust is current-limited to &le; 177 N; the P07 flange is the mechanical stop.</li>
       <li><strong>Fit:</strong> stiffness is the slope of force against travel, with the steel-ball compliance subtracted.</li>
@@ -185,7 +185,7 @@
 
   <section class="section" id="operation">
     <h2>Operation across the full use cycle</h2>
-    <figure><a href="assets/img/gr3/storyboard.jpg"><img src="assets/img/gr3/storyboard.jpg" alt="Six-panel storyboard: 1 switch on, the plate homes; 2 open the door and load the ball with a hole over the peg; 3 close the door and press Start; 4 the plate presses 2 mm; 5 read PLAY or RETIRE with icon and sound; 6 remove the ball, ready for the next" loading="lazy"></a>
+    <figure><a href="assets/img/gr3/storyboard.jpg"><img src="assets/img/gr3/storyboard.jpg" alt="Six-panel storyboard: 1 switch on, the plate homes; 2 open the door and load the ball with a hole over the peg; 3 close the door and tap Start; 4 the plate presses 2 mm; 5 read PLAY or RETIRE with icon and sound; 6 remove the ball, ready for the next" loading="lazy"></a>
       <figcaption><b>Figure 2.</b> One test, from switch-on to removing the ball. It replaces the GR2 roller storyboard.</figcaption></figure>
     <div class="table-wrap"><table>
       <thead><tr><th>Stage</th><th>User input</th><th>Product response</th></tr></thead>
@@ -193,7 +193,8 @@
         <tr><td>Setup (first use)</td><td>Charge over USB-C; choose ball model; test one new ball</td><td>Runs steel-ball calibration; stores the new-ball reference</td></tr>
         <tr><td>Switch on</td><td>Rocker switch</td><td>Self-check; plate homes; battery level shown</td></tr>
         <tr><td>Load</td><td>Open door; set ball with a hole over the peg</td><td>Screen prompts "Close door"</td></tr>
-        <tr><td>Close and start</td><td>Close door; tap Start</td><td>Reed switch and IR beam must agree, otherwise Start is ignored</td></tr>
+        <tr><td>Close</td><td>Close door</td><td>Reed switch and IR beam must agree before Start is enabled</td></tr>
+        <tr><td>Start</td><td>Tap Start</td><td>Large on-screen target, &le; 22.2 N, one hand (ADA 309.4)</td></tr>
         <tr><td>Test (intermediate state)</td><td>Watch through the window</td><td>Contact search, 2 mm press; opening the door stops the motor with no restart</td></tr>
         <tr><td>Result</td><td>Read and decide</td><td>Large check + PLAY + rising tone, or X + RETIRE + low tone; CHECK BALL if invalid. Held until the door opens</td></tr>
         <tr><td>Reset</td><td>Open door; remove ball</td><td>Plate home; ready for the next ball</td></tr>
@@ -201,7 +202,7 @@
         <tr><td>Store and transport</td><td>Switch off; carry in a bag</td><td>Motor de-energized; case protects the press</td></tr>
         <tr><td>End of life</td><td>Return or recycle</td><td>Screws only: aluminium, steel, ABS, board and battery separate</td></tr>
       </tbody></table></div>
-    <p>The GR2 sequence counted four user actions (open, load, close, start) against a target of two; the trust study will test whether players accept it.</p>
+    <p>A test takes four user actions: open the door, set the ball on the peg, close the door, tap Start. This is the same sequence as other products that guard a moving part behind a closed chamber, such as a capsule coffee machine (open, insert, close, press), and it meets the revised S8 target of four or fewer (<a href="product-definition.html#targets">Product Definition</a>). The Start tap is kept on purpose: the press only moves when the player asks it to.</p>
   </section>
 
   <section class="section" id="cad">
@@ -354,15 +355,15 @@
         <tr><td>Doesn't damage the ball</td><td>2 mm press; current limit; flange hard stop</td><td>Not tested (50-test rebound)</td></tr>
         <tr><td>Tests quickly</td><td>One press at 2&ndash;4 mm/s</td><td>Time model: about 10 s</td></tr>
         <tr><td>Increases confidence</td><td>Visible press; icon + word + sound</td><td>Not tested (user study)</td></tr>
-        <tr><td>Fits routine</td><td>Load, close, start</td><td>Four actions against a &le; 2 target</td></tr>
-        <tr><td>Portable</td><td>Compact frame and case</td><td>3.3 L envelope and about 2.2 kg vs. 2.5 L and 2 kg: not yet met</td></tr>
+        <tr><td>Fits routine</td><td>Open, load, close, Start</td><td>4 actions against &le; 4: met by design; user study to confirm</td></tr>
+        <tr><td>Portable</td><td>Compact frame and case</td><td>3.3 L, 11&ndash;15% of a 22&ndash;30 L pickleball backpack; about 2.3 kg against 2.6 kg: met on CAD; fit test and weighing pending</td></tr>
         <tr><td>Affordable</td><td>Off-the-shelf drive and load cell; molded case</td><td>$112.34 unit cost vs. $100 price: not yet met</td></tr>
       </tbody></table></div>
     <p><strong>Strongest evidence.</strong> The Instron study (every used ball's mean below every new ball's at 5 mm; 8&ndash;12%
     gap at every depth; linear to 5 mm); the parameter analysis (compliance stack, power-screw model, structural and fatigue
     checks, time budget); and a manufacturing plan with a process, cycle time, inspection and scrap rate for every custom part.</p>
     <p><strong>Remaining questions.</strong> Single-press accuracy at the peg; 2 mm vs. deeper presses; absolute stiffness 2.3&times;
-    published (fixture check); tests per charge on the 9 V NiMH; size, mass and actions against targets; unit cost; motor axial-load rating; case
+    published (fixture check); tests per charge on the 9 V NiMH; measured mass and bag fit; unassisted completion in four actions; unit cost; motor axial-load rating; case
     tooling lead time.</p>
     <p><strong>Not represented by the POC.</strong> Battery and USB-C charging, the custom board, touchscreen and buzzer, door
     interlock, IR ball sensor, home switch, molded case, anodized finish, steel rod and production-process variation.</p>

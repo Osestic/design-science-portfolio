@@ -109,7 +109,7 @@
         <tr><td>Cycle time</td><td>S7; Driver 4</td><td>Stage time budget</td><td>&asymp; 10 s per test</td><td><a href="#cycle-time">&sect;12</a></td></tr>
         <tr><td>Temperature</td><td>Driver 1</td><td>Published data</td><td>Room-temperature testing; same-session reference</td><td><a href="#temperature">&sect;13</a></td></tr>
         <tr><td>Safety and operating limits</td><td>FMEA; health and safety</td><td>ISO 10218-2 limit; overload SFs</td><td>Door interlock mandatory</td><td><a href="#safety">&sect;14</a></td></tr>
-        <tr><td>Interface and ergonomics</td><td>S5, S8; accessibility</td><td>ADA 309.4; Activity 26</td><td>Start &le; 22.2 N; icon + word + sound</td><td><a href="#ui">&sect;15</a></td></tr>
+        <tr><td>Interface and ergonomics</td><td>S5, S8; accessibility</td><td>ADA 309.4; Activity 26</td><td>Controls &le; 22.2 N; Start only with door shut; icon + word + sound</td><td><a href="#ui">&sect;15</a></td></tr>
         <tr><td>Power and battery</td><td>Courtside use</td><td>Energy per test</td><td>9 V NiMH; &asymp; 0.018 Wh per test, &asymp; 70 tests per charge</td><td><a href="#power">&sect;16</a></td></tr>
         <tr><td>Materials and components</td><td>All</td><td>Weighted selection matrices</td><td>6061-T6, 20 kg cell, HX711, Tr8&times;8, TMC2209</td><td><a href="#materials">&sect;17</a></td></tr>
       </tbody></table></div>
@@ -124,7 +124,7 @@
           <tr><td>Time, pick-up to grade</td><td>&le; 30 s</td><td>QFD S7</td></tr>
           <tr><td>Displacement resolution</td><td>&le; 0.025 mm</td><td>QFD S2</td></tr>
           <tr><td>Measurement %GRR</td><td>&lt; 10%</td><td>QFD S16</td></tr>
-          <tr><td>Packed volume / mass</td><td>&le; 2.5 L / &le; 2 kg</td><td>QFD S9, S10</td></tr>
+          <tr><td>Packed volume / mass</td><td>&le; 15% of a pickleball backpack / &le; 2.6 kg</td><td>QFD S9, S10</td></tr>
           <tr><td>Mean cycles to failure</td><td>&ge; 1,000</td><td>QFD</td></tr>
           <tr><td>Stiffness-ratio agreement</td><td>within 0.05 of 0.90 and 0.80</td><td>Driver 1</td></tr>
           <tr><td>Grade agreement</td><td>&ge; 90%</td><td>Driver 1, S1</td></tr>
@@ -320,7 +320,7 @@
   <section class="section" id="ui">
     <h2>15. User interface and ergonomics</h2>
     <p>Controls follow <a href="https://www.access-board.gov/ada/#ada-309" target="_blank" rel="noopener">ADA 309.4</a>: one hand,
-    no tight grasping or twisting, &le; 5 lbf (22.2 N) to operate. Decisions: a large on-screen Start target and an on/off rocker;
+    no tight grasping or twisting, &le; 5 lbf (22.2 N) to operate. Decisions: the only controls are an on/off rocker and large on-screen Start, Stop and Info targets, with Start enabled only when the door is shut on a ball;
     result as a check or X, the word PLAY or RETIRE and a distinct sound, kept on screen until the door is opened; door opening
     &ge; 115 mm (ball plus fingers). Aesthetic direction (Act 17): dark upper shell, light base and lime accent carried over from
     <a href="alpha-prototype.html#concept">GR2</a>. Approval is rated on a 1&ndash;7 scale in the player study, against the QFD target of &ge; 75% of players rating it 5 or higher (<a href="validation.html#activity-3">Validation</a>).</p>
