@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detailed Design Overview · CuPickle · Team 1 Design Portfolio</title>
+<meta name="description" content="Gate Review 3 summary of the CuPickle MVP, proof of concept, evidence, risks and gate recommendation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#6d7387" stroke="#d5d8e2" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#d5d8e2"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#e8ffae"/><stop offset="100%" stop-color="#c9e67a"/></linearGradient></defs>
+</svg><span>CuPickle</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr1-before-feedback/index.html">Gate Review 1 version (Oct. 1)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr2-before-feedback/concept.html">Gate Review 2 version (Oct. 28)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="detailed-design.html" class="menu-label is-active" aria-haspopup="true">Development &amp; Validation</a>
+        <ul class="submenu" aria-label="Gate Review 3: Detailed Design and Validation">
+          <li class="submenu-caption">Gate Review 3</li>
+          <li><a href="detailed-design.html" aria-current="page">Detailed Design Overview</a></li>
+          <li><a href="technical-development.html">Technical Development Methods</a></li>
+          <li><a href="fmea.html">FMEA</a></li>
+          <li><a href="parameter-analysis.html">Parameter Analysis</a></li>
+          <li><a href="mvp.html">Minimum Viable Product</a></li>
+          <li><a href="poc.html">Proof-of-Concept Prototype</a></li>
+          <li><a href="validation.html">Validation &amp; Verification</a></li>
+          <li><a href="impact.html">Social Impact Evaluation</a></li>
+          <li><a href="appendix.html">Appendix: Supporting Files</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <p class="eyebrow">ME 455 &middot; Gate Review 3 &middot; Detailed Design and Validation</p>
+    <h1>One <span class="gradient-text">2 mm press</span>, one trusted answer.</h1>
+    <p class="lead">CuPickle is now a fully engineered, battery-powered courtside tester. A player sets the ball on a
+    locating peg, closes the door and presses Start; a motor presses the ball a fixed 2 mm while a load cell underneath
+    measures force, and the screen shows PLAY or RETIRE with an icon and a sound.</p>
+  </section>
+
+  <div class="grid grid-3" style="margin:0 0 2rem">
+    <div class="stat"><span class="stat-value">8&ndash;12%</span><span class="stat-label">less force needed by used balls than new at every depth from 1 to 5 mm</span><span class="stat-source">Instron test, 5 new + 5 used balls, p = 0.020&ndash;0.045</span></div>
+    <div class="stat"><span class="stat-value">&asymp; 10 s</span><span class="stat-label">predicted time for one test, against the 30 s requirement</span><span class="stat-source">Cycle-time model, <a href="parameter-analysis.html#cycle-time">Parameter Analysis</a></span></div>
+    <div class="stat"><span class="stat-value">3.3%</span><span class="stat-label">of measured travel comes from the frame, not the ball</span><span class="stat-source">Compliance stack, <a href="parameter-analysis.html#compliance">Parameter Analysis</a></span></div>
+  </div>
+
+  <nav class="toc" aria-label="On this page">
+    <span class="toc-title">On this page</span>
+    <a href="#product">Product and customer</a>
+    <a href="#problem">Design problem</a>
+    <a href="#mvp">The MVP</a>
+    <a href="#drivers">Requirements and drivers</a>
+    <a href="#evidence">Engineering evidence</a>
+    <a href="#failure">Failure modes</a>
+    <a href="#poc">The POC</a>
+    <a href="#validation">Validation</a>
+    <a href="#risks">Remaining risks</a>
+    <a href="#recommendation">Recommendation</a>
+    <a href="#map">Portfolio map</a>
+  </nav>
+
+  <section class="section" id="product">
+    <h2>Product, customer and priority benefit</h2>
+    <p><strong>Product.</strong> CuPickle, a portable pickleball ball-condition tester used courtside, before play or
+    between games. <strong>Target customer and user:</strong> the frequent, competitive player who plays at least weekly
+    in league, rated or tournament play and brings their own balls (<a href="customers.html">Customers &amp; Benefits</a>).
+    <strong>Priority benefit:</strong> an objective keep-or-retire answer the player trusts more than squeezing or bouncing
+    the ball; 52.8% of surveyed players rate their confidence in that manual check at 3 or lower of 7
+    (<a href="research.html#survey">Market Research</a>).</p>
+  </section>
+
+  <section class="section" id="problem">
+    <h2>Updated design problem statement</h2>
+    <div class="callout">
+      <span class="callout-title">Design problem (Gate Review 3)</span>
+      <p>Design a portable, battery-powered tester for frequent, competitive pickleball players that measures a ball's
+      stiffness with one fixed 2 mm press at a repeatable spot and tells the player, in 30 s or less and without damaging
+      the ball, whether it still plays like a new ball of the same model, at a retail price near $100.</p>
+    </div>
+    <p>Two things changed since Gate Review 2. The rolling two-roller cradle and its 4&ndash;6 presses per ball are gone:
+    the alpha prototype's ball drifted on the rollers (FMEA RPN 392, the highest), and our Instron test showed the
+    used balls were softer all over rather than at one spot. The ball now sits on a locating peg and is pressed once. The
+    readout is no longer an undefined "readout": it is a touchscreen showing a large check or X, the word PLAY or RETIRE,
+    and a distinct sound for each (<a href="impact.html#analysis">Social Impact Evaluation</a>).</p>
+  </section>
+
+  <section class="section" id="mvp">
+    <h2>The minimum viable product</h2>
+    <div class="grid grid-2">
+      <figure style="margin:0"><a href="assets/img/gr3/cad-iso.png"><img src="assets/img/gr3/cad-iso.png" alt="CAD render of the CuPickle frame: a square top plate carrying the stepper motor, four round posts, the carriage and press plate on the lead screw, and the load cell under a round load cell plate on the baseplate" loading="lazy"></a>
+        <figcaption><b>Figure 1.</b> MVP frame and press drive (SolidWorks, case hidden). Motor on the Top Plate, Carriage and Press Plate on the lead screw, load cell and peg on the Baseplate.</figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/cad-ball-in-case.png"><img src="assets/img/gr3/cad-ball-in-case.png" alt="CAD render looking through the transparent case at a ball seated between the press plate above and the load cell plate below" loading="lazy"></a>
+        <figcaption><b>Figure 2.</b> Ball seated on the peg between the Press Plate and the Load Cell Plate, inside the case.</figcaption></figure>
+    </div>
+    <p><strong>Architecture.</strong> Five subsystems (<a href="mvp.html#architecture">MVP: Architecture and Operation</a>):</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Subsystem</th><th>Main parts and materials</th><th>Function</th></tr></thead>
+      <tbody>
+        <tr><td>Frame</td><td>Baseplate (P10) and Top Plate (P02) tied by 4 Frame Posts (P13); 6061-T6, clear anodized</td><td>Keeps the test force inside a stiff frame</td></tr>
+        <tr><td>Press drive</td><td>NEMA 17 stepper with integrated Tr8&times;8 lead screw (P01, P03, P04), Carriage (P06), Press Plate (P12), 4140 steel Anti-Rotation Rod (P07) in a bronze bushing (P05); the rod's flange is the hard stop</td><td>Lowers the plate and presses the ball once</td></tr>
+        <tr><td>Force sensing</td><td>20 kg straight-bar load cell (P09), Load Cell Plate (P15) with an M4 set-screw locating peg (P14)</td><td>Seats the ball and measures force under it</td></tr>
+        <tr><td>Electronics and power</td><td>Main board (microcontroller, TMC2209 driver, HX711 amplifier, USB-C charging), 9 V NiMH rechargeable battery</td><td>Runs the test, computes stiffness, grades the ball</td></tr>
+        <tr><td>Interface, safety, case</td><td>On/off switch, 2.8 in. touchscreen, door reed switch, IR ball-presence sensor, home switch, injection-molded ABS case</td><td>Start, result, door interlock, ball check, enclosure</td></tr>
+      </tbody></table></div>
+    <p><b>Table 1.</b> MVP subsystems. Overall size 135 &times; 116 &times; 210 mm; CAD mass 4.74 lb (2.15 kg) without the battery and case electronics.</p>
+    <p><strong>Operating sequence.</strong> Switch on (the plate homes) &rarr; open the door and set the ball on the peg &rarr;
+    close the door (the reed switch and IR sensor must agree) &rarr; press Start &rarr; the plate finds contact at 0.5 N and
+    presses 2 mm at 2&ndash;4 mm/s &rarr; stiffness is the slope of force against travel, compared with a stored new-ball
+    reference of the same model &rarr; PLAY or RETIRE shows with icon and sound &rarr; the plate returns home. Opening the door
+    stops the motor at any point. The full use cycle, from first charge to storage and disposal, is on the
+    <a href="mvp.html#operation">MVP page</a>.</p>
+  </section>
+
+  <section class="section" id="drivers">
+    <h2>Most important requirements and design drivers</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Design driver</th><th>Requirement</th><th>Target</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>1. Playability grading</td><td>Identifies low-performance balls (15%, S1)</td><td>Ratio within 0.05 of 0.90 (4 games) and 0.80 (8 games); &ge; 90% grade agreement</td><td>Partly supported by test</td></tr>
+        <tr><td>2. Force-path accuracy</td><td>Repeatable (13%, S16), precise (S2)</td><td>%GRR &lt; 10; &le; 0.025 mm resolution</td><td>Resolved by analysis; bench test pending</td></tr>
+        <tr><td>3. Ball location</td><td>Same spot every test (S1, S16)</td><td>&ge; 90% correct from one press; re-seat spread &le; 5%</td><td>Decided (peg); test pending</td></tr>
+        <tr><td>4. Test cycle time</td><td>Tests quickly (10%, S7)</td><td>&le; 30 s</td><td>Analysis: about 10 s</td></tr>
+        <tr><td>5. Player trust</td><td>Increases confidence (10%, S5)</td><td>&ge; 2-point gain on a 7-point scale</td><td>User study planned</td></tr>
+      </tbody></table></div>
+    <p><b>Table 2.</b> Design drivers. Full methods on <a href="technical-development.html">Technical Development Methods</a>.</p>
+  </section>
+
+  <section class="section" id="evidence">
+    <h2>Engineering evidence behind the design</h2>
+    <ul>
+      <li><strong>Grading principle (test).</strong> Five new and five used balls, six positions each: used balls needed
+      11.5% less force at 2 mm (p = 0.045) and 8.0% less at 5 mm (p = 0.020); every used ball's mean sat below every new
+      ball's at 5 mm. Force is linear with compression to 5 mm (R&sup2; &ge; 0.997), so a slope is a valid stiffness
+      (<a href="validation.html#activity-1">Validation, Activity 1</a>).</li>
+      <li><strong>Force path (analysis).</strong> The frame adds 0.00204 mm/N, 3.3% of a new ball's compliance; uncorrected,
+      the worn/new ratio would read 0.809 instead of 0.804, a tenth of the 0.05 tolerance.</li>
+      <li><strong>Drive and overload (analysis).</strong> Tr8&times;8 power-screw model: 104&ndash;147 N of thrust at 0.25 N&middot;m;
+      the TMC2209 current is set so stall thrust is &le; 177 N, under the load cell's 235 N safe overload.</li>
+      <li><strong>Structure (analysis).</strong> At the worst-case 235 N: Top Plate safety factor 19.7, Carriage 7.9, screw
+      buckling 4.2, load-cell bolts 6.1; all aluminium stresses sit below the endurance limit (infinite life).</li>
+      <li><strong>Resolution and time (analysis).</strong> 1/16 microstepping gives 0.0025 mm per step; HX711 at 80
+      samples/s; one test takes about 10 s.</li>
+    </ul>
+    <p>All calculations are on <a href="parameter-analysis.html">Parameter Analysis</a>.</p>
+  </section>
+
+  <section class="section" id="failure">
+    <h2>Critical failure modes and mitigations</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Failure mode (FMEA)</th><th>RPN</th><th>MVP mitigation</th></tr></thead>
+      <tbody>
+        <tr><td>Ball not held; drifts on the cradle</td><td class="num">392</td><td>Rollers replaced by a locating peg through one ball hole; one press per ball</td></tr>
+        <tr><td>Wrong grade shown</td><td class="num">288</td><td>Ratio to a same-model new-ball reference; thresholds set on separate balls; PLAY / RETIRE / CHECK BALL with icon, word and sound</td></tr>
+        <tr><td>Ball of wrong model or temperature</td><td class="num">210</td><td>Ball-model selection with stored per-model references; quick-start card tells players to test balls at room temperature and to re-reference after a model change</td></tr>
+        <tr><td>Low battery or stale calibration</td><td class="num">180</td><td>Battery indicator; power-up self-check and steel-ball calibration</td></tr>
+        <tr><td>Force reading wrong</td><td class="num">175</td><td>Stiff 1/4 in. 6061 frame; tare before each press; steel-ball compliance subtracted</td></tr>
+      </tbody></table></div>
+    <p><b>Table 3.</b> Highest-RPN failure modes from the November 1 FMEA. Detail and revised ratings on <a href="fmea.html">FMEA</a>.</p>
+  </section>
+
+  <section class="section" id="poc">
+    <h2>The proof of concept</h2>
+    <div class="grid grid-2">
+      <div>
+        <p><strong>Purpose.</strong> Show that one fixed 2 mm press on a peg-seated ball gives a PLAY or RETIRE grade that
+        agrees with a reference on at least 90% of balls, with %GRR under 10, in 30 s or less, without damaging the ball.</p>
+        <p><strong>Configuration.</strong> A full-scale working tester built in the U-M machine shop from the same eight
+        machined part drawings, motor, lead screw, load cell, peg, TMC2209 driver chip and HX711 amplifier chip as the MVP.
+        Only the electronics packaging (Arduino and breakouts on a breadboard), power (a 12 V bench supply), display (small
+        OLED and switches) and case (3D printed) are stand-ins.</p>
+        <p><strong>How it represents the MVP.</strong> Everything in the force path is the MVP's geometry, material and
+        components, so grading, repeatability, time and ball-damage results carry over. Battery life, the touchscreen,
+        the door interlock and the molded case do not.</p>
+        <p><strong>Status.</strong> Drawings, fabrication, assembly plans and BOM ($137.65) are complete; fabrication preparation is approved, pending shop sign-off of the drawings
+        (<a href="poc.html">Proof-of-Concept Prototype</a>).</p>
+      </div>
+      <figure style="margin:0"><a href="assets/img/gr3/poc-exploded.jpg"><img src="assets/img/gr3/poc-exploded.jpg" alt="Exploded view of the POC with labelled parts P01 to P16, the test ball, the breadboard electronics and the display" loading="lazy"></a>
+        <figcaption><b>Figure 3.</b> POC exploded view; labels match the drawing and BOM numbers.</figcaption></figure>
+    </div>
+    <h3>Important differences between the POC and MVP</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Element</th><th>MVP</th><th>POC</th><th>Effect on what we can conclude</th></tr></thead>
+      <tbody>
+        <tr><td>Electronics</td><td>Custom board</td><td>Arduino Uno, TMC2209 and HX711 breakouts</td><td>Same chips; breadboard noise makes POC repeatability conservative</td></tr>
+        <tr><td>Power</td><td>9 V NiMH rechargeable battery</td><td>12 V bench supply</td><td>Battery life not tested; current per test is measured to size it</td></tr>
+        <tr><td>Interface and safety</td><td>Touchscreen, door interlock, IR sensor, home switch</td><td>OLED, switches; no interlock</td><td>Interlock and UI verified on the first MVP build; trained operators only</td></tr>
+        <tr><td>Rod and finish</td><td>4140 steel rod; anodized</td><td>6061 rod; bare</td><td>No effect on force; rod wear watched</td></tr>
+        <tr><td>Case</td><td>Molded ABS</td><td>3D printed</td><td>Outside the force path</td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="section" id="validation">
+    <h2>Validation and verification results</h2>
+    <p><strong>Completed:</strong> a two-phase Instron compression test (Nov. 5 and Nov. 10). It supports driver 1:
+    used balls are measurably softer. It also shows why the peg matters: one random spot graded a ball correctly about 75% of
+    the time against 91% for four spots, so single-press accuracy at a fixed, peg-located spot is the first thing the POC
+    must prove. <strong>Planned:</strong> blind grading of &ge; 20 held-out balls, gauge R&amp;R (10 balls &times; 3 operators
+    &times; 3 repeats), re-seat spread, stall thrust, cycle time, 50-test ball damage, and a player trust study with &ge; 21
+    weekly competitive players. Full matrix and procedures on <a href="validation.html">Validation &amp; Verification</a>.</p>
+    <figure><a href="assets/img/gr3/v4-accuracy-positions.png"><img src="assets/img/gr3/v4-accuracy-positions.png" alt="Line chart: balls graded correctly rises from 75% with one position to 84, 89, 91, 95 and 100% with six positions; dashed line at the 90% target" loading="lazy" style="max-width:640px"></a>
+      <figcaption><b>Figure 4.</b> In-sample grading accuracy against the number of random positions averaged (10 balls, 5 mm). The cut-off was set on the same balls, so these figures are optimistic.</figcaption></figure>
+  </section>
+
+  <section class="section" id="risks">
+    <h2>Most significant remaining risks</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Risk</th><th>Type</th><th>Next step</th></tr></thead>
+      <tbody>
+        <tr><td>One press at the peg may not reach 90% grading agreement</td><td>Technical</td><td>Single-press blind grading on the POC</td></tr>
+        <tr><td>2 mm signal (11.5% gap) is less certain than 5 mm (8.0%, lower p); ball play history was not recorded</td><td>Technical</td><td>Repeat with X-40 balls of known play history (0, 4, 8 games)</td></tr>
+        <tr><td>Unit cost $112 against a ~$100 price</td><td>Business / manufacturing</td><td>Cost-down in Activity 29 (display, board, motor)</td></tr>
+        <tr><td>9 V NiMH battery gives about 70 tests per charge at the estimated 0.7 A draw</td><td>Technical</td><td>Measure current per test on the POC; confirm a full session per charge</td></tr>
+        <tr><td>Motor axial-load rating unknown</td><td>Technical</td><td>Get rating from Iverntech; thrust bearing if low</td></tr>
+        <tr><td>Case mold lead time 8&ndash;12 weeks, $35k</td><td>Manufacturing</td><td>Freeze case CAD early</td></tr>
+        <tr><td>Four user actions against a &le; 2 target</td><td>User</td><td>Trust and usability study; justify or change the target</td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="section" id="recommendation">
+    <h2>Gate Review 3 recommendation</h2>
+    <div class="callout">
+      <span class="callout-title">Recommendation: proceed with specified revisions before final fabrication or validation</span>
+      <p>The MVP is fully defined and its mechanics are supported by analysis; the grading principle has first test
+      evidence. Before fabrication and validation we will: (1) make the drawing and process-plan revisions from design review (motor-bore machining on P02, reamed bore size and fit on P06, hole-pattern dimensions on P06 and
+      P12, tapping depths on P13) and get shop approval; (2) add the wiring schematic, exact fasteners and the bench
+      supply to the POC documentation; (3) pass a safety review before any powered test; and (4) show
+      single-press grading accuracy at the peg. The design is not yet ready for commercial production.</p>
+    </div>
+  </section>
+
+  <section class="section" id="map">
+    <h2>How the design record fits together</h2>
+    <p>Product requirements &rarr; design drivers &rarr; engineering analysis &rarr; failure assessment &rarr; MVP detailed
+    design &rarr; POC design and fabrication &rarr; validation &rarr; impact assessment &rarr; gate recommendation.</p>
+    <div class="grid grid-3">
+      <a class="section-link" href="technical-development.html"><span class="num">01</span><h3>Technical Development Methods</h3><p>Five design drivers and how each is resolved.</p></a>
+      <a class="section-link" href="fmea.html"><span class="num">02</span><h3>FMEA</h3><p>How CuPickle could fail and what changed because of it.</p></a>
+      <a class="section-link" href="parameter-analysis.html"><span class="num">03</span><h3>Parameter Analysis</h3><p>Loads, drive, sensing, structure, time, materials.</p></a>
+      <a class="section-link" href="mvp.html"><span class="num">04</span><h3>Minimum Viable Product</h3><p>Architecture, CAD, materials, manufacturing, assembly, BOM.</p></a>
+      <a class="section-link" href="poc.html"><span class="num">05</span><h3>Proof-of-Concept Prototype</h3><p>Scope, drawings, fabrication, assembly, BOM.</p></a>
+      <a class="section-link" href="validation.html"><span class="num">06</span><h3>Validation &amp; Verification</h3><p>Matrix, test records, plots and plans.</p></a>
+      <a class="section-link" href="impact.html"><span class="num">07</span><h3>Social Impact Evaluation</h3><p>Social impact, eco-audit and Design for X.</p></a>
+      <a class="section-link" href="appendix.html"><span class="num">08</span><h3>Appendix</h3><p>Drawings, worksheets, data and reports.</p></a>
+    </div>
+  </section>
+
+
+  <nav class="pager" aria-label="Section navigation">
+    <span></span>
+    <a href="technical-development.html">Technical Development Methods &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
+    Gate Review 3: Detailed Design and Validation &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

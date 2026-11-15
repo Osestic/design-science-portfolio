@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introduction · CuPickle · Team 1 Design Portfolio</title>
+<meta name="description" content="CuPickle: Gate Review 1 design portfolio for a pickleball ball-condition tester.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+<div style="position:relative;z-index:51;background:#3f2a1a;color:#fbf4e8;font-family:Outfit,Segoe UI,sans-serif;font-size:0.9rem;padding:0.6rem 1rem;text-align:center">Archived version: the Gate Review 2 portfolio as it stood on Oct. 28, 2026. <a href="../../index.html" style="color:#fed500">Go to the current portfolio &rarr;</a></div>
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#6d7387" stroke="#d5d8e2" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#d5d8e2"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#e8ffae"/><stop offset="100%" stop-color="#c9e67a"/></linearGradient></defs>
+</svg><span>CuPickle</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="../gr1-before-feedback/index.html">GR1 before instructor feedback</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">ME 455 &middot; Gate Review 1 &middot; Team 1</p>
+        <h1>Nobody should lose a point to a <span class="gradient-text">soft ball</span>.</h1>
+        <p class="lead">A pickleball goes soft with play long before most players can feel it, and play
+        suffers until someone notices. This portfolio documents the customer, market and competitive evidence
+        behind CuPickle, a portable tester that lets a frequent, competitive player check at the court, before play
+        or between games, whether a ball still plays like a good ball.</p>
+        <p style="margin-bottom:0"><a href="#introduction">Read the introduction &darr;</a></p>
+      </div>
+      <div><svg class="paddle-art" viewBox="0 0 220 300" role="img" aria-label="Pickleball paddle and ball">
+  <defs>
+    <linearGradient id="face" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8a90a3"/><stop offset="52%" stop-color="#6d7387"/><stop offset="100%" stop-color="#4a5062"/>
+    </linearGradient>
+    <linearGradient id="grip" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#303545"/><stop offset="100%" stop-color="#20232e"/>
+    </linearGradient>
+    <linearGradient id="ballg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8ffae"/><stop offset="100%" stop-color="#c9e67a"/>
+    </linearGradient>
+    <pattern id="grain" width="7" height="7" patternUnits="userSpaceOnUse">
+      <rect width="7" height="7" fill="none"/>
+      <path d="M0 0 V7" stroke="#20232e" stroke-opacity="0.12" stroke-width="1.1"/>
+    </pattern>
+  </defs>
+  <rect x="86" y="176" width="30" height="104" rx="13" fill="url(#grip)"/>
+  <g opacity="0.55">
+    <path d="M88 196 h26 M88 208 h26 M88 220 h26 M88 232 h26 M88 244 h26 M88 256 h26"
+          stroke="#e8ffae" stroke-width="1.4" stroke-opacity="0.6"/>
+  </g>
+  <rect x="20" y="10" width="162" height="182" rx="52" fill="url(#face)" stroke="#20232e" stroke-width="3"/>
+  <rect x="20" y="10" width="162" height="182" rx="52" fill="url(#grain)"/>
+  <rect x="32" y="22" width="138" height="158" rx="44" fill="none" stroke="#f3f4f7" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="168" cy="214" r="34" fill="url(#ballg)" stroke="#20232e" stroke-width="2"/>
+  <g fill="#f3f4f7" fill-opacity="0.85">
+    <circle cx="156" cy="202" r="3.4"/><circle cx="172" cy="199" r="3.4"/><circle cx="184" cy="210" r="3.4"/>
+    <circle cx="150" cy="217" r="3.4"/><circle cx="166" cy="215" r="3.4"/><circle cx="180" cy="226" r="3.4"/>
+    <circle cx="158" cy="231" r="3.4"/><circle cx="172" cy="232" r="3.4"/>
+  </g>
+</svg></div>
+    </div>
+  </section>
+
+  <section id="introduction" class="section">
+    <p class="eyebrow">Gate Review 1 &middot; Product Definition and Market Analysis</p>
+    <h2 style="margin-top:0">Introduction</h2>
+
+    <div class="grid grid-3" style="margin:1.6rem 0 2.2rem">
+      <div class="stat">
+        <span class="stat-value">36.1%</span>
+        <span class="stat-label">have played with a ball that had gone soft</span>
+        <span class="stat-source">Survey, n=36</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">52.8%</span>
+        <span class="stat-label">rank consistent performance as their #1 purchase criterion</span>
+        <span class="stat-source">Survey, n=36</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">46.7%</span>
+        <span class="stat-label">say the hardest part is that damage is difficult to see</span>
+        <span class="stat-source">Survey, n=15 asked</span>
+      </div>
+    </div>
+
+    <p>CuPickle starts from a nuisance every regular player knows: a ball that looked fine plays dead, and the
+    point is gone before anyone notices. This page is a stand-alone overview of the problem, the customer, the
+    evidence and the product direction; the pages linked below give the full design brief.</p>
+
+    <h3>Project and product name</h3>
+    <p><strong>Project:</strong> Pickleball Ball-Condition Tester (tentative). <strong>Product name:</strong>
+    <strong>CuPickle</strong>, “Keep the playable balls. Retire the non-playable ones.” Team CuPickle.</p>
+
+    <h3>Sector and use context</h3>
+    <p>The product is a sports-equipment accessory for pickleball. It is used by the player courtside, before play
+    or between games, in open play, leagues and tournaments. Most respondents play outdoors (58.3%), on courts that
+    often have no wall outlet, so the product must run on its own rechargeable battery.</p>
+
+    <h3>The observed nuisance and today's workaround</h3>
+    <p>Pickleballs soften gradually and without warning. A ball softens and develops soft spots with every hit: in <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/">Pickleball Science's
+    measured play tests</a>, a Franklin X-40 lost about 10% of its stiffness per hour of competitive play. Players
+    usually find out mid-rally, when the ball bounces in a way nobody expected, and under
+    <a href="https://usapickleball.org/docs/rules/USAP-Official-Rulebook.pdf">USA Pickleball Rule 10.G</a> a damaged
+    ball is replaced only if every player agrees. The workaround is to look at, compress, bounce or hit the ball. That
+    check takes about three seconds, but 52.8% of survey respondents rate their confidence in judging equipment at 3
+    or lower of 7.</p>
+
+    <h3>Target customer and user</h3>
+    <p>The <strong>primary customer and user</strong> is the individual frequent, competitive player: someone who
+    plays at least weekly in league, rated or tournament play, brings their own balls, and checks them courtside.
+    Half of respondents bring their own balls at least some of the time, and 64.7% of frequent players find an
+    objective test useful, against 47.4% of occasional players. Clubs, venues and tournament directors that supply
+    shared balls are a possible later segment, but that is an unvalidated hypothesis: the one facility owner
+    interviewed saw no need.</p>
+
+    <h3>Motivation</h3>
+    <p>Competition is the top reason respondents play (48.5% rank it first), and consistent performance is their top
+    equipment criterion (52.8%). A ball that has quietly gone soft attacks exactly what these players value: a fair,
+    uninterrupted game they can trust.</p>
+
+    <h3>Supporting evidence, in brief</h3>
+    <p>The evidence comes from a 40-response survey (36 on the final form), four interviews (three players and one
+    owner of two indoor venues), a customer journey map, published ball-degradation tests, a QFD, competitive
+    benchmarking, a patent and standards search, and national market data. Soft balls are common (36.1% have played with
+    one) and hard to spot (46.7% of the 15 asked), confidence in the manual check is low, and interest in a
+    test is highest among frequent players. The
+    <a href="https://sfia.org/resources/sfia-releases-2026-pickleball-single-sport-report-team-sports-reports-to-follow/">SFIA
+    2026 Pickleball Single Sport Report</a> counts 24.3 million U.S. players in 2025, 7.5 million of them CORE
+    players who play eight or more times a year. The survey sample is young and university-dominated, so willingness
+    to pay among older league and tournament players is the main open question.</p>
+
+    <h3>Proposed product direction</h3>
+    <p>A portable ball-condition tester that gives the player a keep-or-retire result tied to how the ball plays,
+    judged against the <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">USA
+    Pickleball Equipment Standards Manual</a> bounce standard (30–34 in. rebound from a 78 in. drop). It must work
+    courtside on its own rechargeable battery, take 30 seconds or less per ball, need no special skill, not
+    damage the ball, and make no claim of official certification. Gate Review 1 deliberately does not choose a
+    sensing method.</p>
+
+    <h3>Market value proposition</h3>
+    <p>For frequent, competitive players whose balls go soft before they can tell, CuPickle offers earlier
+    detection of hidden softening and more confidence in the ball than a manual check, in a form small enough to
+    carry to the court. The instruments that measure equipment today are bench-bound and built for manufacturers
+    and labs, costing <strong>$2,900 to $4,995</strong>; no commercial tester checks a ball in service. CuPickle
+    targets a result in <strong>30 seconds or less</strong> per ball at <strong>$100 or less</strong>. The manual
+    check is faster, but players do not trust it, and because the check happens before play or between games they
+    can trade a little time for a result they trust. Success will be measured by agreement with the USA Pickleball
+    bounce test, time per ball, the gain in players' confidence, and willingness to buy at the target price.</p>
+
+    <div class="callout">
+      <span class="callout-title">Product goal</span>
+      <p>The goal of this project is to design a pickleball condition tester for frequent, competitive players that
+      tells them objectively whether a ball still plays like a good ball before or between games so that they do not
+      use a ball that reduces their performance.</p>
+    </div>
+
+    <p>The Gate Review 1 recommendation is <strong>proceed with revisions</strong>: the customer problem is well
+    supported, while willingness to pay and the gain in confidence still need to be tested
+    (<a href="value-proposition.html#recommendation">Market Value Proposition</a>).</p>
+
+    <h2>The design brief</h2>
+    <p>Gate Review 1 covers product definition and market analysis. Each page below gives the evidence and
+    reasoning behind one part of the recommendation.</p>
+
+    <p class="phase-label">Customer &amp; Market Research &middot; Gate Review 1</p>
+    <div class="grid grid-2" style="margin-top:0.6rem">
+      <a class="section-link" href="customers.html">
+        <span class="num">SECTION 01</span>
+        <h3>Customers &amp; Benefits</h3>
+        <p>Who loses points to a bad ball, where it happens in their game, and the benefit they would pay for.</p>
+      </a>
+      <a class="section-link" href="research.html">
+        <span class="num">SECTION 02</span>
+        <h3>Market Research</h3>
+        <p>The survey, interviews, journey map, market data and ball-degradation research, and what they show together.</p>
+      </a>
+      <a class="section-link" href="product-definition.html">
+        <span class="num">SECTION 03</span>
+        <h3>Product Definition</h3>
+        <p>Prioritized customer needs, the House of Quality, and every characteristic with its metric and target.</p>
+      </a>
+      <a class="section-link" href="competition.html">
+        <span class="num">SECTION 04</span>
+        <h3>Competition Analysis</h3>
+        <p>What players use today, the instruments that exist, the gap between them, and the positioning chart.</p>
+      </a>
+      <a class="section-link" href="value-proposition.html">
+        <span class="num">SECTION 05</span>
+        <h3>Market Value Proposition</h3>
+        <p>Segment, market size, entry strategy, risks, the design problem statement and the gate recommendation.</p>
+      </a>
+    </div>
+
+    <p class="phase-label">Concept &amp; Prototyping &middot; Gate Review 2</p>
+    <p style="margin-top:0.6rem">Gate Review 2 turns the product definition into a concept: CuPickle, an enclosed rolling
+    compression system that compresses a ball at multiple positions and grades it playable or non-playable. The overview summarizes the outcome; the pages after it give
+    the full record.</p>
+    <div class="grid grid-2" style="margin-top:0.6rem">
+      <a class="section-link" href="concept.html">
+        <span class="num">OVERVIEW</span>
+        <h3>Proposed Concept Description</h3>
+        <p>The selected concept, how it works, why it was chosen, and the gate recommendation.</p>
+      </a>
+      <a class="section-link" href="conceptualization.html">
+        <span class="num">SECTION 01</span>
+        <h3>Conceptualization Methods</h3>
+        <p>Seven methods used to explore the design space, and what each one produced.</p>
+      </a>
+      <a class="section-link" href="functional-decomposition.html">
+        <span class="num">SECTION 02</span>
+        <h3>Functional Decomposition</h3>
+        <p>What the tester must do, with its material, energy and signal flows.</p>
+      </a>
+      <a class="section-link" href="concept-tree.html">
+        <span class="num">SECTION 03</span>
+        <h3>Concept Tree</h3>
+        <p>Every way to sense ball damage, grouped by physical principle.</p>
+      </a>
+      <a class="section-link" href="top-concepts.html">
+        <span class="num">SECTION 04</span>
+        <h3>Top Concepts</h3>
+        <p>Five different concepts, one per team member, each with a drawing.</p>
+      </a>
+      <a class="section-link" href="downselection.html">
+        <span class="num">SECTION 05</span>
+        <h3>Downselection</h3>
+        <p>Feasibility screen, Pugh matrix and QFD-weighted scoring, with sensitivity checks.</p>
+      </a>
+      <a class="section-link" href="alpha-prototype.html">
+        <span class="num">SECTION 06</span>
+        <h3>Proposed Concept &amp; Alpha Prototype</h3>
+        <p>Architecture, operating sequence, the alpha prototype and next steps.</p>
+      </a>
+      <a class="section-link" href="social-impact.html">
+        <span class="num">SECTION 07</span>
+        <h3>Social Impact Statement</h3>
+        <p>Who the product affects, how, and the decisions made because of it.</p>
+      </a>
+    </div>
+
+    <p class="phase-label">Later in the project</p>
+    <div class="grid grid-3" style="margin-top:0.6rem">
+      <div class="section-link is-future"><span class="num">UPCOMING</span><h3>Development &amp; Validation</h3><p>Technical development, proof of concept, manufacturing and validation.</p></div>
+      <div class="section-link is-future"><span class="num">UPCOMING</span><h3>Business Plan</h3><p>Business opportunity, cost model and financial forecast.</p></div>
+    </div>
+
+    <p style="margin-top:1.6rem">The portfolio is written by Team CuPickle (Team 1).
+    <a href="team.html">Meet the team &rarr;</a></p>
+
+  </section>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
+    Gate Review 1: Product Definition and Market Analysis &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

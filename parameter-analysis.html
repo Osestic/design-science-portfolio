@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parameter Analysis · CuPickle · Team 1 Design Portfolio</title>
+<meta name="description" content="Calculations behind CuPickle's press depth, drive, load cell, resolution, frame, stroke, structure, cycle time, power, materials and components.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#6d7387" stroke="#d5d8e2" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#d5d8e2"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#e8ffae"/><stop offset="100%" stop-color="#c9e67a"/></linearGradient></defs>
+</svg><span>CuPickle</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr1-before-feedback/index.html">Gate Review 1 version (Oct. 1)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr2-before-feedback/concept.html">Gate Review 2 version (Oct. 28)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="detailed-design.html" class="menu-label is-active" aria-haspopup="true">Development &amp; Validation</a>
+        <ul class="submenu" aria-label="Gate Review 3: Detailed Design and Validation">
+          <li class="submenu-caption">Gate Review 3</li>
+          <li><a href="detailed-design.html">Detailed Design Overview</a></li>
+          <li><a href="technical-development.html">Technical Development Methods</a></li>
+          <li><a href="fmea.html">FMEA</a></li>
+          <li><a href="parameter-analysis.html" aria-current="page">Parameter Analysis</a></li>
+          <li><a href="mvp.html">Minimum Viable Product</a></li>
+          <li><a href="poc.html">Proof-of-Concept Prototype</a></li>
+          <li><a href="validation.html">Validation &amp; Verification</a></li>
+          <li><a href="impact.html">Social Impact Evaluation</a></li>
+          <li><a href="appendix.html">Appendix: Supporting Files</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section" style="padding-top:2.4rem">
+    <p class="eyebrow">Gate Review 3 &middot; Parameter Analysis</p>
+    <h1>The numbers behind every part</h1>
+    <p class="lead">Each parameter below traces to a requirement or design driver and shows its inputs, equations, result,
+    margin and decision. Values marked (A) are assumptions to be replaced by measurement. Worst cases use the full-current
+    stall thrust of 235 N, not the nominal press force.</p>
+    <nav class="toc" aria-label="On this page">
+      <span class="toc-title">On this page</span>
+      <a href="#roadmap">Roadmap</a><a href="#basis">Design basis</a><a href="#press">Press depth</a><a href="#drive">Drive</a>
+      <a href="#current">Current limit</a><a href="#loadcell">Load cell</a><a href="#adc">ADC rate</a><a href="#resolution">Resolution</a>
+      <a href="#compliance">Compliance</a><a href="#stroke">Stroke and hard stop</a><a href="#structure">Structure</a>
+      <a href="#cycle-time">Cycle time</a><a href="#temperature">Temperature</a><a href="#safety">Safety limits</a>
+      <a href="#ui">Interface</a><a href="#power">Power</a><a href="#materials">Materials and components</a><a href="#margins">Margins</a>
+    </nav>
+  </section>
+
+  <section class="section" id="roadmap">
+    <h2>Roadmap</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Parameter or decision</th><th>Requirement / driver</th><th>Method</th><th>Decision</th><th>Work</th></tr></thead>
+      <tbody>
+        <tr><td>Press depth and measurement mode</td><td>Driver 1; S1</td><td>Instron data + drive model</td><td>One fixed 2 mm press from contact; stiffness = slope; ratio to reference</td><td><a href="#press">&sect;3</a></td></tr>
+        <tr><td>Motor and lead screw</td><td>Force margin; overload</td><td>Power-screw model</td><td>NEMA 17 with integrated Tr8&times;8</td><td><a href="#drive">&sect;4</a></td></tr>
+        <tr><td>Driver current</td><td>Load-cell overload; finger safety</td><td>Screw model at stall</td><td>Stall torque &le; 0.30 N&middot;m &rarr; thrust &le; 177 N</td><td><a href="#current">&sect;5</a></td></tr>
+        <tr><td>Load cell</td><td>Driver 1 accuracy</td><td>Datasheet error budget</td><td>20 kg straight bar; static error &asymp; 0.43 N</td><td><a href="#loadcell">&sect;6</a></td></tr>
+        <tr><td>ADC rate and press speed</td><td>Drivers 1, 4</td><td>Samples-per-mm model</td><td>HX711 at 80 samples/s; 2&ndash;4 mm/s</td><td><a href="#adc">&sect;7</a></td></tr>
+        <tr><td>Displacement resolution</td><td>S2; Driver 2</td><td>Step size + lag</td><td>1/16 microstepping, 0.0025 mm/step</td><td><a href="#resolution">&sect;8</a></td></tr>
+        <tr><td>Frame compliance</td><td>Driver 2; S16</td><td>Series compliance stack</td><td>1/4 in. 6061; frame 3.3% of ball</td><td><a href="#compliance">&sect;9</a></td></tr>
+        <tr><td>Stroke and hard stop</td><td>Fits all legal balls; no crushing</td><td>Diameter tolerance stack</td><td>69.05 mm minimum gap set by the P07 flange</td><td><a href="#stroke">&sect;10</a></td></tr>
+        <tr><td>Plates, carriage, screw, bolts</td><td>Failure prevention</td><td>Beam, buckling, bolt, fatigue checks</td><td>SF 1.33&ndash;19.7 at 235 N; infinite life</td><td><a href="#structure">&sect;11</a></td></tr>
+        <tr><td>Cycle time</td><td>S7; Driver 4</td><td>Stage time budget</td><td>&asymp; 10 s per test</td><td><a href="#cycle-time">&sect;12</a></td></tr>
+        <tr><td>Temperature</td><td>Driver 1</td><td>Published data</td><td>Room-temperature testing; same-session reference</td><td><a href="#temperature">&sect;13</a></td></tr>
+        <tr><td>Safety and operating limits</td><td>FMEA; health and safety</td><td>ISO 10218-2 limit; overload SFs</td><td>Door interlock mandatory</td><td><a href="#safety">&sect;14</a></td></tr>
+        <tr><td>Interface and ergonomics</td><td>S5, S8; accessibility</td><td>ADA 309.4; Activity 26</td><td>Start &le; 22.2 N; icon + word + sound</td><td><a href="#ui">&sect;15</a></td></tr>
+        <tr><td>Power and battery</td><td>Courtside use</td><td>Energy per test</td><td>9 V NiMH; &asymp; 0.018 Wh per test, &asymp; 70 tests per charge</td><td><a href="#power">&sect;16</a></td></tr>
+        <tr><td>Materials and components</td><td>All</td><td>Weighted selection matrices</td><td>6061-T6, 20 kg cell, HX711, Tr8&times;8, TMC2209</td><td><a href="#materials">&sect;17</a></td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="section" id="basis">
+    <h2>2. Design basis: targets and ball data</h2>
+    <div class="grid grid-2">
+      <div class="table-wrap"><table>
+        <thead><tr><th>Characteristic</th><th>Target</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Time, pick-up to grade</td><td>&le; 30 s</td><td>QFD S7</td></tr>
+          <tr><td>Displacement resolution</td><td>&le; 0.025 mm</td><td>QFD S2</td></tr>
+          <tr><td>Measurement %GRR</td><td>&lt; 10%</td><td>QFD S16</td></tr>
+          <tr><td>Packed volume / mass</td><td>&le; 2.5 L / &le; 2 kg</td><td>QFD S9, S10</td></tr>
+          <tr><td>Mean cycles to failure</td><td>&ge; 1,000</td><td>QFD</td></tr>
+          <tr><td>Stiffness-ratio agreement</td><td>within 0.05 of 0.90 and 0.80</td><td>Driver 1</td></tr>
+          <tr><td>Grade agreement</td><td>&ge; 90%</td><td>Driver 1, S1</td></tr>
+        </tbody></table></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Ball case</th><th>lb/in</th><th>N/mm</th></tr></thead>
+        <tbody>
+          <tr><td>Franklin X-40, new</td><td class="num">93.5</td><td class="num">16.37</td></tr>
+          <tr><td>X-40, about 4 games</td><td class="num">84.0</td><td class="num">14.71</td></tr>
+          <tr><td>X-40, about 8 games</td><td class="num">75.2</td><td class="num">13.17</td></tr>
+          <tr><td>Stiffest legal ball (USAP limit)</td><td class="num">172</td><td class="num">30.12</td></tr>
+          <tr><td>Our new balls, Instron</td><td class="num">&asymp; 213</td><td class="num">&asymp; 37.3</td></tr>
+        </tbody></table></div>
+    </div>
+    <p>Published values: <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/" target="_blank" rel="noopener">Pickleball Science [1]</a>;
+    the USAP stiffness rule (&le; 0.25 in. under 43 lbf) from the <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf" target="_blank" rel="noopener">Equipment Standards Manual [2]</a>.
+    Legal diameter 2.87&ndash;2.97 in. (72.9&ndash;75.4 mm). 1 lb/in = 0.17513 N/mm.</p>
+  </section>
+
+  <section class="section" id="press">
+    <h2>3. Press depth and measurement mode</h2>
+    <p><strong>Question.</strong> Should CuPickle press to a force cap or to a fixed depth, and how far?
+    <strong>Candidates:</strong> 89 N force cap; 133 N cap; fixed 2, 3.5 or 5 mm depth.</p>
+    <p><strong>Evidence.</strong> Force is linear with compression to 5 mm (R&sup2; &ge; 0.997), so the slope over any
+    window is a valid stiffness. Used balls were 11.5% softer at 2 mm (p = 0.045) and 8.0% at 5 mm (p = 0.020)
+    (<a href="validation.html#activity-1">Validation</a>). New balls reached about 87 N at 2 mm and 200 N at 5 mm.</p>
+    <p><strong>Decision.</strong> A fixed 2 mm press from a 0.5 N contact. It keeps the force near 87 N on a new ball, inside
+    the drive margin and the load-cell range; it presses less than a third of the 6.35 mm ASTM F1888 certification depth,
+    which protects the ball; and it takes half the time of a 5 mm press. <strong>Tradeoff:</strong> at 2 mm the new&ndash;used
+    gap has a larger p-value than at 5 mm, so the POC records full curves to 5 mm during validation and the depth will be
+    revisited if single-press agreement falls short.</p>
+  </section>
+
+  <section class="section" id="drive">
+    <h2>4. Drive: motor and lead screw</h2>
+    <p><strong>Inputs.</strong> Iverntech 42HD4027-42 NEMA 17 with integrated Tr8&times;8 screw: 0.40 N&middot;m holding torque,
+    8 mm lead (2 mm pitch, 4 starts), brass nut. Mean thread diameter d<sub>m</sub> &asymp; 7.0 mm, flank half-angle
+    &alpha; = 15&deg;, brass-on-steel friction &mu; = 0.10&ndash;0.25 (lubricated to dry).</p>
+    <p><strong>Equations.</strong> Lead angle &lambda; = tan<sup>&minus;1</sup>(L / &pi;d<sub>m</sub>) = 20.0&deg;. Efficiency
+    &eta; = (cos &alpha; &minus; &mu; tan &lambda;) / (cos &alpha; + &mu; cot &lambda;). Thrust F = 2&pi;&eta;T / L; torque needed
+    T = F&middot;L / (2&pi;&eta;).</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>&mu;</th><th>&eta;</th><th>F at 0.25 N&middot;m</th><th>F at 0.30 N&middot;m</th><th>F at 0.40 N&middot;m</th><th>T for 87 N (new ball, 2 mm)</th><th>T for 140 N (worst-case ball)</th></tr></thead>
+      <tbody>
+        <tr><td class="num">0.10</td><td class="num">0.75</td><td class="num">147 N</td><td class="num">177 N</td><td class="num">235 N</td><td class="num">0.148 N&middot;m</td><td class="num">0.238 N&middot;m</td></tr>
+        <tr><td class="num">0.15</td><td class="num">0.66</td><td class="num">130 N</td><td class="num">156 N</td><td class="num">208 N</td><td class="num">0.168 N&middot;m</td><td class="num">0.270 N&middot;m</td></tr>
+        <tr><td class="num">0.20</td><td class="num">0.59</td><td class="num">116 N</td><td class="num">139 N</td><td class="num">185 N</td><td class="num">0.188 N&middot;m</td><td class="num">0.302 N&middot;m</td></tr>
+        <tr><td class="num">0.25</td><td class="num">0.53</td><td class="num">104 N</td><td class="num">125 N</td><td class="num">166 N</td><td class="num">0.209 N&middot;m</td><td class="num">0.337 N&middot;m</td></tr>
+      </tbody></table></div>
+    <p><b>Table 2.</b> Power-screw model. "Worst-case ball" scales the stiffest legal ball (30.1 N/mm) by the 2.3&times; factor
+    between our Instron readings and published values, giving about 140 N at 2 mm.</p>
+    <p><strong>Result and decision.</strong> A new ball needs 0.15&ndash;0.21 N&middot;m, a 1.4&ndash;2.0&times; margin under
+    the 0.30 N&middot;m current setting. The 8 mm lead also limits thrust: a Tr8&times;2 screw would give 199&ndash;458 N, enough to
+    exceed the load cell's 294 N ultimate rating and four times slower. The screw is not self-locking (back-drives when
+    &mu; &lt; tan &lambda; cos &alpha; = 0.35); with power off the ball pushes the carriage away, the safe direction.
+    <strong>Sensitivity.</strong> Thrust varies &plusmn;25% with friction. The very stiffest legal ball with a dry nut would need
+    0.34 N&middot;m, above the current setting; the stall-thrust bench test confirms the real margin, and the nut is greased at assembly.</p>
+  </section>
+
+  <section class="section" id="current">
+    <h2>5. Driver current and overload protection</h2>
+    <p>The 20 kg load cell (196 N rated) has a 120% safe overload (235 N) and 150% ultimate (294 N). At full current and
+    &mu; = 0.10 the stall thrust is 235 N, a safety factor of only 1.0. <strong>Decision:</strong> set the TMC2209 run current so
+    stall torque is &le; 0.30 N&middot;m, giving &le; 177 N (SF 1.33 to safe overload, 1.66 to ultimate). Layers of protection:
+    firmware stops at the 2 mm depth or at 150 N, whichever comes first; the driver current limit; the P07 flange hard stop; and
+    step-loss detection. <strong>Check:</strong> measure stall force once with the digital force gauge (validation activity 2).</p>
+  </section>
+
+  <section class="section" id="loadcell">
+    <h2>6. Load cell range, resolution and accuracy</h2>
+    <p><strong>Inputs.</strong> 20 kg bar, rated output 1.0 &plusmn; 0.15 mV/V; non-linearity, hysteresis and non-repeatability
+    0.05% FS each; span drift &le; 0.15% FS per 10 &deg;C. HX711 gain 128, &plusmn;20 mV full scale at 5 V, noise 90 nV rms at 80 samples/s.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Quantity</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Sensitivity at 5 V excitation</td><td>25.5 &micro;V/N</td></tr>
+        <tr><td>Output at 87 N</td><td>2.2 mV (11% of the HX711 range)</td></tr>
+        <tr><td>Load at the 2 mm press</td><td>44% of full scale</td></tr>
+        <tr><td>Electronic noise floor at 80 samples/s</td><td>0.0035 N rms</td></tr>
+        <tr><td>Static error (root-sum-square of linearity, hysteresis, repeatability, 20 &deg;C span drift)</td><td>&asymp; 0.43 N</td></tr>
+        <tr><td>Zero drift</td><td>Removed by taring before every press</td></tr>
+        <tr><td>Signal to resolve</td><td>&asymp; 10 N (11.5% of 87 N), about 23&times; the error</td></tr>
+      </tbody></table></div>
+    <p><strong>Decision.</strong> Keep the 20 kg cell. A 10 kg cell would overload at 98 N; a 50 kg cell halves resolution with no need for the range.</p>
+  </section>
+
+  <section class="section" id="adc">
+    <h2>7. ADC rate and press speed</h2>
+    <p>At speed v and sample rate f the plate moves v/f between samples, and the force can overshoot a limit by about k&middot;v/f.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Rate</th><th>Speed</th><th>mm per sample</th><th>Samples over the 2 mm press</th><th>Overshoot, new ball</th></tr></thead>
+      <tbody>
+        <tr><td>10 /s</td><td>2 mm/s</td><td class="num">0.200</td><td class="num">10</td><td class="num">3.3 N</td></tr>
+        <tr><td>10 /s</td><td>4 mm/s</td><td class="num">0.400</td><td class="num">5</td><td class="num">6.5 N</td></tr>
+        <tr><td>80 /s</td><td>2 mm/s</td><td class="num">0.025</td><td class="num">80</td><td class="num">0.4 N</td></tr>
+        <tr><td>80 /s</td><td>4 mm/s</td><td class="num">0.050</td><td class="num">40</td><td class="num">0.8 N</td></tr>
+      </tbody></table></div>
+    <p><strong>Decision.</strong> Tie the HX711 RATE pin high (80 samples/s); press at 2 mm/s, or 4 mm/s if the rate test shows less than 1% stiffness change.</p>
+  </section>
+
+  <section class="section" id="resolution">
+    <h2>8. Displacement resolution</h2>
+    <p>Travel per full step = 8 mm / 200 = 0.040 mm, which fails S2 (0.025 mm). With 1/16 microstepping it is 0.0025 mm.
+    Under load the rotor lags by &theta; &asymp; (2/&pi;)&middot;1.8&deg;&middot;sin<sup>&minus;1</sup>(T/T<sub>hold</sub>): 0.010 mm at
+    0.15 N&middot;m and 0.022 mm at 0.30 N&middot;m. The lag grows smoothly with force, so the steel-ball calibration removes it.
+    <strong>Decision:</strong> 1/16 microstepping; position from step count, checked with a 0.01 mm dial indicator.</p>
+  </section>
+
+  <section class="section" id="compliance">
+    <h2>9. Force-path compliance stack</h2>
+    <p>Measured travel = ball + load cell + plates + carriage + screw deflection.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Element</th><th>Model</th><th>Compliance (mm/N)</th><th>Share of new-ball compliance</th></tr></thead>
+      <tbody>
+        <tr><td>New X-40 (published)</td><td>1 / 16.37 N/mm</td><td class="num">0.0611</td><td>&mdash;</td></tr>
+        <tr><td>Load-cell bar</td><td>0.3 mm at 196 N (A)</td><td class="num">0.00153</td><td class="num">2.5%</td></tr>
+        <tr><td>Top and bottom plate (each)</td><td>Simply supported 80 mm span, 50 &times; 6.35 mm, 6061</td><td class="num">0.000145</td><td class="num">0.24%</td></tr>
+        <tr><td>Carriage arm</td><td>Cantilever 30 mm, 30 &times; 6.35 mm</td><td class="num">0.000204</td><td class="num">0.33%</td></tr>
+        <tr><td>Lead screw (axial)</td><td>60 mm of &Oslash;5.5 mm root</td><td class="num">0.000013</td><td class="num">0.02%</td></tr>
+        <tr><td><strong>Machine total</strong></td><td>Sum</td><td class="num"><strong>0.00204</strong></td><td class="num"><strong>3.3%</strong></td></tr>
+      </tbody></table></div>
+    <p><strong>Effect.</strong> Uncorrected, a new ball reads 3.2% less stiff than it is (15.85 vs. 16.37 N/mm), but the
+    worn/new <em>ratio</em> reads 0.809 against a true 0.804: an error of 0.005, a tenth of the 0.05 tolerance. Our balls
+    measured stiffer than published (37.3 N/mm), which raises the frame's share to 7.6%; even then a true ratio of 0.932 reads
+    0.937, still an error of only 0.005.
+    <strong>Decision:</strong> accept the frame and subtract the steel-ball compliance at calibration.</p>
+  </section>
+
+  <section class="section" id="stroke">
+    <h2>10. Stroke, clearance and hard stop</h2>
+    <p>The flange on the Anti-Rotation Rod (P07, &Oslash;.630 in.) stops the Carriage at a 69.05 mm gap between the Press Plate and
+    the Load Cell Plate. Largest legal ball 75.4 mm &rarr; at most 6.35 mm compression, exactly the ASTM F1888 certification depth;
+    smallest legal ball 72.9 mm &rarr; at most 3.85 mm. A 2 mm press brings the gap to 70.9&ndash;73.4 mm, so the stop is never
+    reached in normal use. Retracted gap must clear the largest ball plus 5 mm for loading: &ge; 80.4 mm, so the plate travels about
+    11.4 mm from home to the end of a press. Machining the stop into the rod removes the separate collar and the step of setting it.</p>
+  </section>
+
+  <section class="section" id="structure">
+    <h2>11. Structural checks (failure prevention)</h2>
+    <p>All checks use 235 N, the full-current stall thrust. 6061-T6: yield 276 MPa, E = 68.9 GPa, fatigue strength &asymp; 96 MPa at 5 &times; 10<sup>8</sup> cycles.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Part</th><th>Model</th><th>Stress / load</th><th>Capacity</th><th>SF</th></tr></thead>
+      <tbody>
+        <tr><td>Top Plate</td><td>Simply supported, 80 mm span, b = 50 mm, t = 6.35 mm; &sigma; = Mc/I</td><td class="num">14.0 MPa</td><td class="num">276 MPa</td><td class="num">19.7</td></tr>
+        <tr><td>Carriage arm</td><td>Cantilever 30 mm, b = 30 mm</td><td class="num">35.0 MPa</td><td class="num">276 MPa</td><td class="num">7.9</td></tr>
+        <tr><td>Lead screw</td><td>Euler buckling, fixed&ndash;free (K = 2), 150 mm</td><td class="num">235 N</td><td class="num">985 N</td><td class="num">4.2</td></tr>
+        <tr><td>Brass nut threads</td><td>Bearing pressure, 10 mm engagement</td><td class="num">2.1 MPa</td><td class="num">&asymp; 10 MPa</td><td class="num">4.7</td></tr>
+        <tr><td>Load-cell bolts</td><td>Prying: 235 N &times; 55 mm / 15 mm</td><td class="num">862 N/bolt</td><td class="num">5.27 kN (M4 8.8 proof)</td><td class="num">6.1</td></tr>
+        <tr><td>Load cell</td><td>Current-limited thrust vs. safe overload</td><td class="num">177 N</td><td class="num">235 N</td><td class="num">1.33</td></tr>
+        <tr><td>Fatigue, any aluminium part</td><td>Peak stress vs. endurance strength</td><td class="num">35 MPa</td><td class="num">96 MPa</td><td class="num">2.7 (infinite life)</td></tr>
+      </tbody></table></div>
+    <p>SF &ge; 2 on yield is normal for static, well-characterized loads; ours are higher because 1/4 in. stock was chosen for
+    stiffness. The load cell governs (SF 1.33), so it has three independent protections (&sect;5).</p>
+  </section>
+
+  <section class="section" id="cycle-time">
+    <h2>12. Cycle-time budget</h2>
+    <p>t = 6 s load and close (A) + 5 mm approach at 10 mm/s + 1 mm contact search at v + 2 mm press at v + 8 mm retract at 10 mm/s + 2 s result.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Press speed v</th><th>One test</th><th>Margin to 30 s</th></tr></thead>
+      <tbody>
+        <tr><td>2 mm/s</td><td class="num">10.8 s</td><td class="num">2.8&times;</td></tr>
+        <tr><td>4 mm/s</td><td class="num">10.1 s</td><td class="num">3.0&times;</td></tr>
+      </tbody></table></div>
+    <p>Loading time dominates and is assumed; it is measured in the player study. The GR2 plan of 4&ndash;6 presses per ball needed 26&ndash;46 s.</p>
+  </section>
+
+  <section class="section" id="temperature">
+    <h2>13. Temperature</h2>
+    <p><a href="https://pickleballscience.org/how-does-temperature-affect-a-pickleball/" target="_blank" rel="noopener">Pickleball Science [3]</a>
+    found stiffness changes strongly between &minus;1, 23 and 49 &deg;C, so a cold new ball could grade like a warm worn ball.
+    <strong>MVP decision:</strong> no temperature sensor in the product; grading uses a same-model reference and the
+    quick-start card asks for room-temperature balls. <strong>POC testing:</strong> ball and room temperature are read with an
+    external thermometer and tests run only at 70 &plusmn; 5 &deg;F, the USA Pickleball test condition. Three new X-40s will be
+    measured cold, at room temperature and warm to decide whether the MVP needs a sensor.</p>
+  </section>
+
+  <section class="section" id="safety">
+    <h2>14. Safety and operating limits</h2>
+    <p>ISO 10218-2 (Annex M, formerly ISO/TS 15066) gives 140 N as the maximum quasi-static force for hands and fingers. The
+    2 mm press (about 87 N) is below it, but a stalled drive can reach 177 N, so force limiting alone does not protect a trapped finger.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Hazard</th><th>Worst case</th><th>Design response</th><th>MVP</th><th>POC</th></tr></thead>
+      <tbody>
+        <tr><td>Finger pinch under the plate</td><td>177 N &gt; 140 N</td><td>Door reed-switch interlock; slow press; current limit</td><td>Yes</td><td>No interlock; trained operators only</td></tr>
+        <tr><td>Load-cell overload</td><td>235 N at full current</td><td>Current limit, firmware stop, flange hard stop</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Ball crushed</td><td>Largest ball at the stop: 6.35 mm</td><td>2 mm press; hard stop</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Battery overheating</td><td>Overcharge or charging fault</td><td>NiMH cell; charge termination on the main board</td><td>Planned</td><td>Bench supply</td></tr>
+      </tbody></table></div>
+    <p>Operating limits: press 2 mm from a 0.5 N contact; firmware force stop 150 N; thrust &le; 177 N; ball 72.9&ndash;75.4 mm; ball temperature 18&ndash;24 &deg;C for grading.</p>
+  </section>
+
+  <section class="section" id="ui">
+    <h2>15. User interface and ergonomics</h2>
+    <p>Controls follow <a href="https://www.access-board.gov/ada/#ada-309" target="_blank" rel="noopener">ADA 309.4</a>: one hand,
+    no tight grasping or twisting, &le; 5 lbf (22.2 N) to operate. Decisions: a large on-screen Start target and an on/off rocker;
+    result as a check or X, the word PLAY or RETIRE and a distinct sound, kept on screen until the door is opened; door opening
+    &ge; 115 mm (ball plus fingers). Aesthetic direction (Act 17): dark upper shell, light base and lime accent carried over from
+    <a href="alpha-prototype.html#concept">GR2</a>. Approval is rated on a 1&ndash;7 scale in the player study, against the QFD target of &ge; 75% of players rating it 5 or higher (<a href="validation.html#activity-3">Validation</a>).</p>
+  </section>
+
+  <section class="section" id="power">
+    <h2>16. Power and battery sizing</h2>
+    <p>Coil dissipation at full current &asymp; 2 &times; I&sup2;R = 2 &times; 1.7&sup2; &times; 1.7 &Omega; &asymp; 9.8 W (A). At 70% current, 4.8 W
+    plus 1.5 W for electronics is about 6.3 W during a 10 s test: <strong>&asymp; 0.018 Wh per test</strong>, with the motor
+    de-energized between tests. A 9 V NiMH 175 mAh cell (1.6 Wh, 80% usable) gives about 70 tests and must supply about 0.7 A,
+    near its limit. <strong>Decision:</strong> the MVP uses the Energizer NH22NBP 9 V NiMH cell: clip-in and replaceable, NiMH avoids the
+    lithium fire and shipping requirements, and it is charged on the main board over USB-C. The TMC2209 runs from 4.75 V, so it
+    works from 9 V. Current per test is measured on the POC to confirm that one charge covers a playing session; if it does not,
+    a higher-capacity NiMH pack of the same chemistry is the fallback.</p>
+  </section>
+
+  <section class="section" id="materials">
+    <h2>17. Material and component selection</h2>
+    <p>Weighted matrices score each option 1&ndash;5 (5 = best) against weighted criteria; the selected option is in bold.</p>
+    <h3>Frame plates</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Option</th><th>Stiffness/strength 25%</th><th>Machinability 20%</th><th>Mass 15%</th><th>Cost 10%</th><th>Availability 10%</th><th>Corrosion/finish 10%</th><th>End of life 10%</th><th>Score</th></tr></thead>
+      <tbody>
+        <tr><td><strong>6061-T6 Al</strong></td><td>4</td><td>5</td><td>4</td><td>4</td><td>5</td><td>4</td><td>5</td><td><strong>4.40</strong></td></tr>
+        <tr><td>1018 steel</td><td>5</td><td>3</td><td>2</td><td>5</td><td>5</td><td>2</td><td>5</td><td>3.85</td></tr>
+        <tr><td>7075-T6 Al</td><td>5</td><td>4</td><td>4</td><td>2</td><td>3</td><td>3</td><td>4</td><td>3.85</td></tr>
+        <tr><td>Acetal (POM)</td><td>2</td><td>5</td><td>5</td><td>3</td><td>4</td><td>5</td><td>2</td><td>3.65</td></tr>
+        <tr><td>PLA (printed)</td><td>1</td><td>3</td><td>5</td><td>5</td><td>5</td><td>3</td><td>2</td><td>3.10</td></tr>
+      </tbody></table></div>
+    <h3>Load cell</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Option</th><th>Range fit 30%</th><th>Accuracy 25%</th><th>Mounting 15%</th><th>Overload 15%</th><th>Availability 15%</th><th>Score</th></tr></thead>
+      <tbody>
+        <tr><td><strong>20 kg bar (Adafruit 4543)</strong></td><td>4</td><td>4</td><td>4</td><td>3</td><td>5</td><td><strong>4.00</strong></td></tr>
+        <tr><td>50 kg bar</td><td>3</td><td>3</td><td>4</td><td>5</td><td>4</td><td>3.60</td></tr>
+        <tr><td>Button compression cell</td><td>4</td><td>4</td><td>3</td><td>4</td><td>2</td><td>3.55</td></tr>
+        <tr><td>10 kg bar</td><td>1</td><td>4</td><td>4</td><td>1</td><td>5</td><td>2.80</td></tr>
+        <tr><td>Force-sensing resistor</td><td>1</td><td>1</td><td>5</td><td>3</td><td>5</td><td>2.50</td></tr>
+      </tbody></table></div>
+    <h3>Amplifier, drive and stepper driver</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Component</th><th>Options (weighted score)</th><th>Selected and why</th></tr></thead>
+      <tbody>
+        <tr><td>Amplifier</td><td>HX711 4.20; NAU7802 4.00; ADS1232 3.20</td><td><strong>HX711</strong>: 80 samples/s is enough, mature library, already owned</td></tr>
+        <tr><td>Drive</td><td>NEMA 17 + Tr8&times;8 4.20; 12 mm ball screw 3.65; NEMA 17 + Tr8&times;2 3.30; linear servo actuator 3.10</td><td><strong>NEMA 17 + Tr8&times;8</strong>: lead limits thrust, fast, 0.0025 mm steps. Geared micro actuators lack fine position feedback and add backlash to the measured travel</td></tr>
+        <tr><td>Stepper driver</td><td>TMC2209 4.70; DRV8825 3.05; A4988 2.85</td><td><strong>TMC2209</strong>: precise current setting, quiet, stall detection, runs from 4.75 V</td></tr>
+      </tbody></table></div>
+    <h3>MVP case</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Option</th><th>Impact 25%</th><th>Moldability 20%</th><th>Finish 20%</th><th>Mass 10%</th><th>End of life 15%</th><th>Flame rating 10%</th><th>Score</th></tr></thead>
+      <tbody>
+        <tr><td>PC/ABS (UL94 V-0)</td><td>5</td><td>4</td><td>4</td><td>4</td><td>3</td><td>4</td><td>4.10</td></tr>
+        <tr><td>Die-cast aluminium</td><td>5</td><td>3</td><td>4</td><td>2</td><td>5</td><td>5</td><td>4.10</td></tr>
+        <tr><td><strong>ABS</strong></td><td>3</td><td>5</td><td>4</td><td>4</td><td>3</td><td>2</td><td>3.60</td></tr>
+        <tr><td>Polypropylene</td><td>3</td><td>5</td><td>2</td><td>5</td><td>4</td><td>1</td><td>3.35</td></tr>
+      </tbody></table></div>
+    <p>The manufacturing plan prices ABS, the cheapest moldable option and the material in the eco-audit. PC/ABS V-0 scores higher
+    because the battery sits inside; with a NiMH cell rather than lithium, ABS is kept, saving roughly a dollar per case.
+    POC substitutions and their effect are on the <a href="poc.html#relationship">POC page</a>.</p>
+  </section>
+
+  <section class="section" id="margins">
+    <h2>18. Safety factors and margins</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Item</th><th>Margin</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td>Motor torque for a new ball at 2 mm</td><td>1.4&ndash;2.0&times;</td><td>0.30 N&middot;m setting vs. 0.15&ndash;0.21 N&middot;m needed</td></tr>
+        <tr><td>Load cell vs. safe overload (current-limited)</td><td>1.33</td><td>177 N vs. 235 N</td></tr>
+        <tr><td>Load cell vs. safe overload at the 2 mm press</td><td>2.7</td><td>87 N vs. 235 N</td></tr>
+        <tr><td>Plates and carriage, yield</td><td>7.9&ndash;19.7</td><td>235 N worst case</td></tr>
+        <tr><td>Screw buckling</td><td>&ge; 4.2</td><td>150 mm fixed&ndash;free</td></tr>
+        <tr><td>Load-cell bolts</td><td>6.1</td><td>M4 class 8.8 proof load</td></tr>
+        <tr><td>Fatigue</td><td>2.7</td><td>Infinite-life region</td></tr>
+        <tr><td>Ratio error from frame compliance</td><td>0.005 vs. 0.05 allowed</td><td>&sect;9</td></tr>
+        <tr><td>Cycle time</td><td>&asymp; 2.8&times;</td><td>10.8 s vs. 30 s</td></tr>
+      </tbody></table></div>
+    <h3>Predictions to check against test</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Prediction</th><th>Independent evidence</th><th>Test</th></tr></thead>
+      <tbody>
+        <tr><td>Worn/new ratio 0.90 / 0.80 at 4 / 8 games</td><td>Pickleball Science [1]</td><td>Known-history X-40s on the POC</td></tr>
+        <tr><td>Stall thrust &le; 177 N</td><td>Supplier torque, screw model</td><td>Stall-thrust bench test</td></tr>
+        <tr><td>Frame &asymp; 3% of ball compliance</td><td>Hand calculation</td><td>Steel ball and dial indicator; gauge R&amp;R</td></tr>
+        <tr><td>Rate effect &lt; 1% between 2 and 4 mm/s</td><td>None</td><td>Same ball at both speeds</td></tr>
+        <tr><td>&asymp; 10 s per test</td><td>Time budget</td><td>Firmware timestamps; timed first use</td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="section">
+    <h2>References</h2>
+    <ol class="refs" style="list-style:none;padding-left:0">
+      <li id="ref-1">[1] Pickleball Science, "How Many Games Will a Pickleball Last?" 2023. <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/">pickleballscience.org</a></li>
+      <li id="ref-2">[2] USA Pickleball, <em>Equipment Standards Manual</em>, Jan. 2025, rules 2.D.5&ndash;2.D.7. <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">usapickleball.org</a></li>
+      <li id="ref-3">[3] Pickleball Science, "How Does Temperature Affect a Pickleball?" 2024. <a href="https://pickleballscience.org/how-does-temperature-affect-a-pickleball/">pickleballscience.org</a></li>
+      <li id="ref-4">[4] Adafruit, "Strain Gauge Load Cell, 4 wires, 20 kg," product 4543. <a href="https://www.adafruit.com/product/4543">adafruit.com</a></li>
+      <li id="ref-5">[5] Analog Devices, TMC2209 datasheet. <a href="https://www.analog.com/en/products/tmc2209.html">analog.com</a></li>
+      <li id="ref-6">[6] U.S. Access Board, ADA Standards, &sect;309.4 Operation. <a href="https://www.access-board.gov/ada/#ada-309">access-board.gov</a></li>
+      <li id="ref-7">[7] Team 1, CuPickle Engineering Analysis and Parameter Selection, and Compression Test Analysis workbook. On this site: <a href="assets/docs/compression-test-analysis.xlsx">compression-test-analysis.xlsx</a>.</li>
+    </ol>
+  </section>
+
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="fmea.html">&larr; FMEA</a>
+    <a href="mvp.html">Minimum Viable Product &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
+    Gate Review 3: Detailed Design and Validation &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 # Team 1 — Design Portfolio
 
 ME 455 Analytical Product Design · University of Michigan
-Gate Review 1: Product Definition and Market Analysis · Gate Review 2: Product Concept
+Gate Review 1: Product Definition and Market Analysis · Gate Review 2: Product Concept · Gate Review 3: Detailed Design and Validation
 
 Live site: https://osestic.github.io/design-science-portfolio/
 
@@ -21,9 +21,10 @@ Commit and push as normal; GitHub Pages redeploys from `main` within a minute.
 ## Pages
 
 Navigation follows the course template: **Home** (the introduction), one dropdown per
-gate review, and **Team**. Gate Review 1 sits under *Customer & Market Research* and Gate
-Review 2 under *Concept & Prototyping*; later phases (Development, Business Plan) are greyed
-placeholders in the nav and on the home page until their pages exist.
+gate review, and **Team**. Gate Review 1 sits under *Customer & Market Research*, Gate
+Review 2 under *Concept & Prototyping* and Gate Review 3 under *Development & Validation*; the Business Plan is a greyed
+placeholder until its pages exist. `archive/` holds the GR1 and GR2 portfolios as they stood before
+instructor feedback; each is linked from its dropdown.
 
 | File | Section |
 |---|---|
@@ -41,6 +42,15 @@ placeholders in the nav and on the home page until their pages exist.
 | `downselection.html` | GR2 · Pugh screening, weighted scoring, sensitivity |
 | `alpha-prototype.html` | GR2 · Proposed concept, architecture and operation drawings, alpha prototype |
 | `social-impact.html` | GR2 · Social impact statement |
+| `detailed-design.html` | GR3 · Detailed Design Overview (main Gate Review 3 page) |
+| `technical-development.html` | GR3 · Design drivers and technical development methods |
+| `fmea.html` | GR3 · FMEA with GR3 actions and revised ratings |
+| `parameter-analysis.html` | GR3 · Parameter analysis and material/component selection |
+| `mvp.html` | GR3 · MVP: architecture, operation, CAD, manufacturing, assembly, BOM |
+| `poc.html` | GR3 · Proof of concept: scope, drawings, fabrication, assembly, wiring, BOM |
+| `validation.html` | GR3 · Validation matrix, compression study plots, test plans |
+| `impact.html` | GR3 · Social impact evaluation, eco-audit, Design for X |
+| `appendix.html` | Supporting files (PDF/XLSX in `assets/docs/`) |
 | `team.html` | Team members and roles |
 
 `qfd.html` and `characteristics.html` only redirect to the matching anchors on

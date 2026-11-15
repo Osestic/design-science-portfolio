@@ -33,7 +33,7 @@
           <li><a href="competition.html">Competition Analysis</a></li>
           <li><a href="value-proposition.html">Market Value Proposition</a></li>
           <li class="submenu-caption">Archive</li>
-          <li><a href="archive/gr1-before-feedback/index.html">GR1 before instructor feedback</a></li>
+          <li><a href="archive/gr1-before-feedback/index.html">Gate Review 1 version (Oct. 1)</a></li>
         </ul>
       </li>
       <li class="has-menu">
@@ -48,9 +48,25 @@
           <li><a href="downselection.html">Downselection</a></li>
           <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
           <li><a href="social-impact.html">Social Impact Statement</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr2-before-feedback/concept.html">Gate Review 2 version (Oct. 28)</a></li>
         </ul>
       </li>
-      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li class="has-menu">
+        <a href="detailed-design.html" class="menu-label" aria-haspopup="true">Development &amp; Validation</a>
+        <ul class="submenu" aria-label="Gate Review 3: Detailed Design and Validation">
+          <li class="submenu-caption">Gate Review 3</li>
+          <li><a href="detailed-design.html">Detailed Design Overview</a></li>
+          <li><a href="technical-development.html">Technical Development Methods</a></li>
+          <li><a href="fmea.html">FMEA</a></li>
+          <li><a href="parameter-analysis.html">Parameter Analysis</a></li>
+          <li><a href="mvp.html">Minimum Viable Product</a></li>
+          <li><a href="poc.html">Proof-of-Concept Prototype</a></li>
+          <li><a href="validation.html">Validation &amp; Verification</a></li>
+          <li><a href="impact.html">Social Impact Evaluation</a></li>
+          <li><a href="appendix.html">Appendix: Supporting Files</a></li>
+        </ul>
+      </li>
       <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
       <li><a href="team.html">Team</a></li>
     </ul>
@@ -78,6 +94,26 @@
     </table>
   </div>
   <p><b>Table 9.</b> The five top concepts at a glance.</p>
+
+  <h2 id="narrowing">How and why we narrowed to these five</h2>
+  <p>The concept tree and the other methods produced several dozen ideas across seven sensing branches. Four filters from the
+  QFD and producer constraints cut the field (<a href="concept-tree.html">Concept Tree</a>): the test must not damage the ball,
+  must be portable enough for courtside use, must cost under $400 to prototype, and must be buildable this semester. That
+  removed destructive tests, the ball launcher, X-ray, CT, ultrasound and thermal imaging, and sensors built into the ball.</p>
+  <p>Of the four branches left, we chose finalists from <strong>compression</strong> because it measures stiffness, the property
+  published play tests show degrading first (about 10% per hour on Franklin X-40s), and because it ties to the USA Pickleball
+  compression requirement. The other three were folded in rather than carried as separate finalists:</p>
+  <ul>
+    <li><strong>Tap and sound:</strong> the best lead for locating a soft spot, but no evidence linked their signal to how a
+    ball plays. Their idea of testing many spots became Concept A's rotating cradle.</li>
+    <li><strong>Drop or bounce:</strong> it is the reference test itself, but it needs a fixed drop height and a hard floor, so
+    it is not repeatable courtside. It became the reference for validating the grade.</li>
+  </ul>
+  <p>Within compression, the five finalists were picked to differ in <em>who applies the load</em> (a motor, the user's push,
+  the user's hand) and in <em>form</em> (bench station, compact ring, wearable, handheld, benchtop cube), so the downselection
+  compared different architectures rather than variants of one. Each team member developed one, which kept each concept
+  argued for by someone who knew it in depth.</p>
+
 
   <!-- Concept A -->
   <h2 id="concept-a">Concept A: Rolling Compression Station</h2>

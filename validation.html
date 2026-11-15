@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validation & Verification · CuPickle · Team 1 Design Portfolio</title>
+<meta name="description" content="CuPickle validation matrix, completed Instron compression study with plots, and planned POC engineering and user tests.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#6d7387" stroke="#d5d8e2" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#d5d8e2"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#e8ffae"/><stop offset="100%" stop-color="#c9e67a"/></linearGradient></defs>
+</svg><span>CuPickle</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr1-before-feedback/index.html">Gate Review 1 version (Oct. 1)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr2-before-feedback/concept.html">Gate Review 2 version (Oct. 28)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="detailed-design.html" class="menu-label is-active" aria-haspopup="true">Development &amp; Validation</a>
+        <ul class="submenu" aria-label="Gate Review 3: Detailed Design and Validation">
+          <li class="submenu-caption">Gate Review 3</li>
+          <li><a href="detailed-design.html">Detailed Design Overview</a></li>
+          <li><a href="technical-development.html">Technical Development Methods</a></li>
+          <li><a href="fmea.html">FMEA</a></li>
+          <li><a href="parameter-analysis.html">Parameter Analysis</a></li>
+          <li><a href="mvp.html">Minimum Viable Product</a></li>
+          <li><a href="poc.html">Proof-of-Concept Prototype</a></li>
+          <li><a href="validation.html" aria-current="page">Validation &amp; Verification</a></li>
+          <li><a href="impact.html">Social Impact Evaluation</a></li>
+          <li><a href="appendix.html">Appendix: Supporting Files</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section" style="padding-top:2.4rem">
+    <p class="eyebrow">Gate Review 3 &middot; Validation and Verification</p>
+    <h1>What we have shown, and what the POC still has to show</h1>
+    <p class="lead">One engineering test is complete: a two-phase compression study showing used balls need 8&ndash;12% less force
+    than new ones at every depth from 1 to 5 mm. It supports the grading principle (driver 1) and informed the move to one press
+    at a fixed spot (driver 3). Everything that needs the POC (single-press accuracy, gauge R&amp;R, stall thrust, ball damage,
+    cycle time and player trust) is planned with criteria, procedures and dates below.</p>
+    <nav class="toc" aria-label="On this page">
+      <span class="toc-title">On this page</span>
+      <a href="#matrix">Validation matrix</a><a href="#activity-1">Activity 1: compression study</a>
+      <a href="#activity-2">Activity 2: POC engineering tests</a><a href="#activity-3">Activity 3: user validation</a>
+      <a href="#schedule">Schedule</a><a href="#conclusions">Conclusions</a>
+    </nav>
+  </section>
+
+  <section class="section" id="matrix">
+    <h2>Validation matrix</h2>
+    <p>Method types: <strong>A</strong> analysis, <strong>I</strong> inspection, <strong>D</strong> demonstration, <strong>E</strong> engineering test, <strong>U</strong> user test.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Requirement / driver / failure mode</th><th>Success criterion</th><th>Method</th><th>MVP element</th><th>POC configuration</th><th>Differences affecting interpretation</th><th>Trials</th><th>Equipment</th><th>Status</th><th>Result</th><th>Conclusion</th></tr></thead>
+      <tbody>
+        <tr><td>Driver 1: worn balls measurably softer; FMEA 288</td><td>Ball-level difference at fixed depth, p &lt; 0.05</td><td>E (Activity 1)</td><td>Measurement principle</td><td>Instron press, flat plate (not the POC)</td><td>Different fixture and contact; unknown play history</td><td>5 + 5 balls &times; 6 positions</td><td>Instron press</td><td>Done</td><td>&minus;11.5% at 2 mm (p = 0.045); &minus;8.0% at 5 mm (p = 0.020)</td><td>Supported (preliminary)</td></tr>
+        <tr><td>S1 / Driver 1: grade agreement; FMEA 288</td><td>&ge; 90% agreement with bounce test, thresholds frozen</td><td>E (Activity 2a)</td><td>Grading firmware, force path</td><td>Full POC</td><td>Breadboard electronics</td><td>&ge; 20 held-out balls</td><td>POC, USAP drop rig</td><td>Planned</td><td>&mdash;</td><td>Open</td></tr>
+        <tr><td>Driver 1: ratio vs. Pickleball Science</td><td>Within 0.05 of 0.90 (4 games) and 0.80 (8 games)</td><td>E (2a)</td><td>Grading</td><td>Full POC</td><td>As above</td><td>X-40s at 0, 4, 8 games</td><td>POC, thermometer</td><td>Planned</td><td>&mdash;</td><td>Open</td></tr>
+        <tr><td>Driver 3: single press at the peg; FMEA 392</td><td>Re-seat spread &le; 5% of stiffness</td><td>E (2b)</td><td>Peg and plate</td><td>Full POC</td><td>None</td><td>5 balls &times; 20 re-seats</td><td>POC, marked balls</td><td>Planned</td><td>In-sample random spot: 75%</td><td>Open</td></tr>
+        <tr><td>S16 / Driver 2: repeatability; FMEA 175</td><td>%GRR &lt; 10</td><td>E (2c)</td><td>Measurement chain</td><td>Full POC</td><td>Breadboard noise: conservative</td><td>10 balls &times; 3 operators &times; 3</td><td>POC, steel ball</td><td>Planned</td><td>Analysis: ratio error 0.005</td><td>Analysis only</td></tr>
+        <tr><td>S2 / Driver 2: resolution</td><td>Travel error &le; 0.025 mm</td><td>A + I (2c)</td><td>Drive</td><td>Full POC</td><td>None</td><td>10 approaches</td><td>0.01 mm dial indicator</td><td>Planned</td><td>Analysis: 0.0025 mm/step</td><td>Analysis only</td></tr>
+        <tr><td>Load-cell overload; safety</td><td>Stall thrust &le; 177 N</td><td>E (2d)</td><td>Drive current setting</td><td>Full POC</td><td>None</td><td>3 stalls</td><td>Digital force gauge</td><td>Planned</td><td>Analysis: 177 N</td><td>Analysis only</td></tr>
+        <tr><td>S4: no ball damage; FMEA 84</td><td>Rebound change &lt; 0.5 in. after 50 tests</td><td>E (2e)</td><td>2 mm press</td><td>Full POC</td><td>None</td><td>3 balls + 3 controls</td><td>Drop rig, POC</td><td>Planned</td><td>&mdash;</td><td>Open</td></tr>
+        <tr><td>S12: durability</td><td>1,000 test cycles with no failure; steel-ball reading within &plusmn;2% of its start value; Carriage runs without binding</td><td>E (2g)</td><td>Drive, bushing, rod, load cell</td><td>Full POC</td><td>Aluminium rod (MVP steel): wear is conservative</td><td>1,000 cycles</td><td>POC, steel reference ball</td><td>Planned</td><td>Analysis: infinite fatigue life</td><td>Analysis only</td></tr>
+        <tr><td>S7 / Driver 4: cycle time</td><td>&le; 30 s first use</td><td>A + E + U</td><td>Whole sequence</td><td>Full POC</td><td>No door interlock or touchscreen</td><td>10 first-time users</td><td>Timestamps, stopwatch</td><td>Planned</td><td>Analysis: &asymp; 10 s</td><td>Analysis only</td></tr>
+        <tr><td>S5 / Driver 5: confidence</td><td>Mean gain &ge; 2 points (7-point); trust &ge; 4/5</td><td>U (Activity 3)</td><td>Result presentation</td><td>POC + screen mock-up</td><td>OLED vs. touchscreen</td><td>&ge; 21 players</td><td>Coded balls, survey</td><td>Planned</td><td>&mdash;</td><td>Open</td></tr>
+        <tr><td>S8: routine</td><td>&le; 2 actions; &ge; 90% unassisted completion</td><td>U (3)</td><td>Load, close, start</td><td>POC + mock-up</td><td>No door on POC</td><td>&ge; 21 players</td><td>Observation sheet</td><td>Planned</td><td>Sequence has 4 actions</td><td>At risk</td></tr>
+        <tr><td>S14: appearance</td><td>&ge; 75% of players rate the look 5 or higher on a 1&ndash;7 scale</td><td>U (3)</td><td>Case form, color and finish</td><td>MVP renders + printed POC case</td><td>Printed case finish differs from molded ABS</td><td>&ge; 21 players</td><td>Renders, survey</td><td>Planned</td><td>&mdash;</td><td>Open</td></tr>
+        <tr><td>Door interlock; FMEA 48, 90</td><td>No open-door start; door opening stops motion, no restart</td><td>D</td><td>Reed switch</td><td>First MVP build</td><td>Not on POC</td><td>10 per condition</td><td>Non-human probe</td><td>After POC</td><td>&mdash;</td><td>Open</td></tr>
+        <tr><td>S9, S10: portability</td><td>&le; 2.5 L, &le; 2 kg</td><td>A + I</td><td>Packaged MVP</td><td>CAD</td><td>POC case is printed</td><td>1</td><td>CAD, scale</td><td>Done (CAD)</td><td>3.3 L; 2.15 kg + electronics</td><td>Not met</td></tr>
+        <tr><td>FMEA 210: model and temperature</td><td>Same-session reference drifts &le; 2%</td><td>E</td><td>Reference management</td><td>Full POC</td><td>External thermometer</td><td>Every session</td><td>Thermometer</td><td>Planned</td><td>&mdash;</td><td>Open</td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="section" id="activity-1">
+    <h2>Activity 1: Compression study on new and used balls (complete)</h2>
+    <div class="table-wrap"><table><tbody>
+      <tr><th>Goal</th><td>Driver 1: does a plate press separate used from new balls at equal depth? Also informs driver 3: how much does the reading change with position on one ball?</td></tr>
+      <tr><th>Hypothesis</th><td>Used balls need less force at equal displacement; position-to-position spread is smaller than the new&ndash;used gap.</td></tr>
+      <tr><th>Success criterion</th><td>Exploratory: ball-level group difference at p &lt; 0.05 (Welch). This study does not test the &ge; 90% bounce-agreement requirement.</td></tr>
+      <tr><th>Configuration</th><td>Phase A (Nov. 5): one new and one used ball, presses to 1, 5 and 11 mm. Phase B (Nov. 10): five new and five used balls, six marked positions each, presses to 5 mm (60 runs).</td></tr>
+      <tr><th>Connection to MVP</th><td>Tests the measurement principle. It does not use CuPickle's motor, load cell, peg or electronics.</td></tr>
+      <tr><th>Equipment</th><td>Instron press (5 N display step), flat aluminium distribution plate, ball held in the groove of a metal block, PC logging software (benchtop GUI); Prof. Diann Brei's lab, G.G. Brown Laboratory.</td></tr>
+      <tr><th>Variables</th><td>Independent: ball condition, position, depth. Dependent: force (N). Controlled: fixture, plate, zeroing at first firm contact, 5 mm target. Not controlled: play history, ball model mix, room temperature, recovery time between positions.</td></tr>
+      <tr><th>Samples</th><td>10 balls; the ball, not the position, is the unit for group comparisons.</td></tr>
+      <tr><th>Safety</th><td>Hands clear of the press during motion; jog controls untouched with hands under the press; safety glasses; a second person present. Stop and isolate if the ball cracks or the fixture moves.</td></tr>
+    </tbody></table></div>
+    <div class="grid grid-3">
+      <figure style="margin:0"><a href="assets/img/gr3/forcegauge-setup.jpg"><img src="assets/img/gr3/forcegauge-setup.jpg" alt="Photo of the Instron press: load head above, force distribution plate on a pickleball sitting in a metal fixture" loading="lazy"></a><figcaption><b>Figure V0a.</b> Test setup: gauge, distribution plate, ball, fixture.</figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/ball-numbering.jpg"><img src="assets/img/gr3/ball-numbering.jpg" alt="Photo of a pickleball with numbered positions marked between the holes" loading="lazy"></a><figcaption><b>Figure V0b.</b> Six positions marked between holes on each ball.</figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/forcegauge-software.jpg"><img src="assets/img/gr3/forcegauge-software.jpg" alt="Photo of the laptop running the force-testing software" loading="lazy"></a><figcaption><b>Figure V0c.</b> Logging software.</figcaption></figure>
+    </div>
+    <h3>Procedure</h3>
+    <ol>
+      <li>Set the software to depth control, 5 mm target.</li>
+      <li>Number six positions on each ball, each between holes.</li>
+      <li>Raise the press, place the fixture, seat the ball in its groove with position 1 up, and center it under the gauge.</li>
+      <li>Place the distribution plate on the ball; jog down to first firm contact.</li>
+      <li>Zero force and depth.</li>
+      <li>With hands clear, start the press; it compresses and logs force and travel.</li>
+      <li>Jog up, remove the plate, rotate to the next position, repeat steps 4&ndash;6 for all six.</li>
+      <li>Repeat for all ten balls; save each run separately.</li>
+    </ol>
+    <h3>Analysis</h3>
+    <p>Force at 1&ndash;5 mm is linearly interpolated between the two logged samples either side of each depth on the pressing stroke.
+    Each ball's six positions are averaged first; group means are the mean of five ball means. Difference = (F&#772;<sub>used</sub> &minus;
+    F&#772;<sub>new</sub>) / F&#772;<sub>new</sub>; significance by Welch's two-tailed t-test on ball means (n = 5 per group). Stiffness is the
+    slope of force against depth over 1&ndash;5 mm. Every formula and the raw values are in
+    <a href="assets/docs/compression-test-analysis.xlsx">compression-test-analysis.xlsx</a> (sheet "Method &amp; Equations").</p>
+    <figure id="fig-v1"><a href="assets/img/gr3/v1-phaseA-curves.png"><img src="assets/img/gr3/v1-phaseA-curves.png" alt="Phase A force versus compression curves for tared runs of one new and one used ball, from 0 to 11 mm; curves are close below 5 mm and one used run sits lowest throughout" loading="lazy" style="max-width:760px"></a>
+      <figcaption><b>Figure V1.</b> Phase A raw curves (tared runs only; untared runs started with force on the ball and are excluded). Force is linear to about 5&ndash;6 mm (R&sup2; &ge; 0.998), then flattens. One used ball's own runs spread wider than the new&ndash;used gap, so a single ball cannot separate the groups; this set up Phase B.</figcaption></figure>
+    <figure id="fig-v2"><a href="assets/img/gr3/v2-phaseB-ball-means.png"><img src="assets/img/gr3/v2-phaseB-ball-means.png" alt="Phase B: ten thin lines of ball-mean force against depth 1 to 5 mm with shaded position ranges, and two thick group-mean lines with the new-ball group above the used-ball group at every depth" loading="lazy" style="max-width:760px"></a>
+      <figcaption><b>Figure V2.</b> Phase B ball means (6 positions each) and group means (n = 5 per group). Shading is each ball's min&ndash;max over its six positions.</figcaption></figure>
+    <figure id="fig-v5"><a href="assets/img/gr3/v5-difference-by-depth.png"><img src="assets/img/gr3/v5-difference-by-depth.png" alt="Bar chart of used versus new difference: minus 11.8, 11.5, 9.7, 9.0 and 8.0 percent at 1 to 5 mm with p-values 0.044, 0.045, 0.042, 0.030, 0.020" loading="lazy" style="max-width:640px"></a>
+      <figcaption><b>Figure V5.</b> Used vs. new difference in ball-mean force by depth, with Welch p-values.</figcaption></figure>
+    <figure id="fig-v3"><a href="assets/img/gr3/v3-position-spread.png"><img src="assets/img/gr3/v3-position-spread.png" alt="Two strip plots of the six position forces for each of ten balls at 2 mm and 5 mm, with each ball's mean marked and the 193.9 N cut-off line at 5 mm" loading="lazy"></a>
+      <figcaption><b>Figure V3.</b> Position spread within each ball at 2 mm and 5 mm. Spread within a ball (weakest spot 4&ndash;9% below the other five) is comparable to the gap between groups, which is why one random position grades less reliably than an average.</figcaption></figure>
+    <figure id="fig-v4"><a href="assets/img/gr3/v4-accuracy-positions.png"><img src="assets/img/gr3/v4-accuracy-positions.png" alt="Line chart: balls graded correctly 75, 84, 89, 91, 95 and 100 percent for 1 to 6 positions averaged; dashed 90 percent target" loading="lazy" style="max-width:640px"></a>
+      <figcaption><b>Figure V4.</b> Share of balls graded correctly when k of the 6 positions are averaged, over every combination (6, 15, 20, 15, 6, 1), against the 193.9 N cut-off at 5 mm.</figcaption></figure>
+    <h3>Results</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Depth</th><th>New mean (N)</th><th>Used mean (N)</th><th>Used vs. new</th><th>p (Welch)</th></tr></thead>
+      <tbody>
+        <tr><td>1 mm</td><td class="num">46.1</td><td class="num">40.6</td><td class="num">&minus;11.8%</td><td class="num">0.044</td></tr>
+        <tr><td>2 mm</td><td class="num">87.2</td><td class="num">77.2</td><td class="num">&minus;11.5%</td><td class="num">0.045</td></tr>
+        <tr><td>3 mm</td><td class="num">126.8</td><td class="num">114.6</td><td class="num">&minus;9.7%</td><td class="num">0.042</td></tr>
+        <tr><td>4 mm</td><td class="num">165.8</td><td class="num">150.9</td><td class="num">&minus;9.0%</td><td class="num">0.030</td></tr>
+        <tr><td>5 mm</td><td class="num">200.7</td><td class="num">184.6</td><td class="num">&minus;8.0%</td><td class="num">0.020</td></tr>
+        <tr><td>Stiffness, 1&ndash;5 mm</td><td class="num">38.8 N/mm</td><td class="num">36.2 N/mm</td><td class="num">ratio 0.932</td><td class="num">0.043</td></tr>
+      </tbody></table></div>
+    <p>At 5 mm every used ball's mean (highest 192.4 N) sat below every new ball's (lowest 195.3 N), but by less than one 5 N gauge
+    step. With a cut-off at the midpoint (193.9 N), one random position graded correctly 75% of the time, four positions 91%, six
+    100%. The cut-off was set on the same ten balls, so these accuracies are optimistic. Measured new-ball stiffness was 2.3&times;
+    the published value, most likely from the fixture and contact geometry, so only ratios are used.</p>
+    <p><strong>Conclusion.</strong> Driver 1 has preliminary support: the sampled used balls were distinguishable from new ones. The
+    study does not establish bounce agreement, the absolute stiffness, a play-time relationship, or single-press accuracy at a fixed
+    spot. <strong>Design decisions from it:</strong> grade on ratios; press 2 mm (linear region, 11.5% signal); seat the ball on a peg
+    so position scatter is removed rather than averaged. <strong>Next action:</strong> repeat with X-40s of known play history
+    (0, 4, 8 games) on the POC, with thresholds set on separate balls.</p>
+  </section>
+
+  <section class="section" id="activity-2">
+    <h2>Activity 2: POC engineering tests (planned)</h2>
+    <p><strong>Why no results yet.</strong> The POC parts are awaiting shop approval of the revised drawings, and powered tests wait
+    for the safety review. <strong>Risk of the missing evidence:</strong> the grading principle may not transfer to one press at one
+    fixed spot, and noise or flex in the real frame may hide the 10 N signal. <strong>When:</strong> Nov. 30&ndash;Dec. 4, ahead of
+    Design Expo on Dec. 10.</p>
+    <p><strong>Configuration:</strong> full POC (<a href="poc.html">POC page</a>), firmware logging raw force and step count at 80
+    samples/s, press 2 mm from a 0.5 N contact. <strong>Connection to MVP:</strong> identical force path, so results stand for the MVP
+    except for electronics noise (upper bound). <strong>Variables:</strong> independent: ball, operator, repetition, speed; dependent:
+    force, stiffness, ratio, grade, time; controlled: temperature (70 &plusmn; 5 &deg;F), firmware version, contact threshold, recovery
+    time (2 min between presses on a ball).</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Test</th><th>Hypothesis</th><th>Procedure</th><th>Samples</th><th>Analysis</th><th>Criterion</th></tr></thead>
+      <tbody>
+        <tr><td>2a. Grading and ratio</td><td>One press grades &ge; 90% of balls like the bounce test</td><td>Set thresholds on 10 training balls; freeze; blind and randomize 20 held-out balls; drop-test each from 78 in. onto granite</td><td>&ge; 20 held-out balls; X-40s at 0, 4, 8 games</td><td>Agreement table; false PLAY / false RETIRE counts; 95% interval</td><td>&ge; 90%; ratio within 0.05</td></tr>
+        <tr><td>2b. Re-seat spread</td><td>The peg puts the plate on the same spot</td><td>Lift and re-seat a marked ball 20 times, pressing each time</td><td>5 balls &times; 20</td><td>Standard deviation / mean of stiffness</td><td>&le; 5%</td></tr>
+        <tr><td>2c. Gauge R&amp;R and travel</td><td>Measurement error is small next to ball-to-ball variation</td><td>Crossed study, randomized order, reload between repeats; dial indicator on the Carriage for 10 approaches</td><td>10 balls &times; 3 operators &times; 3</td><td>%GRR = 100 &times; 6&sigma;<sub>GRR</sub> / tolerance; travel error</td><td>%GRR &lt; 10; &le; 0.025 mm</td></tr>
+        <tr><td>2d. Stall thrust</td><td>Current limit holds thrust under 177 N</td><td>Press the force gauge with the plate until the motor stalls</td><td>3 stalls</td><td>Peak force</td><td>&le; 177 N</td></tr>
+        <tr><td>2e. Ball damage</td><td>2 mm presses do not change the bounce</td><td>Drop-test 3 balls and 3 controls; 50 tests on the 3; drop-test all after 24 h</td><td>3 + 3</td><td>Rebound change vs. controls</td><td>&lt; 0.5 in.</td></tr>
+        <tr><td>2f. Speed and time</td><td>Stiffness at 4 mm/s within 1% of 2 mm/s</td><td>Same ball at both speeds, alternating; firmware timestamps</td><td>5 balls &times; 3</td><td>Paired difference</td><td>&lt; 1%; &le; 30 s</td></tr>
+        <tr><td>2g. Durability</td><td>The press survives 1,000 cycles without drift or wear</td><td>Automated cycles on the steel reference ball and a spare pickleball; steel-ball check every 100 cycles; inspect rod and bushing at the end</td><td>1,000 cycles</td><td>Steel-ball reading vs. cycle count</td><td>No failure; drift &le; 2%</td></tr>
+      </tbody></table></div>
+    <p><strong>Safety plan:</strong> safety review first; trained operator plus observer at the bench-supply switch; case
+    closed during presses; current limit set and stall-tested before any ball test; eye protection; stop for binding, abnormal noise,
+    cracking or unexpected motion and isolate power before touching the mechanism. <strong>Data:</strong> raw CSV per press, the
+    analysis workbook and a session log (temperature, operator, firmware version) will be linked here.</p>
+  </section>
+
+  <section class="section" id="activity-3">
+    <h2>Activity 3: User validation (planned)</h2>
+    <div class="grid grid-2">
+      <div>
+        <p><strong>Research question.</strong> Can frequent players run a test and interpret PLAY, RETIRE and CHECK BALL without
+        help, and does a measured result raise their confidence more than their own check?</p>
+        <p><strong>Participants.</strong> &ge; 21 adults who play at least weekly, including competitive and older players, recruited
+        at courts and leagues; team members pilot the procedure but do not count.</p>
+        <p><strong>Task.</strong> "You are about to play. Check this ball with the device, then tell us the result and what you would do."</p>
+        <p><strong>Measures.</strong> Completion without help (effectiveness), time and actions (efficiency), interpretation errors,
+        comfort (1&ndash;5), confidence before and after (1&ndash;7), trust (1&ndash;5), appearance (1&ndash;7; approval = 5 or higher, target &ge; 75% of players).</p>
+        <p><strong>Ethics and privacy.</strong> Voluntary; may stop at any time; recording only with separate permission; coded
+        participant numbers; no names stored with data. Players are told grades are prototype results, not certification.</p>
+        <p><strong>POC vs. MVP interaction.</strong> The POC has no door interlock and uses an OLED, so players operate it with the case
+        closed under supervision and see the result screens below on a tablet mock-up; findings on screens transfer, timing on the door does not.</p>
+      </div>
+      <svg viewBox="0 0 420 300" role="img" aria-labelledby="lay-t" style="width:100%;height:auto">
+        <title id="lay-t">User-test layout: participant at a courtside table with the tester and a tray of coded balls; moderator beside them; observer with timer and survey opposite; a drop rig at the side for the reference grade</title>
+        <g font-family="Outfit, Segoe UI, sans-serif" font-size="12" fill="#20232e">
+          <rect x="90" y="90" width="240" height="110" rx="10" fill="#e9ebf0" stroke="#6d7387"/><text x="210" y="108" text-anchor="middle" font-weight="700">Table (courtside)</text>
+          <rect x="185" y="122" width="50" height="60" rx="6" fill="#303545"/><text x="210" y="196" text-anchor="middle" font-size="11">CuPickle</text>
+          <rect x="110" y="130" width="56" height="40" rx="6" fill="#e8ffae" stroke="#303545"/><text x="138" y="154" text-anchor="middle" font-size="10.5">coded balls</text>
+          <rect x="258" y="130" width="56" height="40" rx="6" fill="#fff" stroke="#303545"/><text x="286" y="148" text-anchor="middle" font-size="10.5">result</text><text x="286" y="161" text-anchor="middle" font-size="10.5">mock-up</text>
+          <circle cx="210" cy="240" r="18" fill="#2a78d6"/><text x="210" y="275" text-anchor="middle">Participant</text>
+          <circle cx="330" cy="240" r="14" fill="#6d7387"/><text x="330" y="272" text-anchor="middle">Moderator</text>
+          <circle cx="210" cy="50" r="14" fill="#6d7387"/><text x="210" y="24" text-anchor="middle">Observer: timer, sheet</text>
+          <rect x="20" y="100" width="40" height="110" rx="6" fill="#fff" stroke="#6d7387"/><text x="40" y="228" text-anchor="middle" font-size="11">Drop rig</text>
+          <text x="40" y="244" text-anchor="middle" font-size="11">(reference)</text>
+        </g>
+      </svg>
+    </div>
+    <h3>Result screens to be tested</h3>
+    <svg viewBox="0 0 880 200" role="img" aria-labelledby="scr-t" style="width:100%;height:auto;max-width:900px">
+      <title id="scr-t">Four result screens: PLAY with a large check mark and rising tone; RETIRE with a large X and low tone; CHECK BALL with an exclamation mark for an invalid test; CLOSE DOOR prompt before Start</title>
+      <g font-family="Outfit, Segoe UI, sans-serif" text-anchor="middle">
+        <rect x="10" y="10" width="200" height="150" rx="12" fill="#20232e"/><circle cx="110" cy="65" r="34" fill="#1baf7a"/><path d="M92 66 l12 12 l22 -26" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="110" y="135" fill="#fff" font-size="30" font-weight="800">PLAY</text>
+        <rect x="230" y="10" width="200" height="150" rx="12" fill="#20232e"/><circle cx="330" cy="65" r="34" fill="#eda100"/><path d="M314 49 l32 32 M346 49 l-32 32" stroke="#20232e" stroke-width="7" stroke-linecap="round"/><text x="330" y="135" fill="#fff" font-size="30" font-weight="800">RETIRE</text>
+        <rect x="450" y="10" width="200" height="150" rx="12" fill="#20232e"/><circle cx="550" cy="65" r="34" fill="#e9ebf0"/><text x="550" y="80" fill="#20232e" font-size="44" font-weight="800">!</text><text x="550" y="132" fill="#fff" font-size="24" font-weight="800">CHECK BALL</text>
+        <rect x="670" y="10" width="200" height="150" rx="12" fill="#20232e"/><rect x="740" y="35" width="60" height="62" rx="6" fill="none" stroke="#e8ffae" stroke-width="5"/><path d="M770 40 v52" stroke="#e8ffae" stroke-width="3"/><text x="770" y="132" fill="#fff" font-size="24" font-weight="800">CLOSE DOOR</text>
+        <g font-size="12.5" fill="#20232e"><text x="110" y="185">rising two-note tone</text><text x="330" y="185">single low tone</text><text x="550" y="185">three short beeps; re-seat ball</text><text x="770" y="185">Start ignored until shut</text></g>
+      </g>
+    </svg>
+    <p><b>Figure V6.</b> Result states from the Activity 26 accessibility analysis: each differs in shape, word and sound, so it does not
+    rely on colour or on reading English alone (<a href="assets/img/gr3/accessible-readout.png">Activity 26 figure</a>).</p>
+    <h3>Procedure</h3>
+    <ol>
+      <li>Consent script; record coded characteristics (play frequency, years playing, age band).</li>
+      <li>Participant checks three coded balls by their usual method and rates confidence (1&ndash;7).</li>
+      <li>Uncoached first use on the same balls, timed from picking up the tester to stating a decision.</li>
+      <li>Participant states the result and next action; observer logs actions, errors and help needed.</li>
+      <li>Ratings: confidence, trust, comfort, appearance; then the CHECK BALL and CLOSE DOOR states are shown and interpreted.</li>
+      <li>Second, practiced use, timed again; open-ended questions; debrief (balls are not discarded on prototype grades).</li>
+    </ol>
+    <p><strong>Analysis.</strong> Participants are the unit; paired confidence gain with mean, median and 95% interval; share meeting
+    30 s; interpretation accuracy per state; themes from comments. <strong>Limitations:</strong> a convenience sample of about 21
+    cannot establish broad acceptance or universal accessibility. <strong>Design changes</strong> will be tied to observed barriers
+    and re-tested.</p>
+  </section>
+
+  <section class="section" id="schedule">
+    <h2>Schedule to Design Expo</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Dates (2026)</th><th>Activity</th></tr></thead>
+      <tbody>
+        <tr><td>Nov. 17&ndash;20</td><td>Revise drawings; shop approval; firmware for logging</td></tr>
+        <tr><td>Nov. 20&ndash;26</td><td>Machine parts, print case, wire, assemble; safety review</td></tr>
+        <tr><td>Nov. 30&ndash;Dec. 1</td><td>Stall thrust (2d), calibration, travel check</td></tr>
+        <tr><td>Dec. 1&ndash;4</td><td>Gauge R&amp;R (2c), re-seat (2b), grading (2a), speed (2f); start damage study (2e)</td></tr>
+        <tr><td>To be decided</td><td>User sessions (Activity 3): dates and venue to be decided</td></tr>
+        <tr><td>Dec. 7&ndash;9</td><td>Analysis, FMEA re-rating, revisions</td></tr>
+        <tr><td>Dec. 10</td><td>Design Expo</td></tr>
+      </tbody></table></div>
+    <p>Dates are targets. If hardware or safety review slips, the affected requirements stay open and are reported as open.</p>
+  </section>
+
+  <section class="section" id="conclusions">
+    <h2>Validation conclusions</h2>
+    <ul>
+      <li><strong>Supported by test evidence:</strong> worn balls are measurably softer under plate compression (preliminary, 10 balls, laboratory fixture).</li>
+      <li><strong>Shown only by analysis:</strong> resolution, frame compliance and ratio error, stall thrust, structural margins, cycle time.</li>
+      <li><strong>Not yet demonstrated:</strong> bounce agreement, single-press accuracy at the peg, %GRR, ball damage, confidence, the interlock, portability and cost targets.</li>
+      <li><strong>Inadequate or at risk:</strong> one random spot graded only 75% correctly in-sample; size (3.3 L) and actions (4) miss their targets.</li>
+      <li><strong>Changes required:</strong> none to the force path; drawing revisions and the safety review before POC testing.</li>
+      <li><strong>Effect of changes on earlier work:</strong> moving from rollers to a peg does not invalidate the compression data but means its position-averaging accuracy does not transfer; single-press tests must be repeated on the POC.</li>
+      <li><strong>Limits from POC differences:</strong> battery, touchscreen, interlock and molded case results come from the first MVP build, not the POC.</li>
+      <li><strong>Proceed?</strong> Yes, with specified revisions and staged validation. The evidence supports building and testing the POC, not declaring CuPickle validated.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>References</h2>
+    <ol class="refs" style="list-style:none;padding-left:0">
+      <li id="ref-1">[1] USA Pickleball, <em>Equipment Standards Manual</em>, Jan. 2025, &sect;&sect;2.D.5&ndash;2.D.7 (bounce: 30&ndash;34 in. from 78 in. onto granite at 70 &plusmn; 5 &deg;F). <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">usapickleball.org</a></li>
+      <li id="ref-2">[2] Minitab, "Interpret the key results for Crossed Gage R&amp;R Study." <a href="https://support.minitab.com/en-us/minitab/help-and-how-to/quality-and-process-improvement/measurement-system-analysis/how-to/gage-study/crossed-gage-r-r-study/interpret-the-results/key-results/">support.minitab.com</a></li>
+      <li id="ref-3">[3] Pickleball Science, "How Many Games Will a Pickleball Last?" 2023. <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/">pickleballscience.org</a></li>
+      <li id="ref-4">[4] Team 1, compression test data and analysis workbook, Nov. 2026. On this site: <a href="assets/docs/compression-test-analysis.xlsx">compression-test-analysis.xlsx</a>.</li>
+    </ol>
+  </section>
+
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="poc.html">&larr; Proof-of-Concept Prototype</a>
+    <a href="impact.html">Social Impact Evaluation &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
+    Gate Review 3: Detailed Design and Validation &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

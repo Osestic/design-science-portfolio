@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minimum Viable Product · CuPickle · Team 1 Design Portfolio</title>
+<meta name="description" content="CuPickle MVP purpose and scope, architecture and operation, CAD, materials, mass-manufacturing processes, assembly, bill of materials and conclusions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#6d7387" stroke="#d5d8e2" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#d5d8e2"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#e8ffae"/><stop offset="100%" stop-color="#c9e67a"/></linearGradient></defs>
+</svg><span>CuPickle</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr1-before-feedback/index.html">Gate Review 1 version (Oct. 1)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr2-before-feedback/concept.html">Gate Review 2 version (Oct. 28)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="detailed-design.html" class="menu-label is-active" aria-haspopup="true">Development &amp; Validation</a>
+        <ul class="submenu" aria-label="Gate Review 3: Detailed Design and Validation">
+          <li class="submenu-caption">Gate Review 3</li>
+          <li><a href="detailed-design.html">Detailed Design Overview</a></li>
+          <li><a href="technical-development.html">Technical Development Methods</a></li>
+          <li><a href="fmea.html">FMEA</a></li>
+          <li><a href="parameter-analysis.html">Parameter Analysis</a></li>
+          <li><a href="mvp.html" aria-current="page">Minimum Viable Product</a></li>
+          <li><a href="poc.html">Proof-of-Concept Prototype</a></li>
+          <li><a href="validation.html">Validation &amp; Verification</a></li>
+          <li><a href="impact.html">Social Impact Evaluation</a></li>
+          <li><a href="appendix.html">Appendix: Supporting Files</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section" style="padding-top:2.4rem">
+    <p class="eyebrow">Gate Review 3 &middot; Minimum Viable Product Design</p>
+    <h1>The product we recommend building</h1>
+    <p class="lead">The CuPickle MVP is a portable, battery-powered courtside tester. It seats a pickleball on a locating peg,
+    presses it once, a fixed 2 mm, from above while a load cell underneath measures force, and shows PLAY or RETIRE in about
+    10 s without damaging the ball. It is planned at 5,000 units a year for an estimated $112.34 per unit. "MVP" means this production product; "POC" means the in-house <a href="poc.html">proof of concept</a>.</p>
+    <nav class="toc" aria-label="On this page">
+      <span class="toc-title">On this page</span>
+      <a href="#scope">Purpose and scope</a><a href="#architecture">Architecture</a><a href="#operation">Operation</a>
+      <a href="#cad">CAD model</a><a href="#materials">Materials and components</a><a href="#manufacturing">Mass manufacturing</a>
+      <a href="#assembly">Assembly</a><a href="#bom">Bill of materials</a><a href="#conclusions">Conclusions</a>
+    </nav>
+  </section>
+
+  <section class="section" id="scope">
+    <h2>MVP purpose and scope</h2>
+    <h3>What the MVP includes</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Subsystem</th><th>MVP content</th><th>Function delivered</th></tr></thead>
+      <tbody>
+        <tr><td>Frame</td><td>6061-T6 Baseplate (P10) and Top Plate (P02) tied by four Frame Posts (P13)</td><td>Keeps the test force inside a stiff frame</td></tr>
+        <tr><td>Press drive</td><td>NEMA 17 stepper with integrated Tr8&times;8 lead screw and brass nut (P01, P03, P04), Carriage (P06), Press Plate (P12), 4140 steel Anti-Rotation Rod (P07) with its flange as the hard stop, bronze bushing (P05), home switch (P11)</td><td>Lowers the plate onto the ball and presses it once</td></tr>
+        <tr><td>Force sensing</td><td>20 kg straight-bar load cell (P09); Load Cell Plate (P15) with an M4 set-screw locating peg (P14)</td><td>Seats the ball and measures force under it</td></tr>
+        <tr><td>Electronics and power</td><td>Main board (P19: microcontroller, TMC2209 driver, HX711 amplifier, USB-C charging); 9 V NiMH rechargeable battery (P20); charger and cable (P25, P26)</td><td>Runs the test, computes stiffness, grades the ball</td></tr>
+        <tr><td>Interface and safety</td><td>2.8 in. touchscreen (P21), on/off rocker (P22), IR break-beam ball sensor (P23), door reed switch with magnet (P24)</td><td>Start; PLAY / RETIRE / CHECK BALL with icon, word and sound; door interlock; ball check</td></tr>
+        <tr><td>Case</td><td>Injection-molded ABS case and door with a clear window (P16)</td><td>Encloses the pinch point; lets the player watch the press</td></tr>
+      </tbody></table></div>
+    <h3>Functions and customer benefits</h3>
+    <ul>
+      <li><strong>A measured answer, not a feel.</strong> Replaces the 3 s squeeze or bounce check, which 52.8% of players rate at 3 or lower of 7 for confidence.</li>
+      <li><strong>Same spot every time.</strong> The peg fixes where the plate lands.</li>
+      <li><strong>Fast.</strong> About 10 s for one 2 mm press, against the 30 s requirement.</li>
+      <li><strong>Non-destructive.</strong> 2 mm is under a third of the 6.35 mm certification depth; the current limit and hard stop back it up.</li>
+      <li><strong>Safe and readable.</strong> The door interlock stops the motor; the result uses icon, word and sound.</li>
+      <li><strong>Serviceable and recyclable.</strong> No adhesives; battery, board, motor and load cell are screw-fastened modules.</li>
+    </ul>
+    <h3>Requirements the MVP is designed to meet</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Customer need (QFD weight)</th><th>Specification</th><th>Target</th></tr></thead>
+      <tbody>
+        <tr><td>Identifies low-performance balls (15%)</td><td>Grade agreement with the bounce reference; stiffness ratio vs. Pickleball Science</td><td>&ge; 90%; within 0.05 of 0.90 and 0.80</td></tr>
+        <tr><td>Doesn't damage the ball (13%)</td><td>Rebound change after 50 tests</td><td>&lt; 0.5 in.</td></tr>
+        <tr><td>Gives repeatable results (13%)</td><td>%GRR across operators and repeats</td><td>&lt; 10%</td></tr>
+        <tr><td>Increases confidence (10%)</td><td>Gain on a 7-point scale</td><td>&ge; 2 points</td></tr>
+        <tr><td>Tests quickly (10%)</td><td>Pick-up to grade</td><td>&le; 30 s</td></tr>
+        <tr><td>Affordable (10%)</td><td>Retail price</td><td>&le; $100</td></tr>
+        <tr><td>Fits routine (7%)</td><td>User actions</td><td>&le; 2</td></tr>
+        <tr><td>Portable (7%)</td><td>Packed volume and mass</td><td>&le; 2.5 L, &le; 2 kg</td></tr>
+        <tr><td>Measures precisely</td><td>Displacement resolution</td><td>&le; 0.025 mm</td></tr>
+      </tbody></table></div>
+    <h3>Deferred beyond the MVP</h3>
+    <p>Testing several spots on one ball and soft-spot detection; an app or wireless data; paddle testing; an acoustic tap test and the hysteresis signal.</p>
+    <h3>How the MVP differs from the GR2 concept and alpha prototype</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Element</th><th>GR2 concept / alpha prototype</th><th>MVP</th><th>Driven by</th></tr></thead>
+      <tbody>
+        <tr><td>Ball location</td><td>Two rollers; ball drifted sideways</td><td>Locating peg through one ball hole</td><td>Alpha prototype; FMEA RPN 392</td></tr>
+        <tr><td>Presses per ball</td><td>4&ndash;6, rolled between presses</td><td>One fixed 2 mm press</td><td>Peg; Instron test; cycle time</td></tr>
+        <tr><td>Force sensing</td><td>Load cell above the ball, on the carriage</td><td>Load cell under the ball, carrying the seat</td><td>Internals layout</td></tr>
+        <tr><td>Frame and guide</td><td>2020 extrusion, two guide rods, linear bearings</td><td>Machined 6061-T6 plates, four posts, one anti-rotation rod in a bushing</td><td>Stiffness (Driver 2)</td></tr>
+        <tr><td>Lead screw</td><td>T8&times;2</td><td>Tr8&times;8</td><td>Built-in force limit; speed</td></tr>
+        <tr><td>Damage signals</td><td>Stiffness and hysteresis</td><td>Stiffness only</td><td>Instron test</td></tr>
+        <tr><td>Result</td><td>Undefined "readout"</td><td>Touchscreen: check or X, PLAY or RETIRE, distinct sounds</td><td>Accessibility review (Activity 26)</td></tr>
+        <tr><td>Safety sensing</td><td>None</td><td>Door reed switch, IR ball sensor, home switch</td><td>FMEA open/close door</td></tr>
+        <tr><td>Power</td><td>Not defined</td><td>Rechargeable battery, USB-C</td><td>Courtside use</td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="section" id="architecture">
+    <h2>Product architecture</h2>
+    <p>The press hangs from the Top Plate and pushes down; the ball sits on the peg on the Load Cell Plate and the load cell
+    underneath reads the force. The four posts tie the Top Plate to the Baseplate, so the test force stays inside the frame. The
+    main board is the only link between sensing and motion: contact detection, the force stop and the grade are firmware decisions.</p>
+    <figure><a href="assets/img/gr3/architecture.jpg"><img src="assets/img/gr3/architecture.jpg" alt="Block diagram: battery powers the main circuit board; the board drives the compression drive, which moves the press plate onto the ball; force passes through the peg and load cell plate to the 20 kg load cell and baseplate and back through the posts; the load cell, reed switch and IR beam send signals to the board; the touchscreen and buzzer exchange start and result with the player" loading="lazy"></a>
+      <figcaption><b>Figure 1.</b> Energy and force (solid), signals (dashed grey) and the ball's path (dashed green). The force loop is motor &rarr; lead screw &rarr; Carriage &rarr; Press Plate &rarr; ball &rarr; peg and Load Cell Plate &rarr; load cell &rarr; Baseplate &rarr; posts &rarr; Top Plate.</figcaption></figure>
+    <h3>Subsystem interfaces</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Interface</th><th>Parts</th><th>Joint</th><th>Requirement</th></tr></thead>
+      <tbody>
+        <tr><td>Posts to plates</td><td>P13 &times;4, P10, P02</td><td>8 &times; M5 on a 4.185 in. square</td><td>Posts in matched-length sets so the plates stay parallel</td></tr>
+        <tr><td>Motor to Top Plate</td><td>P01, P02</td><td>4 &times; M3 on a 1.220 in. square around the &Oslash;.8661 in. bore</td><td>Screw square to the plates</td></tr>
+        <tr><td>Rod to Top Plate</td><td>P07, P02</td><td>1 &times; M5, 1.575 in. from the bore</td><td>Same spacing as the bushing bore in P06</td></tr>
+        <tr><td>Rod through Carriage</td><td>P07, P05, P06</td><td>Sliding fit in a press-fit bushing</td><td>Carriage cannot rotate; no binding over full travel</td></tr>
+        <tr><td>Nut and Press Plate to Carriage</td><td>P04, P06, P12</td><td>4 &times; M3</td><td>Press Plate parallel to Load Cell Plate</td></tr>
+        <tr><td>Ball seat</td><td>Ball, P14, P15</td><td>Peg through one ball hole</td><td>Same spot every test</td></tr>
+        <tr><td>Load-cell mounting</td><td>P09, P10, P15</td><td>M4 with threadlocker</td><td>Free end clears the Baseplate so the bar can flex</td></tr>
+        <tr><td>Sensing</td><td>P09 &rarr; HX711 &rarr; microcontroller</td><td>Keyed connector</td><td>80 samples/s</td></tr>
+        <tr><td>Safety</td><td>P24, P23 &rarr; board &rarr; TMC2209</td><td>Keyed connectors</td><td>No motion with the door open or no ball</td></tr>
+      </tbody></table></div>
+    <h3>Material, energy and information flows</h3>
+    <ul>
+      <li><strong>Material:</strong> the ball goes in through the door, is pressed once and comes out unchanged.</li>
+      <li><strong>Energy:</strong> the battery, charged over USB-C, powers the board and stepper; the Tr8&times;8 screw turns motor torque into plate force.</li>
+      <li><strong>Information:</strong> the load cell's millivolt signal is digitized by the HX711 at 80 samples/s and paired with the step count (0.0025 mm per step); the touchscreen and buzzer report the grade.</li>
+    </ul>
+    <h3>Control and feedback</h3>
+    <ol>
+      <li><strong>Home:</strong> at switch-on the plate rises to the home switch.</li>
+      <li><strong>Check:</strong> the reed switch must read the door closed and the IR beam must see a ball before Start is accepted.</li>
+      <li><strong>Find contact:</strong> the plate lowers until force passes 0.5 N, so nut backlash is always taken up the same way.</li>
+      <li><strong>Press:</strong> 2 mm from contact at 2&ndash;4 mm/s (about 87 N on a new ball). Stall thrust is current-limited to &le; 177 N; the P07 flange is the mechanical stop.</li>
+      <li><strong>Fit:</strong> stiffness is the slope of force against travel, with the steel-ball compliance subtracted.</li>
+      <li><strong>Grade:</strong> compared with the stored new-ball reference of the selected model; PLAY, RETIRE, or CHECK BALL if the press was invalid.</li>
+      <li><strong>Return:</strong> the plate homes; the door can be opened.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="operation">
+    <h2>Operation across the full use cycle</h2>
+    <figure><a href="assets/img/gr3/storyboard.jpg"><img src="assets/img/gr3/storyboard.jpg" alt="Six-panel storyboard: 1 switch on, the plate homes; 2 open the door and load the ball with a hole over the peg; 3 close the door and press Start; 4 the plate presses 2 mm; 5 read PLAY or RETIRE with icon and sound; 6 remove the ball, ready for the next" loading="lazy"></a>
+      <figcaption><b>Figure 2.</b> One test, from switch-on to removing the ball. It replaces the GR2 roller storyboard.</figcaption></figure>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Stage</th><th>User input</th><th>Product response</th></tr></thead>
+      <tbody>
+        <tr><td>Setup (first use)</td><td>Charge over USB-C; choose ball model; test one new ball</td><td>Runs steel-ball calibration; stores the new-ball reference</td></tr>
+        <tr><td>Switch on</td><td>Rocker switch</td><td>Self-check; plate homes; battery level shown</td></tr>
+        <tr><td>Load</td><td>Open door; set ball with a hole over the peg</td><td>Screen prompts "Close door"</td></tr>
+        <tr><td>Close and start</td><td>Close door; tap Start</td><td>Reed switch and IR beam must agree, otherwise Start is ignored</td></tr>
+        <tr><td>Test (intermediate state)</td><td>Watch through the window</td><td>Contact search, 2 mm press; opening the door stops the motor with no restart</td></tr>
+        <tr><td>Result</td><td>Read and decide</td><td>Large check + PLAY + rising tone, or X + RETIRE + low tone; CHECK BALL if invalid. Held until the door opens</td></tr>
+        <tr><td>Reset</td><td>Open door; remove ball</td><td>Plate home; ready for the next ball</td></tr>
+        <tr><td>Clean and maintain</td><td>Wipe plate and peg; recalibrate after a knock</td><td>Calibration prompt if the self-check drifts</td></tr>
+        <tr><td>Store and transport</td><td>Switch off; carry in a bag</td><td>Motor de-energized; case protects the press</td></tr>
+        <tr><td>End of life</td><td>Return or recycle</td><td>Screws only: aluminium, steel, ABS, board and battery separate</td></tr>
+      </tbody></table></div>
+    <p>The GR2 sequence counted four user actions (open, load, close, start) against a target of two; the trust study will test whether players accept it.</p>
+  </section>
+
+  <section class="section" id="cad">
+    <h2>MVP CAD model</h2>
+    <div class="grid grid-3">
+      <figure style="margin:0"><a href="assets/img/gr3/cad-iso.png"><img src="assets/img/gr3/cad-iso.png" alt="Isometric CAD render of the frame, motor, carriage and load cell" loading="lazy"></a><figcaption><b>Figure 3.</b> Frame and drive, case hidden.</figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/cad-ball-in-case.png"><img src="assets/img/gr3/cad-ball-in-case.png" alt="CAD render through the case showing the ball between the plates" loading="lazy"></a><figcaption><b>Figure 4.</b> Ball in place inside the case.</figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/cad-press-closeup.png"><img src="assets/img/gr3/cad-press-closeup.png" alt="Close-up CAD render of the round load cell plate with the peg standing up at its center, on the load cell above the baseplate" loading="lazy"></a><figcaption><b>Figure 5.</b> Load Cell Plate with the peg on the load cell.</figcaption></figure>
+    </div>
+    <figure><a href="assets/img/gr3/mvp-exploded.png"><img src="assets/img/gr3/mvp-exploded.png" alt="MVP exploded view with labels P01 to P26 including the home switch, reed switch and magnet, touchscreen, rocker switch, IR break-beam pair, main board, battery, charger and cable" loading="lazy" style="max-width:820px"></a>
+      <figcaption><b>Figure 6.</b> MVP exploded view. Frame and drive from the SolidWorks assembly; electronics at their planned locations. The case (P16) is left off so the internals show.</figcaption></figure>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Property</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Overall size (case)</td><td>135 &times; 116 &times; 210 mm (5.315 &times; 4.567 &times; 7.839 in. on the P16 drawing)</td></tr>
+        <tr><td>CAD mass</td><td>4.74 lb (2.15 kg) without battery and board</td></tr>
+        <tr><td>Critical clearance</td><td>69.05 mm minimum plate gap at the P07 flange; &ge; 80.4 mm retracted</td></tr>
+        <tr><td>Fasteners</td><td>Three sizes: M3, M4, M5 socket head; thread-forming screws into molded case bosses</td></tr>
+        <tr><td>Tolerances</td><td>&plusmn;0.01 in. two-place, &plusmn;0.005 in. three-place (ASME Y14.5-2009); reamed bushing bore; posts matched within a set</td></tr>
+        <tr><td>Service access</td><td>Case comes off with a few screws; modules unscrew individually</td></tr>
+      </tbody></table></div>
+    <p>The SolidWorks mass-properties screenshot and the full drawing set are in the <a href="appendix.html">Appendix</a>. The part drawings (P02&ndash;P16) are shared with the POC and shown on the <a href="poc.html#drawings">POC page</a>; in production only the finish changes.</p>
+  </section>
+
+  <section class="section" id="materials">
+    <h2>MVP materials and components</h2>
+    <h3>Custom parts</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>No.</th><th>Part</th><th>Qty</th><th>Material and finish</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>P02, P10, P06, P12, P15</td><td>Top Plate, Baseplate, Carriage, Press Plate, Load Cell Plate</td><td>1 each</td><td>6061-T6, 1/4 in. plate; tumble deburr, clear Type II anodize</td><td>Highest selection score; stiffness; recyclable</td></tr>
+        <tr><td>P13</td><td>Frame Post</td><td>4</td><td>6061-T6, 1/2 in. rod; clear anodize</td><td>Turns cleanly; light</td></tr>
+        <tr><td>P07</td><td>Anti-Rotation Rod</td><td>1</td><td>4140 pre-hardened steel, 1 in. rod; black oxide</td><td>Does not wear or gall in bronze the way aluminium can</td></tr>
+        <tr><td>P16</td><td>Case and door</td><td>1</td><td>Injection-molded ABS, molded-in color, &gt;ABS&lt; mark; clear window</td><td>Cheapest per part at volume; no paint</td></tr>
+      </tbody></table></div>
+    <h3>Purchased components</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Component</th><th>Part and supplier</th><th>Key specification</th><th>Availability and risk</th></tr></thead>
+      <tbody>
+        <tr><td>Stepper with lead screw and nut</td><td>Iverntech 42HD4027-42</td><td>NEMA 17, 0.40 N&middot;m, integrated 304 stainless Tr8&times;8 screw, brass nut</td><td>Marketplace listing; axial-load rating unconfirmed</td></tr>
+        <tr><td>Load cell</td><td><a href="https://www.adafruit.com/product/4543">Adafruit 4543</a></td><td>20 kg straight bar, 1.0 mV/V</td><td>In stock; $3.16 at 100+</td></tr>
+        <tr><td>Bushing</td><td>Bronze sleeve, 8 ID &times; 12 OD</td><td>Pressed into P06</td><td>Commodity</td></tr>
+        <tr><td>Main board</td><td>Contract board maker; chips TMC2209 (Analog Devices), HX711</td><td>Microcontroller, driver, amplifier, USB-C charging; lead-free, RoHS</td><td>Board design by Ori; 4&ndash;6 weeks</td></tr>
+        <tr><td>Battery</td><td>Energizer NH22NBP, 9 V NiMH 175 mAh (DigiKey NH22NBP-ND)</td><td>Clip-in, replaceable; charged on the board over USB-C</td><td>&asymp; 70 tests per charge (<a href="parameter-analysis.html#power">&sect;16</a>); current per test measured on the POC</td></tr>
+        <tr><td>Touchscreen</td><td>Adafruit 2770 (DigiKey 1528-2770AD-ND)</td><td>2.8 in. capacitive TFT, 240 &times; 320, SPI</td><td>18-week lead time; largest cost-down target</td></tr>
+        <tr><td>On/off switch</td><td>CIT Relay and Switch RW2123KWC</td><td>Rocker</td><td>Stock part</td></tr>
+        <tr><td>Ball-presence sensor</td><td>Adafruit 2167 (DigiKey 2167-ND)</td><td>IR break-beam pair, 3 mm</td><td>Stock part</td></tr>
+        <tr><td>Door switch</td><td>Standex-Meder ORD 324/15-20 AT</td><td>Glass reed, SPST-NO, magnet in door</td><td>Stock part</td></tr>
+        <tr><td>Home switch</td><td>Microswitch</td><td>Under the Top Plate</td><td>Commodity</td></tr>
+        <tr><td>Charger and cable</td><td>Qualtek QFWC-18-12-USCR; Amphenol 10165794-Z0050YWLF</td><td>18 W USB-C PD; USB-C cable 0.5 m</td><td>Ships in the box</td></tr>
+        <tr><td>Fasteners</td><td>M3, M4, M5 socket head, class 8.8</td><td>Three sizes only</td><td>Commodity</td></tr>
+      </tbody></table></div>
+    <p><strong>Compatibility.</strong> The TMC2209 runs from 4.75 V, so it works from either candidate battery; the HX711 and
+    load cell share 5 V excitation; the 8 mm lead keeps stall thrust within the load cell's rating.</p>
+  </section>
+
+  <section class="section" id="manufacturing">
+    <h2>Mass-manufacturing processes</h2>
+    <p>Volume: 5,000 units a year (assumed). Cycle times, labour and scrap are our estimates unless sourced; laser cutting speed
+    for 1/4 in. aluminium is 200&ndash;800 mm/min (Xometry), molding 15&ndash;45 s (Fictiv), scrap 0.5&ndash;3% (Symestic).</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Part</th><th>Starting form</th><th>Process and steps</th><th>Tooling / equipment</th><th>Cycle</th><th>Tolerance and finish</th><th>QC</th><th>Scrap</th><th>Why this process</th></tr></thead>
+      <tbody>
+        <tr><td>P02 Top Plate</td><td>6061, 1/4 in. plate</td><td>Fiber-laser outline and holes &rarr; CNC mill motor bore &rarr; deburr</td><td>Fiber laser; 3-axis mill, 4-up fixture</td><td>3.5 min</td><td>&plusmn;.005; anodized</td><td>First article; hole gauge 1/50</td><td>2%</td><td>Laser does most features; no hard tooling</td></tr>
+        <tr><td>P10 Baseplate</td><td>6061, 1/4 in. plate</td><td>Laser &rarr; tap M4 &rarr; tumble</td><td>Fiber laser; tapping head</td><td>1.5 min</td><td>&plusmn;.005; anodized</td><td>Hole gauge 1/50</td><td>2%</td><td>Mostly through-cuts</td></tr>
+        <tr><td>P06 Carriage</td><td>6061, 1/4 in. plate</td><td>Laser &rarr; CNC mill, ream bushing bore &rarr; deburr</td><td>Fiber laser; mill fixture; reamer</td><td>2.5 min</td><td>Bushing bore press fit; anodized</td><td>Go/no-go pin 100%</td><td>3%</td><td>Reamed fit needs machining</td></tr>
+        <tr><td>P12 Press Plate</td><td>6061, 1/4 in. plate</td><td>Laser &rarr; drill and form-tap 4 &times; M3</td><td>Fiber laser; CNC mill</td><td>1.5 min</td><td>Ball face flat; anodized</td><td>Thread gauge 1/50</td><td>2%</td><td>Taps cannot be laser cut</td></tr>
+        <tr><td>P15 Load Cell Plate</td><td>6061, 1/4 in. plate</td><td>Laser &rarr; drill and form-tap M4 on axis</td><td>Fiber laser; CNC mill</td><td>1.2 min</td><td>Hole on axis; anodized</td><td>Thread gauge 1/50</td><td>2%</td><td>As P12</td></tr>
+        <tr><td>P13 Frame Post &times;4</td><td>6061, 1/2 in. rod</td><td>Bar-fed lathe: turn, face, drill and tap M5 both ends, cut off</td><td>CNC lathe, sub-spindle</td><td>2 min each</td><td>Length matched in sets of 4</td><td>Length gauge; kitted</td><td>1%</td><td>One-hit lathe part</td></tr>
+        <tr><td>P07 Anti-Rotation Rod</td><td>4140 PH steel, 1 in. rod</td><td>Bar-fed lathe: flange and shaft, drill and tap M5 &rarr; black oxide</td><td>CNC lathe; carbide tools</td><td>3 min</td><td>Shaft smooth; flange face sets 69.05 mm</td><td>Diameter and length 1/50</td><td>1%</td><td>Pre-hardened: no heat treat</td></tr>
+        <tr><td>P16 Case</td><td>ABS pellets</td><td>Injection molding, bosses molded in</td><td>Steel mold with side actions</td><td>45 s</td><td>Draft per mold design; light matte</td><td>First-shot report; visual</td><td>3%</td><td>Cheapest per part at volume</td></tr>
+        <tr><td>Complete unit</td><td>&mdash;</td><td>End-of-line calibration and test</td><td>Calibration station, reference weights</td><td>3 min</td><td>Force reading within spec</td><td>100%</td><td>1% rework</td><td>Every load cell differs</td></tr>
+      </tbody></table></div>
+    <div class="grid grid-2">
+      <figure style="margin:0"><a href="assets/img/gr3/mvp-process-flow.png"><img src="assets/img/gr3/mvp-process-flow.png" alt="Process flow: four supply streams to receiving and inspection, kitting, three sub-assemblies, join on posts, electronics and case, end-of-line calibration with a rework loop, label and pack, ship" loading="lazy"></a><figcaption><b>Figure 7.</b> Process flow; step numbers match the assembly plan.</figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/mvp-floor-plan.png"><img src="assets/img/gr3/mvp-floor-plan.png" alt="U-shaped assembly cell: receiving, inspection, kitting, base bench, carriage bench, top bench, join and case bench, calibration station, rework bench, pack and ship" loading="lazy"></a><figcaption><b>Figure 8.</b> U-shaped in-house assembly cell (rough layout).</figcaption></figure>
+    </div>
+    <p><strong>Owned tooling</strong> (est.): case mold $35k; mill and reaming fixtures $3k; gauges $1k; board test fixture $3k;
+    arbor press, torque drivers and 69.05 mm gauge block $2.5k; calibration station $4k; total &asymp; $48.5k, about $3 per unit over
+    three years. At 14 min a unit, a year is about 1,200 labour-hours, so the cell runs in batches.
+    <strong>Design for environment in production:</strong> buy near-net stock, recycle aluminium chips, minimum-quantity lubrication, compact cardboard packaging.</p>
+  </section>
+
+  <section class="section" id="assembly">
+    <h2>MVP assembly plan</h2>
+    <p>Three sub-assemblies (base, carriage, top) are joined on the posts and closed in the case: about 14 minutes per unit including the final test (Figure 6).</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Step</th><th>Operation</th><th>Parts</th><th>Joining</th><th>Tools</th><th>Check</th><th>Time</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Base: load cell's fixed end to the Baseplate; Load Cell Plate on the free end; thread in the peg</td><td>P10, P09, P15, P14</td><td>M4 + threadlocker</td><td>Torque driver</td><td>Free end clears the Baseplate</td><td>1.5 min</td></tr>
+        <tr><td>2</td><td>Four posts to the Baseplate from below</td><td>P13 &times;4</td><td>4 &times; M5</td><td>Torque driver</td><td>Posts seated flat</td><td>1 min</td></tr>
+        <tr><td>3</td><td>Carriage: press bushing in; nut on top, Press Plate below</td><td>P06, P05, P04, P12</td><td>Press fit; 4 &times; M3</td><td>Arbor press, torque driver</td><td>Bushing square</td><td>1.5 min</td></tr>
+        <tr><td>4</td><td>Top: motor on top, rod and home switch underneath</td><td>P02, P01, P07, P11</td><td>4 &times; M3; 1 &times; M5</td><td>Torque driver</td><td>Rod square to plate</td><td>1.5 min</td></tr>
+        <tr><td>5</td><td>Join: Carriage onto the screw, rod through bushing; Top Plate onto posts</td><td>Sub-assemblies</td><td>4 &times; M5, cross pattern</td><td>Torque driver; 69.05 mm gauge block</td><td>QC1 full travel by hand; QC2 plates parallel; QC3 gap at the stop 69.05 mm</td><td>2 min</td></tr>
+        <tr><td>6</td><td>Electronics into case; plug keyed connectors</td><td>P19&ndash;P24, P16</td><td>Screws into molded bosses</td><td>&mdash;</td><td>Connectors cannot be swapped</td><td>2 min</td></tr>
+        <tr><td>7</td><td>Seat frame in case; close case</td><td>P16</td><td>Thread-forming screws</td><td>Torque driver</td><td>Case closes fully</td><td>1.5 min</td></tr>
+        <tr><td>8</td><td>End-of-line calibration and test</td><td>Complete unit</td><td>&mdash;</td><td>Calibration station</td><td>QC4 calibration stored; full test; door opening stops motor</td><td>3 min</td></tr>
+      </tbody></table></div>
+    <p><strong>Torques</strong> (class 8.8 into tapped 6061, about 55% of steel-on-steel so aluminium threads do not strip): M3 0.7 N&middot;m, M4 1.6 N&middot;m, M5 3.2 N&middot;m.
+    <strong>Design for assembly:</strong> every step goes top-down onto the Baseplate; three screw sizes; keyed connectors; matched post sets; the hard stop is machined into the rod, so there is nothing to set.
+    <strong>Service:</strong> no adhesives; battery, board, motor and load cell come out separately.
+    <strong>Assembly risks:</strong> mismatched posts tilt the plate (QC2); calibration time per unit (3 of 14 min).</p>
+  </section>
+
+  <section class="section" id="bom">
+    <h2>Preliminary MVP bill of materials</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Item</th><th>Part no.</th><th>Description</th><th>Qty</th><th>Custom / purchased</th><th>Material</th><th>Supplier</th><th>Supplier part no.</th><th>Process ref.</th><th>Unit cost</th><th>Total</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>P01, P03, P04</td><td>NEMA 17 stepper, integrated Tr8&times;8 screw and brass nut</td><td>1</td><td>Purchased</td><td>Steel, copper, stainless</td><td>Iverntech</td><td>42HD4027-42</td><td>&mdash;</td><td class="num">$12.00</td><td class="num">$12.00</td><td>Volume price est.; screw cut to length</td></tr>
+        <tr><td>2</td><td>P02</td><td>Top Plate</td><td>1</td><td>Custom</td><td>6061-T6</td><td>Laser + CNC shop</td><td>&mdash;</td><td>P02 sheet</td><td class="num">$4.50</td><td class="num">$4.50</td><td>Anodize adds ~1 week</td></tr>
+        <tr><td>3</td><td>P05</td><td>Bronze bushing, 8 ID &times; 12 OD</td><td>1</td><td>Purchased</td><td>Bronze</td><td>Distributor</td><td>&mdash;</td><td>&mdash;</td><td class="num">$0.50</td><td class="num">$0.50</td><td></td></tr>
+        <tr><td>4</td><td>P06</td><td>Carriage</td><td>1</td><td>Custom</td><td>6061-T6</td><td>Laser + CNC shop</td><td>&mdash;</td><td>P06 sheet</td><td class="num">$3.50</td><td class="num">$3.50</td><td></td></tr>
+        <tr><td>5</td><td>P07</td><td>Anti-Rotation Rod with hard-stop flange</td><td>1</td><td>Custom</td><td>4140 PH steel, black oxide</td><td>CNC turning shop</td><td>&mdash;</td><td>P07 sheet</td><td class="num">$2.50</td><td class="num">$2.50</td><td>69.05 mm gap</td></tr>
+        <tr><td>6</td><td>P09</td><td>Load cell, 20 kg straight bar</td><td>1</td><td>Purchased</td><td>Aluminium</td><td>Adafruit</td><td>4543</td><td>&mdash;</td><td class="num">$3.16</td><td class="num">$3.16</td><td>100+ price</td></tr>
+        <tr><td>7</td><td>P10</td><td>Baseplate</td><td>1</td><td>Custom</td><td>6061-T6</td><td>Laser shop</td><td>&mdash;</td><td>P10 sheet</td><td class="num">$2.50</td><td class="num">$2.50</td><td></td></tr>
+        <tr><td>8</td><td>P11</td><td>Home switch (microswitch)</td><td>1</td><td>Purchased</td><td>&mdash;</td><td>Distributor</td><td>&mdash;</td><td>&mdash;</td><td class="num">$0.40</td><td class="num">$0.40</td><td></td></tr>
+        <tr><td>9</td><td>P12</td><td>Press Plate</td><td>1</td><td>Custom</td><td>6061-T6</td><td>Laser + CNC shop</td><td>&mdash;</td><td>P12 sheet</td><td class="num">$2.00</td><td class="num">$2.00</td><td></td></tr>
+        <tr><td>10</td><td>P13</td><td>Frame Post</td><td>4</td><td>Custom</td><td>6061-T6</td><td>CNC turning shop</td><td>&mdash;</td><td>P13 sheet</td><td class="num">$1.20</td><td class="num">$4.80</td><td>Matched sets</td></tr>
+        <tr><td>11</td><td>P14</td><td>Locating peg, M4 &times; 0.7 &times; 8 mm socket set screw</td><td>1</td><td>Purchased</td><td>Steel</td><td>Fastener distributor</td><td>&mdash;</td><td>&mdash;</td><td class="num">$0.10</td><td class="num">$0.10</td><td></td></tr>
+        <tr><td>12</td><td>P15</td><td>Load Cell Plate</td><td>1</td><td>Custom</td><td>6061-T6</td><td>Laser + CNC shop</td><td>&mdash;</td><td>P15 sheet</td><td class="num">$2.00</td><td class="num">$2.00</td><td>M4 tapped for peg</td></tr>
+        <tr><td>13</td><td>P16</td><td>Case and door with window</td><td>1</td><td>Custom</td><td>ABS</td><td>Injection molder</td><td>&mdash;</td><td>Case sheet</td><td class="num">$3.50</td><td class="num">$3.50</td><td>Mold lead 8&ndash;12 weeks</td></tr>
+        <tr><td>14</td><td>P19</td><td>Main board: MCU, TMC2209, HX711, USB-C charging</td><td>1</td><td>Purchased (custom design)</td><td>FR-4, lead-free</td><td>Contract board maker</td><td>&mdash;</td><td>Board maker</td><td class="num">$15.00</td><td class="num">$15.00</td><td>4&ndash;6 weeks</td></tr>
+        <tr><td>15</td><td>P20</td><td>Rechargeable battery, 9 V NiMH 175 mAh</td><td>1</td><td>Purchased</td><td>NiMH</td><td>Energizer via DigiKey</td><td>NH22NBP-ND</td><td>&mdash;</td><td class="num">$9.00</td><td class="num">$9.00</td><td>Price est.; replaceable</td></tr>
+        <tr><td>16</td><td>P21</td><td>Touchscreen, 2.8 in. capacitive TFT</td><td>1</td><td>Purchased</td><td>&mdash;</td><td>Adafruit via DigiKey</td><td>1528-2770AD-ND</td><td>&mdash;</td><td class="num">$19.95</td><td class="num">$19.95</td><td>Qty-1 price; 18-week lead</td></tr>
+        <tr><td>17</td><td>P22</td><td>On/off rocker switch</td><td>1</td><td>Purchased</td><td>&mdash;</td><td>CIT Relay and Switch</td><td>RW2123KWC</td><td>&mdash;</td><td class="num">$0.80</td><td class="num">$0.80</td><td></td></tr>
+        <tr><td>18</td><td>P23</td><td>IR break-beam pair, 3 mm</td><td>1</td><td>Purchased</td><td>&mdash;</td><td>Adafruit via DigiKey</td><td>2167-ND</td><td>&mdash;</td><td class="num">$2.00</td><td class="num">$2.00</td><td></td></tr>
+        <tr><td>19</td><td>P24</td><td>Reed switch, SPST-NO, with door magnet</td><td>1</td><td>Purchased</td><td>&mdash;</td><td>Standex-Meder</td><td>ORD 324/15-20 AT</td><td>&mdash;</td><td class="num">$0.80</td><td class="num">$0.80</td><td>Safety feature</td></tr>
+        <tr><td>20</td><td>P25</td><td>USB-C to USB-C cable, 0.5 m</td><td>1</td><td>Purchased</td><td>&mdash;</td><td>Amphenol ICC</td><td>10165794-Z0050YWLF</td><td>&mdash;</td><td class="num">$3.85</td><td class="num">$3.85</td><td>In the box</td></tr>
+        <tr><td>21</td><td>P26</td><td>18 W USB-C PD wall adapter</td><td>1</td><td>Purchased</td><td>&mdash;</td><td>Qualtek</td><td>QFWC-18-12-USCR</td><td>&mdash;</td><td class="num">$6.00</td><td class="num">$6.00</td><td>In the box</td></tr>
+        <tr><td>22</td><td>P27</td><td>Fasteners: M3, M4, M5 socket head + case screws</td><td>1 set</td><td>Purchased</td><td>Steel 8.8</td><td>Fastener distributor</td><td>&mdash;</td><td>&mdash;</td><td class="num">$1.00</td><td class="num">$1.00</td><td>Three sizes</td></tr>
+        <tr><td>23</td><td>&mdash;</td><td>Rubber feet</td><td>4</td><td>Purchased</td><td>Rubber</td><td>Distributor</td><td>&mdash;</td><td>&mdash;</td><td class="num">$0.05</td><td class="num">$0.20</td><td></td></tr>
+        <tr><td>24</td><td>&mdash;</td><td>Packaging and quick-start card</td><td>1</td><td>Purchased</td><td>Cardboard</td><td>Packaging supplier</td><td>&mdash;</td><td>&mdash;</td><td class="num">$1.80</td><td class="num">$1.80</td><td>Compact carton</td></tr>
+        <tr><td></td><td></td><td><strong>Parts total</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="num"><strong>$101.86</strong></td><td></td></tr>
+        <tr><td></td><td></td><td>Assembly and calibration labour (14 min at about $30/h)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="num">$7.25</td><td></td></tr>
+        <tr><td></td><td></td><td>Tooling share (&asymp; $48.5k over 15,000 units)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="num">$3.23</td><td></td></tr>
+        <tr><td></td><td></td><td><strong>Estimated unit cost</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="num"><strong>$112.34</strong></td><td></td></tr>
+      </tbody></table></div>
+    <p><b>Table.</b> MVP BOM from <a href="assets/docs/act24-mass-manufacturing-plan.pdf">Activity 24</a>. Unit costs are preliminary; cost is finalized for Design Expo (Activity 29).</p>
+  </section>
+
+  <section class="section" id="conclusions">
+    <h2>MVP design conclusions</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Requirement</th><th>How the MVP addresses it</th><th>Evidence status</th></tr></thead>
+      <tbody>
+        <tr><td>Identifies low-performance balls</td><td>One press at the peg; ratio to a same-model reference</td><td>Shown with 6-position averages; single-press accuracy not yet shown</td></tr>
+        <tr><td>Repeatable results</td><td>Peg; stiff frame; 0.5 N contact threshold; steel-ball correction</td><td>Analysis: ratio error 0.005; %GRR not tested</td></tr>
+        <tr><td>Measures precisely</td><td>1/16 microstepping, 0.0025 mm per step</td><td>Analysis; dial-indicator check pending</td></tr>
+        <tr><td>Doesn't damage the ball</td><td>2 mm press; current limit; flange hard stop</td><td>Not tested (50-test rebound)</td></tr>
+        <tr><td>Tests quickly</td><td>One press at 2&ndash;4 mm/s</td><td>Time model: about 10 s</td></tr>
+        <tr><td>Increases confidence</td><td>Visible press; icon + word + sound</td><td>Not tested (user study)</td></tr>
+        <tr><td>Fits routine</td><td>Load, close, start</td><td>Four actions against a &le; 2 target</td></tr>
+        <tr><td>Portable</td><td>Compact frame and case</td><td>3.3 L envelope and about 2.2 kg vs. 2.5 L and 2 kg: not yet met</td></tr>
+        <tr><td>Affordable</td><td>Off-the-shelf drive and load cell; molded case</td><td>$112.34 unit cost vs. $100 price: not yet met</td></tr>
+      </tbody></table></div>
+    <p><strong>Strongest evidence.</strong> The Instron study (every used ball's mean below every new ball's at 5 mm; 8&ndash;12%
+    gap at every depth; linear to 5 mm); the parameter analysis (compliance stack, power-screw model, structural and fatigue
+    checks, time budget); and a manufacturing plan with a process, cycle time, inspection and scrap rate for every custom part.</p>
+    <p><strong>Remaining questions.</strong> Single-press accuracy at the peg; 2 mm vs. deeper presses; absolute stiffness 2.3&times;
+    published (fixture check); tests per charge on the 9 V NiMH; size, mass and actions against targets; unit cost; motor axial-load rating; case
+    tooling lead time.</p>
+    <p><strong>Not represented by the POC.</strong> Battery and USB-C charging, the custom board, touchscreen and buzzer, door
+    interlock, IR ball sensor, home switch, molded case, anodized finish, steel rod and production-process variation.</p>
+    <p><strong>Engineering before production.</strong> Thresholds set per ball model on balls with known play history; gauge R&amp;R
+    on the first custom board; NiMH charging circuit with charge termination and charging compliance; mold design and drop tests on molded cases;
+    cost model and cost-down (Activity 29).</p>
+    <p><strong>Readiness.</strong> The design is ready to advance <em>with specified revisions</em>: the peg removes the
+    highest-RPN failure mode and a motor, and the analysis shows the frame, drive and load cell are adequate. It is not ready for
+    commercial production until single-press accuracy, battery, size and cost are resolved (<a href="detailed-design.html#recommendation">recommendation</a>).</p>
+  </section>
+
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="parameter-analysis.html">&larr; Parameter Analysis</a>
+    <a href="poc.html">Proof-of-Concept Prototype &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
+    Gate Review 3: Detailed Design and Validation &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

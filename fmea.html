@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FMEA · CuPickle · Team 1 Design Portfolio</title>
+<meta name="description" content="CuPickle failure modes and effects analysis, the design changes it drove, and the residual risk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#6d7387" stroke="#d5d8e2" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#d5d8e2"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#e8ffae"/><stop offset="100%" stop-color="#c9e67a"/></linearGradient></defs>
+</svg><span>CuPickle</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr1-before-feedback/index.html">Gate Review 1 version (Oct. 1)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr2-before-feedback/concept.html">Gate Review 2 version (Oct. 28)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="detailed-design.html" class="menu-label is-active" aria-haspopup="true">Development &amp; Validation</a>
+        <ul class="submenu" aria-label="Gate Review 3: Detailed Design and Validation">
+          <li class="submenu-caption">Gate Review 3</li>
+          <li><a href="detailed-design.html">Detailed Design Overview</a></li>
+          <li><a href="technical-development.html">Technical Development Methods</a></li>
+          <li><a href="fmea.html" aria-current="page">FMEA</a></li>
+          <li><a href="parameter-analysis.html">Parameter Analysis</a></li>
+          <li><a href="mvp.html">Minimum Viable Product</a></li>
+          <li><a href="poc.html">Proof-of-Concept Prototype</a></li>
+          <li><a href="validation.html">Validation &amp; Verification</a></li>
+          <li><a href="impact.html">Social Impact Evaluation</a></li>
+          <li><a href="appendix.html">Appendix: Supporting Files</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section" style="padding-top:2.4rem">
+    <p class="eyebrow">Gate Review 3 &middot; Failure Modes and Effects Analysis</p>
+    <h1>How CuPickle could fail, and what we changed</h1>
+    <p class="lead">The FMEA was run on November 1 against the Gate Review 2 roller design. Its two highest risks, a ball that
+    drifts on the cradle (RPN 392) and a wrong grade (RPN 288), drove the biggest GR3 changes: the rollers became a locating
+    peg, and grading moved to a ratio against a same-model reference with a three-state result. Revised ratings below are
+    projections from the design changes; none is claimed as verified until the POC tests in the validation plan are run.</p>
+    <p>Ratings use 1&ndash;10 scales for severity (S), occurrence (O) and detection (D, 10 = undetectable); RPN = S &times; O &times; D.
+    The team's worksheet, with the root-cause write-up for the top item, is <a href="assets/docs/fmea.xlsx">fmea.xlsx</a>.
+    Owners: Rhia (FMEA lead), with each row's owner shown.</p>
+  </section>
+
+  <section class="section" id="worksheet">
+    <h2>FMEA worksheet with GR3 actions and revised ratings</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Use step</th><th>Failure mode</th><th>Effect</th><th>S</th><th>Cause</th><th>O</th><th>Controls (Nov. 1)</th><th>D</th><th>RPN</th><th>Action taken in the GR3 design</th><th>Owner</th><th>Status</th><th>S&prime;</th><th>O&prime;</th><th>D&prime;</th><th>RPN&prime;</th></tr></thead>
+      <tbody>
+        <tr><td>Sense ball securement</td><td>Ball not held; drifts or slips on the two-roller cradle undetected</td><td>Intended spot not pressed; soft spot missed; repeat tests disagree</td><td class="num">7</td><td>Parallel rollers constrain one axis; holes break contact; low normal force</td><td class="num">8</td><td>First-contact detection only</td><td class="num">7</td><td class="num"><b>392</b></td><td>Rollers removed. Ball seats on an M4 set-screw peg (P14) through one hole, centered over the load cell; one press per ball. IR sensor confirms a ball is present (MVP)</td><td>Jaylen</td><td>In design; re-seat test planned</td><td class="num">7</td><td class="num">2</td><td class="num">4</td><td class="num">56</td></tr>
+        <tr><td>Analyze and display</td><td>Wrong grade shown, or result unclear</td><td>False PLAY: worn ball kept; false RETIRE: good balls thrown away</td><td class="num">8</td><td>Thresholds not validated; stiffness may not track bounce; small text readout</td><td class="num">6</td><td>Ratio to a new ball; result in words</td><td class="num">6</td><td class="num"><b>288</b></td><td>Thresholds set on separate balls and frozen before blind testing; third result state CHECK BALL for invalid tests; icon + word + sound on a 2.8 in. touchscreen</td><td>Nicky</td><td>Blind grading planned</td><td class="num">8</td><td class="num">4</td><td class="num">5</td><td class="num">160</td></tr>
+        <tr><td>Insert ball</td><td>Ball of a different model, or too cold or hot, graded against the stored reference</td><td>Wrong grade</td><td class="num">7</td><td>Model swapped without re-referencing; stiffness depends on temperature</td><td class="num">5</td><td>Cradle shows ball position; temperature sensor; outlier check</td><td class="num">6</td><td class="num"><b>210</b></td><td>Ball-model selection with stored per-model references; same-session reference ball; room-temperature instruction on the quick-start card. A temperature sensor is used in POC testing only</td><td>Rhia</td><td>In design</td><td class="num">7</td><td class="num">4</td><td class="num">5</td><td class="num">140</td></tr>
+        <tr><td>Turn machine on</td><td>Does not turn on, low battery, or out-of-date calibration</td><td>No test; or a whole session biased</td><td class="num">6</td><td>Battery uncharged; frame knocked in a bag; user forgets to recalibrate</td><td class="num">5</td><td>Rechargeable battery; user steel-ball calibration</td><td class="num">6</td><td class="num"><b>180</b></td><td>Battery level on screen; power-up self-check homes the plate and presses the steel reference ball</td><td>Rhia</td><td>Planned (firmware)</td><td class="num">6</td><td class="num">4</td><td class="num">3</td><td class="num">72</td></tr>
+        <tr><td>Sense force</td><td>Force reading wrong (offset, drift, noise, frame flex)</td><td>Misgrade; %GRR above 10</td><td class="num">7</td><td>Flexible 2020 frame and roller sleeves; HX711 drift; motor noise</td><td class="num">5</td><td>Steel-ball calibration</td><td class="num">5</td><td class="num"><b>175</b></td><td>Machined 1/4 in. 6061 frame (3.3% of ball compliance); tare before each press; load-cell wiring routed away from motor wiring</td><td>Ori</td><td>In design; gauge R&amp;R planned</td><td class="num">7</td><td class="num">3</td><td class="num">4</td><td class="num">84</td></tr>
+        <tr><td>Close door</td><td>Door not shut when the test starts</td><td>Pinch point exposed</td><td class="num">6</td><td>No door sensor</td><td class="num">3</td><td>Window; force limit; hard stop</td><td class="num">5</td><td class="num"><b>90</b></td><td>Reed switch: Start does nothing until the door is shut (MVP)</td><td>David</td><td>In design; not on POC</td><td class="num">6</td><td class="num">1</td><td class="num">2</td><td class="num">12</td></tr>
+        <tr><td>Start compression</td><td>Plate presses too little or too far</td><td>Wrong stiffness; ball deformed or broken</td><td class="num">7</td><td>Late contact detection; lost steps; collar mis-set; 4&ndash;6 presses per test</td><td class="num">3</td><td>5 mm collar; force limit; homing</td><td class="num">4</td><td class="num"><b>84</b></td><td>One fixed 2 mm press from a 0.5 N contact; P07 flange hard stop fixes a 69.05 mm minimum gap (no separate collar to mis-set); current-limited stall thrust &le; 177 N</td><td>David</td><td>In design; 50-test damage study planned</td><td class="num">7</td><td class="num">2</td><td class="num">3</td><td class="num">42</td></tr>
+        <tr><td>Open door</td><td>Door opened while the plate moves; door hard to open</td><td>Finger pinch; older players struggle with recess</td><td class="num">6</td><td>No interlock; shallow finger recess</td><td class="num">2</td><td>Motion only after Start; force limit</td><td class="num">4</td><td class="num"><b>48</b></td><td>Reed-switch interlock stops the motor when the door opens (MVP); door grip to be tested with older players</td><td>Ori</td><td>In design; not on POC</td><td class="num">6</td><td class="num">1</td><td class="num">2</td><td class="num">12</td></tr>
+      </tbody></table></div>
+    <p><b>Table 1.</b> FMEA rows sorted by original RPN. S&prime;, O&prime;, D&prime; and RPN&prime; are projected after the GR3 design changes and will be re-rated from POC test results.</p>
+  </section>
+
+  <section class="section" id="critical">
+    <h2>Critical failure modes in detail</h2>
+
+    <h3>Ball not held on the cradle (RPN 392 &rarr; 56 projected)</h3>
+    <ol>
+      <li><strong>What fails and when.</strong> On the GR2 two-roller cradle the ball slid sideways each time the rollers turned, so the plate pressed a different spot from the one intended.</li>
+      <li><strong>Consequences.</strong> Users: a worn ball can pass, or repeat tests disagree, and trust in the product is lost. Non-users and environment: good balls thrown away. Product: its main function is degraded.</li>
+      <li><strong>Evidence for the ratings.</strong> S7: the heaviest needs (15% and 13%) are defeated. O8: drift was seen every time the alpha prototype's rollers were turned. D7: nothing sensed drift.</li>
+      <li><strong>Design change.</strong> The rollers and their motor are gone; a peg through one ball hole fixes the spot (<a href="technical-development.html#d3">Driver 3</a>).</li>
+      <li><strong>Connected parameters.</strong> M4 &times; 0.7 &times; 8 mm steel set screw in the tapped center of P15, on the load-cell axis; ball holes are about 8 mm, so the peg locates without carrying load.</li>
+      <li><strong>POC representation.</strong> Identical peg, plate and load cell.</li>
+      <li><strong>Test.</strong> 5 balls &times; 20 re-seats; spread &le; 5% of stiffness; single-press blind grading.</li>
+      <li><strong>Residual risk.</strong> The peg cannot find a soft spot elsewhere on the ball. The Instron data suggest used balls soften all over, but that rests on 10 balls.</li>
+    </ol>
+
+    <h3>Wrong grade shown (RPN 288 &rarr; 160 projected)</h3>
+    <ol>
+      <li><strong>What fails.</strong> A soft ball shows PLAY, a good ball shows RETIRE, or the player misreads the result.</li>
+      <li><strong>Consequences.</strong> Users keep a ball that costs points or discard good balls; waste and cost rise; disputes with other players.</li>
+      <li><strong>Evidence.</strong> S8: the core function. O6: thresholds are untested against bounce. D6: the user cannot see an error.</li>
+      <li><strong>Design change.</strong> Ratio to a same-model reference; frozen thresholds; a CHECK BALL state for invalid presses; icon + word + sound.</li>
+      <li><strong>Connected parameters.</strong> 2 mm press (about 87 N on a new ball), 80 samples/s, 0.5 N contact threshold.</li>
+      <li><strong>POC representation.</strong> Same force path and firmware logic; OLED text instead of the touchscreen.</li>
+      <li><strong>Test.</strong> Blind grading of &ge; 20 held-out balls against the USA Pickleball bounce test; &ge; 90% agreement.</li>
+      <li><strong>Residual risk.</strong> Remains the highest RPN after changes, which is why it is the first validation activity.</li>
+    </ol>
+
+    <h3>Wrong model or temperature (RPN 210 &rarr; 140 projected)</h3>
+    <ol>
+      <li><strong>What fails.</strong> A cold, hot or different-model ball is compared with the wrong reference.</li>
+      <li><strong>Consequences.</strong> Wrong grade; a cold new ball can look as soft as a warm worn one.</li>
+      <li><strong>Evidence.</strong> <a href="https://pickleballscience.org/how-does-temperature-affect-a-pickleball/" target="_blank" rel="noopener">Pickleball Science</a> found stiffness changes strongly between &minus;1, 23 and 49 &deg;C.</li>
+      <li><strong>Design change.</strong> Model selection with stored references; same-session reference ball; room-temperature instruction.</li>
+      <li><strong>Connected parameters.</strong> USA Pickleball's test condition is 70 &plusmn; 5 &deg;F (about 18&ndash;24 &deg;C).</li>
+      <li><strong>POC representation.</strong> POC tests record ball and room temperature with an external thermometer and run only inside that range.</li>
+      <li><strong>Test.</strong> Measure 3 new X-40s cold, at room temperature and warm; decide whether the MVP needs a sensor.</li>
+      <li><strong>Residual risk.</strong> Outdoor use in summer or winter; relies on the user following instructions.</li>
+    </ol>
+
+    <h3>Finger pinch at the press (safety; RPN 48 and 90 &rarr; 12 projected)</h3>
+    <ol>
+      <li><strong>What fails.</strong> A finger is under the Press Plate when it moves.</li>
+      <li><strong>Consequences.</strong> Injury to the user or a bystander child.</li>
+      <li><strong>Evidence.</strong> A stalled drive can reach 177 N after current limiting, above the 140 N quasi-static hand limit in ISO 10218-2, so force limiting alone does not protect a finger.</li>
+      <li><strong>Design change.</strong> The MVP door reed switch is mandatory: no Start with the door open, and opening the door stops the motor without automatic restart.</li>
+      <li><strong>Connected parameters.</strong> 2 mm press at 2&ndash;4 mm/s; 69.05 mm minimum gap.</li>
+      <li><strong>POC representation.</strong> Not represented: the POC has no interlock, so it is run only by trained team members with the case closed and the power disconnect in reach.</li>
+      <li><strong>Test.</strong> Interlock trials with a non-human probe on the first MVP build.</li>
+      <li><strong>Residual risk.</strong> Interlock failure or bypass; addressed by the stall-current limit and the slow press speed.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="additional">
+    <h2>Other conditions reviewed for the MVP</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Condition</th><th>Failure mode</th><th>Design response</th><th>Where it is checked</th></tr></thead>
+      <tbody>
+        <tr><td>Wear and repeated use</td><td>Anti-rotation rod wears or galls in the bronze bushing</td><td>MVP rod in 4140 pre-hardened steel, black oxide</td><td>Rod wear watched on the aluminium POC rod</td></tr>
+        <tr><td>Foreseeable misuse</td><td>Object other than a ball pressed; plate pushed by hand</td><td>Current-limited thrust; flange hard stop; IR ball check</td><td>Stall-thrust test</td></tr>
+        <tr><td>Software or control failure</td><td>Motor runs past the press depth</td><td>Hard stop at 69.05 mm gap; thrust &le; 177 N; firmware travel limit</td><td>Stall-thrust test; code review</td></tr>
+        <tr><td>Assembly error</td><td>Mixed post lengths tilt the Press Plate</td><td>Posts kitted in matched sets; parallelism check at assembly step 5</td><td><a href="mvp.html#assembly">MVP assembly plan</a></td></tr>
+        <tr><td>Component variability</td><td>Load cells differ in rated output (&plusmn;15%)</td><td>End-of-line calibration of every unit</td><td>Calibration station</td></tr>
+        <tr><td>Environment</td><td>Grit on the plate; summer heat in a car</td><td>Wipe-clean plate and peg; storage guidance</td><td>User study</td></tr>
+        <tr><td>Battery and charging</td><td>NiMH cell overheating when charged</td><td>Charge termination on the main board; replaceable clip-in cell</td><td>Board design</td></tr>
+        <tr><td>End of life</td><td>Battery and board sent to landfill</td><td>Screw-fastened modules; material marks; disposal guidance</td><td><a href="impact.html#eco">Eco-audit</a></td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="section" id="integration">
+    <h2>Where the FMEA shows up in the rest of the design</h2>
+    <ul>
+      <li><strong>Design drivers:</strong> RPN 392 reframed driver 3; RPN 288 is driver 1 (<a href="technical-development.html">Technical Development Methods</a>).</li>
+      <li><strong>Parameter analysis:</strong> current limit, hard-stop gap and contact threshold (<a href="parameter-analysis.html#safety">Safety and operating limits</a>).</li>
+      <li><strong>MVP:</strong> peg, reed switch, IR sensor, CHECK BALL state, steel rod (<a href="mvp.html">MVP</a>).</li>
+      <li><strong>POC objectives and validation:</strong> every validation activity names the failure mode it addresses (<a href="validation.html#matrix">validation matrix</a>).</li>
+    </ul>
+  </section>
+
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="technical-development.html">&larr; Technical Development Methods</a>
+    <a href="parameter-analysis.html">Parameter Analysis &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
+    Gate Review 3: Detailed Design and Validation &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

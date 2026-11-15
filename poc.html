@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proof-of-Concept Prototype · CuPickle · Team 1 Design Portfolio</title>
+<meta name="description" content="CuPickle POC purpose and scope, comparison with the MVP, drawings, fabrication plan, assembly and wiring, bill of materials and reproducibility record.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#6d7387" stroke="#d5d8e2" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#d5d8e2"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#e8ffae"/><stop offset="100%" stop-color="#c9e67a"/></linearGradient></defs>
+</svg><span>CuPickle</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr1-before-feedback/index.html">Gate Review 1 version (Oct. 1)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr2-before-feedback/concept.html">Gate Review 2 version (Oct. 28)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="detailed-design.html" class="menu-label is-active" aria-haspopup="true">Development &amp; Validation</a>
+        <ul class="submenu" aria-label="Gate Review 3: Detailed Design and Validation">
+          <li class="submenu-caption">Gate Review 3</li>
+          <li><a href="detailed-design.html">Detailed Design Overview</a></li>
+          <li><a href="technical-development.html">Technical Development Methods</a></li>
+          <li><a href="fmea.html">FMEA</a></li>
+          <li><a href="parameter-analysis.html">Parameter Analysis</a></li>
+          <li><a href="mvp.html">Minimum Viable Product</a></li>
+          <li><a href="poc.html" aria-current="page">Proof-of-Concept Prototype</a></li>
+          <li><a href="validation.html">Validation &amp; Verification</a></li>
+          <li><a href="impact.html">Social Impact Evaluation</a></li>
+          <li><a href="appendix.html">Appendix: Supporting Files</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section" style="padding-top:2.4rem">
+    <p class="eyebrow">Gate Review 3 &middot; Proof-of-Concept Prototype</p>
+    <h1>A full-scale tester built to measure, not to look finished</h1>
+    <p class="lead">The POC is a full-scale, working CuPickle built in the U-M machine shop from the same frame drawings,
+    motor, load cell, peg, driver chip and amplifier chip as the MVP. Its job is measurable evidence that one fixed 2 mm press
+    grades a ball correctly, repeatably and within 30 s. It swaps the MVP's custom board, battery, touchscreen and molded case
+    for an Arduino on a breadboard, a 12 V bench supply, a small display and a 3D-printed case.</p>
+    <p><strong>Status (Nov. 14):</strong> drawings, fabrication plans, assembly plan and BOM are complete. Fabrication preparation is approved; machining starts after shop personnel approve the revised drawings, and
+    powered testing waits for the safety review. Full plan: <a href="assets/docs/act25-poc-fabrication-plan.pdf">Activity 25 (PDF)</a>;
+    planning worksheet: <a href="assets/docs/prototyping-worksheet.pdf">Prototyping Worksheet (PDF)</a>.</p>
+    <nav class="toc" aria-label="On this page">
+      <span class="toc-title">On this page</span>
+      <a href="#scope">Purpose and scope</a><a href="#relationship">POC vs. MVP</a><a href="#drawings">Drawings</a>
+      <a href="#fabrication">Fabrication plan</a><a href="#assembly">Assembly plan</a><a href="#wiring">Wiring</a>
+      <a href="#bom">Bill of materials</a><a href="#reproducibility">Reproducibility</a>
+    </nav>
+  </section>
+
+  <section class="section" id="scope">
+    <h2>POC purpose and scope</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Worksheet item</th><th>POC plan</th></tr></thead>
+      <tbody>
+        <tr><td>What it must prove</td><td>The press, load cell and grading firmware measure ball stiffness accurately and repeatably, fast enough for courtside use</td></tr>
+        <tr><td>Prototype type and fidelity</td><td>Full-scale working prototype, one unit; MVP fidelity in the force path, low fidelity in packaging and interface</td></tr>
+        <tr><td>Drivers and requirements</td><td>Playability grading (Driver 1, S1); force-path accuracy (Driver 2, S2, S16); ball seating and single position (Driver 3); cycle time (Driver 4, S7)</td></tr>
+        <tr><td>Failure modes (FMEA)</td><td>Wrong grade (288); ball not held (392); wrong reference or temperature (210); force reading wrong (175); ball pressed too far (84)</td></tr>
+        <tr><td>MVP functions included</td><td>Contact detection, single 2 mm press at controlled speed, force logging, stiffness fit, grade against a reference, start/stop, result display</td></tr>
+        <tr><td>Omitted or simplified</td><td>Custom board (Arduino + breakouts); battery and USB-C (bench supply); touchscreen and buzzer (OLED); molded case (printed); home switch, IR sensor and door interlock (MVP only); anodize and steel rod</td></tr>
+        <tr><td>Added for testing</td><td>Force and travel logged over USB; adjustable speed and depth; firmware timestamps; ball and room temperature read with an external thermometer (no temperature sensor in the POC)</td></tr>
+        <tr><td>Can support</td><td>Grading accuracy, repeatability, cycle time, stall thrust, ball damage, because the force path uses the MVP's parts and geometry</td></tr>
+        <tr><td>Cannot support</td><td>Battery life, molded-case strength, touchscreen interface, IR and door sensors, unit cost</td></tr>
+      </tbody></table></div>
+    <h3>Planned tests and success criteria</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Test</th><th>Driver or failure mode</th><th>Success criterion</th><th>Trials</th><th>Equipment</th></tr></thead>
+      <tbody>
+        <tr><td>Stiffness ratio vs. Pickleball Science</td><td>Driver 1</td><td>Ratio within 0.05 of 0.90 (4 games) and 0.80 (8 games)</td><td>New, 4-game, 8-game X-40s</td><td>Digital force gauge, thermometer</td></tr>
+        <tr><td>Blind grading vs. bounce test</td><td>Driver 1; wrong grade</td><td>&ge; 90% agreement</td><td>&ge; 20 mixed balls</td><td>Drop rig</td></tr>
+        <tr><td>Gauge R&amp;R</td><td>Driver 2; force reading</td><td>%GRR &lt; 10</td><td>10 balls &times; 3 operators &times; 3 repeats</td><td>Steel reference ball</td></tr>
+        <tr><td>Re-seat spread</td><td>Driver 3; ball not held</td><td>Spread &le; 5% of stiffness</td><td>5 balls &times; 20 re-seats</td><td>Marked balls</td></tr>
+        <tr><td>Cycle time</td><td>Driver 4</td><td>&le; 30 s</td><td>10 first-time users</td><td>Stopwatch, timestamps</td></tr>
+        <tr><td>Ball damage</td><td>Pressed too far</td><td>Rebound change &le; 0.5 in. after 50 tests</td><td>3 balls + controls</td><td>Drop rig</td></tr>
+        <tr><td>Durability</td><td>S12</td><td>1,000 cycles, no failure; steel-ball drift &le; 2%</td><td>1,000 cycles</td><td>Steel reference ball</td></tr>
+        <tr><td>Stall thrust</td><td>Driver 2; load-cell overload</td><td>&le; 177 N, under the 235 N safe overload</td><td>3 stalls</td><td>Digital force gauge</td></tr>
+      </tbody></table></div>
+    <h3>How temperature is handled</h3>
+    <p>Ball stiffness changes with temperature, so every POC test session (1) conditions balls in the test room for at least
+    1 h; (2) records room temperature and each ball's surface temperature with an external thermometer; (3) runs only when both are
+    within 70 &plusmn; 5 &deg;F (about 18&ndash;24 &deg;C), the USA Pickleball test condition; and (4) re-tests the new reference ball at
+    the start and end of the session. Because grades are ratios to that same-session reference, a uniform temperature shift cancels;
+    a reference that drifts more than 2% between start and end flags the session for repeat.</p>
+  </section>
+
+  <section class="section" id="relationship">
+    <h2>Relationship between the POC and MVP</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Design element</th><th>MVP</th><th>POC</th><th>Reason for difference</th><th>Effect on validation</th></tr></thead>
+      <tbody>
+        <tr><td>Material: frame and press parts</td><td>6061-T6, tumble-deburred, clear anodized</td><td>6061, deburred, bare</td><td>Shop build; anodize adds cost and a week</td><td>None on the force path</td></tr>
+        <tr><td>Material: Anti-Rotation Rod (P07)</td><td>4140 pre-hardened steel, black oxide</td><td>6061 aluminium</td><td>Easier to turn in the shop</td><td>No effect on force; bushing wear watched</td></tr>
+        <tr><td>Material: case</td><td>Injection-molded ABS, clear window</td><td>3D-printed ABS body, clear PC window</td><td>No mold for one unit</td><td>Outside the force path; strength and sealing not tested</td></tr>
+        <tr><td>Geometry or scale</td><td>Full scale</td><td>Full scale, same drawings</td><td>&mdash;</td><td>Grading, stiffness and time transfer directly</td></tr>
+        <tr><td>Component: controller, driver, amplifier</td><td>Custom board with TMC2209 and HX711 chips</td><td>Arduino Uno R3, TMC2209 breakout, HX711 breakout on a breadboard</td><td>Board not yet designed</td><td>Same chips; breadboard wiring may add noise, so POC repeatability is conservative</td></tr>
+        <tr><td>Component: power</td><td>Rechargeable battery, USB-C</td><td>12 V bench supply</td><td>Battery not needed for one unit</td><td>Battery life not tested; current per test measured to size it</td></tr>
+        <tr><td>Component: display and controls</td><td>Touchscreen with start, stop, info, result</td><td>SSD1306 OLED; on/off and start/stop slide switches</td><td>Cost and lead time</td><td>Shows the result; trust study uses a screen mock-up</td></tr>
+        <tr><td>Component: sensors</td><td>Home switch, IR ball sensor, door reed switch</td><td>Not included</td><td>MVP features</td><td>Not tested on the POC; trained operators only</td></tr>
+        <tr><td>Manufacturing process</td><td>Fiber laser + CNC mill, bar-fed lathe, molding, contract PCB</td><td>Water jet + manual mill, manual lathe, 3D printing, hand wiring</td><td>U-M shop resources</td><td>Part-to-part variation not represented</td></tr>
+        <tr><td>Included function</td><td>All MVP functions</td><td>All but battery, touchscreen, interlock, IR check, homing</td><td>Scope and time</td><td>Grading, time and force transfer; safety and UI do not</td></tr>
+        <tr><td>Testing feature</td><td>None</td><td>USB force&ndash;travel log; adjustable speed and depth; timestamps</td><td>Needed to measure</td><td>Removed in the MVP; firmware re-checked without them</td></tr>
+      </tbody></table></div>
+    <p><strong>Interpreting results.</strong> POC grading, %GRR, time and damage results are read as MVP results because the force
+    path is identical; noise results are treated as an upper bound. <strong>Further work before applying results to the MVP:</strong>
+    repeat gauge R&amp;R and the stiffness-ratio test on the first custom board; size the battery from the measured current per test
+    and test tests-per-charge; check bushing wear with the steel rod; test the home switch, IR sensor and door interlock on the
+    first MVP build; drop-test the molded case.</p>
+  </section>
+
+  <section class="section" id="drawings">
+    <h2>POC CAD and engineering drawings</h2>
+    <p>Every custom part has a dimensioned drawing (inches; &plusmn;0.01 two-place, &plusmn;0.005 three-place; ASME Y14.5-2009; 6061
+    aluminium; deburr all edges). Click a drawing for full size; machined-part PDFs are linked under each.</p>
+    <div class="grid grid-3">
+      <figure style="margin:0"><a href="assets/img/gr3/dwg-p02-top-plate.png"><img src="assets/img/gr3/dwg-p02-top-plate.png" alt="Drawing P02 Top Plate" loading="lazy"></a><figcaption><b>P02 Top Plate.</b> &Oslash;.8661 motor bore, 4 &times; &Oslash;.1339 motor holes, 5 &times; &Oslash;.2165. <a href="assets/docs/drawings/top-plate-p2.pdf">PDF</a></figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/dwg-p10-baseplate.png"><img src="assets/img/gr3/dwg-p10-baseplate.png" alt="Drawing P10 Baseplate" loading="lazy"></a><figcaption><b>P10 Baseplate.</b> 4 &times; &Oslash;.2165 on a 4.185 in. square; M4 &times; 0.7 tapped. <a href="assets/docs/drawings/baseplate-p10.pdf">PDF</a></figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/dwg-p06-carriage.png"><img src="assets/img/gr3/dwg-p06-carriage.png" alt="Drawing P06 Carriage" loading="lazy"></a><figcaption><b>P06 Carriage.</b> Reamed bushing bore 1.5748 in. from the nut hole. <a href="assets/docs/drawings/carriage-p6.pdf">PDF</a></figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/dwg-p12-press-plate.png"><img src="assets/img/gr3/dwg-p12-press-plate.png" alt="Drawing P12 Press Plate" loading="lazy"></a><figcaption><b>P12 Press Plate.</b> Flat ball face; 4 &times; M3 &times; 0.5 tapped. <a href="assets/docs/drawings/press-plate-p12.pdf">PDF</a></figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/dwg-p15-load-cell-plate.png"><img src="assets/img/gr3/dwg-p15-load-cell-plate.png" alt="Drawing P15 Load Cell Plate" loading="lazy"></a><figcaption><b>P15 Load Cell Plate.</b> M4 &times; 0.7 tapped on axis for the peg. <a href="assets/docs/drawings/load-cell-plate-p15.pdf">PDF</a></figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/dwg-p13-frame-post.png"><img src="assets/img/gr3/dwg-p13-frame-post.png" alt="Drawing P13 Frame Post" loading="lazy"></a><figcaption><b>P13 Frame Post (&times;4).</b> &Oslash;.315 &times; 5.6201 in.; M5 &times; 0.8 both ends. <a href="assets/docs/drawings/frame-post-p13.pdf">PDF</a></figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/dwg-p07-anti-rotation-rod.png"><img src="assets/img/gr3/dwg-p07-anti-rotation-rod.png" alt="Drawing P07 Anti-Rotation Rod" loading="lazy"></a><figcaption><b>P07 Anti-Rotation Rod.</b> &Oslash;.315 shaft; &Oslash;.630 flange is the hard stop; 2.2185 in. overall. <a href="assets/docs/drawings/anti-rotation-rod-p7.pdf">PDF</a></figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/dwg-p14-set-screw.png"><img src="assets/img/gr3/dwg-p14-set-screw.png" alt="Drawing of the set-screw locating peg" loading="lazy"></a><figcaption><b>P14 Locating peg.</b> Purchased M4 &times; 0.7 &times; 8 mm socket set screw (drawing for reference).</figcaption></figure>
+      <figure style="margin:0"><a href="assets/img/gr3/dwg-p16-cover.png"><img src="assets/img/gr3/dwg-p16-cover.png" alt="Drawing P16 Cover with section A-A" loading="lazy"></a><figcaption><b>P16 Cover.</b> 5.315 &times; 4.567 &times; 7.839 in.; .197 walls, .394 top.</figcaption></figure>
+    </div>
+    <h3>Critical characteristics and fits</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Part</th><th>Characteristic</th><th>Requirement</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>P06</td><td>Bushing bore</td><td>&Oslash;12.000 mm H7 (&Oslash;.4724&ndash;.4731 in.); bushing OD measured before reaming for 0.01&ndash;0.04 mm interference</td><td>Press fit holds the bushing square to the rod</td></tr>
+        <tr><td>P02, P06</td><td>Rod hole to bore / nut-hole spacing</td><td>1.575 in. &plusmn;.002, both parts</td><td>Rod must slide without binding</td></tr>
+        <tr><td>P02, P10</td><td>Post hole pattern</td><td>4.185 in. square, &plusmn;.005 true position</td><td>Plates parallel; posts square</td></tr>
+        <tr><td>P13</td><td>Length</td><td>5.6201 in., all four within .002 of each other</td><td>Press Plate parallel to Load Cell Plate</td></tr>
+        <tr><td>P07</td><td>Flange face to top end</td><td>2.2185 in. &plusmn;.005</td><td>Sets the 69.05 mm hard-stop gap</td></tr>
+        <tr><td>P12</td><td>Ball face</td><td>Flat within .002 in.</td><td>Even contact on the ball</td></tr>
+      </tbody></table></div>
+    <h3>Drawing revisions before shop approval</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Drawing</th><th>Revision</th><th>Owner</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>P06 Carriage</td><td>Fully dimension the 4 &times; &Oslash;.1339 holes (vertical spacing as well as the .315 offset); add the reamed bore size and H7 fit</td><td>Jaylen</td><td>Before shop approval</td></tr>
+        <tr><td>P12 Press Plate</td><td>Locate the 4 &times; M3 holes with center-to-center spacing</td><td>Jaylen</td><td>Before shop approval</td></tr>
+        <tr><td>P13 Frame Post</td><td>Drill and thread depths called out at both ends</td><td>Jaylen</td><td>Before shop approval</td></tr>
+        <tr><td>All</td><td>Critical tolerances and fits from the table above</td><td>Jaylen</td><td>Before shop approval</td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="section" id="fabrication">
+    <h2>POC fabrication plan</h2>
+    <p>Shop staff water-jet the plate outlines (each team gets one 30-minute slot a day); holes, taps, bores and reams are done on
+    the manual mill and round parts on the lathe. Drawings and plans are approved by Chris and the shop staff before cutting.
+    Standard parts are bought: motor, lead screw and nut, bushing, load cell, peg, electronics and fasteners.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Part</th><th>Material and stock</th><th>Process and sequence</th><th>Equipment and tooling</th><th>Inspection</th><th>Time</th><th>Who</th></tr></thead>
+      <tbody>
+        <tr><td>P02 Top Plate (1)</td><td>6061, 1/4 in. plate</td><td>Water-jet outline &rarr; mill: find datum, center drill + drill 5 &times; 7/32 in. and 4 &times; #29 &rarr; drill 3/4 in. pilot at the motor bore &rarr; bore to &Oslash;.8661 (+.002/&minus;.000) with a boring head &rarr; deburr</td><td>Water jet; mill, vise, 1-1/2 in. parallels, edge finder, #2/#3 center drills, 7/32 in. and #29 drills, 3/4 in. drill, boring head</td><td>Calipers on hole positions; bore gauged; motor boss and posts test-fit</td><td>1.75 h</td><td>Jaylen</td></tr>
+        <tr><td>P10 Baseplate (1)</td><td>6061, 1/4 in. plate</td><td>Water-jet &rarr; mill: datum, drill 4 &times; 7/32 in. &rarr; drill #30, tap M4 &times; 0.7 &rarr; deburr</td><td>Water jet; mill, vise, edge finder, drills, M4 tap</td><td>Hole positions; lines up with P02; M4 thread check</td><td>0.75 h</td><td>Jaylen</td></tr>
+        <tr><td>P06 Carriage (1)</td><td>6061, 1/4 in. plate</td><td>Water-jet &rarr; measure bushing OD &rarr; mill: drill 4 &times; #29, 23/64 in. nut hole, 29/64 in. pilot &rarr; ream &Oslash;12 mm H7 &rarr; deburr</td><td>Water jet; mill, edge finder, #2/#5 center drills, drills, 12 mm H7 reamer, micrometer</td><td>Micrometer on bushing OD; bore with 12 mm go/no-go pin; bushing fit; slides on rod</td><td>1.5 h</td><td>Jaylen</td></tr>
+        <tr><td>P12 Press Plate (1)</td><td>6061, 1/4 in. plate</td><td>Water-jet &rarr; mill: center, drill 4 &times; #39, tap M3 &times; 0.5 through &rarr; deburr</td><td>Water jet; mill, #1 center drill, #39 drill, M3 tap</td><td>M3 screw threads in all 4; face flat</td><td>0.75 h</td><td>Jaylen</td></tr>
+        <tr><td>P15 Load Cell Plate (1)</td><td>6061, 1/4 in. plate</td><td>Water-jet &rarr; mill: center, drill #30 through, tap M4 &times; 0.7 &rarr; deburr</td><td>Water jet; mill, #2 center drill, #30 drill, M4 tap</td><td>Peg threads in square</td><td>0.5 h</td><td>Jaylen</td></tr>
+        <tr><td>P13 Frame Post (4)</td><td>6061, 1/2 in. rod</td><td>Band saw &rarr; lathe: face, center drill, turn &Oslash;.315 with live center, drill #19 to .700 deep, tap M5 &times; 0.8 to .616 full thread &rarr; part off &rarr; flip on &Oslash;.315, face to 5.6201, drill #19 to .700 deep, tap M5 &times; 0.8 to .616 &rarr; deburr</td><td>Band saw; lathe, 1/2 in. and 5/16 in. collets, live center, tailstock chuck, #19 drill, M5 tap</td><td>&Oslash;.315 and 5.6201 length; four lengths within .002; thread depth both ends</td><td>4 h</td><td>David</td></tr>
+        <tr><td>P07 Anti-Rotation Rod (1)</td><td>6061, 1 in. rod</td><td>Band saw &rarr; lathe: face, turn &Oslash;.630 flange and &Oslash;.315 shaft, part off &rarr; flip on flange, face to 2.2185, drill #19 .680 deep, tap M5 .472 deep &rarr; deburr</td><td>Band saw; lathe, collets, live center, parting tool, #19 drill, M5 tap</td><td>&Oslash;.315, &Oslash;.630, 2.2185 overall; M5 thread</td><td>1.5 h</td><td>David</td></tr>
+        <tr><td>P16 Case (1)</td><td>ABS filament (body); clear PC filament (window)</td><td>Print the body in ABS and the window in clear PC from the P16 drawing; fit window</td><td>3D printer (U-M makerspace)</td><td>Outside size; slides over the frame; sits flush on the Baseplate</td><td>&asymp; 18 h print</td><td>Rhia</td></tr>
+        <tr><td colspan="5"><strong>Total</strong></td><td>&asymp; 10.75 h shop + water-jet slot; &asymp; 18 h print</td><td></td></tr>
+      </tbody></table></div>
+    <p><strong>Safety precautions.</strong> Safety glasses at all times; no gloves, loose sleeves or jewellery at the mill or lathe;
+    long hair tied back; work held in a vise or collet, never by hand; chuck key never left in the chuck; clear chips with a brush,
+    spindle stopped; tap by hand with the spindle off; seat the live center before turning long parts; ream and bore at low speed;
+    hands clear of the band-saw blade; deburr before handling; only machines you are trained on, with shop staff present; water jet
+    run by shop staff only.</p>
+  </section>
+
+  <section class="section" id="assembly">
+    <h2>POC assembly plan</h2>
+    <figure><a href="assets/img/gr3/poc-exploded.jpg"><img src="assets/img/gr3/poc-exploded.jpg" alt="POC exploded view with parts labelled by drawing number" loading="lazy" style="max-width:760px"></a>
+      <figcaption><b>Figure 1.</b> POC exploded view from the SolidWorks assembly, labelled with drawing numbers (the peg is P14).</figcaption></figure>
+    <p>Build three sub-assemblies (base, carriage, top), then join them. Every screw is reachable with a straight hex key from above
+    or below before the Top Plate goes on.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Step</th><th>Operation</th><th>Parts</th><th>Fasteners (qty &times; size)</th><th>Tools</th><th>Check</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Base: bolt the load cell's fixed end to the Baseplate; mount the Load Cell Plate on the free end; thread the peg into the plate's center so it stands about 3 mm proud</td><td>P10, P09, P15, P14</td><td>Load-cell screws per the load cell's holes (M4); 1 &times; M4 &times; 8 set screw</td><td>2.5 and 2 mm hex keys</td><td>Free end of the load cell clears the Baseplate</td></tr>
+        <tr><td>2</td><td>Screw the four posts to the Baseplate from below</td><td>P13 &times;4, P10</td><td>4 &times; M5 &times; 0.8 &times; 16 mm SHCS</td><td>4 mm hex key</td><td>Posts seated flat</td></tr>
+        <tr><td>3</td><td>Carriage: press the bushing into the Carriage; nut on top, Press Plate underneath; fasten through nut and Carriage into the Press Plate</td><td>P05, P06, P04, P12</td><td>Press fit; 4 &times; M3 &times; 0.5 &times; 14 mm SHCS</td><td>Arbor press or vise with soft jaws; 2.5 mm hex key</td><td>Bushing square; screw tips do not reach the ball face</td></tr>
+        <tr><td>4</td><td>Top: motor on the Top Plate with its boss in the bore; hang the rod under the plate</td><td>P01, P02, P07</td><td>4 &times; M3 &times; 0.5 &times; 10 mm SHCS; 1 &times; M5 &times; 0.8 &times; 16 mm SHCS</td><td>2.5 and 4 mm hex keys</td><td>Rod square to the plate</td></tr>
+        <tr><td>5</td><td>Join: thread the Carriage onto the lead screw with the bushing over the rod</td><td>Sub-assemblies</td><td>&mdash;</td><td>&mdash;</td><td>Carriage turns the screw freely</td></tr>
+        <tr><td>6</td><td>Lower the Top Plate onto the posts and screw it down in a cross pattern</td><td>P02, P13</td><td>4 &times; M5 &times; 0.8 &times; 16 mm SHCS</td><td>4 mm hex key</td><td>Full travel by hand without binding; gap at the stop 69.05 mm; plates parallel</td></tr>
+        <tr><td>7</td><td>Wire the electronics (<a href="#wiring">wiring table</a>), connect the bench supply with its output off, fit the case</td><td>Electronics, P16</td><td>Jumper wires; screw terminals</td><td>Small screwdriver; multimeter</td><td>Load cell reads zero with no ball; start/stop runs the motor down and back</td></tr>
+      </tbody></table></div>
+    <p><strong>Torques</strong> (into 6061): M3 0.7 N&middot;m, M4 1.6 N&middot;m, M5 3.2 N&middot;m. Grease the nut. Screw lengths come from the
+    stack on the drawings (1/4 in. plate plus 1.5&ndash;2&times; diameter of thread engagement); confirm each at the first fit.</p>
+    <h3>Preventing excess force or travel without the MVP's sensors</h3>
+    <ol>
+      <li><strong>Mechanical stop.</strong> The P07 flange stops the Carriage at a 69.05 mm gap whatever the firmware does.</li>
+      <li><strong>Current limit.</strong> The TMC2209 current is set before the motor is connected so stall thrust is &le; 177 N; first runs use half that current.</li>
+      <li><strong>Firmware limits.</strong> The press stops at 2 mm from a 0.5 N contact or at 150 N, whichever comes first; it aborts if no contact is found within 15 mm of the start position.</li>
+      <li><strong>Start position.</strong> Without a home switch, the operator jogs the plate to about 5 mm above a ball before each session; the firmware treats that as zero.</li>
+      <li><strong>First power-up.</strong> Steel reference ball first, at half current, with the stall-thrust test before any pickleball.</li>
+      <li><strong>Stop.</strong> The start/stop switch halts motion; the bench-supply output switch cuts all power and stays within reach.</li>
+    </ol>
+    <p><strong>Safety.</strong> No powered test before the safety review. Fingers out from under the Press Plate when
+    jogging; power off before reaching inside; the screw back-drives when unpowered; eye protection at the arbor press. Only trained
+    team members run the POC, with the case closed. <strong>Disassembly:</strong> remove the case, unplug the electronics, remove the four
+    Top Plate screws, lift the top assembly off, then turn the Carriage off the screw.</p>
+  </section>
+
+  <section class="section" id="wiring">
+    <h2>Electrical connections</h2>
+    <svg viewBox="0 0 760 330" role="img" aria-labelledby="wire-t" style="width:100%;max-width:820px;height:auto;display:block;margin:0 auto">
+      <title id="wire-t">POC wiring block diagram: 12 V bench supply through the on/off switch to the TMC2209 motor supply; laptop USB powers the Arduino, which sends step, direction and enable to the TMC2209 and reads the HX711; the HX711 reads the load cell; the OLED is on I2C; the start/stop switch is a digital input; the TMC2209 drives the stepper</title>
+      <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#303545"/></marker></defs>
+      <g font-family="Outfit, Segoe UI, sans-serif" font-size="13" fill="#20232e">
+        <rect x="20" y="20" width="150" height="50" rx="8" fill="#e9ebf0" stroke="#6d7387"/><text x="95" y="42" text-anchor="middle" font-weight="700">12 V bench supply</text><text x="95" y="60" text-anchor="middle">&ge; 2 A, output switch</text>
+        <rect x="20" y="130" width="150" height="50" rx="8" fill="#e9ebf0" stroke="#6d7387"/><text x="95" y="152" text-anchor="middle" font-weight="700">On/off switch</text><text x="95" y="170" text-anchor="middle">SS12D10, in 12 V line</text>
+        <rect x="300" y="110" width="170" height="90" rx="8" fill="#e8ffae" stroke="#303545" stroke-width="1.5"/><text x="385" y="140" text-anchor="middle" font-weight="700">Arduino Uno R3</text><text x="385" y="160" text-anchor="middle">USB to laptop: power</text><text x="385" y="178" text-anchor="middle">and force&ndash;travel log</text>
+        <rect x="560" y="20" width="180" height="60" rx="8" fill="#e9ebf0" stroke="#6d7387"/><text x="650" y="45" text-anchor="middle" font-weight="700">TMC2209 breakout</text><text x="650" y="64" text-anchor="middle">VM 12 V, VIO 5 V</text>
+        <rect x="560" y="120" width="180" height="50" rx="8" fill="#e9ebf0" stroke="#6d7387"/><text x="650" y="142" text-anchor="middle" font-weight="700">NEMA 17 stepper</text><text x="650" y="160" text-anchor="middle">coils A1 A2 B1 B2</text>
+        <rect x="560" y="200" width="180" height="50" rx="8" fill="#e9ebf0" stroke="#6d7387"/><text x="650" y="222" text-anchor="middle" font-weight="700">HX711 breakout</text><text x="650" y="240" text-anchor="middle">RATE high (80 /s)</text>
+        <rect x="560" y="270" width="180" height="50" rx="8" fill="#e9ebf0" stroke="#6d7387"/><text x="650" y="292" text-anchor="middle" font-weight="700">20 kg load cell</text><text x="650" y="310" text-anchor="middle">E+ E&minus; A+ A&minus;</text>
+        <rect x="300" y="250" width="170" height="40" rx="8" fill="#e9ebf0" stroke="#6d7387"/><text x="385" y="275" text-anchor="middle" font-weight="700">SSD1306 OLED (I&sup2;C)</text>
+        <rect x="80" y="250" width="150" height="40" rx="8" fill="#e9ebf0" stroke="#6d7387"/><text x="155" y="275" text-anchor="middle" font-weight="700">Start/stop switch</text>
+      </g>
+      <g stroke="#303545" stroke-width="1.6" fill="none" marker-end="url(#ar)">
+        <path d="M95 70 V128"/><path d="M170 155 H230 V50 H558"/><path d="M470 130 H520 V60 H558"/><path d="M650 80 V118"/>
+        <path d="M470 185 H520 V225 H558"/><path d="M650 270 V252"/><path d="M385 200 V248"/><path d="M230 270 H298"/>
+      </g>
+      <g font-family="Outfit, Segoe UI, sans-serif" font-size="11.5" fill="#303545">
+        <text x="240" y="44">12 V motor supply</text><text x="514" y="100" text-anchor="end">STEP D5, DIR D6, EN D7</text><text x="514" y="218" text-anchor="end">DT D3, SCK D2</text><text x="392" y="232">SDA A4, SCL A5</text><text x="236" y="262">D8 to GND</text>
+      </g>
+    </svg>
+    <p><b>Figure 2.</b> POC wiring. All grounds are common; a 100 &micro;F capacitor sits across the TMC2209 motor supply.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>From</th><th>To</th><th>Signal</th></tr></thead>
+      <tbody>
+        <tr><td>Bench supply +12 V (via on/off switch)</td><td>TMC2209 VM</td><td>Motor power</td></tr>
+        <tr><td>Bench supply GND</td><td>TMC2209 GND, Arduino GND</td><td>Common ground</td></tr>
+        <tr><td>Arduino 5 V</td><td>TMC2209 VIO, HX711 VCC, OLED VCC</td><td>Logic power</td></tr>
+        <tr><td>Arduino D5 / D6 / D7</td><td>TMC2209 STEP / DIR / EN</td><td>Step, direction, enable (EN low = on)</td></tr>
+        <tr><td>TMC2209 MS1, MS2</td><td>Set for 1/16 microstepping</td><td>0.0025 mm per step</td></tr>
+        <tr><td>TMC2209 A1, A2, B1, B2</td><td>Motor coils</td><td>Drive current set by Vref before connecting</td></tr>
+        <tr><td>Load cell red / black / green / white</td><td>HX711 E+ / E&minus; / A+ / A&minus;</td><td>Bridge excitation and signal</td></tr>
+        <tr><td>HX711 DT / SCK</td><td>Arduino D3 / D2</td><td>Force samples at 80 /s</td></tr>
+        <tr><td>OLED SDA / SCL</td><td>Arduino A4 / A5</td><td>Result display</td></tr>
+        <tr><td>Start/stop switch</td><td>Arduino D8 and GND</td><td>Input with internal pull-up</td></tr>
+        <tr><td>Arduino USB</td><td>Laptop</td><td>Power and serial log</td></tr>
+      </tbody></table></div>
+    <p>Load-cell leads are twisted and run away from the motor leads. The MVP replaces this with the main board (P19) and keyed connectors.</p>
+  </section>
+
+  <section class="section" id="bom">
+    <h2>POC bill of materials</h2>
+    <p>One unit. Custom aluminium parts cost the raw stock they are machined from (estimated), or nothing if the shop supplies it;
+    shop time and the water jet are free. Prices checked Nov. 13, 2026 for the load cell, HX711, Arduino and TMC2209; others are estimates.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Item</th><th>Part no.</th><th>Description</th><th>Qty</th><th>Custom / purchased</th><th>Material</th><th>Supplier</th><th>Supplier part no.</th><th>Unit</th><th>Total</th><th>Status, lead time</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>P01, P03, P04</td><td>NEMA 17 stepper with integrated Tr8&times;8 screw and brass nut</td><td>1</td><td>Purchased</td><td>Steel, copper, stainless</td><td>Iverntech (Amazon)</td><td>42HD4027-42</td><td class="num">$20.00</td><td class="num">$20.00</td><td>In hand</td><td>Cut screw to length</td></tr>
+        <tr><td>2</td><td>P02</td><td>Top Plate</td><td>1</td><td>Custom (U-M shop)</td><td>6061, 1/4 in. plate</td><td>U-M machine shop</td><td>Drawing P02</td><td class="num">$5.00</td><td class="num">$5.00</td><td>Shop approval; 1.75 h</td><td>Stock only</td></tr>
+        <tr><td>3</td><td>P05</td><td>Bronze bushing, 8 ID &times; 12 OD</td><td>1</td><td>Purchased</td><td>Bronze</td><td>Amazon</td><td>8 &times; 12 mm sleeve bushing</td><td class="num">$3.00</td><td class="num">$3.00</td><td>In hand</td><td>Measure OD before reaming P06</td></tr>
+        <tr><td>4</td><td>P06</td><td>Carriage</td><td>1</td><td>Custom (U-M shop)</td><td>6061, 1/4 in. plate</td><td>U-M machine shop</td><td>Drawing P06</td><td class="num">$2.00</td><td class="num">$2.00</td><td>Shop approval; 1.5 h</td><td></td></tr>
+        <tr><td>5</td><td>P07</td><td>Anti-Rotation Rod with hard-stop flange</td><td>1</td><td>Custom (U-M shop)</td><td>6061, 1 in. rod</td><td>U-M machine shop</td><td>Drawing P07</td><td class="num">$3.00</td><td class="num">$3.00</td><td>Shop approval; 1.5 h</td><td>MVP uses 4140 steel</td></tr>
+        <tr><td>6</td><td>P09</td><td>Load cell, 20 kg straight bar</td><td>1</td><td>Purchased</td><td>Aluminium</td><td>Adafruit</td><td><a href="https://www.adafruit.com/product/4543">4543</a></td><td class="num">$3.95</td><td class="num">$3.95</td><td>In hand</td><td></td></tr>
+        <tr><td>7</td><td>P10</td><td>Baseplate</td><td>1</td><td>Custom (U-M shop)</td><td>6061, 1/4 in. plate</td><td>U-M machine shop</td><td>Drawing P10</td><td class="num">$7.00</td><td class="num">$7.00</td><td>Shop approval; 0.75 h</td><td></td></tr>
+        <tr><td>8</td><td>P12</td><td>Press Plate</td><td>1</td><td>Custom (U-M shop)</td><td>6061, 1/4 in. plate</td><td>U-M machine shop</td><td>Drawing P12</td><td class="num">$1.50</td><td class="num">$1.50</td><td>Shop approval; 0.75 h</td><td></td></tr>
+        <tr><td>9</td><td>P13</td><td>Frame Post</td><td>4</td><td>Custom (U-M shop)</td><td>6061, 1/2 in. rod</td><td>U-M machine shop</td><td>Drawing P13</td><td class="num">$0.75</td><td class="num">$3.00</td><td>Shop approval; 4 h</td><td></td></tr>
+        <tr><td>10</td><td>P14</td><td>Locating peg, M4 &times; 0.7 &times; 8 mm socket set screw</td><td>1</td><td>Purchased</td><td>Steel</td><td>Team stock</td><td>&mdash;</td><td class="num">$0.00</td><td class="num">$0.00</td><td>In hand</td><td></td></tr>
+        <tr><td>11</td><td>P15</td><td>Load Cell Plate</td><td>1</td><td>Custom (U-M shop)</td><td>6061, 1/4 in. plate</td><td>U-M machine shop</td><td>Drawing P15</td><td class="num">$2.00</td><td class="num">$2.00</td><td>Shop approval; 0.5 h</td><td></td></tr>
+        <tr><td>12</td><td>P16</td><td>Case: printed body and window</td><td>1</td><td>Custom</td><td>ABS body; clear PC window</td><td>U-M makerspace</td><td>&mdash;</td><td class="num">$15.00</td><td class="num">$15.00</td><td>Ready to print; &asymp; 18 h</td><td>Filament cost</td></tr>
+        <tr><td>13a</td><td>&mdash;</td><td>M3 &times; 0.5 &times; 10 mm socket head cap screw</td><td>4</td><td>Purchased</td><td>Steel 8.8</td><td>Team stock</td><td>ISO 4762</td><td class="num">$0.00</td><td class="num">$0.00</td><td>In hand</td><td>Motor to P02</td></tr>
+        <tr><td>13b</td><td>&mdash;</td><td>M3 &times; 0.5 &times; 14 mm socket head cap screw</td><td>4</td><td>Purchased</td><td>Steel 8.8</td><td>Team stock</td><td>ISO 4762</td><td class="num">$0.00</td><td class="num">$0.00</td><td>In hand</td><td>Nut + P06 into P12</td></tr>
+        <tr><td>13c</td><td>&mdash;</td><td>M5 &times; 0.8 &times; 16 mm socket head cap screw</td><td>9</td><td>Purchased</td><td>Steel 8.8</td><td>Team stock</td><td>ISO 4762</td><td class="num">$0.00</td><td class="num">$0.00</td><td>In hand</td><td>8 posts, 1 rod</td></tr>
+        <tr><td>13d</td><td>&mdash;</td><td>M4 &times; 0.7 socket head cap screws for the load cell</td><td>4</td><td>Purchased</td><td>Steel 8.8</td><td>Team stock</td><td>ISO 4762</td><td class="num">$0.00</td><td class="num">$0.00</td><td>In hand</td><td>Length set at first fit</td></tr>
+        <tr><td>14</td><td>&mdash;</td><td>Arduino Uno R3</td><td>1</td><td>Purchased</td><td>&mdash;</td><td>SparkFun</td><td><a href="https://www.sparkfun.com/products/11021">DEV-11021</a></td><td class="num">$27.60</td><td class="num">$27.60</td><td>In hand</td><td>Controller</td></tr>
+        <tr><td>15</td><td>&mdash;</td><td>TMC2209 stepper driver breakout</td><td>1</td><td>Purchased</td><td>&mdash;</td><td>Adafruit via Jameco</td><td>Adafruit 6121; Jameco 2883471</td><td class="num">$11.65</td><td class="num">$11.65</td><td>In hand</td><td>Same chip as MVP</td></tr>
+        <tr><td>16</td><td>&mdash;</td><td>HX711 load-cell amplifier</td><td>1</td><td>Purchased</td><td>&mdash;</td><td>SparkFun</td><td><a href="https://www.sparkfun.com/products/13879">SEN-13879</a></td><td class="num">$4.95</td><td class="num">$4.95</td><td>In hand</td><td>Same chip as MVP</td></tr>
+        <tr><td>17</td><td>&mdash;</td><td>SSD1306 OLED, 0.96 in., 128 &times; 64, I&sup2;C, 4-pin</td><td>1</td><td>Purchased</td><td>&mdash;</td><td>Amazon</td><td>SSD1306 128&times;64 I&sup2;C module</td><td class="num">$15.00</td><td class="num">$15.00</td><td>In hand</td><td>Any SSD1306 I&sup2;C module at address 0x3C</td></tr>
+        <tr><td>18</td><td>&mdash;</td><td>SS12D10 SPDT slide switch (on/off; start/stop)</td><td>2</td><td>Purchased</td><td>&mdash;</td><td>Amazon</td><td>SS12D10G4 pack</td><td class="num">$3.00</td><td class="num">$3.00</td><td>In hand</td><td>One pack covers both</td></tr>
+        <tr><td>19</td><td>&mdash;</td><td>Breadboard (830-point) and jumper-wire kit</td><td>1</td><td>Purchased</td><td>&mdash;</td><td>Amazon</td><td>BOJACK breadboard kit</td><td class="num">$10.00</td><td class="num">$10.00</td><td>In hand</td><td></td></tr>
+        <tr><td>20</td><td>&mdash;</td><td>Bench DC power supply, 12 V, &ge; 2 A, current-limited</td><td>1</td><td>Borrowed</td><td>&mdash;</td><td>U-M lab</td><td>&mdash;</td><td class="num">$0.00</td><td class="num">$0.00</td><td>Available</td><td>Any 12 V supply rated &ge; 2 A</td></tr>
+        <tr><td></td><td></td><td><strong>POC total</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="num"><strong>$137.65</strong></td><td></td><td></td></tr>
+      </tbody></table></div>
+    <p><strong>Fabrication and external-process costs:</strong> none; shop time and water jet are free and the case is charged as filament.
+    <strong>Budget check:</strong> POC $137.65 + alpha prototype $0 (team materials) = $137.65 of the $400 team budget; Design Expo
+    materials are planned inside the remaining $262.35.</p>
+  </section>
+
+  <section class="section" id="reproducibility">
+    <h2>Reproducibility and prototype documentation</h2>
+    <p>A technically qualified team can build the POC from this documentation: nine drawings, a fabrication plan for every custom part,
+    a seven-step assembly with fasteners and torques, the wiring table and a priced BOM. Expected cost $137.65; about 10.75 h of
+    machining plus one water-jet slot and an 18 h print; expected performance about 10 s per ball, 0.0025 mm per step and about
+    0.43 N static force error (<a href="parameter-analysis.html">Parameter Analysis</a>). Safety: trained operators only until the
+    interlocked MVP exists.</p>
+    <figure><a href="assets/img/gr3/subsystem-rig.png"><img src="assets/img/gr3/subsystem-rig.png" alt="Photo of the preliminary arrangement: motor and lead screw above, anti-rotation rod, a pickleball on the load cell below, held on a cardboard support" loading="lazy" style="max-width:420px"></a>
+      <figcaption><b>Figure 3.</b> First arrangement of the POC motor, lead screw, anti-rotation feature, ball and load cell (layout check only; not a load test).</figcaption></figure>
+    <h3>As-built record</h3>
+    <p>The machined POC has not been built yet. As it is built, the record will capture, with photos and video: what was built and how;
+    deviations from the drawings and plans; problems and fixes; reasons for any design change; the final as-built configuration;
+    and actual cost and hours against the estimates above.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Date</th><th>Part or step</th><th>Planned</th><th>As built</th><th>Deviation and reason</th><th>Photo / video</th></tr></thead>
+      <tbody>
+        <tr><td colspan="6">No entries yet: fabrication starts after shop approval of the revised drawings.</td></tr>
+      </tbody></table></div>
+  </section>
+
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="mvp.html">&larr; Minimum Viable Product</a>
+    <a href="validation.html">Validation &amp; Verification &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
+    Gate Review 3: Detailed Design and Validation &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

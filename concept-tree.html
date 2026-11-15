@@ -33,7 +33,7 @@
           <li><a href="competition.html">Competition Analysis</a></li>
           <li><a href="value-proposition.html">Market Value Proposition</a></li>
           <li class="submenu-caption">Archive</li>
-          <li><a href="archive/gr1-before-feedback/index.html">GR1 before instructor feedback</a></li>
+          <li><a href="archive/gr1-before-feedback/index.html">Gate Review 1 version (Oct. 1)</a></li>
         </ul>
       </li>
       <li class="has-menu">
@@ -48,9 +48,25 @@
           <li><a href="downselection.html">Downselection</a></li>
           <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
           <li><a href="social-impact.html">Social Impact Statement</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr2-before-feedback/concept.html">Gate Review 2 version (Oct. 28)</a></li>
         </ul>
       </li>
-      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li class="has-menu">
+        <a href="detailed-design.html" class="menu-label" aria-haspopup="true">Development &amp; Validation</a>
+        <ul class="submenu" aria-label="Gate Review 3: Detailed Design and Validation">
+          <li class="submenu-caption">Gate Review 3</li>
+          <li><a href="detailed-design.html">Detailed Design Overview</a></li>
+          <li><a href="technical-development.html">Technical Development Methods</a></li>
+          <li><a href="fmea.html">FMEA</a></li>
+          <li><a href="parameter-analysis.html">Parameter Analysis</a></li>
+          <li><a href="mvp.html">Minimum Viable Product</a></li>
+          <li><a href="poc.html">Proof-of-Concept Prototype</a></li>
+          <li><a href="validation.html">Validation &amp; Verification</a></li>
+          <li><a href="impact.html">Social Impact Evaluation</a></li>
+          <li><a href="appendix.html">Appendix: Supporting Files</a></li>
+        </ul>
+      </li>
       <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
       <li><a href="team.html">Team</a></li>
     </ul>
@@ -181,6 +197,22 @@
   </ul>
   <p>Methods in plain text, such as image recognition, LIDAR and game counting, remain possible but lower priority,
   because most cannot detect softening.</p>
+
+  <h2 id="full-system">Beyond the measurement: loading, control, result and safety</h2>
+  <p>The tree above explores how to sense a ball. A player also has to load the ball, start the test, receive the result and
+  stay safe, so a second tree covers the rest of the system. The options were judged on the same QFD needs: fits routine
+  (&le; 2 actions), increases confidence, works courtside without an outlet, and no injury.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Function</th><th>Options explored</th><th>Kept at GR2</th><th>Changed at GR3, and why</th></tr></thead>
+    <tbody>
+      <tr><td>Load and locate the ball</td><td>Drop into an open cup; cradle behind a door; two rollers; locating peg; hand-held clamp</td><td>Two-roller cradle behind a door</td><td>Locating peg: the ball drifted on the rollers (FMEA RPN 392)</td></tr>
+      <tr><td>Start the test</td><td>Physical button; auto-start when the door closes; touchscreen; phone app</td><td>One physical button</td><td>On-screen Start after the door closes, so the door must be shut first</td></tr>
+      <tr><td>Communicate the result</td><td>Word on a text display; red/green LEDs; icon + word; sound; haptic; phone app</td><td>Word only ("Playable / Non-playable")</td><td>Check or X + PLAY or RETIRE + distinct tones: words alone depend on language and eyesight, color alone fails color-blind users (Activity 26)</td></tr>
+      <tr><td>Keep fingers safe</td><td>Enclosure only; door interlock; two-hand start; force limit only; light curtain</td><td>Enclosure, force limit (proposed)</td><td>Reed-switch door interlock added: stall force can exceed the hand limit, so force limiting alone is not enough</td></tr>
+      <tr><td>Power</td><td>Wall adapter; replaceable AA cells; rechargeable pack with USB-C</td><td>Not decided</td><td>Rechargeable with USB-C: most courts have no outlet</td></tr>
+      <tr><td>Check the ball is present</td><td>None; load-cell contact only; IR break-beam</td><td>Load-cell contact</td><td>IR break-beam added so Start is refused with no ball</td></tr>
+    </tbody></table></div>
+  <p>The current system is described on the <a href="mvp.html#operation">MVP page</a>.</p>
 
   <h2>Gaps and new ideas</h2>
   <p>After drawing the first version of the tree (<a href="conceptualization.html#concept-tree">Figure 4</a>), the team

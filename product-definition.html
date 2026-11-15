@@ -33,7 +33,7 @@
           <li><a href="competition.html">Competition Analysis</a></li>
           <li><a href="value-proposition.html">Market Value Proposition</a></li>
           <li class="submenu-caption">Archive</li>
-          <li><a href="archive/gr1-before-feedback/index.html">GR1 before instructor feedback</a></li>
+          <li><a href="archive/gr1-before-feedback/index.html">Gate Review 1 version (Oct. 1)</a></li>
         </ul>
       </li>
       <li class="has-menu">
@@ -48,9 +48,25 @@
           <li><a href="downselection.html">Downselection</a></li>
           <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
           <li><a href="social-impact.html">Social Impact Statement</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr2-before-feedback/concept.html">Gate Review 2 version (Oct. 28)</a></li>
         </ul>
       </li>
-      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li class="has-menu">
+        <a href="detailed-design.html" class="menu-label" aria-haspopup="true">Development &amp; Validation</a>
+        <ul class="submenu" aria-label="Gate Review 3: Detailed Design and Validation">
+          <li class="submenu-caption">Gate Review 3</li>
+          <li><a href="detailed-design.html">Detailed Design Overview</a></li>
+          <li><a href="technical-development.html">Technical Development Methods</a></li>
+          <li><a href="fmea.html">FMEA</a></li>
+          <li><a href="parameter-analysis.html">Parameter Analysis</a></li>
+          <li><a href="mvp.html">Minimum Viable Product</a></li>
+          <li><a href="poc.html">Proof-of-Concept Prototype</a></li>
+          <li><a href="validation.html">Validation &amp; Verification</a></li>
+          <li><a href="impact.html">Social Impact Evaluation</a></li>
+          <li><a href="appendix.html">Appendix: Supporting Files</a></li>
+        </ul>
+      </li>
       <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
       <li><a href="team.html">Team</a></li>
     </ul>
@@ -97,7 +113,7 @@
   <p>The <strong>customer and user</strong> is the individual frequent, competitive player: someone who plays at least
   weekly in leagues, rated or tournament play, brings their own balls, and checks them at the court (see
   <a href="customers.html">Customers &amp; Benefits</a>). Clubs and tournament directors are a possible secondary
-  segment that has not been validated, so no requirement on this page is set for unattended facility screening. The
+  segment that has not been validated, so no requirement is set for unattended facility screening. The
   product succeeds if its grades agree with the USA Pickleball bounce test, it raises players' confidence in their
   balls, and it does both quickly, repeatably and without harming the ball, at a price a player will pay.</p>
 
@@ -181,7 +197,7 @@
         <li><strong>User:</strong> raise player confidence by at least 2 points on the 7-point scale (S5)</li>
         <li><strong>Business:</strong> retail at $100 or less (S6)</li>
         <li>Resolve deformation changes of 0.025 mm (S2); two user actions or fewer (S8)</li>
-        <li>Last at least 1,500 test cycles (S12); 75% appearance approval (S14)</li>
+        <li>Last at least 1,000 test cycles (S12); 75% appearance approval (S14)</li>
       </ul>
     </div>
     <div class="card">
@@ -742,7 +758,7 @@
 <text x="984.0" y="1136.0" font-size="13" text-anchor="middle" font-weight="700" fill="#20232e">≤ 2.5</text>
 <text x="1036.0" y="1136.0" font-size="13" text-anchor="middle" font-weight="700" fill="#20232e">≤ 2</text>
 <text x="1088.0" y="1136.0" font-size="13" text-anchor="middle" font-weight="700" fill="#20232e">5</text>
-<text x="1140.0" y="1136.0" font-size="13" text-anchor="middle" font-weight="700" fill="#20232e">≥ 1,500</text>
+<text x="1140.0" y="1136.0" font-size="13" text-anchor="middle" font-weight="700" fill="#20232e">≥ 1,000</text>
 <text x="1192.0" y="1136.0" font-size="13" text-anchor="middle" font-weight="700" fill="#20232e">&lt; 400</text>
 <text x="1244.0" y="1136.0" font-size="13" text-anchor="middle" font-weight="700" fill="#20232e">≥ 75</text>
 <text x="1296.0" y="1136.0" font-size="13" text-anchor="middle" font-weight="700" fill="#20232e">&lt; 8</text>
@@ -915,7 +931,7 @@
         <tr><td>S9</td><td><strong>Packed volume</strong> (L)</td><td>Portable to court</td><td>Volume of the tester as carried, including its power source, measured from its bounding box</td><td>Constraint</td><td>▼</td><td>≤ 2.5</td><td><strong>Justified estimate</strong>: small enough to fit in a pickleball bag alongside balls, as the portability need requires; existing trusted methods are bench instruments or a fixed drop setup (Table 16)</td><td>Strong + with S10; moderate − with S2 and S11</td><td>Bag sizes vary; the limit has not yet been checked with players</td></tr>
         <tr><td>S10</td><td><strong>Mass of tester</strong> (kg)</td><td>Portable to court</td><td>Mass as carried, including its rechargeable battery, weighed on a scale</td><td>Constraint</td><td>▼</td><td>≤ 2</td><td><strong>Justified estimate</strong>: 2 kg is the team's estimate of what a player will add to a pickleball bag they already carry to the court; not yet checked with players</td><td>Strong + with S9; moderate − with S2, S11, S12 and S13</td><td>A lighter structure may flex and limit resolution (S2)</td></tr>
         <tr><td>S11</td><td><strong>Common ball models graded</strong> (of 5)</td><td>Works with any ball</td><td>Number of the five survey models (Franklin X-40, Onix Dura Fast 40, Life Time LT Pro 48, Vulcan VPRO Flight, Selkirk Pro S1) for which the tester meets S1, while accepting the full USA Pickleball diameter and mass range</td><td>Requirement</td><td>▲</td><td>5</td><td><strong>Survey and interviews</strong>: X-40 most used (38.9%) <a class="cite" href="research.html#survey" title="[1] Team 1, “Activity 10a: Consumer Survey,” ME 455, 2026 (n=36 responses).">[1]</a>; clubs standardize on Life Time balls <a class="cite" href="research.html#interviews" title="[2] Team 1, “Activity 10b: Consumer Interviews,” ME 455, 2026 (P1–P4).">[2]</a>; <strong>standard</strong> size and mass limits <a class="cite" href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf" target="_blank" rel="noopener" title="[4] USA Pickleball, Equipment Standards Manual, Rev. 3.0, Jan. 2025, rules 2.D.3–2.D.7. usapickleball.org">[4]</a></td><td>Moderate − with S1, S6, S8, S9, S10 and S13</td><td>Models wear at very different rates (see <a href="research.html">Market Research</a>), so each may need its own threshold</td></tr>
-        <tr><td>S12</td><td><strong>Test cycles before failure</strong> (#)</td><td>Long-lasting product</td><td>Number of tests the tester completes before it fails or drifts outside S1 and S16, measured in an accelerated cycling test</td><td>Objective</td><td>▲</td><td>≥ 1,500</td><td><strong>Engineering analysis</strong>: 4 balls per set × about 6 checks per ball per season × 3 seasons × 20 ball sets ≈ 1,440, rounded to 1,500 <span class="badge badge-assumption">Assumption</span> use rates are team estimates</td><td>Strong − with S13; moderate − with S6 and S10</td><td>Use rates have not been surveyed</td></tr>
+        <tr><td>S12</td><td><strong>Test cycles before failure</strong> (#)</td><td>Long-lasting product</td><td>Number of tests the tester completes before it fails or drifts outside S1 and S16, measured in an accelerated cycling test</td><td>Objective</td><td>▲</td><td>≥ 1,000</td><td><strong>Engineering analysis</strong>: 4 balls per set × about 4 checks per ball per season × 3 seasons × 20 ball sets ≈ 960, rounded to 1,000; verified by a 1,000-cycle durability test <span class="badge badge-assumption">Assumption</span> use rates are team estimates</td><td>Strong − with S13; moderate − with S6 and S10</td><td>Use rates have not been surveyed</td></tr>
         <tr><td>S13</td><td><strong>Prototype cost</strong> ($)</td><td>Affordable; producer</td><td>Total spend on materials and parts for the prototype</td><td>Constraint</td><td>▼</td><td>&lt; 400</td><td><strong>Course constraint</strong> ($400 budget)</td><td>Strong + with S6 and S15; strong − with S2 and S12</td><td>Parts estimate about $130 (downselection)</td></tr>
         <tr><td>S14</td><td><strong>Appearance approval</strong> (%)</td><td>Aesthetically pleasing</td><td>Share of at least 20 target players who, shown the tester, say it looks like something they would carry in their bag</td><td>Objective</td><td>▲</td><td>≥ 75</td><td><strong>Justified estimate</strong>: three in four players approve, so it reads as a consumer product</td><td>Moderate + with S9; weak + with S10; weak − with S12</td><td>Lowest-weighted need (2%); a finished look competes with prototype budget and time</td></tr>
         <tr><td>S15</td><td><strong>Prototype build time</strong> (weeks)</td><td>Producer constraint</td><td>Weeks from design freeze to a working prototype, built only with course fabrication resources</td><td>Constraint</td><td>▼</td><td>&lt; 8</td><td><strong>Course constraint</strong>: the prototype must be finished this semester</td><td>Strong + with S13; weak − with S12</td><td>Fixed by the schedule; leaves little time for iteration</td></tr>

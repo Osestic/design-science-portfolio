@@ -33,7 +33,7 @@
           <li><a href="competition.html">Competition Analysis</a></li>
           <li><a href="value-proposition.html">Market Value Proposition</a></li>
           <li class="submenu-caption">Archive</li>
-          <li><a href="archive/gr1-before-feedback/index.html">GR1 before instructor feedback</a></li>
+          <li><a href="archive/gr1-before-feedback/index.html">Gate Review 1 version (Oct. 1)</a></li>
         </ul>
       </li>
       <li class="has-menu">
@@ -48,9 +48,25 @@
           <li><a href="downselection.html">Downselection</a></li>
           <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
           <li><a href="social-impact.html">Social Impact Statement</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr2-before-feedback/concept.html">Gate Review 2 version (Oct. 28)</a></li>
         </ul>
       </li>
-      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li class="has-menu">
+        <a href="detailed-design.html" class="menu-label" aria-haspopup="true">Development &amp; Validation</a>
+        <ul class="submenu" aria-label="Gate Review 3: Detailed Design and Validation">
+          <li class="submenu-caption">Gate Review 3</li>
+          <li><a href="detailed-design.html">Detailed Design Overview</a></li>
+          <li><a href="technical-development.html">Technical Development Methods</a></li>
+          <li><a href="fmea.html">FMEA</a></li>
+          <li><a href="parameter-analysis.html">Parameter Analysis</a></li>
+          <li><a href="mvp.html">Minimum Viable Product</a></li>
+          <li><a href="poc.html">Proof-of-Concept Prototype</a></li>
+          <li><a href="validation.html">Validation &amp; Verification</a></li>
+          <li><a href="impact.html">Social Impact Evaluation</a></li>
+          <li><a href="appendix.html">Appendix: Supporting Files</a></li>
+        </ul>
+      </li>
       <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
       <li><a href="team.html">Team</a></li>
     </ul>
@@ -79,6 +95,14 @@
   </div>
   <p style="margin-top:0.7rem"><b>Figure 1.</b> CuPickle: concept render with the door closed and open (team,
   AI-assisted), and the full-scale alpha prototype of its press and roller cradle.</p>
+
+  <div class="callout">
+    <span class="callout-title">Where the design is now (Gate Review 3)</span>
+    <p>The concept described here is the one selected at Gate Review 2. Since then the two-roller cradle and its 4&ndash;6 presses
+    have been replaced by a locating peg and one fixed 2 mm press, the frame is machined 6061 aluminium, and the result is
+    shown as a check or X, the word PLAY or RETIRE, and a distinct sound. The current design is on the
+    <a href="detailed-design.html">Detailed Design Overview</a>.</p>
+  </div>
 
   <h2>Customer need and design problem</h2>
   <p><strong>Balls soften, reducing performance, and players can't tell.</strong></p>
@@ -141,14 +165,14 @@
 
   <h2>How CuPickle works</h2>
   <p>The player opens the door with the finger recess, sets the ball on a two-roller cradle, closes the door and presses
-  the start button on top: two actions. A stepper-driven lead screw lowers a plate onto the ball; the load cell detects
+  the start button on top: four actions counting the door. A stepper-driven lead screw lowers a plate onto the ball; the load cell detects
   contact, then the plate compresses the ball a fixed distance while force is recorded on the way down and on the way
   back up. That gives two damage signals, <strong>stiffness</strong> (force ÷ deflection) and
   <strong>hysteresis</strong> (the loop between loading and unloading). The plate lifts, the rollers turn the ball,
   and the compression repeats at 4–6 positions. A position that reads far from the others flags a soft spot, or a ball
   resting on a hole or seam. The controller compares the results with a new ball of the same model and shows
-  <strong>Playable</strong> or <strong>Non-playable</strong> on the readout, while the player watches the test through
-  the door's window.</p>
+  <strong>Playable</strong> or <strong>Non-playable</strong> in words on a small monochrome text display on the top
+  face, with no lights or sound, while the player watches the test through the door's window.</p>
   <p>Fixed-displacement compression is the principle behind the compression test in the
   <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf">USA Pickleball Equipment
   Standards Manual</a>, which requires new balls to average below 43 lbf under ASTM F1888
@@ -158,7 +182,7 @@
   <div class="callout">
     <span class="callout-title">Compression testing has been successfully used to determine the stiffness of a pickleball</span>
     <p style="margin:0">Pickleball Science compressed Franklin X-40 balls with a plate and force gauge after each hour of
-    competitive play <a class="cite" href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/" target="_blank" rel="noopener" title="[2] Pickleball Science, “How Many Games Will a Pickleball Last?” Mar. 15, 2023. pickleballscience.org">[2]</a>. This validates our device methodology:</p>
+    competitive play <a class="cite" href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/" target="_blank" rel="noopener" title="[2] Pickleball Science, “How Many Games Will a Pickleball Last?” Mar. 15, 2023. pickleballscience.org">[2]</a>. This supports the measuring principle, within the limits below:</p>
     <ul style="margin-bottom:0">
       <li><strong>Linear response.</strong> Force and displacement are linear up to 30 lb, so stiffness (k = F/δ) from a
       fixed compression is a valid measure.</li>
@@ -175,6 +199,24 @@
     <a href="downselection.html#evidence">Downselection: Pickleball Science evidence</a>.</figcaption>
   </figure>
 
+  <div class="callout callout-limit">
+    <span class="callout-title">Limits of this evidence</span>
+    <ul style="margin-bottom:0">
+      <li><strong>Softening rate.</strong> The 10% per hour comes from Franklin X-40 balls in one set of play tests at room
+      temperature <a class="cite" href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/" target="_blank" rel="noopener">[2]</a>;
+      other models and outdoor conditions may soften at different rates, and stiffness also changes with temperature
+      (<a href="https://pickleballscience.org/how-does-temperature-affect-a-pickleball/" target="_blank" rel="noopener">Pickleball Science, temperature</a>).</li>
+      <li><strong>Reference-ball normalization.</strong> Grading against a new ball of the same model assumes new balls are
+      alike. In our own test, five new balls ranged from 37.7 to 40.9 N/mm, about &plusmn;4%, which is a third to a half of the
+      wear signal (<a href="validation.html#activity-1">Validation</a>).</li>
+      <li><strong>Stiffness as a predictor of playability.</strong> The governing standard, the
+      <a href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf" target="_blank" rel="noopener">USA Pickleball Equipment Standards Manual</a>,
+      defines a legal ball by bounce (30&ndash;34 in. from 78 in.) and by maximum compression force under ASTM F1888, not by
+      loss of stiffness. No published study we found ties a stiffness ratio to failing the bounce test; our blind grading
+      against the bounce test is designed to establish it.</li>
+    </ul>
+  </div>
+
   <h2>Subsystems and how they interact</h2>
   <div class="grid grid-3">
     <div class="card"><h3>Housing</h3><p style="margin:0">Dark upper shell for the drive, white lower shell for the cradle, windowed door and finger-pull recess.</p></div>
@@ -182,7 +224,7 @@
     <div class="card"><h3>Compression</h3><p style="margin:0">Stepper and lead screw drive the plate; a collar sets a 5 mm hard stop.</p></div>
     <div class="card"><h3>Force sensing</h3><p style="margin:0">A load cell in the full force path reads force through loading and unloading.</p></div>
     <div class="card"><h3>Control</h3><p style="margin:0">Computes stiffness, hysteresis and the outlier check, subtracts frame flex from a steel-ball calibration, grades the ball.</p></div>
-    <div class="card"><h3>User interface</h3><p style="margin:0">One start button and a readout on the top face; the window shows the test.</p></div>
+    <div class="card"><h3>User interface</h3><p style="margin:0">One start button and a small monochrome text display on the top face showing Playable or Non-playable; the window shows the test.</p></div>
   </div>
   <h3 id="parts-list">Parts list</h3>
   <figure style="margin:0 0 1rem">
@@ -206,7 +248,7 @@
         </tbody>
       </table>
     </div>
-  <p><b>Table 2.</b> CuPickle parts list (callouts 1–18 in Figure 2). Also on
+  <p><b>Table 2.</b> CuPickle parts list (callouts 1–18 in Figure 2). Dimensions are preliminary GR2 values, given for scale. Also on
   <a href="top-concepts.html#parts-list">Top Concepts: Concept A</a>.</p>
 
   <p>The controller commands the compression drive, the drive deforms the ball, the load cell returns the force, and
@@ -227,7 +269,7 @@
   CubeClamp (E): a hysteresis signal, steel-ball calibration, and its transparent view and premium enclosed form; and the refined A′ scored highest at 3.25, ahead of the
   CubeClamp at 3.19 <a class="cite" href="downselection.html" title="[5] Team 1, “CuPickle Downselection (condensed),” ME 455, Oct. 26, 2026.">[5]</a>. Because that gap is smaller than one rating step, the team
   decided on buildability: the CubeClamp's ball does not fit through its 40 mm opening, and it needs two synchronized
-  motors and a machined flexure, while A′ uses off-the-shelf parts and two user actions. The full argument is on
+  motors and a machined flexure, while A′ uses off-the-shelf parts and one start button. The full argument is on
   <a href="downselection.html">Downselection</a>.</p>
 
   <h2>Advantages, limitations, risks and open questions</h2>

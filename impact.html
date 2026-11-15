@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Social Impact Evaluation · CuPickle · Team 1 Design Portfolio</title>
+<meta name="description" content="Gate Review 3 social impact analysis, design decisions, Design for Environment and GRANTA eco-audit, and Design for X for the CuPickle MVP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#6d7387" stroke="#d5d8e2" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#d5d8e2"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#e8ffae"/><stop offset="100%" stop-color="#c9e67a"/></linearGradient></defs>
+</svg><span>CuPickle</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr1-before-feedback/index.html">Gate Review 1 version (Oct. 1)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr2-before-feedback/concept.html">Gate Review 2 version (Oct. 28)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="detailed-design.html" class="menu-label is-active" aria-haspopup="true">Development &amp; Validation</a>
+        <ul class="submenu" aria-label="Gate Review 3: Detailed Design and Validation">
+          <li class="submenu-caption">Gate Review 3</li>
+          <li><a href="detailed-design.html">Detailed Design Overview</a></li>
+          <li><a href="technical-development.html">Technical Development Methods</a></li>
+          <li><a href="fmea.html">FMEA</a></li>
+          <li><a href="parameter-analysis.html">Parameter Analysis</a></li>
+          <li><a href="mvp.html">Minimum Viable Product</a></li>
+          <li><a href="poc.html">Proof-of-Concept Prototype</a></li>
+          <li><a href="validation.html">Validation &amp; Verification</a></li>
+          <li><a href="impact.html" aria-current="page">Social Impact Evaluation</a></li>
+          <li><a href="appendix.html">Appendix: Supporting Files</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section" style="padding-top:2.4rem">
+    <p class="eyebrow">Gate Review 3 &middot; Social Impact Statement</p>
+    <h1>What CuPickle could change, for better and worse</h1>
+    <p class="lead">CuPickle's largest possible benefit is fewer good balls thrown away and fewer bad ones kept; its largest possible
+    harm is a wrong grade presented with false authority, followed by a finger pinch at the press. Those two concerns shaped the
+    GR3 design more than any other social or environmental factor: they led to the three-state result, the door interlock and the
+    claims we will and will not make. Environmentally, 91.5% of CuPickle's life-cycle energy is in its materials, most of it in the
+    circuit board and display, so a longer product life and a simpler display matter more than operating energy.</p>
+    <p>This updates the <a href="social-impact.html">Gate Review 2 statement</a> for the detailed MVP: its peg and single press, its
+    materials, its manufacturing plan, its battery and its end-of-life plan.</p>
+  </section>
+
+  <section class="section" id="analysis">
+    <h2>Social impact analysis</h2>
+    <p>Each effect is tagged <strong>L</strong> likely or <strong>P</strong> possible but uncertain, and by source: <strong>N</strong>
+    normal use, <strong>M</strong> misuse or unequal access, <strong>MF</strong> manufacturing, distribution, maintenance or disposal.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Category</th><th>Question we asked</th><th>Effects (likelihood, source)</th><th>Who is affected</th><th>Response in the MVP</th></tr></thead>
+      <tbody>
+        <tr><td>Health and safety</td><td>Can the press hurt someone, or the battery fail?</td><td>Finger pinch: stall thrust 177 N exceeds the 140 N hand limit (P, M). Ball fragments if over-pressed (P, M). Battery heating while charging (P, MF).</td><td>Users, children nearby</td><td>Door reed-switch interlock; 2 mm press; current limit; flange hard stop; NiMH cell with charge termination</td></tr>
+        <tr><td>Paid work and working conditions</td><td>Who makes the parts, and under what conditions?</td><td>Machining, molding and board jobs (L, MF); hazards in aluminium refining, electronics and battery supply chains we do not control (P, MF)</td><td>Supplier workers</td><td>Screen suppliers for safety and labour compliance; ordinary processes with no special hazards; simple top-down assembly</td></tr>
+        <tr><td>Social or economic stratification</td><td>Who can afford a $100-plus tester?</td><td>Owners get a better tool than non-owners (L, M); the unit cost of $112 makes a lower price harder (L)</td><td>Casual and lower-income players</td><td>Shared units for clubs and facilities as a second channel; replaceable modules lower ownership cost</td></tr>
+        <tr><td>Human rights and accessibility</td><td>Can people with low vision, color blindness, dyslexia, limited English or weak grip use it?</td><td>The GR2 text-only "Playable / Non-playable" readout excluded some users (L, N)</td><td>Older players, users with disabilities</td><td>Check or X, PLAY or RETIRE, distinct sounds with volume control; high-contrast screen; one-hand operation &le; 22.2 N (Act 26)</td></tr>
+        <tr><td>Education</td><td>Does it teach or mislead?</td><td>Players learn that balls soften before they look damaged (P, N); a grade may be over-trusted as the whole truth about a ball (P, N)</td><td>Players, coaches</td><td>Quick-start card explains what stiffness does and does not say</td></tr>
+        <tr><td>Family</td><td>Does it fit mixed-age, social play?</td><td>Fewer disputes about a ball (P, N); a slow test interrupts play (P, N)</td><td>Family and social groups</td><td>About 10 s per test; no setup; result understood without reading</td></tr>
+        <tr><td>Gender</td><td>Does operation depend on hand size or strength?</td><td>A stiff door or small button could exclude some users (P, N)</td><td>Users with smaller hands or less grip</td><td>Door and button force limits; user study includes varied hand sizes; no gendered marketing</td></tr>
+        <tr><td>Population change</td><td>What if the player base ages or spreads to schools and parks?</td><td>More older users and new users unfamiliar with test equipment (L)</td><td>Older and novice players</td><td>Accessible feedback; battery operation with no installation</td></tr>
+        <tr><td>Conflict and crime</td><td>Could the result start arguments or be abused?</td><td>A wrong grade, or selective testing to pressure opponents (P, M); theft at public courts (P, M)</td><td>Opponents, facilities</td><td>No claim of official certification or USA Pickleball endorsement; CHECK BALL instead of a forced grade</td></tr>
+        <tr><td>Social networks and communication</td><td>Does it collect data or need a connection?</td><td>No app, account or wireless: nothing to leak and it works at courts without signal (L, N); no shared test history (L)</td><td>Users</td><td>Connectivity deferred; if added, consent and privacy review first</td></tr>
+        <tr><td>Cultural identity and heritage</td><td>Does it make a social sport overly technical, or favour brands?</td><td>Risk of making casual play feel clinical (P, N); grades could be read as brand rankings (P, M)</td><td>Recreational players, ball makers</td><td>Simple, fast interaction; per-model references so no model is judged against another</td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="section" id="decisions">
+    <h2>Design decisions and professional responsibility</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Decision</th><th>Driven by</th><th>Responsibility it serves</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Door reed-switch interlock; slow 2 mm press; current-limited thrust</td><td>Health and safety; FMEA</td><td>Prevent foreseeable injury</td><td>In MVP design; not on the POC</td></tr>
+        <tr><td>Three result states: PLAY, RETIRE, CHECK BALL</td><td>Conflict; accuracy</td><td>Do not turn a failed measurement into a confident answer</td><td>In MVP design</td></tr>
+        <tr><td>Icon + word + sound; high-contrast screen</td><td>Accessibility (Act 26)</td><td>Usable regardless of vision, language or color perception</td><td>In MVP design; user test planned</td></tr>
+        <tr><td>No app, account or wireless</td><td>Privacy</td><td>Collect no personal data</td><td>In MVP</td></tr>
+        <tr><td>No certification or endorsement claims; limits printed on the quick-start card</td><td>Conflict; education</td><td>Honest marketing</td><td>Business practice</td></tr>
+        <tr><td>"RETIRE" means retire from competitive play; suggest drills and practice</td><td>Environment</td><td>Avoid turning the product into a disposal driver</td><td>Quick-start card</td></tr>
+        <tr><td>Screw-fastened modules; spare parts</td><td>Stratification; environment</td><td>Lower ownership cost; longer life</td><td>In MVP design</td></tr>
+        <tr><td>Shared units for clubs</td><td>Stratification</td><td>Access without ownership</td><td>Business plan (later)</td></tr>
+        <tr><td>Supplier screening for labour and safety</td><td>Paid work</td><td>Responsible sourcing</td><td>Before production</td></tr>
+      </tbody></table></div>
+    <p>The most important professional duty is the accuracy of the grade. Until blind testing shows &ge; 90% agreement with the bounce
+    test, the reference-ball method is a starting point and is not presented as a validated judgment of playability
+    (<a href="validation.html">Validation</a>).</p>
+  </section>
+
+  <section class="section" id="eco">
+    <h2>Design for Environment and GRANTA eco-audit</h2>
+    <p><strong>Inputs and assumptions.</strong> GRANTA EduPack 2026 R1 model of the MVP: manufactured and used in North America,
+    3-year life, 4.7 lb of modeled parts (6061 frame, ABS case, PC window, motor, board, display, battery, charger). Use phase from the
+    DfE worksheet: 20 W for 1.5 min a day. End of life: 80% metal recovery, 50% battery downcycling. Full report:
+    <a href="assets/docs/eco-audit-report.pdf">eco-audit report (PDF)</a>; worksheet: <a href="assets/docs/dfe-worksheet.pdf">DfE worksheet (PDF)</a>.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Life-cycle stage</th><th>Energy (MJ)</th><th>Energy share</th><th>CO&#8322;-eq (kg)</th><th>CO&#8322;-eq share</th></tr></thead>
+      <tbody>
+        <tr><td>Material</td><td class="num">448</td><td class="num">91.5%</td><td class="num">29.7</td><td class="num">91.7%</td></tr>
+        <tr><td>Manufacture</td><td class="num">36.2</td><td class="num">7.4%</td><td class="num">2.40</td><td class="num">7.4%</td></tr>
+        <tr><td>Transport</td><td class="num">2.6</td><td class="num">0.5%</td><td class="num">0.16</td><td class="num">0.5%</td></tr>
+        <tr><td>Use</td><td class="num">1.7</td><td class="num">0.4%</td><td class="num">0.08</td><td class="num">0.2%</td></tr>
+        <tr><td>Disposal</td><td class="num">0.9</td><td class="num">0.2%</td><td class="num">0.06</td><td class="num">0.2%</td></tr>
+        <tr><td><strong>Total, first life</strong></td><td class="num"><strong>485</strong></td><td class="num">100%</td><td class="num"><strong>32.3</strong></td><td class="num">100%</td></tr>
+        <tr><td>End-of-life potential (recovery credit)</td><td class="num">&minus;56</td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+      </tbody></table></div>
+    <p><b>Table.</b> Eco-audit results converted from the report (1 kcal = 4.184 kJ; 1 lb = 0.4536 kg).</p>
+    <p><strong>Where the impact is.</strong> By material energy, the main circuit assembly is 33.6% and the display 19.3%, though
+    they weigh 0.27 lb together; the battery is 7.6%, the Top Plate and Baseplate 14%, the ABS case 5%. Within manufacturing, rolling
+    the plate stock and molding the case are the largest loads. <strong>Toxins and hazards:</strong> lead-free solder on the board,
+    battery chemistry, machining fluids and aluminium refining upstream.</p>
+    <p><strong>Data quality.</strong> Board, display and battery use generic EduPack records ("printed wiring board, unspecified";
+    "LCD, unmounted"; Li-ion), so their numbers are order-of-magnitude. The model uses a Li-ion pack while the MVP uses a 9 V
+    NiMH cell, and it still includes the old stop collar (0.01 lb); both change the totals by well under the 20% the report treats
+    as significant. An earlier DfE worksheet run gave 582 MJ and 36.5 kg; the report above is the later model.</p>
+    <h3>Alternatives considered and changes made</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Life-cycle stage</th><th>Alternative considered</th><th>Decision and tradeoff</th></tr></thead>
+      <tbody>
+        <tr><td>Material</td><td>Thinner plates or polymer frame</td><td>Kept 1/4 in. 6061-T6: stiffness sets measurement accuracy (3.3% compliance); aluminium is recyclable</td></tr>
+        <tr><td>Material</td><td>Simpler display (segment LCD or LEDs)</td><td>Open: would cut the 19% display share and cost, but must keep icon + word + sound readable</td></tr>
+        <tr><td>Manufacture</td><td>3D-printed case in production</td><td>Injection molding: lower energy and cost per part at volume</td></tr>
+        <tr><td>Manufacture</td><td>Machining from oversize stock</td><td>Near-net stock; chips collected for recycling; minimum-quantity lubrication</td></tr>
+        <tr><td>Packaging and transport</td><td>Foam inserts</td><td>Compact carton with paper inserts; battery shipping rules apply</td></tr>
+        <tr><td>Use</td><td>Motor held energized</td><td>Motor de-energized between tests; screen timeout</td></tr>
+        <tr><td>Maintenance and life</td><td>Glued, sealed unit</td><td>Screws only; battery, board, motor and load cell replaceable to extend the 3-year life</td></tr>
+        <tr><td>End of life</td><td>Mixed-material landfill</td><td>Material marks (&gt;ABS&lt;); separable metals; take-back and disposal guidance</td></tr>
+      </tbody></table></div>
+    <p><strong>Not the lowest-impact option.</strong> A case-less bench unit or a cheaper display would lower impact, but the case is the
+    safety enclosure and the readable display is an accessibility requirement; we kept both and target the display for cost-down.
+    The modeled mass (2.15 kg in CAD plus electronics) also misses the 2 kg portability target.</p>
+  </section>
+
+  <section class="section" id="dfx">
+    <h2>Design for X across the detailed design</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Design for</th><th>Where it changed CuPickle</th><th>Trace</th></tr></thead>
+      <tbody>
+        <tr><td>Safety</td><td>Interlock; 2 mm press; current limit; flange hard stop</td><td><a href="fmea.html#critical">FMEA</a>, <a href="parameter-analysis.html#safety">&sect;14</a></td></tr>
+        <tr><td>Performance</td><td>Stiff frame; 1/16 microstepping; 80 samples/s</td><td><a href="parameter-analysis.html#compliance">&sect;9</a></td></tr>
+        <tr><td>Reliability</td><td>Steel rod in bronze bushing; infinite-life stresses</td><td><a href="parameter-analysis.html#structure">&sect;11</a></td></tr>
+        <tr><td>Manufacturability</td><td>Laser-cut plates; one-hit lathe parts; ordinary tolerances except one reamed bore</td><td><a href="mvp.html#manufacturing">MVP manufacturing</a></td></tr>
+        <tr><td>Assembly and disassembly</td><td>Top-down assembly; three screw sizes; keyed connectors; no adhesives</td><td><a href="mvp.html#assembly">MVP assembly</a></td></tr>
+        <tr><td>Cost</td><td>Integrated motor and screw; rollers and second motor removed; display as cost-down target</td><td><a href="mvp.html#bom">MVP BOM</a></td></tr>
+        <tr><td>Quality</td><td>Matched post sets; go/no-go bore gauge; end-of-line calibration</td><td><a href="mvp.html#manufacturing">Process sheets</a></td></tr>
+        <tr><td>Usability and accessibility</td><td>Icon + word + sound; one-hand controls</td><td><a href="assets/docs/act26-accessibility.pdf">Act 26</a></td></tr>
+        <tr><td>Maintenance and repair</td><td>Screw-fastened modules; wipe-clean plate</td><td><a href="mvp.html#operation">Use cycle</a></td></tr>
+        <tr><td>Sustainability</td><td>Near-net stock; chip recycling; longer life</td><td><a href="#eco">Eco-audit</a></td></tr>
+        <tr><td>Transportation and packaging</td><td>Compact carton; battery shipping compliance</td><td><a href="#eco">Eco-audit</a></td></tr>
+        <tr><td>Testing and validation</td><td>USB force log, adjustable speed and depth on the POC</td><td><a href="validation.html">Validation</a></td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="section" id="conclusions">
+    <h2>Updated impact conclusions</h2>
+    <ul>
+      <li><strong>Most consequential benefit:</strong> evidence-based decisions about when to retire a ball, keeping good balls in play longer and reducing replacement cost and waste for players and clubs.</li>
+      <li><strong>Most significant harm:</strong> a wrong grade trusted too much (waste, disputes, lost trust), and a pinch injury if the interlock fails or is bypassed.</li>
+      <li><strong>Most affected stakeholders:</strong> frequent players and clubs; older players and players with disabilities; supplier and recycling workers.</li>
+      <li><strong>Most important design changes:</strong> door interlock, CHECK BALL state, icon + word + sound, no data collection, screw-fastened modules.</li>
+      <li><strong>Remaining uncertainties:</strong> stiffness-to-playability agreement; interlock reliability; accessibility in real use; supplier practices; real recycling access; tests per charge on the NiMH battery.</li>
+      <li><strong>Actions:</strong> blind grading, interlock tests on the first MVP build, the player study with varied users, supplier screening and a take-back plan.</li>
+      <li><strong>Values for the business:</strong> accuracy before claims, safety by design, access for every player, and a product that lasts and comes apart.</li>
+    </ul>
+  </section>
+
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="validation.html">&larr; Validation &amp; Verification</a>
+    <a href="appendix.html">Appendix: Supporting Files &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
+    Gate Review 3: Detailed Design and Validation &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

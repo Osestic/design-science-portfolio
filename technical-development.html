@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Development Methods · CuPickle · Team 1 Design Portfolio</title>
+<meta name="description" content="CuPickle design drivers, why each matters, and the method, evidence and validation used to resolve it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+  <rect x="3" y="2" width="16" height="18" rx="6" fill="#6d7387" stroke="#d5d8e2" stroke-width="1.6"/>
+  <rect x="8.5" y="18" width="5" height="6" rx="2.2" fill="#d5d8e2"/>
+  <circle cx="20" cy="19" r="5" fill="url(#mg)"/>
+  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#e8ffae"/><stop offset="100%" stop-color="#c9e67a"/></linearGradient></defs>
+</svg><span>CuPickle</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu">
+        <a href="customers.html" class="menu-label" aria-haspopup="true">Customer &amp; Market Research</a>
+        <ul class="submenu" aria-label="Gate Review 1: Product Definition and Market Analysis">
+          <li class="submenu-caption">Gate Review 1</li>
+          <li><a href="customers.html">Customers &amp; Benefits</a></li>
+          <li><a href="research.html">Market Research</a></li>
+          <li><a href="product-definition.html">Product Definition</a></li>
+          <li><a href="competition.html">Competition Analysis</a></li>
+          <li><a href="value-proposition.html">Market Value Proposition</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr1-before-feedback/index.html">Gate Review 1 version (Oct. 1)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="concept.html" class="menu-label" aria-haspopup="true">Concept &amp; Prototyping</a>
+        <ul class="submenu" aria-label="Gate Review 2: Product Concept">
+          <li class="submenu-caption">Gate Review 2</li>
+          <li><a href="concept.html">Proposed Concept Description</a></li>
+          <li><a href="conceptualization.html">Conceptualization Methods</a></li>
+          <li><a href="functional-decomposition.html">Functional Decomposition</a></li>
+          <li><a href="concept-tree.html">Concept Tree</a></li>
+          <li><a href="top-concepts.html">Top Concepts</a></li>
+          <li><a href="downselection.html">Downselection</a></li>
+          <li><a href="alpha-prototype.html">Proposed Concept &amp; Alpha Prototype</a></li>
+          <li><a href="social-impact.html">Social Impact Statement</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr2-before-feedback/concept.html">Gate Review 2 version (Oct. 28)</a></li>
+        </ul>
+      </li>
+      <li class="has-menu">
+        <a href="detailed-design.html" class="menu-label is-active" aria-haspopup="true">Development &amp; Validation</a>
+        <ul class="submenu" aria-label="Gate Review 3: Detailed Design and Validation">
+          <li class="submenu-caption">Gate Review 3</li>
+          <li><a href="detailed-design.html">Detailed Design Overview</a></li>
+          <li><a href="technical-development.html" aria-current="page">Technical Development Methods</a></li>
+          <li><a href="fmea.html">FMEA</a></li>
+          <li><a href="parameter-analysis.html">Parameter Analysis</a></li>
+          <li><a href="mvp.html">Minimum Viable Product</a></li>
+          <li><a href="poc.html">Proof-of-Concept Prototype</a></li>
+          <li><a href="validation.html">Validation &amp; Verification</a></li>
+          <li><a href="impact.html">Social Impact Evaluation</a></li>
+          <li><a href="appendix.html">Appendix: Supporting Files</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section" style="padding-top:2.4rem">
+    <p class="eyebrow">Gate Review 3 &middot; Technical Development Methods</p>
+    <h1>Five design drivers decide whether CuPickle works</h1>
+    <p class="lead">Five focused questions decide whether CuPickle gives a trusted grade in 30 s or less. Drivers 2 and 4
+    are resolved by analysis; driver 1 has test evidence; driver 3 is decided (a locating peg and one press) and waits on the
+    POC; driver 5 needs the player study.</p>
+    <p>The drivers come from the heaviest QFD needs (<a href="product-definition.html#qfd">House of Quality</a>), the
+    hardest functions in the <a href="functional-decomposition.html">functional decomposition</a>, the risks left open at
+    <a href="downselection.html">downselection</a>, and what the <a href="alpha-prototype.html#prototype">alpha prototype</a>
+    taught us: the ball drifted on the rollers and the frame was too large. Activity 20 framed driver 3 around two
+    motorized rollers; the Instron test and the FMEA changed it to the peg question below.
+    The original Activity 20 write-up is in the <a href="appendix.html">Appendix</a>.</p>
+  </section>
+
+  <section class="section" id="table">
+    <h2>Design-driver table</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Driver</th><th>Why critical</th><th>Need / spec</th><th>Target</th><th>Method to resolve</th><th>Evidence / result</th><th>Validation method</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><a href="#d1">1. Playability grading</a></td><td>Without a measurable stiffness loss the grade has no evidence behind it</td><td>Identifies low-performance balls (15%), S1</td><td>Ratio within 0.05 of 0.90 (4 games) and 0.80 (8 games); &ge; 90% grade agreement</td><td>Controlled compression experiment; drive and load model</td><td>Used balls 11.5% below new at 2 mm (p = 0.045), 8.0% at 5 mm (p = 0.020); linear to 5 mm (R&sup2; &ge; 0.997)</td><td>Blind grading of &ge; 20 held-out balls; known-history X-40s</td><td>Partly supported</td></tr>
+        <tr><td><a href="#d2">2. Force-path accuracy</a></td><td>Any flex or lag is read as ball deflection</td><td>Repeatable (13%), S16; precise, S2</td><td>%GRR &lt; 10; &le; 0.025 mm</td><td>Compliance stack, microstep and lag model, structural checks</td><td>Frame 3.3% of ball compliance; ratio error 0.005; 0.0025 mm/step; SF &ge; 1.33</td><td>Gauge R&amp;R 10 &times; 3 &times; 3; dial-indicator travel check</td><td>Analysis done; bench test pending</td></tr>
+        <tr><td><a href="#d3">3. Ball location</a></td><td>The press must land on the same spot every test</td><td>S1, S16; FMEA RPN 392</td><td>&ge; 90% correct from one press; re-seat spread &le; 5% of stiffness</td><td>Comparison of peg, peg with re-seating, and rollers, using the position data</td><td>Peg removes drift and a motor; one random spot 75% correct in-sample</td><td>Single-press blind grading; 5 balls &times; 20 re-seats</td><td>Decided (peg); untested</td></tr>
+        <tr><td><a href="#d4">4. Test cycle time</a></td><td>A slow test will not be used courtside</td><td>Tests quickly (10%), S7</td><td>&le; 30 s</td><td>Stage-by-stage time budget; ADC rate model</td><td>About 10 s per test</td><td>Firmware timestamps; timed first-use trials</td><td>Analysis done</td></tr>
+        <tr><td><a href="#d5">5. Player trust</a></td><td>An accurate grade fails if players will not act on it</td><td>Increases confidence (10%), S5; fits routine, S8</td><td>&ge; 2-point gain (7-point scale); &ge; 4 of 5 trust; &le; 2 actions</td><td>Customer and usability study</td><td>Result format chosen from Activity 26 (icon + word + sound)</td><td>&ge; 21 weekly competitive players, manual vs. CuPickle on coded balls</td><td>Planned</td></tr>
+      </tbody></table></div>
+    <p><b>Table 1.</b> Design drivers. S-numbers are House of Quality characteristics.</p>
+  </section>
+
+  <section class="section" id="d1">
+    <h2>Driver 1: Playability grading (controlled experiment)</h2>
+    <ol>
+      <li><strong>Question.</strong> Does a plate press show a stiffness loss with play, and what ratio to a new ball marks a ball RETIRE?</li>
+      <li><strong>Why it matters.</strong> The grade is the product.</li>
+      <li><strong>Requirement and failure mode.</strong> Identifies low-performance balls (15%, the heaviest need); FMEA "wrong grade shown" (RPN 288).</li>
+      <li><strong>Why this method.</strong> <a href="https://pickleballscience.org/how-many-games-will-a-pickleball-last/" target="_blank" rel="noopener">Pickleball Science</a> measured plate stiffness on Franklin X-40s falling 93.5 &rarr; 84.0 &rarr; 75.2 lb/in over two hours of play, the same property CuPickle measures, so a controlled compression test on our own balls is the most direct check.</li>
+      <li><strong>Application.</strong> Phase A pressed one new and one used ball to 1, 5 and 11 mm. Phase B pressed five new and five used balls at six marked positions each to 5 mm (60 runs).</li>
+      <li><strong>Inputs.</strong> Instron press with a flat plate and block (5 N display step), tared runs only, force interpolated at 1&ndash;5 mm. Used balls came from courts retiring them; play history unknown.</li>
+      <li><strong>Result.</strong> Used balls averaged 184.6 N and new 200.7 N at 5 mm (stiffness ratio 0.932). At 2 mm the gap is 11.5% (p = 0.045). Measured new-ball stiffness (about 37 N/mm) is 2.3&times; the published 16.4 N/mm, so only ratios are usable. Limits: 10 balls, unknown history, fixture differs from CuPickle.</li>
+      <li><strong>Decision.</strong> Grade on the ratio to a same-model new-ball reference, never on absolute stiffness. Press a fixed 2 mm: new balls reach about 87 N there, well inside the drive and load-cell limits, and the curve is linear.</li>
+      <li><strong>Validation.</strong> Repeat on X-40s with 0, 4 and 8 recorded games; confirm the ratio is within 0.05 of the published ratio; blind-grade &ge; 20 held-out balls against the bounce test (<a href="validation.html#activity-1">Validation, Activity 1</a>).</li>
+    </ol>
+  </section>
+
+  <section class="section" id="d2">
+    <h2>Driver 2: Force-path accuracy (analytical model, then bench test)</h2>
+    <ol>
+      <li><strong>Question.</strong> Do frame flex, motor lag or nut backlash hide the wear signal?</li>
+      <li><strong>Why it matters.</strong> At 2 mm the worn-ball signal is about 10 N; any flex is read as ball deflection.</li>
+      <li><strong>Requirement.</strong> S2 (&le; 0.025 mm), S16 (%GRR &lt; 10); FMEA "force reading wrong" (RPN 175).</li>
+      <li><strong>Why this method.</strong> A series compliance stack shows which part flexes most before anything is built, and is quick to update with CAD dimensions.</li>
+      <li><strong>Application.</strong> Summed the compliance of the load-cell bar, plates, carriage arm and screw and compared it with a new X-40.</li>
+      <li><strong>Inputs.</strong> 1/4 in. 6061-T6, spans from the drawings, 235 N worst-case stall thrust, 1.8&deg; motor with 1/16 microstepping.</li>
+      <li><strong>Result.</strong> Machine compliance 0.00204 mm/N, 3.3% of the ball's; worn/new ratio error 0.005. Travel 0.0025 mm per microstep, lag &le; 0.022 mm. Safety factors 1.33&ndash;19.7.</li>
+      <li><strong>Decision.</strong> Keep 1/4 in. plates; subtract steel-ball compliance; 0.5 N contact threshold so backlash is always taken up the same way; stall thrust limited to 177 N.</li>
+      <li><strong>Validation.</strong> Dial-indicator travel check; calibration with known masses; gauge R&amp;R on the POC (<a href="validation.html#activity-2">Activity 2</a>).</li>
+    </ol>
+  </section>
+
+  <section class="section" id="d3">
+    <h2>Driver 3: Ball location (selection comparison)</h2>
+    <ol>
+      <li><strong>Question.</strong> How is the ball held so every test presses a known spot?</li>
+      <li><strong>Why it matters.</strong> The alpha prototype's ball drifted on the rollers, and a random spot changes the reading.</li>
+      <li><strong>Requirement.</strong> S1, S16; FMEA "ball not held" (RPN 392, the highest).</li>
+      <li><strong>Why this method.</strong> Three candidates could be compared on drift, coverage, time and parts using data we already had.</li>
+    </ol>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Criterion</th><th>Peg, 1 press (selected)</th><th>Peg, user re-seats ball</th><th>Two motor rollers, 4&ndash;6 spots</th></tr></thead>
+      <tbody>
+        <tr><td>Ball drift</td><td>Eliminated</td><td>Eliminated</td><td>Untested; the only physical test failed</td></tr>
+        <tr><td>Finds a local soft spot</td><td>No</td><td>Yes, if re-seated</td><td>Yes</td></tr>
+        <tr><td>Cycle time</td><td>&asymp; 10 s</td><td>&asymp; 25 s for 3 spots</td><td>26&ndash;45 s</td></tr>
+        <tr><td>Parts and complexity</td><td>Lowest</td><td>Lowest</td><td>Extra motor, rollers, guides</td></tr>
+      </tbody></table></div>
+    <ol start="5">
+      <li><strong>Application and inputs.</strong> Phase B position data and the cycle-time budget.</li>
+      <li><strong>Result.</strong> Weakest positions were only 4&ndash;9% below the other five on the same ball, so used balls were softer all over, not at one spot. One random spot graded about 75% correctly in-sample, four spots 91%, six 100% (<a href="validation.html#fig-v4">Figure V4</a>).</li>
+      <li><strong>Decision.</strong> An M4 &times; 0.7 &times; 8 mm set-screw peg (P14) at the center of the Load Cell Plate; one press per ball. Testing several spots and soft-spot detection are deferred beyond the MVP.</li>
+      <li><strong>Limitation.</strong> 75% comes from random spots on 10 balls with an in-sample cut-off; a fixed spot removes position scatter but has not been tested.</li>
+      <li><strong>Validation.</strong> Single-press blind grading of &ge; 20 balls; 5 balls &times; 20 re-seats, spread &le; 5% of stiffness.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="d4">
+    <h2>Driver 4: Test cycle time (analytical model)</h2>
+    <ol>
+      <li><strong>Question.</strong> Does one press fit in 30 s, and is the amplifier fast enough?</li>
+      <li><strong>Why it matters.</strong> Players judge a ball in about 3 s today.</li>
+      <li><strong>Requirement.</strong> S7, &le; 30 s.</li>
+      <li><strong>Why this method.</strong> A time budget and a samples-per-millimetre model show the margin before hardware exists.</li>
+      <li><strong>Inputs.</strong> 5 mm approach and 8 mm retract at 10 mm/s, 1 mm contact search, 2 mm press, 6 s to load and close (assumed), 2 s result.</li>
+      <li><strong>Result.</strong> About 10.8 s at 2 mm/s and 10.1 s at 4 mm/s. At 10 samples/s the HX711 gives too few points; at 80 samples/s the overshoot is under 1.5 N.</li>
+      <li><strong>Uncertainty.</strong> The 6 s loading time dominates and is assumed.</li>
+      <li><strong>Decision.</strong> HX711 RATE pin high (80 samples/s); press at 2 mm/s, or 4 mm/s if stiffness changes by less than 1%.</li>
+      <li><strong>Validation.</strong> Firmware timestamps on the POC; timed first-use trials in the player study.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="d5">
+    <h2>Driver 5: Player trust (customer and usability study)</h2>
+    <ol>
+      <li><strong>Question.</strong> Which result format makes a player retire a ball on the result alone?</li>
+      <li><strong>Why it matters.</strong> Players buy confidence, not a number.</li>
+      <li><strong>Requirement.</strong> S5 (&ge; 2-point gain), S8 (&le; 2 actions).</li>
+      <li><strong>Why this method.</strong> Trust can only be measured with players.</li>
+      <li><strong>Application.</strong> &ge; 21 weekly competitive adult players, including older players, check coded balls by hand and with CuPickle and rate their confidence.</li>
+      <li><strong>Inputs.</strong> Result as large check or X, the word PLAY or RETIRE, and a distinct sound (Activity 26); one start control at &le; 22.2 N (ADA 309.4).</li>
+      <li><strong>Result.</strong> None yet.</li>
+      <li><strong>Decision so far.</strong> The icon + word + sound format replaces the GR2 text-only readout.</li>
+      <li><strong>Validation.</strong> <a href="validation.html#activity-3">Validation, Activity 3</a>.</li>
+    </ol>
+  </section>
+
+
+  <nav class="pager" aria-label="Section navigation">
+    <a href="detailed-design.html">&larr; Detailed Design Overview</a>
+    <a href="fmea.html">FMEA &rarr;</a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="margin:0">ME 455 Analytical Product Design &middot; Team CuPickle (Team 1) &middot;
+    Gate Review 3: Detailed Design and Validation &middot; University of Michigan</p>
+  </div>
+</footer>
+
+</body>
+</html>

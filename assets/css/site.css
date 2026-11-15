@@ -320,7 +320,8 @@ a:hover { color: var(--night); background: var(--neon); text-decoration-color: v
 
 .stat-label { display: block; margin-top: 0.35rem; color: var(--bg); font-size: 0.92rem; }
 .stat-source { display: block; margin-top: 0.5rem; color: #9aa0b2; font-size: 0.76rem; }
-.stat a { color: var(--neon); text-decoration-color: rgba(232, 255, 174, 0.5); }
+.stat a { color: #b9c6db; text-decoration-color: rgba(185, 198, 219, 0.5); }
+.stat a:hover { color: var(--neon); background: none; text-decoration-color: var(--neon); }
 
 /* ── Evidence badges ──────────────────────────────────────────────────── */
 

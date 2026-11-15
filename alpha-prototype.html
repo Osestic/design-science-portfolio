@@ -33,7 +33,7 @@
           <li><a href="competition.html">Competition Analysis</a></li>
           <li><a href="value-proposition.html">Market Value Proposition</a></li>
           <li class="submenu-caption">Archive</li>
-          <li><a href="archive/gr1-before-feedback/index.html">GR1 before instructor feedback</a></li>
+          <li><a href="archive/gr1-before-feedback/index.html">Gate Review 1 version (Oct. 1)</a></li>
         </ul>
       </li>
       <li class="has-menu">
@@ -48,9 +48,25 @@
           <li><a href="downselection.html">Downselection</a></li>
           <li><a href="alpha-prototype.html" aria-current="page">Proposed Concept &amp; Alpha Prototype</a></li>
           <li><a href="social-impact.html">Social Impact Statement</a></li>
+          <li class="submenu-caption">Archive</li>
+          <li><a href="archive/gr2-before-feedback/concept.html">Gate Review 2 version (Oct. 28)</a></li>
         </ul>
       </li>
-      <li><span class="nav-soon" title="Development &amp; Validation (later gate review)">Development</span></li>
+      <li class="has-menu">
+        <a href="detailed-design.html" class="menu-label" aria-haspopup="true">Development &amp; Validation</a>
+        <ul class="submenu" aria-label="Gate Review 3: Detailed Design and Validation">
+          <li class="submenu-caption">Gate Review 3</li>
+          <li><a href="detailed-design.html">Detailed Design Overview</a></li>
+          <li><a href="technical-development.html">Technical Development Methods</a></li>
+          <li><a href="fmea.html">FMEA</a></li>
+          <li><a href="parameter-analysis.html">Parameter Analysis</a></li>
+          <li><a href="mvp.html">Minimum Viable Product</a></li>
+          <li><a href="poc.html">Proof-of-Concept Prototype</a></li>
+          <li><a href="validation.html">Validation &amp; Verification</a></li>
+          <li><a href="impact.html">Social Impact Evaluation</a></li>
+          <li><a href="appendix.html">Appendix: Supporting Files</a></li>
+        </ul>
+      </li>
       <li><span class="nav-soon" title="Business Plan (later gate review)">Business Plan</span></li>
       <li><a href="team.html">Team</a></li>
     </ul>
@@ -62,9 +78,7 @@
   <p class="eyebrow">Gate Review 2 &middot; Concept &amp; Prototyping</p>
   <h1>Proposed Concept &amp; Alpha Prototype</h1>
   <p class="lead">CuPickle measures what players can't feel: how much stiffness a ball has lost, and where. It is the
-  refined Rolling Compression Station (A′) inside an enclosed two-tone housing. This page describes the concept in
-  enough detail to build it, shows how its subsystems connect and how a test runs, and documents what the full-scale
-  alpha prototype taught us.</p>
+  refined Rolling Compression Station (A′) inside an enclosed two-tone housing.</p>
 
   <nav class="toc" aria-label="On this page">
     <span class="toc-title">On this page</span>
@@ -144,10 +158,16 @@
   the grade into light the player reads; the window lets the player see the compression itself.</p>
 
   <h3>Interface, controls, feedback and affordances</h3>
-  <p>Two user actions: load the ball, press start. The finger-pull recess shows how the door opens, the cradle shows
+  <p>The core actions are loading the ball and pressing start. The finger-pull recess shows how the door opens, the cradle shows
   where the ball goes, and the single top button is the only control. Through the window the player sees the plate
-  press and the ball turn, so they know the test is running, and the readout states <strong>Playable</strong> or
-  <strong>Non-playable</strong> in words, so the result does not depend on color perception.</p>
+  press and the ball turn, so they know the test is running. Counting the door, a test is four actions: open, load,
+  close, start.</p>
+  <p><strong>How the result is communicated.</strong> At Gate Review 2 the readout was a small monochrome text display on the
+  top face that showed the word <strong>Playable</strong> or <strong>Non-playable</strong>, with no lights or sound. The
+  Activity 26 accessibility review found the two words look alike, depend on reading English and are hard to see in sun.
+  The Gate Review 3 MVP replaces it with a 2.8 in. touchscreen showing a large check or X, the word PLAY or RETIRE, and a
+  distinct tone for each, plus a CHECK BALL state for an invalid test
+  (<a href="mvp.html#operation">MVP operation</a>).</p>
 
   <h3>Aesthetic and emotional qualities</h3>
   <p>The two-tone shell and lime seam, carried over from the CubeClamp, read as a premium consumer device rather than
@@ -161,10 +181,21 @@
   printed shells for the product version, priced for the $100 retail target.</p>
 
   <h3>Safety and accessibility</h3>
-  <p>The plate–cradle pinch point sits behind the closed door, a software force limit stops the compression, and a collar
-  caps travel at 5 mm, below the 0.25 in. displacement of the ASTM F1888 compression test that the USA Pickleball
-  standard uses <a class="cite" href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf" target="_blank" rel="noopener" title="[6] USA Pickleball, Equipment Standards Manual, Rev. 3.0, Jan. 2025, rule 2.D.6; ASTM F1888 procedure as described in U.S. Patent 8,771,114. usapickleball.org">[6]</a>. One button and a word-based result suit older players and players
-  with limited dexterity or color vision; the readout's legibility still has to be tested.</p>
+  <p>Safeguards at Gate Review 2 were at different stages, and the table separates what existed from what was only proposed.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Safeguard</th><th>Status at GR2</th><th>Status at GR3</th></tr></thead>
+    <tbody>
+      <tr><td>Pinch point enclosed behind a door</td><td>Shown in the alpha mock-up (no mechanism)</td><td>In the MVP case and the printed POC case</td></tr>
+      <tr><td>Door interlock</td><td>Not designed: proposed after the FMEA</td><td>Reed switch in the MVP design; not on the POC</td></tr>
+      <tr><td>Software force limit</td><td>Proposed, not implemented</td><td>In POC firmware: stop at 2 mm or 150 N; to be tested</td></tr>
+      <tr><td>Travel limit</td><td>Proposed 5 mm collar</td><td>Flange on the Anti-Rotation Rod fixes a 69.05 mm minimum gap</td></tr>
+      <tr><td>Battery protection</td><td>Not designed</td><td>Replaceable 9 V NiMH cell with charge termination on the main board</td></tr>
+    </tbody></table></div>
+  <p>The proposed design limited travel to 5 mm, below the 0.25 in. displacement of the ASTM F1888 compression test that the USA Pickleball
+  standard uses <a class="cite" href="https://usapickleball.org/docs/rules/USAP-Equipment-Standards-Manual.pdf" target="_blank" rel="noopener" title="[6] USA Pickleball, Equipment Standards Manual, Rev. 3.0, Jan. 2025, rule 2.D.6; ASTM F1888 procedure as described in U.S. Patent 8,771,114. usapickleball.org">[6]</a>. One button suits players with limited dexterity, but one button alone
+  does not make a product accessible, and a word-only result depends on the user's language and eyesight. That is why the
+  result became icon + word + sound at GR3. Whether it works is tested with players, including older players, in the
+  <a href="validation.html#activity-3">user validation study</a>.</p>
 
   <h3>Benefits and differentiators</h3>
   <p>A measured answer instead of feel; softening detected before players can feel it; two damage signals at several
@@ -301,15 +332,15 @@
         <g stroke="#6d7387" stroke-width="1"><line x1="354" y1="369" x2="452" y2="369"/><line x1="364" y1="198" x2="452" y2="198"/><line x1="320" y1="214" x2="452" y2="222"/></g>
       </svg>
     </div>
-    <figcaption><b>Figure 17.</b> Internal mechanism, front elevation, with key dimensions in millimetres from the
-    Concept A CAD model. On rollers 54 mm apart, the 74 mm ball sits with its centre 38.5 mm above the roller axes, so
+    <figcaption><b>Figure 17.</b> Internal mechanism, front elevation, with <strong>preliminary</strong> key dimensions in
+    millimetres from the Concept A CAD model, given for scale and for the ball&ndash;roller&ndash;plate relationship only; they
+    are not design values. On rollers 54 mm apart, the 74 mm ball sits with its centre 38.5 mm above the roller axes, so
     the plate meets it on centre. Housing dimensions are not yet fixed: the alpha prototype showed the mechanism must
     shrink.</figcaption>
   </figure>
 
   <h2 id="operation">Operation, step by step</h2>
-  <p>The six frames below show one complete test. The player performs two actions, loading the ball and pressing
-  start; CuPickle does the rest, testing 4–6 positions per ball against a 30-second target.</p>
+  <p>The six frames below show one complete test. The player loads the ball and presses start (four actions counting the door); CuPickle does the rest, testing 4–6 positions per ball against a 30-second target.</p>
   <div class="grid grid-3">
     <figure style="margin:0">
       <div class="chart-surface" style="padding:0.6rem">
